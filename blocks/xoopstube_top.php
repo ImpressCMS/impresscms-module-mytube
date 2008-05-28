@@ -11,13 +11,16 @@
 // @param string $permType
 // @param boolean $redirect
 // @return
+$mydirname = basename( dirname(  dirname( __FILE__ ) ) ) ;
+$mydirpath = dirname( dirname( __FILE__ ) ) ;
+
 function checkXTubeBlockgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
     global $xoopsUser;
 
     $groups = is_object( $xoopsUser ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
     $gperm_handler = &xoops_gethandler( 'groupperm' );
     $module_handler = &xoops_gethandler( 'module' );
-    $module = &$module_handler -> getByDirname( 'mytube' );
+    $module = &$module_handler -> getByDirname($mydirname);
     if ( !$gperm_handler -> checkRight( $permType, $cid, $groups, $module -> getVar( 'mid' ) ) )     {
         if ( $redirect == false ) {
             return false;
@@ -35,7 +38,7 @@ function b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false 
 
     $groups = is_object( $xoopsUser ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
     $modhandler = xoops_gethandler( 'module' );
-    $xtubeModule = $modhandler -> getByDirname( 'mytube' );
+    $xtubeModule = $modhandler -> getByDirname($mydirname);
     $gperm_handler = &xoops_gethandler( 'groupperm' );
     if ( !$gperm_handler -> checkRight( $permType, $cid, $groups, $xtubeModule -> getVar( 'mid' ) ) ) {
         if ( $redirect == false ) {
@@ -48,7 +51,7 @@ function b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false 
 function b_xoopstube_top_thumbs( $bvidid, $btitle, $bsource, $bscreenshot, $bpicurl ) {
   $thumbb='';
   $modhandler = xoops_gethandler( 'module' );
-  $xtubeModule = $modhandler -> getByDirname( 'mytube' );
+  $xtubeModule = $modhandler -> getByDirname($mydirname);
   $config_handler = xoops_gethandler( 'config' );
   $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
 
@@ -91,7 +94,7 @@ function b_xoopstube_top_show( $options ) {
     global $xoopsDB,$xoopsModule, $xoopsModuleConfig;
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
-    $xtubeModule = $modhandler -> getByDirname( 'mytube' );
+    $xtubeModule = $modhandler -> getByDirname($mydirname);
     $config_handler = xoops_gethandler( 'config' );
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();
@@ -134,7 +137,7 @@ function b_xoopstube_random( $options ) {
 
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
-    $xtubeModule = $modhandler -> getByDirname( 'mytube' );
+    $xtubeModule = $modhandler -> getByDirname($mydirname);
     $config_handler = xoops_gethandler( 'config' );
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();
@@ -170,7 +173,7 @@ function b_xoopstube_randomh( $options ) {
 
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
-    $xtubeModule = $modhandler -> getByDirname( 'mytube' );
+    $xtubeModule = $modhandler -> getByDirname($mydirname);
     $config_handler = xoops_gethandler( 'config' );
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();

@@ -8,6 +8,8 @@
 if (!defined('XOOPS_ROOT_PATH')) {
 	die('XOOPS root path not defined');
 }
+$mydirname = basename( dirname(  dirname( __FILE__ ) ) ) ;
+$mydirpath = dirname( dirname( __FILE__ ) ) ;
 
 function b_mytube_banner_show( $options ) {
     global $xoopsDB;
@@ -15,7 +17,7 @@ function b_mytube_banner_show( $options ) {
     $block = array();
     $time = time();
     $modhandler = &xoops_gethandler( 'module' );
-    $wflModule = &$modhandler -> getByDirname( "mytube" );
+    $wflModule = &$modhandler -> getByDirname($mydirname);
     $config_handler = &xoops_gethandler( 'config' );
     $wflModuleConfig = &$config_handler -> getConfigsByCat( 0, $wflModule -> getVar( 'mid' ) );
 
