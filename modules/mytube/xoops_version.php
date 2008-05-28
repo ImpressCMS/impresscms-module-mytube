@@ -4,6 +4,8 @@
  * Module: MyTube
  * Licence: GNU
  */
+$mydirname = basename( dirname( __FILE__ ) ) ;
+$mydirpath = dirname( __FILE__ ) ;
 $modversion['name'] = _MI_XTUBE_NAME;
 $modversion['version'] = "1.04";
 $modversion['releasedate'] = "May 27, 2008";
@@ -18,7 +20,7 @@ if (defined("ICMS_VERSION_NAME")) {
 }
 $modversion['iconsmall'] = "images/xtube_iconsmall.png";
 $modversion['iconbig'] = "images/xtube_iconbig.png";
-$modversion['dirname'] = "mytube";
+$modversion['dirname'] = $mydirname ;
 
 $modversion['author'] = "McDonald";
 $modversion['credits'] = "WF-Projects Team. Based on the module WF-Links, thanks to the dream-team for some code snippits.";
@@ -385,7 +387,7 @@ $modversion['config'][$i]['title'] = '_MI_XTUBE_MAINIMGDIR';
 $modversion['config'][$i]['description'] = '_MI_XTUBE_MAINIMGDIRDSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'text';
-$modversion['config'][$i]['default'] = 'modules/mytube/images';
+$modversion['config'][$i]['default'] = 'modules/'.$mydirname.'/images';
 $i++;
 $modversion['config'][$i]['name'] = 'catimage';
 $modversion['config'][$i]['title'] = '_MI_XTUBE_CATEGORYIMG';
