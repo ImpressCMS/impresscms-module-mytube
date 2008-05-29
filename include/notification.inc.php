@@ -3,13 +3,15 @@
  * $Id: notification.inc.php
  * Module: MyTube
  */
+$mydirname = basename( dirname(  dirname( __FILE__ ) ) ) ;
+$mydirpath = dirname( dirname( __FILE__ ) ) ;
 
 function xoopstube_notify_iteminfo($category, $item_id) {
 	global $xoopsModule, $xoopsModuleConfig, $xoopsConfig;
 
-	if (empty($xoopsModule) || $xoopsModule->getVar('dirname') != 'xoopstube') {
+	if (empty($xoopsModule) || $xoopsModule->getVar('dirname') != 'mytube') {
 		$module_handler =& xoops_gethandler('module');
-		$module =& $module_handler->getByDirname('xoopstube');
+		$module =& $module_handler->getByDirname($mydirname);
 		$config_handler =& xoops_gethandler('config');
 		$config =& $config_handler->getConfigsByCat(0,$module->getVar('mid'));
 	} else {
