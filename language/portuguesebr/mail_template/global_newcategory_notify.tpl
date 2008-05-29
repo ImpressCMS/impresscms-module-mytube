@@ -1,4 +1,4 @@
-Hello {X_UNAME},
+Olá {X_UNAME},
 
 A new video category "{CATEGORY_NAME}" has been created at {X_SITENAME}.
 

@@ -1,4 +1,4 @@
-Hello {X_UNAME},
+Olá {X_UNAME},
 
 The submitted video "{LINK_NAME}" has been approved at {X_SITENAME}.
 

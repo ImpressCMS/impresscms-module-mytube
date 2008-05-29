@@ -1,4 +1,4 @@
-Hello {X_UNAME},
+Olá {X_UNAME},
 
 If you are the publisher of {X_TITLE} submitted on the date: {X_SUB_DATE}.
 

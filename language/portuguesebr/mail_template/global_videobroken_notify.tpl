@@ -1,4 +1,4 @@
-Hello {X_UNAME},
+Olá {X_UNAME},
 
 A broken video report has been submitted and is awaiting approval.
 

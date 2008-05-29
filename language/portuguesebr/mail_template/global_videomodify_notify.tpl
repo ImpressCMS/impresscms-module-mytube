@@ -1,4 +1,4 @@
-Hello {X_UNAME},
+Olá {X_UNAME},
 
 A video modification request has been submitted and is awaiting approval.
 
