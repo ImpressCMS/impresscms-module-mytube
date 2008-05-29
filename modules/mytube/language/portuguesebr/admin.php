@@ -26,7 +26,7 @@ define( "_AM_XTUBE_BDELETEIMAGE", "Delete Selected Image" );
 define( "_AM_XTUBE_BRETURN", "Return to where you where!" );
 define( "_AM_XTUBE_DBERROR", "Database Access Error" );
 // Other Options
-define( "_AM_XTUBE_TEXTOPTIONS", "Text Options:" );
+define( "_AM_XTUBE_TEXTOPTIONS", "Opições de Texto:" );
 define( "_AM_XTUBE_DISABLEHTML", " Disable HTML Tags" );
 define( "_AM_XTUBE_DISABLESMILEY", " Disable Smilie Icons" );
 define( "_AM_XTUBE_DISABLEXCODE", " Disable XOOPS Codes" );

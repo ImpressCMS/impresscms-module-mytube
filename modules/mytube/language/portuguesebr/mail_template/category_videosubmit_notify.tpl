@@ -1,4 +1,4 @@
-Hello {X_UNAME},
+Olá {X_UNAME},
 
 A new video "{VIDEO_NAME}" has been submitted in the category "{CATEGORY_NAME}" at {X_SITENAME} and is awaiting approval.
 

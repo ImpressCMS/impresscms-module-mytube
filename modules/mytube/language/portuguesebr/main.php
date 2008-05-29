@@ -12,7 +12,7 @@ define( "_MD_XTUBE_THANKSFORINFO", "Thank-you for your submission.<br />You will
 define( "_MD_XTUBE_ISAPPROVED", "Thank-you for your submission.<br />Your request has been approved and will now appear in our listing." );
 define( "_MD_XTUBE_THANKSFORHELP", "Thank-you for helping to maintain this directory's integrity." );
 define( "_MD_XTUBE_FORSECURITY", "For security reasons your user name and IP address will also be temporarily recorded." );
-define( "_MD_XTUBE_DESCRIPTION", "Description" );
+define( "_MD_XTUBE_DESCRIPTION", "Descrição" );
 define( "_MD_XTUBE_SUBMITCATHEAD", "Submit video Form" );
 define( "_MD_XTUBE_MAIN", "Home" );
 define( "_MD_XTUBE_POPULAR", "Popular" );

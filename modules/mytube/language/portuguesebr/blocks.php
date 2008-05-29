@@ -21,5 +21,5 @@ define( "_MB_XTUBE_CLICKS", "Clicks" );
 define( "_MB_XTUBE_CATTITLE", "Category" );
 define( "_MB_XTUBE_UNLIMIT", "Unlimited" );
 define( "_MB_XTUBE_DATEFORMAT", "Date format" );
-define( "_MB_XTUBE_DATEFORMATMANUAL", 'See <a href="http://jp.php.net/manual/en/function.date.php" target="_blank">PHP manual</a>' );
+define( "_MB_XTUBE_DATEFORMATMANUAL", 'Veja também o <a href="http://jp.php.net/manual/pt_BR/function.date.php" target="_blank">Manual do PHP</a>' );
 ?>

@@ -22,7 +22,7 @@ define("_MI_XTUBE_BNAME6","Random videos");
 define("_MI_XTUBE_BNAME7","Random videos (h)");
 
 // Sub menu titles
-define("_MI_XTUBE_SMNAME1","Submit");
+define("_MI_XTUBE_SMNAME1","Enviar");
 define("_MI_XTUBE_SMNAME2","Popular");
 define("_MI_XTUBE_SMNAME3","Top Rated");
 define("_MI_XTUBE_SMNAME4","Latest Listings");
@@ -251,7 +251,7 @@ INCIDENTAL OR CONSEQUENTIAL DAMAGES HOWEVER THEY MAY ARISE AND EVEN IF
 MCDONALD HAS BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES..");
 
 define('_MI_XTUBE_AUTHOR_CREDITSTEXT',"WF-Projects Team.");
-define('_MI_XTUBE_AUTHOR_BUGFIXES', "Bug Fix History");
+define('_MI_XTUBE_AUTHOR_BUGFIXES', "Histórico Sobre Correção de Erros");
 
 define('_MI_XTUBE_COPYRIGHTIMAGE', "");
 

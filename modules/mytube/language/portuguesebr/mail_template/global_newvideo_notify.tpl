@@ -1,4 +1,4 @@
-Hello {X_UNAME},
+Olá {X_UNAME},
 
 A new video "{LINK_NAME}" has been added at {X_SITENAME}.
 
