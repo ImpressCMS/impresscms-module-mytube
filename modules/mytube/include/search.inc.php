@@ -3,6 +3,8 @@
  * $Id: search.php
  * Module: MyTube
  */
+$mydirname = basename( dirname(  dirname( __FILE__ ) ) ) ;
+$mydirpath = dirname( dirname( __FILE__ ) ) ;
 
 function xtubecheckSearchgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
     global $xoopsUser;
@@ -11,7 +13,7 @@ function xtubecheckSearchgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect
     $gperm_handler = &xoops_gethandler( 'groupperm' );
 
     $module_handler = &xoops_gethandler( 'module' );
-    $module = &$module_handler -> getByDirname( 'xoopstube' );
+    $module = &$module_handler -> getByDirname($mydirname);
 
     if ( !$gperm_handler -> checkRight( $permType, $cid, $groups, $module -> getVar( 'mid' ) ) ) {
         if ( $redirect == false ) {
