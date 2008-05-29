@@ -123,9 +123,13 @@ while ( $arr = $xoopsDB -> fetchArray( $result ) ) {
     $videouid['published'] = formatTimestamp( $arr['published'], $xoopsModuleConfig['dateformat'] );
     $xoopsTpl -> append( 'video_uid', $videouid );
 } 
-
 if ( isset( $xoopsModuleConfig['copyright'] ) && $xoopsModuleConfig['copyright'] == 1 ) {
-    $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " � " . _MD_XTUBE_COPYRIGHT . " " . date( "Y" ) . " " . XOOPS_URL );
+if (defined("ICMS_VERSION_NAME")) {
+    $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " © " . _MD_XTUBE_COPYRIGHT . " " . formatTimestamp(time(),"Y") . " " . XOOPS_URL );
+} else {
+  $modversion['image'] = "images/wfl_slogo_bak.gif";
+    $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " © " . _MD_XTUBE_COPYRIGHT . " " . date( "Y" ) . " " . XOOPS_URL );
+}
 }
 if ( isset( $xoopsModuleConfig['othervideos'] ) && $xoopsModuleConfig['othervideos'] == 1 ) {
     $xoopsTpl -> assign( 'other_videos', "" . "<b>" ._MD_XTUBE_OTHERBYUID . "</b>"  . $video['submitter'] . "<br />" );
