@@ -30,6 +30,9 @@ function xtube_returnsource($returnsource) {
     case 103:
           $returnsource = _AM_XTUBE_BLIPTV;
           break;
+    case 104:
+          $returnsource = _AM_XTUBE_CLIPFISH;
+          break;
     case 200:
           $returnsource = _AM_XTUBE_MYTUBE;
           break;
@@ -100,6 +103,10 @@ function xtube_videopublisher($vidid, $publisher, $source) {
      $publisher = '<a href="http://www.dailymotion.com/' . $publisher .'" target="_blank">' . $publisher . '</a>';
   }
 // Determine if video source is DailyMotion for publisher
+  if ($source == 104) {
+     $publisher = '<a href="http://www.clipfish.de/user/' . $publisher .'" target="_blank">' . $publisher . '</a>';
+  }
+// Determine if video source is DailyMotion for publisher
   if ($source == 200) {
      $publisher = $publisher;
   }
@@ -141,6 +148,10 @@ function xtube_showvideo($vidid, $source, $screenshot) {
 // Show if source is Blip.tv
     if ($source == 103) {
        $showvideo = '<embed src="http://blip.tv/play/' . $vidid . '" type="application/x-shockwave-flash" width="425" height="350" allowscriptaccess="always" allowfullscreen="true"></embed>';
+    }
+// Show if source is Blip.tv
+    if ($source == 104) {
+       $showvideo = '<embed src="http://www.clipfish.de/videoplayer.swf?as=0&videoid=' . $vidid . '==&r=1&c=0067B3" quality="high" bgcolor="#0067B3" width="464" height="380" name="player" align="middle" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'; // Change c=0067B3 for different player color
     }
 // Show if source is MyTube
     if ($source == 200) {

@@ -1,10 +1,11 @@
 Bug fix list history:
 
 =========================================================
-xx.xx.2008   1.04 RC-x
+xx.xx.2008   1.04 RC-2
 =========================================================
 - Folder name can be changed [stranger]
 - Replaced date() by formatTimestamp() [stranger]
+- Added support for videoclips from ClipFish
 
 =========================================================
 27.05.2008   1.04 RC-1

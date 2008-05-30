@@ -94,13 +94,14 @@ function edit( $lid = 0 )
                               100 => _AM_XTUBE_GOOGLEVIDEO,
                               101 => _AM_XTUBE_MYSPAVETV,
                               102 => _AM_XTUBE_DAILYMOTION,
-                              103 => _AM_XTUBE_BLIPTV );  // #200 is reserved for MyTube's internal FLV player
+                              103 => _AM_XTUBE_BLIPTV,
+                              104 => _AM_XTUBE_CLIPFISH );  // #200 is reserved for MyTube's internal FLV player
     $vidsource_select = new XoopsFormSelect( _AM_XTUBE_VIDSOURCE, 'vidsource', $vidsource );
     $vidsource_select -> addOptionArray( $vidsource_array );
     $sform -> addElement( $vidsource_select );
 
 // Video code
-    $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_DLVIDID, 'vidid', 70, 512, $vidid ), false);
+    $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_DLVIDID, 'vidid', 70, 512, $vidid ), true);
     $note = _AM_XTUBE_VIDEO_DLVIDID_NOTE;
     $sform -> addElement(new XoopsFormLabel('', $note));
 
