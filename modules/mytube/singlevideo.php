@@ -122,19 +122,21 @@ while ( $arr = $xoopsDB -> fetchArray( $result ) ) {
     $videouid['cid'] = $arr['cid'];
     $videouid['published'] = formatTimestamp( $arr['published'], $xoopsModuleConfig['dateformat'] );
     $xoopsTpl -> append( 'video_uid', $videouid );
-} 
+}
+
+// Copyright notice
 if ( isset( $xoopsModuleConfig['copyright'] ) && $xoopsModuleConfig['copyright'] == 1 ) {
-if (defined("ICMS_VERSION_NAME")) {
-    $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " Â© " . _MD_XTUBE_COPYRIGHT . " " . formatTimestamp(time(),"Y") . " " . XOOPS_URL );
-} else {
-  $modversion['image'] = "images/wfl_slogo_bak.gif";
-    $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " Â© " . _MD_XTUBE_COPYRIGHT . " " . date( "Y" ) . " " . XOOPS_URL );
+   if ( defined("ICMS_VERSION_NAME") ) {
+       $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " © " . _MD_XTUBE_COPYRIGHT . " " . formatTimestamp( time(), "Y" ) . " " . XOOPS_URL );
+     } else {
+       $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " © " . _MD_XTUBE_COPYRIGHT . " " . date( "Y" ) . " " . XOOPS_URL );
+     }
 }
-}
+
+// Show other videos by submitter
 if ( isset( $xoopsModuleConfig['othervideos'] ) && $xoopsModuleConfig['othervideos'] == 1 ) {
     $xoopsTpl -> assign( 'other_videos', "" . "<b>" ._MD_XTUBE_OTHERBYUID . "</b>"  . $video['submitter'] . "<br />" );
-}
-if ( $videouid == '' ) {
+} else {
     $xoopsTpl -> assign( 'other_videos', "" . "<b>" ._MD_XTUBE_NOOTHERBYUID . "</b>"  . $video['submitter'] . "<br />" );
 }
 
@@ -142,7 +144,7 @@ $video['showsbookmarx'] = $xoopsModuleConfig['showsbookmarks'];
 $video['othervideox'] = $xoopsModuleConfig['othervideos'];
 $xoopsTpl -> assign( 'video', $video );
 
-$xoopsTpl -> assign( 'back' , '<a href="javascript:history.go(-1)"><img src="' . XOOPS_URL . '/modules/' . $xoopsModule -> getvar( 'dirname' ) . '/images/icon/back.png" /></a>' );
+$xoopsTpl -> assign( 'back' , '<a href="javascript:history.go(-1)"><img src="' . XOOPS_URL . '/modules/' . $xoopsModule -> getvar( 'dirname' ) . '/images/icon/back.png" /></a>' );  // Displays Back button
 $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
 
 include XOOPS_ROOT_PATH . '/include/comment_view.php';
