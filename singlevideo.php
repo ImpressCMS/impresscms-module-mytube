@@ -126,11 +126,7 @@ while ( $arr = $xoopsDB -> fetchArray( $result ) ) {
 
 // Copyright notice
 if ( isset( $xoopsModuleConfig['copyright'] ) && $xoopsModuleConfig['copyright'] == 1 ) {
-   if ( defined("ICMS_VERSION_NAME") ) {
-       $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " © " . _MD_XTUBE_COPYRIGHT . " " . formatTimestamp( time(), "Y" ) . " " . XOOPS_URL );
-     } else {
-       $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " © " . _MD_XTUBE_COPYRIGHT . " " . date( "Y" ) . " " . XOOPS_URL );
-     }
+    $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " © " . _MD_XTUBE_COPYRIGHT . " " . formatTimestamp( time(), "Y" ) . " - " . XOOPS_URL );
 }
 
 // Show other videos by submitter
