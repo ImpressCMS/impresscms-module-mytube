@@ -251,6 +251,7 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", '
 <b>MySpace TV:</b> http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=<font color=#FF0000>13171141</font><br />
 <b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun<br />
 <b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
+<b>ClipFish :</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>' );
 define( "_AM_XTUBE_VIDEO_PICURL", "Picture url: " );
 define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV, DailyMotion or Blip.tv</small>" );
@@ -413,7 +414,7 @@ define( "_AM_XTUBE_MYSPAVETV", "MySpace TV" );
 define( "_AM_XTUBE_PHOTOBUCKET", "Photobucket" );
 define( "_AM_XTUBE_DAILYMOTION", "DailyMotion" );
 
-// Version 1.04
+// Version 1.04 RC-1
 define( "_AM_XTUBE_BLIPTV", "Blip.tv" );
 define( "_AM_XTUBE_MYTUBE", "MyTube" );
 define( "_AM_XTUBE_ICO_EXPIRE", "Expired" );
@@ -472,4 +473,7 @@ define( "_AM_XTUBE_FAILEDUPLOADING", "Failed uploading file: " );
 define( "_AM_XTUBE_ALREADYEXISTTRYAGAIN", " already exists on the server. Please rename this file and try again.<br />" );
 define( "_AM_XTUBE_ERRORSRETURNUPLOAD", "<h4>Errors Returned While Uploading</h4>" );
 define( "_AM_XTUBE_DOESNOTEXIST", " does not exist!" );
+
+// Version 1.04 RC-2
+define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
 ?>

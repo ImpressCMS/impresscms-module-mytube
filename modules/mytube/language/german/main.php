@@ -49,13 +49,15 @@ define( "_MD_XTUBE_LATESTLIST", "Neuste Videos" );
 define( "_MD_XTUBE_FILETITLE", "Video Titel: " );
 define( "_MD_XTUBE_DLVIDID", "Video ID-Code: " );
 define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
-<small><small><small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
+<small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
 <b>MetaCafe:</b> http://www.metacafe.com/watch/<font color=#FF0000>191543/sperm_whale_encounters_underwater_robot</font>/<br />
 <b>SPIKE/ifilm:</b> http://www.ifilm.com/video/<font color=#FF0000>2718605</font><br />
 <b>Photobucket:</b> http://i39.photobucket.com/albums/<font color=#FF0000>e168/vailtom/th_BigSquid</font>.jpg<br />
 <b>Google Video:</b> http://video.google.com/videoplay?docid=<font color=#FF0000>4761076111111865377</font>&q=rov&total=913&start=...<br />
 <b>MySpace TV:</b> http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=<font color=#FF0000>13171141</font><br />
-<b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun</small></small></small>" );
+<b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun<br />
+<b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
+<b>ClipFish :</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br /></small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Bild url: " );
 define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Bild wenn das Ziel Google Video, MySpace TV oder DailyMotion ist.</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Video Herkunft:" );
@@ -186,4 +188,7 @@ define( "_MD_XTUBE_ADMINSECTION", "Administration" );
 
 // Version 1.04
 define( "_MD_XTUBE_BLIPTV", "Blip.tv" );
+
+// Version 1.04 RC-2
+define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 ?>

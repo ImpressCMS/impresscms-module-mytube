@@ -242,14 +242,17 @@ define( "_AM_XTUBE_VIDEO_MODIFYFILE", "&Auml;ndern der Video Information" );
 define( "_AM_XTUBE_VIDEO_CREATENEWFILE", "Neues Video erstellen" );
 define( "_AM_XTUBE_VIDEO_TITLE", "Video Titel: " );
 define( "_AM_XTUBE_VIDEO_DLVIDID", "Video URL: " );
-define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
-<small><small><small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
+define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", '
+<small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
 <b>MetaCafe:</b> http://www.metacafe.com/watch/<font color=#FF0000>191543/sperm_whale_encounters_underwater_robot</font>/<br />
 <b>SPIKE/ifilm:</b> http://www.ifilm.com/video/<font color=#FF0000>2718605</font><br />
 <b>Photobucket:</b> http://i39.photobucket.com/albums/<font color=#FF0000>e168/vailtom/th_BigSquid</font>.jpg<br />
 <b>Google Video:</b> http://video.google.com/videoplay?docid=<font color=#FF0000>4761076111111865377</font>&q=rov&total=913&start=...<br />
 <b>MySpace TV:</b> http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=<font color=#FF0000>13171141</font><br />
-<b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun</small>" );
+<b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun<br />
+<b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
+<b>ClipFish :</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
+<b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>' );
 define( "_AM_XTUBE_VIDEO_PICURL", "Picture url: " );
 define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Bilder URL wenn das Video von Google Video, MySpace TV oder DailyMotion ist.</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Videobeschreibung: " );
@@ -411,7 +414,7 @@ define( "_AM_XTUBE_MYSPAVETV", "MySpace TV" );
 define( "_AM_XTUBE_PHOTOBUCKET", "Photobucket" );
 define( "_AM_XTUBE_DAILYMOTION", "DailyMotion" );
 
-// Version 1.04
+// Version 1.04 RC-1
 define( "_AM_XTUBE_BLIPTV", "Blip.tv" );
 define( "_AM_XTUBE_MYTUBE", "MyTube" );
 define( "_AM_XTUBE_ICO_EXPIRE", "Abgelaufen" );
@@ -470,4 +473,7 @@ define( "_AM_XTUBE_FAILEDUPLOADING", "Fehler beim Dateiupload: " );
 define( "_AM_XTUBE_ALREADYEXISTTRYAGAIN", " existiert bereits auf dem Server. Bitte Datei umbenennen und nochmals hochladen.<br />" );
 define( "_AM_XTUBE_ERRORSRETURNUPLOAD", "<h4>Fehler w&auml;hrend des Datentransfers zur&uuml;ckgegeben</h4>" );
 define( "_AM_XTUBE_DOESNOTEXIST", " existiert nicht!" );
+
+// Version 1.04 RC-2
+define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
 ?>
