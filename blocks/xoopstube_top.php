@@ -4,6 +4,8 @@
  * Module: MyTube
  */
 
+$mydirname = basename( dirname(  dirname( __FILE__ ) ) );
+$mydirpath = dirname( dirname( __FILE__ ) );
 
 // checkXTubeBlockGroups()
 //
@@ -11,9 +13,6 @@
 // @param string $permType
 // @param boolean $redirect
 // @return
-$mydirname = basename( dirname(  dirname( __FILE__ ) ) ) ;
-$mydirpath = dirname( dirname( __FILE__ ) ) ;
-
 function checkXTubeBlockgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
     global $xoopsUser;
 
@@ -227,11 +226,4 @@ function b_xoopstube_top_edit( $options ) {
     return $form;
 }
 
-function b_xoopstube_tag_block_cloud_edit($options) {
-	if (!@include_once XOOPS_ROOT_PATH."/modules/tag/blocks/block.php") {
-		return null; 
-	}
-	$form = tag_block_cloud_edit($options);
-	return $form;
-}
 ?>
