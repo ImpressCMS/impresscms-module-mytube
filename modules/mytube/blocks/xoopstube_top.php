@@ -4,9 +4,6 @@
  * Module: MyTube
  */
 
-$mydirname = basename( dirname(  dirname( __FILE__ ) ) );
-$mydirpath = dirname( dirname( __FILE__ ) );
-
 // checkXTubeBlockGroups()
 //
 // @param integer $cid
@@ -14,6 +11,7 @@ $mydirpath = dirname( dirname( __FILE__ ) );
 // @param boolean $redirect
 // @return
 function checkXTubeBlockgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
+    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
     global $xoopsUser;
 
     $groups = is_object( $xoopsUser ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
@@ -33,6 +31,7 @@ function checkXTubeBlockgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect 
 }
 
 function b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
+    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
     global $xoopsUser;
 
     $groups = is_object( $xoopsUser ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
@@ -48,6 +47,7 @@ function b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false 
 }
 
 function b_xoopstube_top_thumbs( $bvidid, $btitle, $bsource, $bscreenshot, $bpicurl ) {
+  $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
   $thumbb='';
   $modhandler = xoops_gethandler( 'module' );
   $xtubeModule = $modhandler -> getByDirname($mydirname);
@@ -90,7 +90,8 @@ function b_xoopstube_top_thumbs( $bvidid, $btitle, $bsource, $bscreenshot, $bpic
 //           $options[1] = How many videos are displayes
 // Output  : Returns the most recent or most popular videos
 function b_xoopstube_top_show( $options ) {
-    global $xoopsDB,$xoopsModule, $xoopsModuleConfig;
+    global $xoopsDB, $xoopsModule, $xoopsModuleConfig;
+    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
     $xtubeModule = $modhandler -> getByDirname($mydirname);
@@ -133,10 +134,10 @@ function b_xoopstube_top_show( $options ) {
 // Output  : Returns random video
 function b_xoopstube_random( $options ) {
     global $xoopsDB, $xoopsModuleConfig, $xtubemyts;
-
+    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
-    $xtubeModule = $modhandler -> getByDirname($mydirname);
+    $xtubeModule = $modhandler -> getByDirname( $mydirname );
     $config_handler = xoops_gethandler( 'config' );
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();
@@ -157,7 +158,7 @@ function b_xoopstube_random( $options ) {
         $videorandom['cid'] = intval($myrow['cid']);
         $videorandom['title'] = $title;
         $videorandom['date'] = formatTimestamp( $myrow['date'], $xtubeModuleConfig['dateformat'] );
-        $videorandom['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $title,$myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
+        $videorandom['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $title, $myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
         $videorandom['dirname'] = $xtubeModule -> getVar( 'dirname' );
         $block['random'][] = $videorandom;
     }
@@ -169,10 +170,10 @@ function b_xoopstube_random( $options ) {
 // Output  : Returns random video in horizontal block
 function b_xoopstube_randomh( $options ) {
     global $xoopsDB, $xoopsModuleConfig, $xtubemyts;
-
+    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
-    $xtubeModule = $modhandler -> getByDirname($mydirname);
+    $xtubeModule = $modhandler -> getByDirname( $mydirname );
     $config_handler = xoops_gethandler( 'config' );
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();
