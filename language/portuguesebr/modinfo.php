@@ -263,7 +263,7 @@ define("_MI_XTUBE_FORM_DHTMLEXT", "DHTML Extended");
 define('_MI_XTUBE_DATEFORMATADMIN', 'Timestamp administration:');
 define('_MI_XTUBE_DATEFORMATADMINDSC', 'Default admininstration Timestamp for MyTube');
 
-// Version 1.04
+// Version 1.04 RC-1
 define('_MI_XTUBE_VIDEODIR', 'Video upload directory:');
 define('_MI_XTUBE_VIDEODIRDSC', 'Set the directory for MyTube videos files');
 define('_MI_XTUBE_VIDEOIMGDIR', 'Video screenshots upload directory:');
@@ -274,4 +274,10 @@ define('_MI_XTUBE_VUPLOADS', 'Video upload');
 define('_MI_XTUBE_CATEGORYIMGDSC', '');
 define('_MI_XTUBE_MAINIMGDIRDSC', '');
 define("_MI_XTUBE_BNAME8","MyTube Sponsor Statistics");
+
+// Version 1.04 RC-2
+define('_MI_XTUBE_MODULE_MANUAL', 'Manual' );
+define('_MI_XTUBE_MODULE_MANUALWIKI', 'Wiki Manual' );
+define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Request a new feature' );
+define('_MI_XTUBE_MODULE_SUBMITBUG', 'Submit a Bug' );
 ?>

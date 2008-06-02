@@ -228,7 +228,6 @@ define('_MI_XTUBE_MODULE_BUG', "Report a bug for this module");
 define('_MI_XTUBE_MODULE_FEATURE', "Suggest a new feature for this module");
 define('_MI_XTUBE_MODULE_DISCLAIMER', "Disclaimer");
 define('_MI_XTUBE_RELEASE', "Release Date: ");
-define('_MI_XTUBE_ICONS_CREDITS', "Icons");
 
 define('_MI_XTUBE_MODULE_MAILLIST', "WF-Project Mailing Lists");
 define('_MI_XTUBE_MODULE_MAILANNOUNCEMENTS', "Announcements Mailing List");
@@ -250,7 +249,7 @@ EVENT WILL MCDONALD BE LIABLE FOR ANY INDIRECT, PUNITIVE, SPECIAL,
 INCIDENTAL OR CONSEQUENTIAL DAMAGES HOWEVER THEY MAY ARISE AND EVEN IF
 MCDONALD HAS BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES..");
 
-define('_MI_XTUBE_AUTHOR_CREDITSTEXT',"WF-Projects Team.");
+define('_MI_XTUBE_AUTHOR_CREDITSTEXT',"WF-Projects Team");
 define('_MI_XTUBE_AUTHOR_BUGFIXES', "Bug Fix History");
 
 define('_MI_XTUBE_COPYRIGHTIMAGE', "");
@@ -263,7 +262,7 @@ define("_MI_XTUBE_FORM_DHTMLEXT", "DHTML Extended");
 define('_MI_XTUBE_DATEFORMATADMIN', 'Timestamp administration:');
 define('_MI_XTUBE_DATEFORMATADMINDSC', 'Default admininstration Timestamp for MyTube');
 
-// Version 1.04
+// Version 1.04 RC-1
 define('_MI_XTUBE_VIDEODIR', 'Video upload directory:');
 define('_MI_XTUBE_VIDEODIRDSC', 'Set the directory for MyTube videos files');
 define('_MI_XTUBE_VIDEOIMGDIR', 'Video screenshots upload directory:');
@@ -273,5 +272,12 @@ define('_MI_XTUBE_FLVPLAYER_CREDITDSC', 'JW FLV Media Player by Jeroen Wijering'
 define('_MI_XTUBE_VUPLOADS', 'Video upload');
 define('_MI_XTUBE_CATEGORYIMGDSC', '');
 define('_MI_XTUBE_MAINIMGDIRDSC', '');
-define("_MI_XTUBE_BNAME8","MyTube Sponsor Statistics");
+define('_MI_XTUBE_BNAME8', 'MyTube Sponsor Statistics' );
+define('_MI_XTUBE_ICONS_CREDITS', "Icons");
+
+// Version 1.04 RC-2
+define('_MI_XTUBE_MODULE_MANUAL', 'Manual' );
+define('_MI_XTUBE_MODULE_MANUALWIKI', 'Wiki Manual' );
+define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Request a new feature' );
+define('_MI_XTUBE_MODULE_SUBMITBUG', 'Submit a Bug' );
 ?>

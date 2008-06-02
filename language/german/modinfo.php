@@ -264,7 +264,7 @@ define("_MI_XTUBE_FORM_DHTMLEXT", "erweiterter DHTML");
 define('_MI_XTUBE_DATEFORMATADMIN', 'Datumformat Administration:');
 define('_MI_XTUBE_DATEFORMATADMINDSC', 'Standard Datumanzeige f&uuml;r MyTube');
 
-// Version 1.04
+// Version 1.04 RC-1
 define('_MI_XTUBE_VIDEODIR', 'Videoupload Ordner:');
 define('_MI_XTUBE_VIDEODIRDSC', 'Setze den Ordner f&uuml;r die MyTube Videodateien');
 define('_MI_XTUBE_VIDEOIMGDIR', 'Vorschaubilder Ordner:');
@@ -274,5 +274,11 @@ define('_MI_XTUBE_FLVPLAYER_CREDITDSC', 'JW FLV Media Player von Jeroen Wijering
 define('_MI_XTUBE_VUPLOADS', 'Videoupload');
 define('_MI_XTUBE_CATEGORYIMGDSC', '');
 define('_MI_XTUBE_MAINIMGDIRDSC', '');
-define("_MI_XTUBE_BNAME8","Banner");
+define('_MI_XTUBE_BNAME8', 'MyTube Sponsor Statistics' );
+
+// Version 1.04 RC-2
+define('_MI_XTUBE_MODULE_MANUAL', 'Manual' );
+define('_MI_XTUBE_MODULE_MANUALWIKI', 'Wiki Manual' );
+define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Request a new feature' );
+define('_MI_XTUBE_MODULE_SUBMITBUG', 'Submit a Bug' );
 ?>
