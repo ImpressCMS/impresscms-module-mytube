@@ -29,34 +29,20 @@ echo "
 		<div>" . _MI_XTUBE_RELEASE . " " . $versioninfo -> getInfo( 'releasedate' ) . "</div>\n
 		<div>" . _AM_XTUBE_BY . " " . $author_name . "</div>\n
 		<div>" . $versioninfo -> getInfo( 'license' ) . "</div><br />\n";
+
 // Author Information
 $sform = new XoopsThemeForm( _MI_XTUBE_AUTHOR_INFO, "", "" );
 $sform -> addElement( new XoopsFormLabel( _MI_XTUBE_AUTHOR_NAME, $author_name ) );
-//$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_AUTHOR_WEBSITE, "<a href='" . $versioninfo -> getInfo( 'author_website_url' ) . "' target='_blank'>" . $versioninfo -> getInfo( 'author_website_name' ) . "</a>" ) );
-//$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_AUTHOR_EMAIL, "<a href='mailto:" . $versioninfo -> getInfo( 'author_email' ) . "'>" . $versioninfo -> getInfo( 'author_email' ) . "</a>" ) );
-//$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_AUTHOR_DEVTEAM, $versioninfo -> getInfo( 'teammembers' ) ) );
 $sform -> display();
+
 // Author Information
 $sform = new XoopsThemeForm( _MI_XTUBE_MODULE_INFO, "", "" );
 $sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_STATUS, $versioninfo -> getInfo( 'status' ) ) );
-//$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_DEMO, "<a href='" . $versioninfo -> getInfo( 'support_site_url' ) . "' target='_blank'>" . $versioninfo -> getInfo( 'support_site_name' ) . "</a>" ) );
 $sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_SUPPORT, "<a href='" . $versioninfo -> getInfo( 'support_site_url' ) . "' target='_blank'>" . $versioninfo -> getInfo( 'support_site_name' ) . "</a>" ) );
-$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_BUG, "<a href='" . $versioninfo -> getInfo( 'submit_bug' ) . "' target='_blank'>" . "Submit a Bug" . "</a>" ) );
-$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_FEATURE, "<a href='" . $versioninfo -> getInfo( 'submit_feature' ) . "' target='_blank'>" . "Request a new feature" . "</a>" ) );
+$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_BUG, "<a href='" . $versioninfo -> getInfo( 'submit_bug' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_SUBMITBUG . "</a>" ) );
+$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_FEATURE, "<a href='" . $versioninfo -> getInfo( 'submit_feature' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_REQUESTNEWFEATURE . "</a>" ) );
+$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_MANUAL, "<a href='" . $versioninfo -> getInfo( 'manual_wiki' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_MANUALWIKI . "</a>" ) );
 $sform -> display();
-// Author Information
-//$sform = new XoopsThemeForm( _MI_XTUBE_MODULE_MAILLIST, "", "" );
-//$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_MAILANNOUNCEMENTS, "<a href='" . $versioninfo -> getInfo( 'maillist_announcements' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_MAILANNOUNCEMENTSDSC . "</a>" ) );
-//$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_MAILBUGS, "<a href='" . $versioninfo -> getInfo( 'maillist_bugs' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_MAILBUGSDSC . "</a>" ) );
-//$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_MAILFEATURES, "<a href='" . $versioninfo -> getInfo( 'maillist_features' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_MAILFEATURESDSC . "</a>" ) );
-//$sform -> display();
-
-//$sform = new XoopsThemeForm( _MI_XTUBE_MODULE_DISCLAIMER, "", "" );
-//ob_start();
-//echo "<div class='even'>" . $versioninfo -> getInfo( 'warning' ) . "</div>";
-//$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_DISCLAIMER, ob_get_contents(), 0 ) );
-//ob_end_clean();
-//$sform -> display();
 
 $sform = new XoopsThemeForm( _MI_XTUBE_AUTHOR_CREDITS, "", "" );
 ob_start();
