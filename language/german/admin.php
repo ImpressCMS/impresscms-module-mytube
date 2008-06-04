@@ -476,4 +476,5 @@ define( "_AM_XTUBE_DOESNOTEXIST", " existiert nicht!" );
 
 // Version 1.04 RC-2
 define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
+define( "_AM_XTUBE_FILE", "Datei " );
 ?>

@@ -269,7 +269,7 @@ class XoopsMediaUploader {
         $this->savedFileName = preg_replace('!\s+!', '_', $this->savedFileName);
 		$this->savedDestination = $this->uploadDir . $this->savedFileName;
 		if (is_file($this->savedDestination) && !!is_dir($this->savedDestination)) {
-		    $this->setErrors('File ' . $this->mediaName . _AM_XTUBE_ALREADYEXISTTRYAGAIN);
+		    $this->setErrors( _AM_XTUBE_FILE . $this->mediaName . _AM_XTUBE_ALREADYEXISTTRYAGAIN);
 			return false;
 		}
         if (!move_uploaded_file($this->mediaTmpName, $this->savedDestination)) {
@@ -368,5 +368,5 @@ class XoopsMediaUploader {
             return $ret;
         } 
     } 
-} 
+}
 ?>
