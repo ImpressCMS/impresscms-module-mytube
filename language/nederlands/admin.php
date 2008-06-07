@@ -248,7 +248,7 @@ define( "_AM_XTUBE_VIDEO_MODIFYFILE", "Aangepaste video informatie" );
 define( "_AM_XTUBE_VIDEO_CREATENEWFILE", "Nieuwe video aanmaken" );
 define( "_AM_XTUBE_VIDEO_TITLE", "Video titel: " );
 define( "_AM_XTUBE_VIDEO_DLVIDID", "Video id-code: " );
-define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", '
+define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
 <b>MetaCafe:</b> http://www.metacafe.com/watch/<font color=#FF0000>191543/sperm_whale_encounters_underwater_robot</font>/<br />
 <b>SPIKE/ifilm:</b> http://www.ifilm.com/video/<font color=#FF0000>2718605</font><br />
@@ -257,8 +257,9 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", '
 <b>MySpace TV:</b> http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=<font color=#FF0000>13171141</font><br />
 <b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun<br />
 <b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
-<b>ClipFish :</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
-<b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>' );
+<b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
+<b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
+<b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "Afbeeldings url" );
 define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video, MySpace TV of DailyMotion is.</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Video omschrijving: " );
@@ -473,6 +474,7 @@ define( "_AM_XTUBE_DOESNOTEXIST", " bestaat niet!" );
 
 // Version 1.04 RC-2
 define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
-define( "_AM_XTUBE_FILE", "Bestand " );
+define( "_AM_XTUBE_LIVELEAK", "LiveLeak" );
+define( "_AM_XTUBE_FILE", "File " );
 
 ?>

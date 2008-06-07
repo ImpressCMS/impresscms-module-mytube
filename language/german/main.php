@@ -57,7 +57,8 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>MySpace TV:</b> http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=<font color=#FF0000>13171141</font><br />
 <b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun<br />
 <b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
-<b>ClipFish :</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br /></small>" );
+<b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
+<b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font></small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Bild url: " );
 define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Bild wenn das Ziel Google Video, MySpace TV oder DailyMotion ist.</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Video Herkunft:" );
@@ -191,4 +192,5 @@ define( "_MD_XTUBE_BLIPTV", "Blip.tv" );
 
 // Version 1.04 RC-2
 define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
+define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
 ?>

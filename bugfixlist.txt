@@ -6,6 +6,7 @@ xx.xx.2008   1.04 RC-2
 - Folder name can be changed [stranger]
 - Replaced date() by formatTimestamp() [stranger]
 - Added support for videoclips from ClipFish
+- Added support for videoclips from LiveLeak
 
 =========================================================
 27.05.2008   1.04 RC-1
