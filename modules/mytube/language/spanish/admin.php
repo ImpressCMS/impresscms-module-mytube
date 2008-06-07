@@ -241,7 +241,7 @@ define( "_AM_XTUBE_VIDEO_MODIFYFILE", "Modificar información del vídeo" );
 define( "_AM_XTUBE_VIDEO_CREATENEWFILE", "Crear nuevo vídeo" );
 define( "_AM_XTUBE_VIDEO_TITLE", "Título del vídeo: " );
 define( "_AM_XTUBE_VIDEO_DLVIDID", "Video id-code: " );
-define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", '
+define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
 <b>MetaCafe:</b> http://www.metacafe.com/watch/<font color=#FF0000>191543/sperm_whale_encounters_underwater_robot</font>/<br />
 <b>SPIKE/ifilm:</b> http://www.ifilm.com/video/<font color=#FF0000>2718605</font><br />
@@ -250,8 +250,9 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", '
 <b>MySpace TV:</b> http://vids.myspace.com/index.cfm?fuseaction=vids.individual&videoid=<font color=#FF0000>13171141</font><br />
 <b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun<br />
 <b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
-<b>ClipFish :</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
-<b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>' );
+<b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
+<b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
+<b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "URL de la imagen: " );
 define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>URL de la imagen cuando procede de Google Video, MySpace TV o DailyMotion.</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Descripción: " );
@@ -469,5 +470,6 @@ define( "_AM_XTUBE_DOESNOTEXIST", " does not exist!" );
 
 // Version 1.04 RC-2
 define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
+define( "_AM_XTUBE_LIVELEAK", "LiveLeak" );
 define( "_AM_XTUBE_FILE", "File " );
 ?>
