@@ -4,7 +4,7 @@
 <{/if}> 
 <table width="100%" cellspacing="0" cellpadding="">
   <tr>
-    <td align="left" class="xoopstube_title">&nbsp;<{$video.title}><{$video.icons}></td>
+    <td align="left" class="xoopstube_title">&nbsp;<a href="<{$xoops_url}>/modules/<{$video.module_dir}>/singlevideo.php?cid=<{$video.cid}>&amp;lid=<{$video.id}>"><{$video.title}></a><{$video.icons}></td>
     <{if $video.published > 0 }> 
 		<td style="text-align: right; padding: 2px;"><a href="<{$xoops_url}>/modules/<{$video.module_dir}>/singlevideo.php?cid=<{$video.cid}>&amp;lid=<{$video.id}>"><span><b><{$smarty.const._MD_XTUBE_VIEWDETAILS}>&nbsp;</b></span></a></td>
 	<{/if}>
