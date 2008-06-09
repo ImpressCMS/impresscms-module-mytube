@@ -65,7 +65,7 @@ function xtube_videothumb($vidid, $title, $source, $picurl, $screenshot) {
   if ($source == 3) {
      $thumb = '<img src="http://i153.photobucket.com/albums/' . $vidid . '.jpg" width="' . $xoopsModuleConfig['shotwidth'] . '" height="' . $xoopsModuleConfig['shotheight'] . '"  title="' . $title . '" alt="' . $title . '" hspace="7" vspace="2" border="0" align="left" />';
   }
-// Determine if video source is Google Video, MySpace TV, DailyMotion, BrightCove, Blip.tv for thumbnail
+// Determine if video source is Google Video, MySpace TV, DailyMotion, BrightCove, Blip.tv, ClipFish, LiveLeak for thumbnail
   if ($source >= 100 & $source < 200) {
      $thumb = '<img src="' . $picurl . '" width="' . $xoopsModuleConfig['shotwidth'] . '" height="' . $xoopsModuleConfig['shotheight'] . '"  title="' . $title . '" alt="' . $title . '" hspace="7" vspace="2" border="0" align="left" />';
   }
@@ -105,7 +105,7 @@ function xtube_videopublisher($vidid, $publisher, $source) {
   if ($source == 102) {
      $publisher = '<a href="http://www.dailymotion.com/' . $publisher .'" target="_blank">' . $publisher . '</a>';
   }
-// Determine if video source is DailyMotion for publisher
+// Determine if video source is ClipFish for publisher
   if ($source == 104) {
      $publisher = '<a href="http://www.clipfish.de/user/' . $publisher .'" target="_blank">' . $publisher . '</a>';
   }
@@ -113,7 +113,7 @@ function xtube_videopublisher($vidid, $publisher, $source) {
   if ($source == 105) {
      $publisher = '<a href="http://www.liveleak.com/user/' . $publisher .'" target="_blank">' . $publisher . '</a>';
   }
-// Determine if video source is DailyMotion for publisher
+// Determine if video source is MyTube for publisher
   if ($source == 200) {
      $publisher = $publisher;
   }
@@ -156,7 +156,7 @@ function xtube_showvideo($vidid, $source, $screenshot) {
     if ($source == 103) {
        $showvideo = '<embed src="http://blip.tv/play/' . $vidid . '" type="application/x-shockwave-flash" width="425" height="350" allowscriptaccess="always" allowfullscreen="true"></embed>';
     }
-// Show if source is Blip.tv
+// Show if source is CkipFish
     if ($source == 104) {
        $showvideo = '<embed src="http://www.clipfish.de/videoplayer.swf?as=0&videoid=' . $vidid . '==&r=1&c=0067B3" quality="high" bgcolor="#0067B3" width="464" height="380" name="player" align="middle" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'; // Change c=0067B3 for different player color
     }
