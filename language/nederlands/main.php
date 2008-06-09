@@ -59,7 +59,7 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font></small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Afbeeldings url: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video of MySpace TV is.</small>" );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish of LiveLeak is.</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Video bron:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
