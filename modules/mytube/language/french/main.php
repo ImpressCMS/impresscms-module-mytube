@@ -60,7 +60,7 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font></small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Url de l'image: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV or DailyMotion.</small>" );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Url de l'image quand Google Video, MySpace TV, LiveLeak, Blip.tv, ClipFish ou DailyMotion est la Source.</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Source de la vidéo:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
