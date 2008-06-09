@@ -261,7 +261,7 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
 <b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "Afbeeldings url" );
-define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video, MySpace TV of DailyMotion is.</small>" );
+define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish of LiveLeak is.</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Video omschrijving: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Video categorie: " );
 define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Video offline plaatsen?<br /><br /><small><span style='font-weight: normal;'>Video zal niet zichbaar zijn.</span></small>" );
