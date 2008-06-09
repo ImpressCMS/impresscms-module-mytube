@@ -254,7 +254,7 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
 <b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "URL de la imagen: " );
-define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>URL de la imagen cuando procede de Google Video, MySpace TV o DailyMotion.</small>" );
+define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>URL de la imagen cuando procede de Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish o LiveLeak.</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Descripción: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Categoría principal: " );
 define( "_AM_XTUBE_VIDEO_FILESSTATUS", "¿Permitir el acceso sin conexión?<br /><br /><span style='font-weight: normal;'>el vídeo no será visible para todos los usuarios.</span>" );
