@@ -117,7 +117,7 @@ function b_xoopstube_top_show( $options ) {
         $videoload['id'] = intval($myrow['lid']);
         $videoload['cid'] = intval($myrow['cid']);
         $videoload['title'] = $title;
-        if ( $options[0] == "date" ) {
+        if ( $options[0] == "published" ) {
             $videoload['date'] = formatTimestamp( $myrow['published'], $xtubeModuleConfig['dateformat'] );
         } elseif ( $options[0] == "hits" ) {
             $videoload['hits'] = $myrow['hits'];
@@ -209,8 +209,8 @@ function b_xoopstube_randomh( $options ) {
 function b_xoopstube_top_edit( $options ) {
     $form = "" . _MB_XTUBE_DISP . "&nbsp;";
     $form .= "<input type='hidden' name='options[]' value='";
-    if ( $options[0] == "date" ) {
-        $form .= "date'";
+    if ( $options[0] == "published" ) {
+        $form .= "published'";
     }
     if ( $options[0] == "random" ) {
         $form .= "random'";
