@@ -1,8 +1,10 @@
 <?php
 /**
- * $Id: main.php
+ * $Id: main.php 2758 2008-06-11 16:40:26Z gibaphp $
  * Module: MyTube
+ * Author: mcdonald
  * Language: Portuguesebr
+ * Licence: GNU
  */
 
 define( "_MD_XTUBE_NOVIDEO", "This video does not exist!" );

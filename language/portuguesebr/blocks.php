@@ -1,8 +1,10 @@
 <?php
 /**
- * $Id: blocks.php
+ * $Id: blocks.php 2758 2008-06-11 16:40:26Z gibaphp $
  * Module: MyTube
+ * Author: mcdonald
  * Language: Portuguesebr
+ * Licence: GNU
  */
  
 // Blocks
