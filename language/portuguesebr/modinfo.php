@@ -2,7 +2,7 @@
 /**
  * $Id: modinfo.php
  * Module: MyTube
- * Language: english
+ * Language: Portuguesebr
  */
 
 // Module Info

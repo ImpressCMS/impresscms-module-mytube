@@ -2,12 +2,12 @@
 /**
  * $Id: admin.php
  * Module: MyTube
- * Language: english
+ * Language: Portuguesebr
  */
 
-define( "_AM_XTUBE_WARNINSTALL1", "<b>WARNING:</b> <u>Directory</u> %s exists on your server.<br />Please remove this directory for security reasons." );
-define( "_AM_XTUBE_WARNINSTALL2", "<b>WARNING:</b> <u>File</u> %s exists on your server.<br />Please remove this directory for security reasons." );
-define( "_AM_XTUBE_WARNINSTALL3", "<b>WARNING:</b> <u>Folder</u> %s does not exists on your server.<br />This folder is required by MyTube." );
+define( "_AM_XTUBE_WARNINSTALL1", "AVISO:</b> o <u>diretório</u> %s já existe no seu servidor. <br />Por favor, por razõe de segurança, remova antes este diretório." );
+define( "_AM_XTUBE_WARNINSTALL2", "AVISO:</b> o <u>arquivo</u> %s já existe no seu servidor. <br />Por favor, por razõe de segurança, remova antes este arquivo." );
+define( "_AM_XTUBE_WARNINSTALL3", "AVISO:</b> a <u>pasta</u> %s não existe em seu servidor. <br />Esta pasta é necessária para o funcionamento do XoopsTube." );
 
 define( "_AM_XTUBE_MODULE_NAME", "MyTube" );
 

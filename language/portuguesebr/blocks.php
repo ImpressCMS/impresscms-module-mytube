@@ -2,7 +2,7 @@
 /**
  * $Id: blocks.php
  * Module: MyTube
- * Language: english
+ * Language: Portuguesebr
  */
  
 // Blocks
