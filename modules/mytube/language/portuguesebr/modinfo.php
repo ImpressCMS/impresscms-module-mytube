@@ -1,10 +1,12 @@
 <?php
 /**
- * $Id: modinfo.php
+ * $Id: modinfo.php 2758 2008-06-11 16:40:26Z gibaphp $
  * Module: MyTube
+ * Author: mcdonald
  * Language: Portuguesebr
+ * Licence: GNU
  */
-
+ 
 // Module Info
 // The name of this module
 define("_MI_XTUBE_NAME","MyTube");

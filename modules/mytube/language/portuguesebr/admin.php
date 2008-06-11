@@ -1,8 +1,10 @@
 <?php
 /**
- * $Id: admin.php
+ * $Id: admin.php 2758 2008-06-11 16:40:26Z gibaphp $
  * Module: MyTube
+ * Author:  mcdonald
  * Language: Portuguesebr
+ * Licence: GNU
  */
 
 define( "_AM_XTUBE_WARNINSTALL1", "AVISO:</b> o <u>diretório</u> %s já existe no seu servidor. <br />Por favor, por razõe de segurança, remova antes este diretório." );
