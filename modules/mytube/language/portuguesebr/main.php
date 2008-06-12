@@ -49,7 +49,7 @@ define( "_MD_XTUBE_THEREARE", "Há <b>%s</b> <i>Categorias</i> e <b>%s</b> <i>V�
 define( "_MD_XTUBE_THEREIS", "Há <b>%s</b> <i>Categoria</i> e <b>%s</b> <i>Vídeos</i> listados" );
 define( "_MD_XTUBE_LATESTLIST", "Listas mais recentes" );
 define( "_MD_XTUBE_FILETITLE", "Título do Vídeo: " );
-define( "_MD_XTUBE_DLVIDID", "Video id-code: " );
+define( "_MD_XTUBE_DLVIDID", "Código do Video: " );
 define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
 <b>MetaCafe:</b> http://www.metacafe.com/watch/<font color=#FF0000>191543/sperm_whale_encounters_underwater_robot</font>/<br />
@@ -62,8 +62,8 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font></small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Picture url: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish or LiveLeak</small>" );
-define( "_MD_XTUBE_VIDSOURCE", "Video source:" );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Url da Foto quando for um código do Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish ou LiveLeak</small>" );
+define( "_MD_XTUBE_VIDSOURCE", "Código do Video:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
 define( "_MD_XTUBE_IFILM", "Spike" );
@@ -71,8 +71,8 @@ define( "_MD_XTUBE_GOOGLEVIDEO", "Google Video" );
 define( "_MD_XTUBE_MYSPAVETV", "MySpace TV" );
 define( "_MD_XTUBE_PHOTOBUCKET", "Photobucket" );
 define( "_MD_XTUBE_DAILYMOTION", "DailyMotion" );
-define( "_MD_XTUBE_VIDEO_PUBLISHER", "Video Publisher Name:" );
-define( "_MD_XTUBE_HOMEPAGEC", "Home Page: " );
+define( "_MD_XTUBE_VIDEO_PUBLISHER", "Nome do editor do Video:" );
+define( "_MD_XTUBE_HOMEPAGEC", "WebSite: " );
 define( "_MD_XTUBE_NOTSPECIFIED", "Não Especificado" );
 define( "_MD_XTUBE_PUBLISHER", "Publicador" );
 define( "_MD_XTUBE_UPDATEDON", "Atualizado em" );
@@ -121,7 +121,7 @@ define( "_MD_XTUBE_DTOTALFORLAST", "Total dos últimos novos vídeos" );
 define( "_MD_XTUBE_AGREE", "Eu concordo" );
 define( "_MD_XTUBE_DOYOUAGREE", "Você concorda com os termos acima?" );
 define( "_MD_XTUBE_DISCLAIMERAGREEMENT", "Disclaimer" );
-define( "_MD_XTUBE_DUPLOADSCRSHOT", "Upload Screenshot Image:" );
+define( "_MD_XTUBE_DUPLOADSCRSHOT", "Upload de ScreenShot de Imagem:" );
 define( "_MD_XTUBE_RESOURCEID", "Vídeo id#: " );
 define( "_MD_XTUBE_REPORTER", "Informe Original: " );
 define( "_MD_XTUBE_DATEREPORTED", "Data do Informe: " );
@@ -147,10 +147,10 @@ Todos os comentários serão revisados por algum de nossos webmasters antes de s
 " );
 define( "_MD_XTUBE_ISNOTAPPROVED", "Seu envio terá primeiro que ser aprovado por um moderador." );
 define( "_MD_XTUBE_HOMEPAGETITLEC", "Título da Home Page: " );
-define( "_MD_XTUBE_SCREENSHOT", "Screenshot:" );
+define( "_MD_XTUBE_SCREENSHOT", "ScreenShot:" );
 define( "_MD_XTUBE_SCREENSHOTCLICK", "Exibir imagem plena" );
 define( "_MD_XTUBE_OTHERBYUID", "Outros vídeo por: " );
-define( "_MD_XTUBE_NOOTHERBYUID", "No other videos by: " );
+define( "_MD_XTUBE_NOOTHERBYUID", "Nenhum outros vídeos por: " );
 define( "_MD_XTUBE_LINKTIMES", "Duração do Vídeo: " );
 define( "_MD_XTUBE_MAINTOTAL", "Total de Vídeos: " );
 define( "_MD_XTUBE_VIDEONOW", "Exibir vídeo" );
@@ -159,7 +159,7 @@ define( "_MD_XTUBE_RATEDRESOURCE", "clasificação do Vídeo" );
 define( "_MD_XTUBE_SUBMITTER", "Enviado por" );
 define( "_MD_XTUBE_ERROR", "Erro ao atualizar a base de dados: a informação não foi salva" );
 define( "_MD_XTUBE_COPYRIGHT", "copyright" );
-define( "_MD_XTUBE_INFORUM", "Discutir em Fórum" );
+define( "_MD_XTUBE_INFORUM", "Discutir no Fórum" );
 // added frankblack
 define( "_MD_XTUBE_NOTALLOWESTOSUBMIT", "Você não tem permissão para enviar vídeos" );
 define( "_MD_XTUBE_INFONOSAVEDB", "A informação não foi salva na base de dados: <br /><br />" );
@@ -187,7 +187,7 @@ define( "_MD_XTUBE_LINKID", "Vídeo id" );
 define( "_MD_XTUBE_ADDTO", "Adicionar em: " );
 define( "_MD_XTUBE_NEWVIDEOS", "Vídeos Recentes" );
 define( "_MD_XTUBE_TAKINGUBACK", "Retornar." );
-define( "_MD_XTUBE_ADMINSECTION", "Administrative Section" );
+define( "_MD_XTUBE_ADMINSECTION", "Seção Administrativa" );
 
 // Version 1.04 RC-1
 define( "_MD_XTUBE_BLIPTV", "Blip.tv" );
