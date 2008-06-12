@@ -8,7 +8,7 @@ xx.xx.2008   1.04 RC-2
 - Corrected date used for showing clips in blocks
 - Added support for videoclips from ClipFish
 - Added support for videoclips from LiveLeak
-- Added Portugese-Brazilian language files utf-8 [gibaphp]
+- Added Portuguese-Brazilian language files utf-8 [gibaphp]
 
 =========================================================
 27.05.2008   1.04 RC-1
