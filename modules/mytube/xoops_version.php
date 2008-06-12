@@ -8,7 +8,7 @@
 $mydirname = basename( dirname( __FILE__ ) );
 $mydirpath = dirname( __FILE__ );
 
-$modversion['name'] = XoopsTube;
+$modversion['name'] = _MI_XTUBE_NAME;
 $modversion['version'] = "1.04";
 $modversion['releasedate'] = "May 27, 2008";
 $modversion['status'] = "RC-1";
@@ -65,7 +65,7 @@ $modversion['blocks'][1]['name'] = _MI_XTUBE_BNAME1;
 $modversion['blocks'][1]['description'] = "Shows recently added video";
 $modversion['blocks'][1]['show_func'] = "b_xoopstube_top_show";
 $modversion['blocks'][1]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][1]['options'] = "published|10|19|d/m/Y";
+$modversion['blocks'][1]['options'] = "date|10|19|d/m/Y";
 $modversion['blocks'][1]['template'] = 'xoopstube_block_new_t.html';
 $modversion['blocks'][1]['can_clone'] = true ;
 
@@ -74,7 +74,7 @@ $modversion['blocks'][2]['name'] = _MI_XTUBE_BNAME2;
 $modversion['blocks'][2]['description'] = "Shows recently added video";
 $modversion['blocks'][2]['show_func'] = "b_xoopstube_top_show";
 $modversion['blocks'][2]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][2]['options'] = "published|10|19|d/m/Y";
+$modversion['blocks'][2]['options'] = "date|10|19|d/m/Y";
 $modversion['blocks'][2]['template'] = 'xoopstube_block_new.html';
 $modversion['blocks'][2]['can_clone'] = true ;
 
@@ -101,7 +101,7 @@ $modversion['blocks'][5]['name'] = _MI_XTUBE_BNAME5;
 $modversion['blocks'][5]['description'] = "Shows recently added video";
 $modversion['blocks'][5]['show_func'] = "b_xoopstube_top_show";
 $modversion['blocks'][5]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][5]['options'] = "published|5|19|d/m/Y";
+$modversion['blocks'][5]['options'] = "date|5|19|d/m/Y";
 $modversion['blocks'][5]['template'] = 'xoopstube_block_new_h.html';
 $modversion['blocks'][5]['can_clone'] = true ;
 
