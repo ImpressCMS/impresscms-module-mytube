@@ -1,18 +1,18 @@
 Olá {X_UNAME},
 
-A video modification request has been submitted and is awaiting approval.
+Uma solicitação de modificação de vídeo foi enviada e está aguardando por sua aprovação.
 
-You can view this request here:
+Você pode ver este pedido aqui:
 {MODIFYREPORTS_URL}
 
 -----------
 
-You are receiving this message because you selected to be notified when new video modification requests are submitted.
+Você está recebendo esta mensagem porque você escolheu para ser notificado quando novos pedidos para modificações de video forem apresentados.
 
-If this is an error or you wish not to receive further such notifications, please update your subscriptions by visiting the link below:
+Se este é um erro ou não desejar receber mais essas notificações, atualize suas inscrições, acesse o link abaixo:
 {X_UNSUBSCRIBE_URL}
 
-Please do not reply to this message.
+NÃO RESPONDER ESTA MENSAGEM.
 
 -----------
 
