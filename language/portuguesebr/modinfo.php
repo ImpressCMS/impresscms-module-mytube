@@ -276,6 +276,7 @@ define('_MI_XTUBE_VUPLOADS', 'Video upload');
 define('_MI_XTUBE_CATEGORYIMGDSC', '');
 define('_MI_XTUBE_MAINIMGDIRDSC', '');
 define("_MI_XTUBE_BNAME8","MyTube Sponsor Statistics");
+define('_MI_XTUBE_ICONS_CREDITS', "Icons");
 
 // Version 1.04 RC-2
 define('_MI_XTUBE_MODULE_MANUAL', 'Manual' );
