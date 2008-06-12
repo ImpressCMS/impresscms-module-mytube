@@ -46,7 +46,7 @@ function b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false 
     return true;
 }
 
-function b_xoopstube_top_thumbs( $bvidid, $btitle, $bsource, $bscreenshot, $bpicurl ) {
+function b_xoopstube_top_thumbs( $bvidid, $balloon, $btitle, $bsource, $bscreenshot, $bpicurl ) {
   $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
   $thumbb='';
   $modhandler = xoops_gethandler( 'module' );
@@ -56,29 +56,29 @@ function b_xoopstube_top_thumbs( $bvidid, $btitle, $bsource, $bscreenshot, $bpic
 
 // Determine if video source YouTube
   if ($bsource == 0) {
-  $thumbb = '<img src="http://img.youtube.com/vi/' . $bvidid . '/default.jpg" title="' . $btitle . '" alt="' . $btitle . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
+  $thumbb = '<img src="http://img.youtube.com/vi/' . $bvidid . '/default.jpg" title="' . $balloon . '" alt="' . $balloon . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
   }
 // Determine if video source MetaCafe
   if ($bsource == 1) {
   list($metaclip) = split('[/]', $bvidid);
   $videothumb['metathumb'] = $metaclip;
-  $thumbb = '<img src="http://www.metacafe.com/thumb/' . $videothumb['metathumb'] . '.jpg" title="' . $btitle . '" alt="' . $btitle . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
+  $thumbb = '<img src="http://www.metacafe.com/thumb/' . $videothumb['metathumb'] . '.jpg" title="' . $balloon . '" alt="' . $balloon . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
   }
 // Determine if video source iFilm/Spike
   if ($bsource == 2) {
-  $thumbb = '<img src="http://img2.ifilmpro.com/resize/image/stills/films/resize/istd/' . $bvidid . '.jpg?width=' . $xtubeModuleConfig['shotwidth'] . ' title="' . $btitle . '" alt="' . $btitle . '" border="0" />';
+  $thumbb = '<img src="http://img2.ifilmpro.com/resize/image/stills/films/resize/istd/' . $bvidid . '.jpg?width=' . $xtubeModuleConfig['shotwidth'] . ' title="' . $balloon . '" alt="' . $balloon . '" border="0" />';
   }
 // Determine if video source Photobucket
   if ($bsource == 3) {
-  $thumbb = '<img src="http://i153.photobucket.com/albums/' . $bvidid . '.jpg" title="' . $btitle . '" alt="' . $btitle . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
+  $thumbb = '<img src="http://i153.photobucket.com/albums/' . $bvidid . '.jpg" title="' . $balloon . '" alt="' . $balloon . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
   }
 // Determine if video source Google Video / MySpace TV / DailyMotion / Blip.tv
   if ($bsource >= 100 & $bsource < 200) {
-  $thumbb = '<img src="' . $bpicurl . '" title="' . $btitle . '" alt="' . $btitle . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
+  $thumbb = '<img src="' . $bpicurl . '" title="' . $balloon . '" alt="' . $balloon . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
   }
 // Determine if video source is MyTube for thumbnail
   if ($bsource == 200) {
-     $thumbb = '<img src="' . XOOPS_URL . '/' . $xtubeModuleConfig['videoimgdir'] . '/' . $bscreenshot . '" title="' . $btitle . '" alt="' . $btitle . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
+     $thumbb = '<img src="' . XOOPS_URL . '/' . $xtubeModuleConfig['videoimgdir'] . '/' . $bscreenshot . '" title="' . $balloon . '" alt="' . $balloon . '" width="' . $xtubeModuleConfig['shotwidth'] . '" height="' . $xtubeModuleConfig['shotheight'] . '"  border="0" />';
   }
   return $thumbb;
 }
@@ -108,7 +108,7 @@ function b_xoopstube_top_show( $options ) {
             exit;
         }
         $videoload = array();
-        $title = $xtubemyts -> htmlSpecialChars( $xtubemyts -> stripSlashesGPC($myrow["title"]) );
+        $title = $xtubemyts -> htmlSpecialChars( $xtubemyts -> stripSlashesGPC($myrow['title']) );
         if ( !XOOPS_USE_MULTIBYTES ) {
             if ( strlen( $myrow['title'] ) >= $options[2] ) {
                 $title = substr( $myrow['title'], 0, ( $options[2] -1 ) ) . "...";
@@ -117,12 +117,12 @@ function b_xoopstube_top_show( $options ) {
         $videoload['id'] = intval($myrow['lid']);
         $videoload['cid'] = intval($myrow['cid']);
         $videoload['title'] = $title;
-        if ( $options[0] == "published" ) {
-            $videoload['date'] = formatTimestamp( $myrow['published'], $xtubeModuleConfig['dateformat'] );
+        if ( $options[0] == "date" ) {
+            $videoload['date'] = formatTimestamp( $myrow['published'], $options[3] );
         } elseif ( $options[0] == "hits" ) {
             $videoload['hits'] = $myrow['hits'];
         }
-        $videoload['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $title,$myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
+        $videoload['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $myrow['title'], $title, $myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
         $videoload['dirname'] = $xtubeModule -> getVar( 'dirname' );
         $block['videos'][] = $videoload;
     }
@@ -157,7 +157,7 @@ function b_xoopstube_random( $options ) {
         $videorandom['id'] = intval($myrow['lid']);
         $videorandom['cid'] = intval($myrow['cid']);
         $videorandom['title'] = $title;
-        $videorandom['date'] = formatTimestamp( $myrow['published'], $xtubeModuleConfig['dateformat'] );
+        $videorandom['date'] = formatTimestamp( $myrow['published'], $options[3] );
         $videorandom['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $title, $myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
         $videorandom['dirname'] = $xtubeModule -> getVar( 'dirname' );
         $block['random'][] = $videorandom;
@@ -194,7 +194,7 @@ function b_xoopstube_randomh( $options ) {
         $videorandomh['id'] = intval($myrow['lid']);
         $videorandomh['cid'] = intval($myrow['cid']);
         $videorandomh['title'] = $title;
-        $videorandomh['date'] = formatTimestamp( $myrow['published'], $xtubeModuleConfig['dateformat'] );
+        $videorandomh['date'] = formatTimestamp( $myrow['published'], $options[3] );
         $videorandomh['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $title,$myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
         $videorandomh['dirname'] = $xtubeModule -> getVar( 'dirname' );
         $block['random'][] = $videorandomh;
@@ -209,8 +209,8 @@ function b_xoopstube_randomh( $options ) {
 function b_xoopstube_top_edit( $options ) {
     $form = "" . _MB_XTUBE_DISP . "&nbsp;";
     $form .= "<input type='hidden' name='options[]' value='";
-    if ( $options[0] == "published" ) {
-        $form .= "published'";
+    if ( $options[0] == "date" ) {
+        $form .= "date'";
     }
     if ( $options[0] == "random" ) {
         $form .= "random'";
