@@ -117,7 +117,7 @@ function b_xoopstube_top_show( $options ) {
         $videoload['id'] = intval($myrow['lid']);
         $videoload['cid'] = intval($myrow['cid']);
         $videoload['title'] = $title;
-        if ( $options[0] == "date" ) {
+        if ( $options[0] == "published" ) {
             $videoload['date'] = formatTimestamp( $myrow['published'], $options[3] );
         } elseif ( $options[0] == "hits" ) {
             $videoload['hits'] = $myrow['hits'];
@@ -158,7 +158,7 @@ function b_xoopstube_random( $options ) {
         $videorandom['cid'] = intval($myrow['cid']);
         $videorandom['title'] = $title;
         $videorandom['date'] = formatTimestamp( $myrow['published'], $options[3] );
-        $videorandom['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $title, $myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
+        $videorandom['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $myrow['title'], $title, $myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
         $videorandom['dirname'] = $xtubeModule -> getVar( 'dirname' );
         $block['random'][] = $videorandom;
     }
@@ -195,7 +195,7 @@ function b_xoopstube_randomh( $options ) {
         $videorandomh['cid'] = intval($myrow['cid']);
         $videorandomh['title'] = $title;
         $videorandomh['date'] = formatTimestamp( $myrow['published'], $options[3] );
-        $videorandomh['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $title,$myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
+        $videorandomh['videothumb'] = b_xoopstube_top_thumbs( $myrow['vidid'], $myrow['title'], $title, $myrow['vidsource'], $myrow['screenshot'], $myrow['picurl'] );
         $videorandomh['dirname'] = $xtubeModule -> getVar( 'dirname' );
         $block['random'][] = $videorandomh;
     }
@@ -209,8 +209,8 @@ function b_xoopstube_randomh( $options ) {
 function b_xoopstube_top_edit( $options ) {
     $form = "" . _MB_XTUBE_DISP . "&nbsp;";
     $form .= "<input type='hidden' name='options[]' value='";
-    if ( $options[0] == "date" ) {
-        $form .= "date'";
+    if ( $options[0] == "published" ) {
+        $form .= "published'";
     }
     if ( $options[0] == "random" ) {
         $form .= "random'";
