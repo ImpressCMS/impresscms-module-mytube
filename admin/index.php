@@ -44,13 +44,18 @@ function edit( $lid = 0 )
     xoops_cp_header();
     xtube_adminmenu( _AM_XTUBE_MVIDEOS );
 
-    $_vote_data = getVoteDetails( $lid );
-    if ( $lid > 0 && $_vote_data['rate'] > 0 ) {
+    if ( $lid ) {
         $_vote_data = getVoteDetails( $lid );
         $text_info = "
 			<table width='100%'>
 			 <tr>
-			  <td width='50%' valign='top'>
+			  <td width='33%' valign='top'>
+			   <div><b>" . _AM_XTUBE_VIDEO_ID . " </b>" . $lid . "</div>
+			   <div><b>" . _AM_XTUBE_MINDEX_SUBMITTED . ": </b>" . formatTimestamp( $video_array['date'], $xoopsModuleConfig['dateformat'] ). "</div>
+			   <div><b>" . _AM_XTUBE_MOD_MODIFYSUBMITTER . " </b>" . xoops_getLinkedUnameFromId( $video_array['submitter'] ) . "</div>
+			   <div><b>" . _AM_XTUBE_VIDEO_IP . " </b>" . $ipaddress . "</div>
+			  </td>
+			  <td>
 			   <div><b>" . _AM_XTUBE_VOTE_TOTALRATE . ": </b>" . intval( $_vote_data['rate'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_USERAVG . ": </b>" . intval( round( $_vote_data['avg_rate'], 2 ) ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_MAXRATE . ": </b>" . intval( $_vote_data['min_rate'] ) . "</div>
@@ -65,9 +70,9 @@ function edit( $lid = 0 )
 			 </tr>
 			</table>";
         echo "
-			<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_VOTE_DISPLAYVOTES . "</legend>\n
+			<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_INFORMATION . "</legend>\n
 			<div style='padding: 8px;'>$text_info</div>\n	
-			<div style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></div>\n
+		<!--	<div style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></div>\n    -->
 			</fieldset>\n
 			<br />\n";
     } 
@@ -78,10 +83,10 @@ function edit( $lid = 0 )
     $sform = new XoopsThemeForm( $caption, "storyform", xoops_getenv( 'PHP_SELF' ) );
     $sform -> setExtra( 'enctype="multipart / form - data"' );
 
-    if ( $lid ) {
-        $sform -> addElement( new XoopsFormLabel( _AM_XTUBE_VIDEO_ID, $lid ) );
-        $sform -> addElement( new XoopsFormLabel( _AM_XTUBE_VIDEO_IP, $ipaddress ) );
-    }
+//    if ( $lid ) {
+//        $sform -> addElement( new XoopsFormLabel( _AM_XTUBE_VIDEO_ID, $lid ) );
+//        $sform -> addElement( new XoopsFormLabel( _AM_XTUBE_VIDEO_IP, $ipaddress ) );
+//    }
 
 // Video title
     $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_TITLE, 'title', 70, 255, $title ), true );
