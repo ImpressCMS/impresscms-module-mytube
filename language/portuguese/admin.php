@@ -482,6 +482,7 @@ define( "_AM_XTUBE_DOESNOTEXIST", " não existe!" );
 define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
 define( "_AM_XTUBE_LIVELEAK", "LiveLeak" );
 define( "_AM_XTUBE_FILE", "Arquivo " );
+define( "_AM_XTUBE_INFORMATION", "Video Information" );
 
 //define( "_AM_XTUBE_VIDEO_DLURL", "Código do Vídeo Embedded: " ); //Verificando remoção...
 //define( "_AM_XTUBE_VIDEO_DLURL_NOTE", "<small>(video embedded code = http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font>)</small>" ); //Verificando remoção...
