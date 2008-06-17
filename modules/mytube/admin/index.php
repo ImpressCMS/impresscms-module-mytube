@@ -254,6 +254,7 @@ switch ( strtolower( $op ) ) {
         if ( !$lid ) {
             $date = time();
             $publishdate = time();
+            $expiredate = '0';
         } else {
             $publishdate = $_POST['was_published'];
             $expiredate = $_POST['was_expired'];
