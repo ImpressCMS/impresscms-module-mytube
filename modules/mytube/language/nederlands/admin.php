@@ -476,5 +476,6 @@ define( "_AM_XTUBE_DOESNOTEXIST", " bestaat niet!" );
 define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
 define( "_AM_XTUBE_LIVELEAK", "LiveLeak" );
 define( "_AM_XTUBE_FILE", "File " );
+define( "_AM_XTUBE_INFORMATION", "Video Informatie" );
 
 ?>
