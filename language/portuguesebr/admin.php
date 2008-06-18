@@ -215,7 +215,7 @@ define( "_AM_XTUBE_MOD_MODREQUESTS", "Vídeos Modificados" );
 define( "_AM_XTUBE_MOD_MODREQUESTSINFO", "Informação dos Vídeos Modificados" );
 define( "_AM_XTUBE_MOD_MODID", "ID" );
 define( "_AM_XTUBE_MOD_MODTITLE", "Título" );
-define( "_AM_XTUBE_MOD_MODPOSTER", "Postador Original: " );
+define( "_AM_XTUBE_MOD_MODPOSTER", "Publicador Original: " );
 define( "_AM_XTUBE_MOD_DATE", "Enviado em" );
 define( "_AM_XTUBE_MOD_NOMODREQUEST", "Não há solicitações que atendam estes critérios" );
 define( "_AM_XTUBE_MOD_TITLE", "Título do Vídeo: " );
@@ -407,8 +407,8 @@ define( "_AM_XTUBE_KEYWORDS_NOTE", "<i>Palavras-chave devem ser separadas com v�
 define("_AM_XTUBE_VIDEO_META_DESCRIPTION", "Meta-Descrição");
 define("_AM_XTUBE_VIDEO_META_DESCRIPTION_DSC", "De modo a ajudar o Mecanismos de Busca, você pode personalizar a meta-descrição deste vídeo como você quiser. Se você deixar o campo vazio quando adicionar um vídeo, ele irá ser automaticamente preenchido com o campo Sumário deste vídeo.");
 
-define( "_AM_XTUBE_VIDSOURCE", "Video source:" );
-define( "_AM_XTUBE_VIDSOURCE2", "Video source" );
+define( "_AM_XTUBE_VIDSOURCE", "Código do Video:" );
+define( "_AM_XTUBE_VIDSOURCE2", "Código do Video" );
 define( "_AM_XTUBE_YOUTUBE", "YouTube" );
 define( "_AM_XTUBE_METACAFE", "MetaCafe" );
 define( "_AM_XTUBE_IFILM", "Spike" );
@@ -481,9 +481,9 @@ define( "_AM_XTUBE_DOESNOTEXIST", " não existe!" );
 define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
 define( "_AM_XTUBE_LIVELEAK", "LiveLeak" );
 define( "_AM_XTUBE_FILE", "Arquivo " );
+define( "_AM_XTUBE_INFORMATION", "Informações do Video" ); //1.06RC-1
 
 //define( "_AM_XTUBE_VIDEO_DLURL", "Código do Vídeo Embedded: " ); //Verificando remoção...
 //define( "_AM_XTUBE_VIDEO_DLURL_NOTE", "<small>(video embedded code = http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font>)</small>" ); //Verificando remoção...
 //define( "_AM_XTUBE_VIDEO_DIRCA", " Avaliação do Conteúdo pela internet: " ); //Verificando remoção...
-define( "_AM_XTUBE_INFORMATION", "Video Information" );
 ?>
