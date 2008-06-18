@@ -294,15 +294,15 @@ define( "_AM_XTUBE_VIDEO_PUBLISHER", "Nome do publicador do vídeo: " );
  * Broken links defines
  */
 define( "_AM_XTUBE_SBROKENSUBMIT", "Vídeo com Problema: " );
-define( "_AM_XTUBE_BROKEN_FILE", "Relato de Vídeo com Problemas" );
-define( "_AM_XTUBE_BROKEN_FILEIGNORED", "Relato de problema ignorado e excluído da Base de Dados com sucesso!" );
+define( "_AM_XTUBE_BROKEN_FILE", "Relatório de Vídeo com Problemas" );
+define( "_AM_XTUBE_BROKEN_FILEIGNORED", "Relatório de Video com problema ignorado e excluído da Base de Dados com sucesso!" );
 define( "_AM_XTUBE_BROKEN_NOWACK", "Status do reconhecimento alterado e Base de dados atualizada!" );
 define( "_AM_XTUBE_BROKEN_NOWCON", "Status de confirmação alterado e Base de dados atualizada!" );
 define( "_AM_XTUBE_BROKEN_REPORTINFO", "Informação de Relato de Vídeos com Problemas" );
 define( "_AM_XTUBE_BROKEN_REPORTSNO", "Relatos de Problemas Aguardando:" );
-define( "_AM_XTUBE_BROKEN_IGNOREDESC", "<b>Ignore</b> o relato e simplesmente exclua-o." );
-define( "_AM_XTUBE_BROKEN_DELETEDESC", "<b>Exclua</b> o vídeo com problemas e os relatos." );
-define( "_AM_XTUBE_BROKEN_EDITDESC", "<b>Edite</b> o vídeo para corrigir o problema." );
+define( "_AM_XTUBE_BROKEN_IGNOREDESC", "<b>Ignorar</b> o relato e simplesmente exclua-o." );
+define( "_AM_XTUBE_BROKEN_DELETEDESC", "<b>Excluir</b> o vídeo com problemas e os relatos." );
+define( "_AM_XTUBE_BROKEN_EDITDESC", "<b>Editar</b> o vídeo para corrigir o problema." );
 define( "_AM_XTUBE_BROKEN_ACKDESC", "<b>Reconhecimento: </b> defina o estado de reconhecimento do relato de vídeo com problemas." );
 define( "_AM_XTUBE_BROKEN_CONFIRMDESC", "<b>Confirmado:</b> defina o estados de confirmado para o relato de vídeo com problemas." );
 define( "_AM_XTUBE_BROKEN_ACKNOWLEDGED", "Reconhecido" );
@@ -314,8 +314,8 @@ define( "_AM_XTUBE_BROKEN_REPORTER", "Relator" );
 define( "_AM_XTUBE_BROKEN_FILESUBMITTER", "Enviado por" );
 define( "_AM_XTUBE_BROKEN_DATESUBMITTED", "Data do envio" );
 define( "_AM_XTUBE_BROKEN_ACTION", "Ação" );
-define( "_AM_XTUBE_BROKEN_NOFILEMATCH", "Não há relatos de vídeos com problemas que atendam  estes critérios" );
-define( "_AM_XTUBE_BROKENFILEDELETED", "vídeo e relato removidos da Base de Dados" );
+define( "_AM_XTUBE_BROKEN_NOFILEMATCH", "Não há relatórios de vídeos com problemas que atendam estes critérios" );
+define( "_AM_XTUBE_BROKENFILEDELETED", "vídeo e relatório removidos da Base de Dados" );
 define( "_AM_XTUBE_BROKEN_VIDSOURCE", "Código do Vídeo" );
 /**
  * About defines
@@ -354,10 +354,10 @@ define( "_AM_XTUBE_ICO_STATS", "Estatísticas" );
 define( "_AM_XTUBE_ICO_VIEW", "Ver este Item" );
 
 define( "_AM_XTUBE_ICO_IGNORE", "Ignorar" );
-define( "_AM_XTUBE_ICO_ACK", "Reconhecimento de Relato de Problemas" );
-define( "_AM_XTUBE_ICO_REPORT", "Reconher o Relato de Problemas?" );
-define( "_AM_XTUBE_ICO_CONFIRM", "Relato de Problemas Confirmado" );
-define( "_AM_XTUBE_ICO_CONBROKEN", "Confirma Relato de Problemas?" );
+define( "_AM_XTUBE_ICO_ACK", "Reconhecimento de Relatório de Problemas" );
+define( "_AM_XTUBE_ICO_REPORT", "Reconher o Relatório de Problemas?" );
+define( "_AM_XTUBE_ICO_CONFIRM", "Relatório de Problemas Confirmado" );
+define( "_AM_XTUBE_ICO_CONBROKEN", "Confirma Relatório de Problemas?" );
 define( "_AM_XTUBE_ICO_RES", "Editar Recurso/Vídeos para este Item" );
 define( "_AM_XTUBE_MOD_URLRATING", "Avaliação do Conteudo pela Internet:" );
 // Alternate category
