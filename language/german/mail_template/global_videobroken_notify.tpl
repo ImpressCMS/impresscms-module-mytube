@@ -1,6 +1,6 @@
-Hallo {X_UNAME},
+ï»¿Hallo {X_UNAME},
 
-Ein fehlerhafter Video Link wurde übermittelt.
+Ein fehlerhafter Video Link wurde Ã¼bermittelt.
 
 Du erreichst die Anfrage unter folgendem URL:
 {BROKENREPORTS_URL}
@@ -9,7 +9,7 @@ Du erreichst die Anfrage unter folgendem URL:
 
 Sie erhalten diese Nachricht weil Sie benachrichtigt werden wollten, wenn ein fehlerhafter Link gefunden wird.
 
-Wenn dies ein Fehler ist und Sie keine weiteren Nachrichten dieser Art mehr empfangen möchten, folgen Sie diesem Link:
+Wenn dies ein Fehler ist und Sie keine weiteren Nachrichten dieser Art mehr empfangen mÃ¶chten, folgen Sie diesem Link:
 {X_UNSUBSCRIBE_URL}
 
 Bitte nicht auf diese E-Mail/PN antworten.
