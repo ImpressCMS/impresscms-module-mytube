@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * $Id: main.php
  * Module: MyTube
@@ -8,24 +8,24 @@
 define( "_MD_XTUBE_NOVIDEO", "Das Video existiert nicht!" );
 define( "_MD_XTUBE_SUBCATLISTING", "Kategorieliste" );
 define( "_MD_XTUBE_ISADMINNOTICE", "Webmaster: Es gibt ein Problem mit diesem Bild." );
-define( "_MD_XTUBE_THANKSFORINFO", "Danke f&uuml;r die &Uuml;bermittlung.<br />Sie werden nach der freischaltung beanchrichtigt." );
-define( "_MD_XTUBE_ISAPPROVED", "Danke f&uuml;r die &Uuml;bermittlung.<br />Ihr Anliegen wurde gepr&uuml;ft und wurde freigeschaltet." );
-define( "_MD_XTUBE_THANKSFORHELP", "Danke, dass Sie uns dabei unterst&uuml;tzen das Verzeichnis aktuell zu halten." );
-define( "_MD_XTUBE_FORSECURITY", "Aus Sicherheitsgr&uuml;nden wird Ihr Mitgliedsname und ihre IP temporar&auml;r gespeichert." );
+define( "_MD_XTUBE_THANKSFORINFO", "Danke für die übermittlung.<br />Sie werden nach der freischaltung beanchrichtigt." );
+define( "_MD_XTUBE_ISAPPROVED", "Danke für die übermittlung.<br />Ihr Anliegen wurde geprüft und wurde freigeschaltet." );
+define( "_MD_XTUBE_THANKSFORHELP", "Danke, dass Sie uns dabei unterstützen das Verzeichnis aktuell zu halten." );
+define( "_MD_XTUBE_FORSECURITY", "Aus Sicherheitsgründen wird Ihr Mitgliedsname und ihre IP temporarär gespeichert." );
 define( "_MD_XTUBE_DESCRIPTION", "Beschreibung" );
-define( "_MD_XTUBE_SUBMITCATHEAD", "&Uuml;bermittlungs Formular" );
+define( "_MD_XTUBE_SUBMITCATHEAD", "übermittlungs Formular" );
 define( "_MD_XTUBE_MAIN", "Start" );
-define( "_MD_XTUBE_POPULAR", "Popul&auml;r" );
+define( "_MD_XTUBE_POPULAR", "Populär" );
 define( "_MD_XTUBE_NEWTHISWEEK", "Neu diese Woche" );
 define( "_MD_XTUBE_UPTHISWEEK", "Erneuert diese Woche" );
-define( "_MD_XTUBE_POPULARITYLTOM", "Popularit&auml;t (Least to Most Views)" );
-define( "_MD_XTUBE_POPULARITYMTOL", "Popularit&auml;t (Most to Least Views)" );
+define( "_MD_XTUBE_POPULARITYLTOM", "Popularität (Least to Most Views)" );
+define( "_MD_XTUBE_POPULARITYMTOL", "Popularität (Most to Least Views)" );
 define( "_MD_XTUBE_TITLEATOZ", "Titel (A nach Z)" );
 define( "_MD_XTUBE_TITLEZTOA", "Titel (Z nach A)" );
-define( "_MD_XTUBE_DATEOLD", "Datum (&auml;ltere Videos zuerst)" );
+define( "_MD_XTUBE_DATEOLD", "Datum (ältere Videos zuerst)" );
 define( "_MD_XTUBE_DATENEW", "Datum (Neue Videos zuerst)" );
-define( "_MD_XTUBE_RATINGLTOH", "Bewertung (niedrigste zu h&ouml;chste)" );
-define( "_MD_XTUBE_RATINGHTOL", "Bewertung (h&ouml;chste zu niedrigste)" );
+define( "_MD_XTUBE_RATINGLTOH", "Bewertung (niedrigste zu höchste)" );
+define( "_MD_XTUBE_RATINGHTOL", "Bewertung (höchste zu niedrigste)" );
 define( "_MD_XTUBE_DESCRIPTIONC", "Beschreibung: " );
 define( "_MD_XTUBE_CATEGORYC", "Kategorie: " );
 define( "_MD_XTUBE_VERSION", "Version" );
@@ -36,7 +36,7 @@ define( "_MD_XTUBE_RATINGC", "Wertung: " );
 define( "_MD_XTUBE_ONEVOTE", "1 Bewertung" );
 define( "_MD_XTUBE_NUMVOTES", "%s Bewertungen" );
 define( "_MD_XTUBE_RATETHISFILE", "Bewerte dieses Video" );
-define( "_MD_XTUBE_MODIFY", "&auml;ndern" );
+define( "_MD_XTUBE_MODIFY", "ändern" );
 define( "_MD_XTUBE_REPORTBROKEN", "Defektes Video melden" );
 define( "_MD_XTUBE_BROKENREPORT", "Defektes Video melden" );
 define( "_MD_XTUBE_SUBMITBROKEN", "Abschicken" );
@@ -60,7 +60,7 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font></small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Bild url: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Bilder URL wenn das Video von Google Video, MySpace TV, ClipFish, Blip.tv, LiveLeak oder DailyMotion ist.</small>" );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Bild wenn das Ziel Google Video, MySpace TV oder DailyMotion ist.</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Video Herkunft:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
@@ -77,13 +77,13 @@ define( "_MD_XTUBE_UPDATEDON", "Aktualisiert am" );
 define( "_MD_XTUBE_PRICEFREE", "kostenlos" );
 define( "_MD_XTUBE_VIEWDETAILS", "Zeige alle Details" );
 define( "_MD_XTUBE_OPTIONS", 'Optionen: ' );
-define( "_MD_XTUBE_NOTIFYAPPROVE", 'Ich m&ouml;chte eine Benachrichtigung wenn das Video freigegeben wird.' );
+define( "_MD_XTUBE_NOTIFYAPPROVE", 'Ich möchte eine Benachrichtigung wenn das Video freigegeben wird.' );
 define( "_MD_XTUBE_VOTEAPPRE", "Ihre Bewertung ist willkommen." );
-define( "_MD_XTUBE_THANKYOU", "Danke das Sie sich die Zeit genommen habe auf %s f&uuml;r ein Video zu werten" ); // %s is your site name
+define( "_MD_XTUBE_THANKYOU", "Danke das Sie sich die Zeit genommen habe auf %s für ein Video zu werten" ); // %s is your site name
 define( "_MD_XTUBE_VOTEONCE", "Bitte immer nur einmal Abstimmen." );
-define( "_MD_XTUBE_RATINGSCALE", "Die Bewertungsskala reicht von 1 - 10, wobei 1 die niedrigste und 10 die h&ouml;chste Bewertung ist." );
-define( "_MD_XTUBE_BEOBJECTIVE", "Seien Sie objektiv, denn wenn jeder mit 1 oder 10 abstimmt sind die Ergebnisse wenig aussagekr&auml;ftig." );
-define( "_MD_XTUBE_DONOTVOTE", "Bitte stimmen Sie nicht f&uuml;r Ihren eigenes Video." );
+define( "_MD_XTUBE_RATINGSCALE", "Die Bewertungsskala reicht von 1 - 10, wobei 1 die niedrigste und 10 die höchste Bewertung ist." );
+define( "_MD_XTUBE_BEOBJECTIVE", "Seien Sie objektiv, denn wenn jeder mit 1 oder 10 abstimmt sind die Ergebnisse wenig aussagekräftig." );
+define( "_MD_XTUBE_DONOTVOTE", "Bitte stimmen Sie nicht für Ihren eigenes Video." );
 define( "_MD_XTUBE_RATEIT", "Bewerten!" );
 define( "_MD_XTUBE_INTFILEFOUND", "Hier findesn Sie ein interesantes Video auf %s" ); // %s is your site name
 define( "_MD_XTUBE_RANK", "Rang" );
@@ -94,17 +94,17 @@ define( "_MD_XTUBE_VOTE", "Stimmen" );
 define( "_MD_XTUBE_SORTBY", "Sortiert nach:" );
 define( "_MD_XTUBE_TITLE", "Titel" );
 define( "_MD_XTUBE_DATE", "Datum" );
-define( "_MD_XTUBE_POPULARITY", "Popularit&auml;t" );
+define( "_MD_XTUBE_POPULARITY", "Popularität" );
 define( "_MD_XTUBE_TOPRATED", "Wertung" );
 define( "_MD_XTUBE_CURSORTBY", "Videos sind sortiert nach: %s" );
 define( "_MD_XTUBE_CANCEL", "Abbrechen" );
 define( "_MD_XTUBE_ALREADYREPORTED", "Dieses Video wurde bereits als defekt gemeldet." );
-define( "_MD_XTUBE_MUSTREGFIRST", "Sie habe f&uuml;r diese Aktion keine Berechtigung.<br />Bitte registrieren oder anmelden!" );
-define( "_MD_XTUBE_NORATING", "Keine Bewertung gew&auml;hlt." );
+define( "_MD_XTUBE_MUSTREGFIRST", "Sie habe für diese Aktion keine Berechtigung.<br />Bitte registrieren oder anmelden!" );
+define( "_MD_XTUBE_NORATING", "Keine Bewertung gewählt." );
 define( "_MD_XTUBE_VOTEFORTITLE", "Bewerte dieses Video: " );
-define( "_MD_XTUBE_CANTVOTEOWN", "Sie k&ouml;nnen Ihre Einsendungen nicht bewerten.<br />Alle Wertungen werden aufgezeichnet." );
+define( "_MD_XTUBE_CANTVOTEOWN", "Sie können Ihre Einsendungen nicht bewerten.<br />Alle Wertungen werden aufgezeichnet." );
 define( "_MD_XTUBE_SUBMITVIDEO", "Video einsenden" );
-define( "_MD_XTUBE_SUB_SNEWMNAMEDESC", "<ul><li>Je nach aufkommen kann es bis zu 24 Stunden dauern bis ein Video freigegeben wird.</li><li>Wir behalten uns vor jedes Video oder die Beschreibung ohne nachfragen zu ver&auml;ndern oder zu entfernen.</li></ul>" );
+define( "_MD_XTUBE_SUB_SNEWMNAMEDESC", "<ul><li>Je nach aufkommen kann es bis zu 24 Stunden dauern bis ein Video freigegeben wird.</li><li>Wir behalten uns vor jedes Video oder die Beschreibung ohne nachfragen zu verändern oder zu entfernen.</li></ul>" );
 define( "_MD_XTUBE_MAINLISTING", "Hauptkategorien" );
 define( "_MD_XTUBE_LASTWEEK", "Letzte Woche" );
 define( "_MD_XTUBE_LAST30DAYS", "Letzte 30 Tage" );
@@ -115,7 +115,7 @@ define( "_MD_XTUBE_SHOW", "Zeige" );
 define( "_MD_XTUBE_DAYS", "Tage" );
 define( "_MD_XTUBE_NEWlinks", "Neues Video" );
 define( "_MD_XTUBE_TOTALNEWVIDEOS", "Neue Videos Gesamt" );
-define( "_MD_XTUBE_DTOTALFORLAST", "Neue Videos f&uuml;r die letzten" );
+define( "_MD_XTUBE_DTOTALFORLAST", "Neue Videos für die letzten" );
 define( "_MD_XTUBE_AGREE", "I Agree" );
 define( "_MD_XTUBE_DOYOUAGREE", "Do you agree to the above terms?" );
 define( "_MD_XTUBE_DISCLAIMERAGREEMENT", "Disclaimer" );
@@ -127,23 +127,23 @@ define( "_MD_XTUBE_RESOURCEREPORTED", "Video als defekt gemeldet" );
 define( "_MD_XTUBE_RESOURCEREPORTED2", "Das Video wurde schon als defekt gemeldet, wir arbeiten daran." );
 define( "_MD_XTUBE_BROWSETOTOPIC", "<b>Durchsuche Videos in alphabetischer Reihenfolge</b>" );
 define( "_MD_XTUBE_WEBMASTERACKNOW", "Bericht des defekten Links quittieren: " );
-define( "_MD_XTUBE_WEBMASTERCONFIRM", "Bericht des defekten Links best&auml;tigen: " );
-define( "_MD_XTUBE_ERRORSENDEMAIL", "Wir best&auml;tigen den Bericht des defekten Videoss aber bei der Benachrichtigung des Webmasters ist ein Fehler aufgetreten." );
+define( "_MD_XTUBE_WEBMASTERCONFIRM", "Bericht des defekten Links bestätigen: " );
+define( "_MD_XTUBE_ERRORSENDEMAIL", "Wir bestätigen den Bericht des defekten Videoss aber bei der Benachrichtigung des Webmasters ist ein Fehler aufgetreten." );
 
-define( "_MD_XTUBE_DELETE", "L&ouml;schen" );
+define( "_MD_XTUBE_DELETE", "Löschen" );
 define( "_MD_XTUBE_DISPLAYING", "Angezeigt von: " );
 define( "_MD_XTUBE_LEGENDTEXTNEW", "Heute neu" );
 define( "_MD_XTUBE_LEGENDTEXTNEWTHREE", "letzte 3 Tage" );
 define( "_MD_XTUBE_LEGENDTEXTTHISWEEK", "diese Woche" );
-define( "_MD_XTUBE_LEGENDTEXTNEWLAST", "&auml;lter als 1 Woche" );
+define( "_MD_XTUBE_LEGENDTEXTNEWLAST", "älter als 1 Woche" );
 define( "_MD_XTUBE_THISFILEDOESNOTEXIST", "Fehler: Dieses Video gibt es nicht!" );
 define( "_MD_XTUBE_BROKENREPORTED", "Defektes Video melden" );
 
 define( "_MD_XTUBE_REV_SNEWMNAMEDESC", "  
-Bitte f&uuml;llen Sie das Formular komplett aus und wir werden Ihre Rezension so bald wie m&ouml;glich ver&ouml;ffentlichen.<br /><br />
-Danke, dass Sie sich die Zeit genommen haben. Wir m&ouml;chten unseren Benutzern die M&ouml;glichkeit geben, qualitativ hochwertige Programme schnell zu finden.<br /><br />Alle Rezesion werden vor der Ver&ouml;ffentlichung durch einen der Webmaster &uuml;berpr&uuml;ft. 
+Bitte füllen Sie das Formular komplett aus und wir werden Ihre Rezension so bald wie möglich veröffentlichen.<br /><br />
+Danke, dass Sie sich die Zeit genommen haben. Wir möchten unseren Benutzern die Möglichkeit geben, qualitativ hochwertige Programme schnell zu finden.<br /><br />Alle Rezesion werden vor der Veröffentlichung durch einen der Webmaster überprüft. 
 " );
-define( "_MD_XTUBE_ISNOTAPPROVED", "Ihre Einsendung muss von einem Moderator gepr&uuml;ft werden." );
+define( "_MD_XTUBE_ISNOTAPPROVED", "Ihre Einsendung muss von einem Moderator geprüft werden." );
 define( "_MD_XTUBE_HOMEPAGETITLEC", "Homepage Titel: " );
 define( "_MD_XTUBE_SCREENSHOT", "Screenshot:" );
 define( "_MD_XTUBE_SCREENSHOTCLICK", "Zeige Vollbild" );
@@ -168,7 +168,7 @@ define( "_MD_XTUBE_THREE", "Neu eingeschickt in den letzten 3 Tagen" );
 define( "_MD_XTUBE_TODAY", "Neu eingeschickt heute" );
 define( "_MD_XTUBE_NO_FILES", "Keine Videos" );
 
-define( "_MD_XTUBE_NOPERMISSIONTOPOST", "Sie haben nicht die Berechtigung f&uuml;r diese Kategorie." );
+define( "_MD_XTUBE_NOPERMISSIONTOPOST", "Sie haben nicht die Berechtigung für diese Kategorie." );
 define( "_MD_XTUBE_RESOURCES", "Resources" );
 
 define( "_MD_XTUBE_PUBLISHDATE", "erstellt" );
@@ -178,13 +178,13 @@ define( "_MD_XTUBE_MODERATOR_OPTIONS", "Moderator Optionen" );
 // added by McDonald
 define( "_MD_XTUBE_TIME", "Zeit:" );
 define( "_MD_XTUBE_TIMEB", "<b>Zeit:</b>" );
-define( "_MD_XTUBE_KEYWORDS", "Schl&uuml;sselw&ouml;rter:" );
-define( "_MD_XTUBE_KEYWORDS_NOTE", "<small>Schl&uuml;sselw&ouml;rter m&uuml;ssen mit einem Komma unterteilt werden (<i>Wort1, Wort2, Wort3</i>).</small>" );
-define( "_MD_XTUBE_NOVIDEOLOAD", "Danke f&uuml;r den Eintrag!" );
+define( "_MD_XTUBE_KEYWORDS", "Schlüsselwörter:" );
+define( "_MD_XTUBE_KEYWORDS_NOTE", "<small>Schlüsselwörter müssen mit einem Komma unterteilt werden (<i>Wort1, Wort2, Wort3</i>).</small>" );
+define( "_MD_XTUBE_NOVIDEOLOAD", "Danke für den Eintrag!" );
 define( "_MD_XTUBE_LINKID", "Video ID" );
 define( "_MD_XTUBE_ADDTO", "Erstellen in: " );
 define( "_MD_XTUBE_NEWVIDEOS", "Letzte Videos" );
-define( "_MD_XTUBE_TAKINGUBACK", "Sie werden zur&uuml;ckgeleitet." );
+define( "_MD_XTUBE_TAKINGUBACK", "Sie werden zurückgeleitet." );
 define( "_MD_XTUBE_ADMINSECTION", "Administration" );
 
 // Version 1.04

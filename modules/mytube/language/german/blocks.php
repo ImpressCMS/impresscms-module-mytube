@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * $Id: blocks.php
  * Module: MyTube
@@ -8,7 +8,7 @@
 // Blocks
 define("_MB_XTUBE_DISP","Anzeige");
 define("_MB_XTUBE_FILES","Videos");
-define("_MB_XTUBE_CHARS","L&Auml;nge des Titels");
+define("_MB_XTUBE_CHARS","Länge des Titels");
 define("_MB_XTUBE_LENGTH"," Zeichen");
 
 // Version 1.04
