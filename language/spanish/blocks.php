@@ -1,5 +1,5 @@
 <?php
-//TraducciÛn de Evasan y Debianus para http://es.impresscms.org
+//Traducci√≥n de Evasan y Debianus para http://es.impresscms.org
 /**
 * $Id: blocks.php
  * Module: MyTube
@@ -8,19 +8,19 @@
  
 // Blocks
 define("_MB_XTUBE_DISP","Pantalla");
-define("_MB_XTUBE_FILES","VÌdeos");
-define("_MB_XTUBE_CHARS","Longitud del tÌtulo");
+define("_MB_XTUBE_FILES","V√≠deos");
+define("_MB_XTUBE_CHARS","Longitud del t√≠tulo");
 define("_MB_XTUBE_LENGTH","Caracteres");
 
 // Version 1.04
 define( "_MB_XTUBE_ID", "ID" );
-define( "_MB_XTUBE_CLIENT", "Client Name" );
-define( "_MB_XTUBE_BANNERID", "Banner ID" );
-define( "_MB_XTUBE_IMPMADE", "Impr. made" );
-define( "_MB_XTUBE_IMPLEFT", "Impr. left" );
-define( "_MB_XTUBE_CLICKS", "Clicks" );
-define( "_MB_XTUBE_CATTITLE", "Category" );
-define( "_MB_XTUBE_UNLIMIT", "Unlimited" );
-define( "_MB_XTUBE_DATEFORMAT", "Date format" );
-define( "_MB_XTUBE_DATEFORMATMANUAL", 'See <a href="http://jp.php.net/manual/en/function.date.php" target="_blank">PHP manual</a>' );
+define( "_MB_XTUBE_CLIENT", "Nombre del cliente" );
+define( "_MB_XTUBE_BANNERID", "ID del banner" );
+define( "_MB_XTUBE_IMPMADE", "Clics hechos" );
+define( "_MB_XTUBE_IMPLEFT", "Clics que faltan" );
+define( "_MB_XTUBE_CLICKS", "Clics" );
+define( "_MB_XTUBE_CATTITLE", "Categor√≠a" );
+define( "_MB_XTUBE_UNLIMIT", "Ilimitada" );
+define( "_MB_XTUBE_DATEFORMAT", "Formato de fecha" );
+define( "_MB_XTUBE_DATEFORMATMANUAL", 'Lea <a href="http://jp.php.net/manual/en/function.date.php" target="_blank">PHP manual</a>' );
 ?>
