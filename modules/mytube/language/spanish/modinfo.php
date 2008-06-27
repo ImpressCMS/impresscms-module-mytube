@@ -1,5 +1,5 @@
 <?php
-//Traducción de Evasan y Debianus para http://es.impresscms.org
+//TraducciÃ³n de Evasan y Debianus para http://es.impresscms.org
 /**
 * $Id: blocks.php
  * Module: MyTube
@@ -11,64 +11,64 @@
 define("_MI_XTUBE_NAME","MyTube");
 
 // A brief description of this module
-define("_MI_XTUBE_DESC","Inserte en su web vídeos desde YouTube.");
+define("_MI_XTUBE_DESC","Inserte en su web vÃ­deos desde YouTube.");
 
 // Names of blocks for this module (Not all module has blocks)
-define("_MI_XTUBE_BNAME1","Vídeos recientes (t)");
-define("_MI_XTUBE_BNAME2","Vídeos recientes");
+define("_MI_XTUBE_BNAME1","VÃ­deos recientes (t)");
+define("_MI_XTUBE_BNAME2","VÃ­deos recientes");
 define("_MI_XTUBE_BNAME3","Mejores videos (t)");
 define("_MI_XTUBE_BNAME4","Mejores videos");
-define("_MI_XTUBE_BNAME5","Vídeos recientes (h)");
-define("_MI_XTUBE_BNAME6","Vídeos aleatorios");
-define("_MI_XTUBE_BNAME7","Vídeos recientes (h)");
+define("_MI_XTUBE_BNAME5","VÃ­deos recientes (h)");
+define("_MI_XTUBE_BNAME6","VÃ­deos aleatorios");
+define("_MI_XTUBE_BNAME7","VÃ­deos recientes (h)");
 
 // Sub menu titles
 define("_MI_XTUBE_SMNAME1","Enviar");
 define("_MI_XTUBE_SMNAME2","Popular");
 define("_MI_XTUBE_SMNAME3","Mejores clasificados");
-define("_MI_XTUBE_SMNAME4","Últimos");
+define("_MI_XTUBE_SMNAME4","Ãšltimos");
 // Names of admin menu items
 define("_MI_XTUBE_BINDEX","Indice principal");
-define("_MI_XTUBE_INDEXPAGE","Gestión del índice de páginas");
-define("_MI_XTUBE_MCATEGORY","Gestión de categoría");
-define("_MI_XTUBE_MVIDEOS","Gestión de vídeos");
+define("_MI_XTUBE_INDEXPAGE","GestiÃ³n del Ã­ndice de pÃ¡ginas");
+define("_MI_XTUBE_MCATEGORY","GestiÃ³n de categorÃ­a");
+define("_MI_XTUBE_MVIDEOS","GestiÃ³n de vÃ­deos");
 define("_MI_XTUBE_MUPLOADS","Subir imagen");
 define("_MI_XTUBE_PERMISSIONS","Configurar permisos");
-define("_MI_XTUBE_BLOCKADMIN","Administración de bloques");
+define("_MI_XTUBE_BLOCKADMIN","AdministraciÃ³n de bloques");
 define("_MI_XTUBE_MVOTEDATA","Votos");
 
 // Title of config items
-define('_MI_XTUBE_POPULAR', 'Contador de vídeo');
-define('_MI_XTUBE_POPULARDSC', 'Número de visualizaciones para que un video sea considerado popular.');
+define('_MI_XTUBE_POPULAR', 'Contador de vÃ­deo');
+define('_MI_XTUBE_POPULARDSC', 'NÃºmero de visualizaciones para que un video sea considerado popular.');
 
 //Display Icons
 define("_MI_XTUBE_ICONDISPLAY","Iconos 'Popular' y 'Nuevo':");
-define("_MI_XTUBE_DISPLAYICONDSC", "Seleccionar cómo mostrar los iconos popular y nuevo en el listado de videos.");
+define("_MI_XTUBE_DISPLAYICONDSC", "Seleccionar cÃ³mo mostrar los iconos popular y nuevo en el listado de videos.");
 define("_MI_XTUBE_DISPLAYICON1", "Mostrar como iconos");
 define("_MI_XTUBE_DISPLAYICON2", "Mostrar como texto");
 define("_MI_XTUBE_DISPLAYICON3", "No mostrar");
 
-define("_MI_XTUBE_DAYSNEW","Nuevos vídeos del día:");
-define("_MI_XTUBE_DAYSNEWDSC","El número de días para que una categoría de vídeos sea considerada nueva.");
-define("_MI_XTUBE_DAYSUPDATED","Días para videos actualizados:");
-define("_MI_XTUBE_DAYSUPDATEDDSC","El margen de días para que una categoría se considere actualizada.");
+define("_MI_XTUBE_DAYSNEW","Nuevos vÃ­deos del dÃ­a:");
+define("_MI_XTUBE_DAYSNEWDSC","El nÃºmero de dÃ­as para que una categorÃ­a de vÃ­deos sea considerada nueva.");
+define("_MI_XTUBE_DAYSUPDATED","DÃ­as para videos actualizados:");
+define("_MI_XTUBE_DAYSUPDATEDDSC","El margen de dÃ­as para que una categorÃ­a se considere actualizada.");
 
-define('_MI_XTUBE_PERPAGE', 'Vídeos a mostrar:');
-define('_MI_XTUBE_PERPAGEDSC', 'Numero de vídeos a mostrar en cada listado de categoría.');
-define("_MI_XTUBE_ADMINPAGE", "Vídeos a mostrar (en administración):");
-define("_MI_XTUBE_AMDMINPAGEDSC", "Número de vídeos que serán mostrados en el área de administración del módulo.");
+define('_MI_XTUBE_PERPAGE', 'VÃ­deos a mostrar:');
+define('_MI_XTUBE_PERPAGEDSC', 'Numero de vÃ­deos a mostrar en cada listado de categorÃ­a.');
+define("_MI_XTUBE_ADMINPAGE", "VÃ­deos a mostrar (en administraciÃ³n):");
+define("_MI_XTUBE_AMDMINPAGEDSC", "NÃºmero de vÃ­deos que serÃ¡n mostrados en el Ã¡rea de administraciÃ³n del mÃ³dulo.");
 
-define("_MI_XTUBE_ARTICLESSORT", "Orden predeterminado de los vídeos:");
+define("_MI_XTUBE_ARTICLESSORT", "Orden predeterminado de los vÃ­deos:");
 
-define("_MI_XTUBE_ARTICLESSORTDSC", "Seleccione el criterio por el que de forma predeterminada se mostrarán los listados de videos.");
+define("_MI_XTUBE_ARTICLESSORTDSC", "Seleccione el criterio por el que de forma predeterminada se mostrarÃ¡n los listados de videos.");
 
-define("_MI_XTUBE_SORTCATS", "Ordenar categorías por:");
-define("_MI_XTUBE_SORTCATSDSC", "Seleccione como se mostrarán las categorías y las subcategorías.");
+define("_MI_XTUBE_SORTCATS", "Ordenar categorÃ­as por:");
+define("_MI_XTUBE_SORTCATSDSC", "Seleccione como se mostrarÃ¡n las categorÃ­as y las subcategorÃ­as.");
 
-define('_MI_XTUBE_SUBCATS', 'Subcategorías:');
-define('_MI_XTUBE_SUBCATSDSC', 'Seleccione "Sí" para mostrar las subcategorías. Seleccione "No" para ocultar las mismas en el listado.');
+define('_MI_XTUBE_SUBCATS', 'SubcategorÃ­as:');
+define('_MI_XTUBE_SUBCATSDSC', 'Seleccione "SÃ­" para mostrar las subcategorÃ­as. Seleccione "No" para ocultar las mismas en el listado.');
 define('_MI_XTUBE_EDITOR', "Editor a usar:");
-define('_MI_XTUBE_EDITORCHOICE', "Seleccionar el editor a usar. Si tiene una instalación simple (p.e. si sólo usa el editor DHTML contenido en el paquete básico de ImpressCMS), entonces sólo puede seleccionar DHTML y Compact");
+define('_MI_XTUBE_EDITORCHOICE', "Seleccionar el editor a usar. Si tiene una instalaciÃ³n simple (p.e. si sÃ³lo usa el editor DHTML contenido en el paquete bÃ¡sico de ImpressCMS), entonces sÃ³lo puede seleccionar DHTML y Compact");
 define("_MI_XTUBE_FORM_DHTML","DHTML");
 define("_MI_XTUBE_FORM_COMPACT","Compact");
 define("_MI_XTUBE_FORM_SPAW","Spaw Editor");
@@ -78,89 +78,89 @@ define("_MI_XTUBE_FORM_KOIVI","Koivi Editor");
 define("_MI_XTUBE_FORM_INBETWEEN","Inbetween");
 define("_MI_XTUBE_FORM_TINYEDITOR","Tinyeditor");
 define('_MI_XTUBE_EDITORUSER', "Editor a usar por los usuarios:");
-define('_MI_XTUBE_EDITORCHOICEUSER', "Seleccione el editor a usar por los usuarios. Si tiene una instalación simple (p.e. si sólo usa el editor DHTML contenido en el paquete básico de ImpressCMS), entonces sólo puede seleccionar DHTML y Compact.");
+define('_MI_XTUBE_EDITORCHOICEUSER', "Seleccione el editor a usar por los usuarios. Si tiene una instalaciÃ³n simple (p.e. si sÃ³lo usa el editor DHTML contenido en el paquete bÃ¡sico de ImpressCMS), entonces sÃ³lo puede seleccionar DHTML y Compact.");
 
 define('_MI_XTUBE_USESHOTS', 'Mostrar capturas de pantalla?');
-define('_MI_XTUBE_USESHOTSDSC', 'Seleccione "Sí" para mostrar capturas de pantalla en cada video');
+define('_MI_XTUBE_USESHOTSDSC', 'Seleccione "SÃ­" para mostrar capturas de pantalla en cada video');
 
-//elimiando en la versión final; pendiente de revisar
-//define('_MI_XTUBE_CATEGORYIMG','Directorio de categorías de imágenes subidas');
-//define('_MI_XTUBE_MAINIMGDIR','Directorio principal de imágenes');
+//elimiando en la versiÃ³n final; pendiente de revisar
+//define('_MI_XTUBE_CATEGORYIMG','Directorio de categorÃ­as de imÃ¡genes subidas');
+//define('_MI_XTUBE_MAINIMGDIR','Directorio principal de imÃ¡genes');
 define('_MI_XTUBE_USETHUMBS', 'Usar imagen reducida:');
-define("_MI_XTUBE_USETHUMBSDSC", "Extensiones que soporta: JPG, GIF, PNG.<div style='padding-top: 8px;'>WF-Links utilizará imágenes reducidas para las imágenes. Seleccione 'No' para usar la imágenes originales si el servidor no soporta esta opción.</div>");
+define("_MI_XTUBE_USETHUMBSDSC", "Extensiones que soporta: JPG, GIF, PNG.<div style='padding-top: 8px;'>WF-Links utilizarÃ¡ imÃ¡genes reducidas para las imÃ¡genes. Seleccione 'No' para usar la imÃ¡genes originales si el servidor no soporta esta opciÃ³n.</div>");
 
 // Description of each config items
-//define('_MI_XTUBE_SUBCATSDSC', 'Selecciones Sí/Yes para mostrar subcategorías. Seleccionando No se eliminarán las subcateogrías de los listados');
+//define('_MI_XTUBE_SUBCATSDSC', 'Selecciones SÃ­/Yes para mostrar subcategorÃ­as. Seleccionando No se eliminarÃ¡n las subcateogrÃ­as de los listados');
 
 
-define("_MI_XTUBE_IMGUPDATE", "¿Actualizar miniaturas?");
-define("_MI_XTUBE_IMGUPDATEDSC", "Si selecciona esta opción, las imágenes serán actualizadas cuando la página sea mostrada; en otro caso la primera minuatura será usada indiferentemente. <br /><br />");
+define("_MI_XTUBE_IMGUPDATE", "Â¿Actualizar miniaturas?");
+define("_MI_XTUBE_IMGUPDATEDSC", "Si selecciona esta opciÃ³n, las imÃ¡genes serÃ¡n actualizadas cuando la pÃ¡gina sea mostrada; en otro caso la primera minuatura serÃ¡ usada indiferentemente. <br /><br />");
 define('_MI_XTUBE_SHOTWIDTH', 'Anchura de la imagen mostrada');
 define('_MI_XTUBE_SHOTWIDTHDSC', 'Mostrar anchura de la captura de pantalla');
 define('_MI_XTUBE_SHOTHEIGHT', 'Altura de la imagen mostrada');
 define('_MI_XTUBE_SHOTHEIGHTDSC', 'Mostrar altura de la captura de pantalla');
 define('_MI_XTUBE_MAINIMGDIR','Directorio de la imagen principal');
 
-define('_MI_XTUBE_CATEGORYIMG','Directorio para almacenar las imágenes de las categorías');//Category Image Upload Directory
+define('_MI_XTUBE_CATEGORYIMG','Directorio para almacenar las imÃ¡genes de las categorÃ­as');//Category Image Upload Directory
 
 define('_MI_XTUBE_DATEFORMAT', 'Formato de fecha:');
 define('_MI_XTUBE_DATEFORMATDSC', 'Formato de fecha predeterminado para MyTube');
 
-define("_MI_XTUBE_TOTALCHARS", "¿Establecer un máximo de caracteres para la descripción?");
-define("_MI_XTUBE_TOTALCHARSDSC", "Establezca un número máximo de caracteres para la descripción en la página índice.");
+define("_MI_XTUBE_TOTALCHARS", "Â¿Establecer un mÃ¡ximo de caracteres para la descripciÃ³n?");
+define("_MI_XTUBE_TOTALCHARSDSC", "Establezca un nÃºmero mÃ¡ximo de caracteres para la descripciÃ³n en la pÃ¡gina Ã­ndice.");
 
-define("_MI_XTUBE_OTHERVIDEOS", "¿Mostrar otros vídeos que haya enviado la misma persona?");
-define("_MI_XTUBE_OTHERVIDEOSDSC", "Seleccione 'Si' para mostrar otros vídeos que haya enviado la misma persona.");
+define("_MI_XTUBE_OTHERVIDEOS", "Â¿Mostrar otros vÃ­deos que haya enviado la misma persona?");
+define("_MI_XTUBE_OTHERVIDEOSDSC", "Seleccione 'Si' para mostrar otros vÃ­deos que haya enviado la misma persona.");
 
-define("_MI_XTUBE_SHOWSBOOKMARKS", "¿Mostrar Marcadores Sociales?");
-define("_MI_XTUBE_SHOWSBOOKMARKSDSC", "Seleccione 'Si' si desea que los iconos de los Marcadores Sociales sean mostrados bajo el vídeo.");
+define("_MI_XTUBE_SHOWSBOOKMARKS", "Â¿Mostrar Marcadores Sociales?");
+define("_MI_XTUBE_SHOWSBOOKMARKSDSC", "Seleccione 'Si' si desea que los iconos de los Marcadores Sociales sean mostrados bajo el vÃ­deo.");
 
 define("_MI_XTUBE_USEMETADESCR", "Generar Meta Description:");
-define("_MI_XTUBE_USEMETADSC", "Con esta opción la meta description estará basada en la descripción del vídeo.");
+define("_MI_XTUBE_USEMETADSC", "Con esta opciÃ³n la meta description estarÃ¡ basada en la descripciÃ³n del vÃ­deo.");
 
 define("_MI_XTUBE_USERTAGDESCR", "Usuarios que pueden enviar etiquetas:");
 define("_MI_XTUBE_USERTAGDSC", "Seleccione 'Si' si los usuarios pueden enviar etiquetas.");
 
-define('_MI_XTUBE_SHOWDISCLAIMER', '¿Mostrar la advertencia antes del envío del usuario?');
-define('_MI_XTUBE_SHOWDISCLAIMERDSC', '¿Antes de que el usuario pueda enviar el video, desea mostrar las condiciones?');
+define('_MI_XTUBE_SHOWDISCLAIMER', 'Â¿Mostrar la advertencia antes del envÃ­o del usuario?');
+define('_MI_XTUBE_SHOWDISCLAIMERDSC', 'Â¿Antes de que el usuario pueda enviar el video, desea mostrar las condiciones?');
 define('_MI_XTUBE_DISCLAIMER', 'Introduzca el texto de la advertencia:');
 
-define('_MI_XTUBE_SHOWVIDEODISCL', '¿Mostrar la advertencia antes de que el usuario pueda ver el vídeo?');
-define('_MI_XTUBE_SHOWVIDEODISCLDSC', '¿Mostrar las condiciones antes de reproducir el video?');
+define('_MI_XTUBE_SHOWVIDEODISCL', 'Â¿Mostrar la advertencia antes de que el usuario pueda ver el vÃ­deo?');
+define('_MI_XTUBE_SHOWVIDEODISCLDSC', 'Â¿Mostrar las condiciones antes de reproducir el video?');
 
 define('_MI_XTUBE_VIDEODISCLAIMER', 'Introducir el texto de la advertencia:');
-//define('_MI_XTUBE_SUBCATS', 'Sub-Categorías:');
+//define('_MI_XTUBE_SUBCATS', 'Sub-CategorÃ­as:');
 //define('_MI_XTUBE_COPYRIGHT', 'Aviso de Copyright:');
-//define('_MI_XTUBE_COPYRIGHTDSC', 'Selecciona para mostrar el aviso de copyright en la página del video.');
+//define('_MI_XTUBE_COPYRIGHTDSC', 'Selecciona para mostrar el aviso de copyright en la pÃ¡gina del video.');
 define('_MI_XTUBE_COPYRIGHT', 'Aviso de Copyright:');
-define('_MI_XTUBE_COPYRIGHTDSC', 'Selecciones para mostrar un aviso sobre el copyright en la página del vídeo.');
-define('_MI_XTUBE_CHECKHOST', '¿Rechazar el enlace directo al video? (leeching/sanguijuela)');
-define('_MI_XTUBE_REFERERS', 'Estos sitios pueden enlazar directamente a tus vídeos <br />Separados con #');
-define("_MI_XTUBE_ANONPOST","Presentación de un usuario anónimo:");
-define("_MI_XTUBE_ANONPOSTDSC","Permitir a los usuarios anónimos hacer envíos a tu sitio web?");
-define('_MI_XTUBE_AUTOAPPROVE','Aprobar automaticamente los envíos');
-define('_MI_XTUBE_AUTOAPPROVEDSC','Seleccione para aprobar los envíos de vídeos sin moderar.');
+define('_MI_XTUBE_COPYRIGHTDSC', 'Selecciones para mostrar un aviso sobre el copyright en la pÃ¡gina del vÃ­deo.');
+define('_MI_XTUBE_CHECKHOST', 'Â¿Rechazar el enlace directo al video? (leeching/sanguijuela)');
+define('_MI_XTUBE_REFERERS', 'Estos sitios pueden enlazar directamente a tus vÃ­deos <br />Separados con #');
+define("_MI_XTUBE_ANONPOST","PresentaciÃ³n de un usuario anÃ³nimo:");
+define("_MI_XTUBE_ANONPOSTDSC","Permitir a los usuarios anÃ³nimos hacer envÃ­os a tu sitio web?");
+define('_MI_XTUBE_AUTOAPPROVE','Aprobar automaticamente los envÃ­os');
+define('_MI_XTUBE_AUTOAPPROVEDSC','Seleccione para aprobar los envÃ­os de vÃ­deos sin moderar.');
 
-define('_MI_XTUBE_MAXFILESIZE','Tamaño del envío (KB)');
-define('_MI_XTUBE_MAXFILESIZEDSC','Tamaño máximo permitido en los envíos de video.');
+define('_MI_XTUBE_MAXFILESIZE','TamaÃ±o del envÃ­o (KB)');
+define('_MI_XTUBE_MAXFILESIZEDSC','TamaÃ±o mÃ¡ximo permitido en los envÃ­os de video.');
 define('_MI_XTUBE_IMGWIDTH','Anchura de la imagen');
-define('_MI_XTUBE_IMGWIDTHDSC','Anchura máximo permitido de la imagen del vídeo enviado');
+define('_MI_XTUBE_IMGWIDTHDSC','Anchura mÃ¡ximo permitido de la imagen del vÃ­deo enviado');
 define('_MI_XTUBE_IMGHEIGHT','Altura de la imagen');
-define('_MI_XTUBE_IMGHEIGHTDSC','Altura máxima permitida de la imagen del vídeo enviado');
+define('_MI_XTUBE_IMGHEIGHTDSC','Altura mÃ¡xima permitida de la imagen del vÃ­deo enviado');
 
 define('_MI_XTUBE_UPLOADDIR','Enviar directorio (No puede hacer "trailing slash")');
 define('_MI_XTUBE_ALLOWSUBMISS','Presentaciones del usuario:');
 define('_MI_XTUBE_ALLOWSUBMISSDSC','Permitir a los usuarios enviar nuevos videos');
-define('_MI_XTUBE_ALLOWUPLOADS','Envíos del usuario:');
+define('_MI_XTUBE_ALLOWUPLOADS','EnvÃ­os del usuario:');
 define('_MI_XTUBE_ALLOWUPLOADSDSC','Permitir a los usuarios subir videos directamente a tu sitio web');
 define('_MI_XTUBE_SCREENSHOTS','Directorio de capturas de pantalla subidas');
 
-define("_MI_XTUBE_SUBMITART", "Presentación del video:");
+define("_MI_XTUBE_SUBMITART", "PresentaciÃ³n del video:");
 define("_MI_XTUBE_SUBMITARTDSC", "Seleccionar los grupos que pueden enviar nuevos videos.");
-define("_MI_XTUBE_RATINGGROUPS", "Puntuación de videos:");
+define("_MI_XTUBE_RATINGGROUPS", "PuntuaciÃ³n de videos:");
 define("_MI_XTUBE_RATINGGROUPSDSC", "Seleccionar los grupos que pueden puntuar videos.");
-define("_MI_XTUBE_QUALITY", "Calidad de las imágenes reducidas:");
-define("_MI_XTUBE_QUALITYDSC", "Calidad más baja: 0 Más alta: 100");
+define("_MI_XTUBE_QUALITY", "Calidad de las imÃ¡genes reducidas:");
+define("_MI_XTUBE_QUALITYDSC", "Calidad mÃ¡s baja: 0 MÃ¡s alta: 100");
 define("_MI_XTUBE_KEEPASPECT", "Mantener proporciones de la imagen?");
 define("_MI_XTUBE_KEEPASPECTDSC", "");
 
@@ -168,69 +168,69 @@ define("_MI_XTUBE_TITLE", "Titulo");
 define("_MI_XTUBE_RATING", "Ranking");
 define("_MI_XTUBE_WEIGHT", "Anchura");
 define("_MI_XTUBE_POPULARITY", "Popularidad");
-define("_MI_XTUBE_SUBMITTED2", "Fecha del envío");
+define("_MI_XTUBE_SUBMITTED2", "Fecha del envÃ­o");
 
 // Text for notifications
 define('_MI_XTUBE_GLOBAL_NOTIFY', 'Global');
-define('_MI_XTUBE_GLOBAL_NOTIFYDSC', 'Global videos opciones de notificación.');
-define('_MI_XTUBE_CATEGORY_NOTIFY', 'Categoría');
-define('_MI_XTUBE_CATEGORY_NOTIFYDSC', 'Opciones de notificación que aplica al actual categoría de vídeo.');
+define('_MI_XTUBE_GLOBAL_NOTIFYDSC', 'Global videos opciones de notificaciÃ³n.');
+define('_MI_XTUBE_CATEGORY_NOTIFY', 'CategorÃ­a');
+define('_MI_XTUBE_CATEGORY_NOTIFYDSC', 'Opciones de notificaciÃ³n que aplica al actual categorÃ­a de vÃ­deo.');
 define('_MI_XTUBE_VIDEO_NOTIFY', 'Video');
-define('_MI_XTUBE_FILE_NOTIFYDSC', 'Opciones de notificación que aplica al video actual.');
-define('_MI_XTUBE_GLOBAL_NEWCATEGORY_NOTIFY', 'Nueva Categoría');
-define('_MI_XTUBE_GLOBAL_NEWCATEGORY_NOTIFYCAP', 'Notificarme cuando se cree una nueva categoría de video.');
-define('_MI_XTUBE_GLOBAL_NEWCATEGORY_NOTIFYDSC', 'Recibir notificacones cuando se cree una nueva categoría de videos.');
-define('_MI_XTUBE_GLOBAL_NEWCATEGORY_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notify : Nueva categoría de vídeo');
+define('_MI_XTUBE_FILE_NOTIFYDSC', 'Opciones de notificaciÃ³n que aplica al video actual.');
+define('_MI_XTUBE_GLOBAL_NEWCATEGORY_NOTIFY', 'Nueva CategorÃ­a');
+define('_MI_XTUBE_GLOBAL_NEWCATEGORY_NOTIFYCAP', 'Notificarme cuando se cree una nueva categorÃ­a de video.');
+define('_MI_XTUBE_GLOBAL_NEWCATEGORY_NOTIFYDSC', 'Recibir notificacones cuando se cree una nueva categorÃ­a de videos.');
+define('_MI_XTUBE_GLOBAL_NEWCATEGORY_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notify : Nueva categorÃ­a de vÃ­deo');
 
-define('_MI_XTUBE_GLOBAL_VIDEOMODIFY_NOTIFY', 'Modificación de video solicitada');
-define('_MI_XTUBE_GLOBAL_VIDEOMODIFY_NOTIFYCAP', 'Notificarme la solicitud de modificación de algún video.');
-define('_MI_XTUBE_GLOBAL_VIDEOMODIFY_NOTIFYDSC', 'Recibir notificación cuando alguna petición de modificación de video sea enviada.');
-define('_MI_XTUBE_GLOBAL_VIDEOMODIFY_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificar : Solicitud de modificación de video');
+define('_MI_XTUBE_GLOBAL_VIDEOMODIFY_NOTIFY', 'ModificaciÃ³n de video solicitada');
+define('_MI_XTUBE_GLOBAL_VIDEOMODIFY_NOTIFYCAP', 'Notificarme la solicitud de modificaciÃ³n de algÃºn video.');
+define('_MI_XTUBE_GLOBAL_VIDEOMODIFY_NOTIFYDSC', 'Recibir notificaciÃ³n cuando alguna peticiÃ³n de modificaciÃ³n de video sea enviada.');
+define('_MI_XTUBE_GLOBAL_VIDEOMODIFY_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificar : Solicitud de modificaciÃ³n de video');
 
 define('_MI_XTUBE_GLOBAL_VIDEOBROKEN_NOTIFY', 'Enviado informe de enlace de video roto');
 define('_MI_XTUBE_GLOBAL_VIDEOBROKEN_NOTIFYCAP', 'Notificarme cualquier informe de enlace roto.');
-define('_MI_XTUBE_GLOBAL_VIDEOBROKEN_NOTIFYDSC', 'Recibir notificación cuando sea enviado algún informe de enlace de video roto.');
+define('_MI_XTUBE_GLOBAL_VIDEOBROKEN_NOTIFYDSC', 'Recibir notificaciÃ³n cuando sea enviado algÃºn informe de enlace de video roto.');
 define('_MI_XTUBE_GLOBAL_VIDEOBROKEN_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notify : Informado un enlace roto');
 
 define('_MI_XTUBE_GLOBAL_VIDEOSUBMIT_NOTIFY', 'Video enviado');
-define('_MI_XTUBE_GLOBAL_VIDEOSUBMIT_NOTIFYCAP', 'Notifciarme cuando algún video sea enviado (esperando aprobación).');
-define('_MI_XTUBE_GLOBAL_VIDEOSUBMIT_NOTIFYDSC', 'Recibir notificación cuando algún video sea enviado (esperando aprobación).');
+define('_MI_XTUBE_GLOBAL_VIDEOSUBMIT_NOTIFYCAP', 'Notifciarme cuando algÃºn video sea enviado (esperando aprobaciÃ³n).');
+define('_MI_XTUBE_GLOBAL_VIDEOSUBMIT_NOTIFYDSC', 'Recibir notificaciÃ³n cuando algÃºn video sea enviado (esperando aprobaciÃ³n).');
 define('_MI_XTUBE_GLOBAL_VIDEOSUBMIT_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificar : nuevo video enviado');
 
 define('_MI_XTUBE_GLOBAL_NEWVIDEO_NOTIFY', 'Nuevo Video');
 define('_MI_XTUBE_GLOBAL_NEWVIDEO_NOTIFYCAP', 'Notificarme cuando un nuevo video es enviado.');
-define('_MI_XTUBE_GLOBAL_NEWVIDEO_NOTIFYDSC', 'Receibir notificación cunado un nuevo video es enviado.');
+define('_MI_XTUBE_GLOBAL_NEWVIDEO_NOTIFYDSC', 'Receibir notificaciÃ³n cunado un nuevo video es enviado.');
 define('_MI_XTUBE_GLOBAL_NEWVIDEO_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificar : Nuevo video');
 
 define('_MI_XTUBE_CATEGORY_FILESUBMIT_NOTIFY', 'Video enviado');
-define('_MI_XTUBE_CATEGORY_FILESUBMIT_NOTIFYCAP', 'Notificarme cuando un video nuevo es enviado (esperando aprobación) a la categoría actual.');
-define('_MI_XTUBE_CATEGORY_FILESUBMIT_NOTIFYDSC', 'Recibir notifiación cuando un video nuevo es enviado (esperando aprobación) a la categoría actual.');
-define('_MI_XTUBE_CATEGORY_FILESUBMIT_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificar : Un nuevo video ha sido enviado a esta categoría');
+define('_MI_XTUBE_CATEGORY_FILESUBMIT_NOTIFYCAP', 'Notificarme cuando un video nuevo es enviado (esperando aprobaciÃ³n) a la categorÃ­a actual.');
+define('_MI_XTUBE_CATEGORY_FILESUBMIT_NOTIFYDSC', 'Recibir notifiaciÃ³n cuando un video nuevo es enviado (esperando aprobaciÃ³n) a la categorÃ­a actual.');
+define('_MI_XTUBE_CATEGORY_FILESUBMIT_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificar : Un nuevo video ha sido enviado a esta categorÃ­a');
 
 define('_MI_XTUBE_CATEGORY_NEWVIDEO_NOTIFY', 'Nuevo Video');
-define('_MI_XTUBE_CATEGORY_NEWVIDEO_NOTIFYCAP', 'Notificarme cuando un nuevo video es enviado a la categoría actual.');
-define('_MI_XTUBE_CATEGORY_NEWVIDEO_NOTIFYDSC', 'Recibir notificacion cuando un nuevo video es enviado a la categoría actual.');
-define('_MI_XTUBE_CATEGORY_NEWVIDEO_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificación : Video nuevo en la categoría');
+define('_MI_XTUBE_CATEGORY_NEWVIDEO_NOTIFYCAP', 'Notificarme cuando un nuevo video es enviado a la categorÃ­a actual.');
+define('_MI_XTUBE_CATEGORY_NEWVIDEO_NOTIFYDSC', 'Recibir notificacion cuando un nuevo video es enviado a la categorÃ­a actual.');
+define('_MI_XTUBE_CATEGORY_NEWVIDEO_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificaciÃ³n : Video nuevo en la categorÃ­a');
 
 define('_MI_XTUBE_VIDEO_APPROVE_NOTIFY', 'Video Aprobado');
 define('_MI_XTUBE_VIDEO_APPROVE_NOTIFYCAP', 'Notificarme cuando este video sea aprobado.');
-define('_MI_XTUBE_VIDEO_APPROVE_NOTIFYDSC', 'Recibir notificación cuando este video sea aprobado.');
-define('_MI_XTUBE_VIDEO_APPROVE_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificación : Video Aprobado');
+define('_MI_XTUBE_VIDEO_APPROVE_NOTIFYDSC', 'Recibir notificaciÃ³n cuando este video sea aprobado.');
+define('_MI_XTUBE_VIDEO_APPROVE_NOTIFYSBJ', '[{X_SITENAME}] {X_MODULE} auto-notificaciÃ³n : Video Aprobado');
 
 define('_MI_XTUBE_AUTHOR_INFO', "Informacion del desarrollador");
 define('_MI_XTUBE_AUTHOR_NAME', "Desarrollador");
 define('_MI_XTUBE_AUTHOR_DEVTEAM', "Equipo de desarrollo");
 define('_MI_XTUBE_AUTHOR_WEBSITE', "Sitio web del desarrollador");
 define('_MI_XTUBE_AUTHOR_EMAIL', "Email del desarrollador");
-define('_MI_XTUBE_AUTHOR_CREDITS', "Créditos");
-define('_MI_XTUBE_MODULE_INFO', "Información del módulo");
+define('_MI_XTUBE_AUTHOR_CREDITS', "CrÃ©ditos");
+define('_MI_XTUBE_MODULE_INFO', "InformaciÃ³n del mÃ³dulo");
 define('_MI_XTUBE_MODULE_STATUS', "Estado del desarrollo");
 define('_MI_XTUBE_MODULE_DEMO', "Sitio Demo");
 define('_MI_XTUBE_MODULE_SUPPORT', "Sitio de apoyo oficial");
-define('_MI_XTUBE_MODULE_BUG', "Envía una propuesta/consejo para este módulo");
-define('_MI_XTUBE_MODULE_FEATURE', "Sugiere una nueva función para este módulo");
+define('_MI_XTUBE_MODULE_BUG', "EnvÃ­a una propuesta/consejo para este mÃ³dulo");
+define('_MI_XTUBE_MODULE_FEATURE', "Sugiere una nueva funciÃ³n para este mÃ³dulo");
 define('_MI_XTUBE_MODULE_DISCLAIMER', "Renuncia");
-define('_MI_XTUBE_RELEASE', "Fecha de liberación: ");
+define('_MI_XTUBE_RELEASE', "Fecha de liberaciÃ³n: ");
 define('_MI_XTUBE_ICONS_CREDITS', "Iconos de");
 define('_MI_XTUBE_SUBMITABUG', "Enviar un reporte de error");
 
@@ -254,34 +254,34 @@ EVENT WILL MCDONALD BE LIABLE FOR ANY INDIRECT, PUNITIVE, SPECIAL,
 INCIDENTAL OR CONSEQUENTIAL DAMAGES HOWEVER THEY MAY ARISE AND EVEN IF
 MCDONALD HAS BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES..");
 
-define('_MI_XTUBE_AUTHOR_CREDITSTEXT',"WF-Projects Team. Basado en el módulo WF-Links; thanks to the dream-team for some code snippits.");
+define('_MI_XTUBE_AUTHOR_CREDITSTEXT',"WF-Projects Team. Basado en el mÃ³dulo WF-Links; thanks to the dream-team for some code snippits.");
 define('_MI_XTUBE_AUTHOR_BUGFIXES', "Bug Fix History");
 
 define('_MI_XTUBE_COPYRIGHTIMAGE', "");
 
 // version 1.02
 define("_MI_XTUBE_FORM_TINYMCE", "TinyMCE");
-define("_MI_XTUBE_FORM_DHTMLEXT", "DHTML Extended");
+define("_MI_XTUBE_FORM_DHTMLEXT", "DHTML Extendido");
 
 // Version 1.03
-define('_MI_XTUBE_DATEFORMATADMIN', 'Administración de fechas:');
-define('_MI_XTUBE_DATEFORMATADMINDSC', 'Administración de MyTube relativa a la fijación de fechas de publicación y expiración en la lista principal');
+define('_MI_XTUBE_DATEFORMATADMIN', 'AdministraciÃ³n de fechas:');
+define('_MI_XTUBE_DATEFORMATADMINDSC', 'AdministraciÃ³n de MyTube relativa a la fijaciÃ³n de fechas de publicaciÃ³n y expiraciÃ³n en la lista principal');
 
 // Version 1.04 RC-1
-define('_MI_XTUBE_VIDEODIR', 'Video upload directory:');
-define('_MI_XTUBE_VIDEODIRDSC', 'Set the directory for MyTube videos files');
-define('_MI_XTUBE_VIDEOIMGDIR', 'Video screenshots upload directory:');
-define('_MI_XTUBE_VIDEOIMGDIRDSC', 'Set the directory for MyTube video screenshots');
+define('_MI_XTUBE_VIDEODIR', 'Directorio de subida de video:');
+define('_MI_XTUBE_VIDEODIRDSC', 'Establezca el directorio para los archivos de video de MyTube');
+define('_MI_XTUBE_VIDEOIMGDIR', 'Directorio para la subida de las capturas de pantalla:');
+define('_MI_XTUBE_VIDEOIMGDIRDSC', 'Establezca el directorio para las capturas de pantalla de los videos de MyTubeSet');
 define('_MI_XTUBE_FLVPLAYER_CREDITS', 'FLV Player');
-define('_MI_XTUBE_FLVPLAYER_CREDITDSC', 'JW FLV Media Player by Jeroen Wijering');
-define('_MI_XTUBE_VUPLOADS', 'Video upload');
+define('_MI_XTUBE_FLVPLAYER_CREDITDSC', 'JW FLV Media Player por Jeroen Wijering');
+define('_MI_XTUBE_VUPLOADS', 'Subida de video');
 define('_MI_XTUBE_CATEGORYIMGDSC', '');
 define('_MI_XTUBE_MAINIMGDIRDSC', '');
-define('_MI_XTUBE_BNAME8', 'MyTube Sponsor Statistics' );
+define('_MI_XTUBE_BNAME8', 'EstadÃ­sticas de los patrocinadores' );
 
 // Version 1.04 RC-2
 define('_MI_XTUBE_MODULE_MANUAL', 'Manual' );
-define('_MI_XTUBE_MODULE_MANUALWIKI', 'Wiki Manual' );
-define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Request a new feature' );
-define('_MI_XTUBE_MODULE_SUBMITBUG', 'Submit a Bug' );
+define('_MI_XTUBE_MODULE_MANUALWIKI', 'Manual en el Wiki' );
+define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Solicitar una nueva caracterÃ­stica' );
+define('_MI_XTUBE_MODULE_SUBMITBUG', 'Reportar un fallo' );
 ?>
