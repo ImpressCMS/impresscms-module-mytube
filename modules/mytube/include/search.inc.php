@@ -7,16 +7,16 @@
 function xtubecheckSearchgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
     global $xoopsUser;
     
-$mydirname = basename( dirname(  dirname( __FILE__ ) ) ) ;
-$mydirpath = dirname( dirname( __FILE__ ) ) ;
+$mydirname = basename( dirname( dirname( __FILE__ ) ) );
+$mydirpath = dirname( dirname( __FILE__ ) );
 
     $groups = is_object( $xoopsUser ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
     $gperm_handler = &xoops_gethandler( 'groupperm' );
 
     $module_handler = &xoops_gethandler( 'module' );
-    $module = &$module_handler -> getByDirname($mydirname);
+    $module = &$module_handler -> getByDirname( $mydirname );
 
-/*    if ( !$gperm_handler -> checkRight( $permType, $cid, $groups, $module -> getVar( 'mid' ) ) ) {
+    if ( !$gperm_handler -> checkRight( $permType, $cid, $groups, $module -> getVar( 'mid' ) ) ) {
         if ( $redirect == false ) {
             return false;
         } else {
@@ -24,7 +24,7 @@ $mydirpath = dirname( dirname( __FILE__ ) ) ;
             exit();
         } 
     } 
-*/
+
     unset( $module );
     return true;
 } 
@@ -38,8 +38,7 @@ function xoopstube_search( $queryarray, $andor, $limit, $offset, $userid ) {
         $_search_check_array[$_search_group_check['cid']] = $_search_group_check;
     } 
     $sql = "SELECT lid, cid, title, submitter, published, description FROM " . $xoopsDB -> prefix( 'xoopstube_videos' );
-    $sql .= " WHERE published > 0 AND published <= " . time()
-     . " AND ( expired = 0 OR expired > " . time() . ") AND offline = 0 AND cid > 0";
+    $sql .= " WHERE published > 0 AND published <= " . time() . " AND ( expired = 0 OR expired > " . time() . ") AND offline = 0 AND cid > 0";
 
     if ( $userid != 0 ) {
         $sql .= " AND submitter=" . $userid . " ";
