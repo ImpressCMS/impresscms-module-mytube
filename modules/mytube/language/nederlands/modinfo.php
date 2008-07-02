@@ -81,7 +81,7 @@ define('_MI_XTUBE_ALLOWSUBMISSDSC','Gebruikers toestaan nieuwe videos in te zend
 define('_MI_XTUBE_ALLOWUPLOADS','Gebruikers uploads:');
 define('_MI_XTUBE_ALLOWUPLOADSDSC','Gebruikers toestaan nieuwe videos direct te uploaden in de website');
 define('_MI_XTUBE_SCREENSHOTS','Screenshots upload bestand');
-define('_MI_XTUBE_CATEGORYIMG','categorieën afbeelding uploadbestand');
+define('_MI_XTUBE_CATEGORYIMG','categorie&#0235;n afbeelding uploadbestand');
 define('_MI_XTUBE_MAINIMGDIR','Hoofd afbeeldingen bestand');
 define('_MI_XTUBE_USETHUMBS', 'Gebruik thumbnails:');
 define("_MI_XTUBE_USETHUMBSDSC", "Ondersteunde afbeeldingstypen: JPG, GIF, PNG.<div style='padding-top: 8px;'>MyTube gebruikt thumbnails voor afbeeldingen. Selekteer 'Nee' Om het orgineel te gebruiken wanneer de server deze optie niet ondersteund.</div>");
@@ -93,7 +93,7 @@ define('_MI_XTUBE_SHOWVIDEODISCL', 'Toon disclaimer voordat een gebruiker kan li
 define('_MI_XTUBE_SHOWVIDEODISCLDSC', 'Toon richtlijnen voor videos voordat een video opend?');
 define('_MI_XTUBE_DISCLAIMER', 'Voer de inzend disclaimer tekst in:');
 define('_MI_XTUBE_VIDEODISCLAIMER', 'Voer de video disclaimer tekst in:');
-define('_MI_XTUBE_SUBCATS', 'Sub-categorieën:');
+define('_MI_XTUBE_SUBCATS', 'Sub-categorie&#0235;n:');
 define("_MI_XTUBE_SUBMITART", "video inzenden:");
 define("_MI_XTUBE_SUBMITARTDSC", "Selekteer de groep die nieuwe videos kan inzenden.");
 define("_MI_XTUBE_RATINGGROUPS", "video beoordeling:");
@@ -117,7 +117,7 @@ define('_MI_XTUBE_COPYRIGHT', 'Copyright opmerking:');
 define('_MI_XTUBE_COPYRIGHTDSC', 'Selekteer om een copyright opmerking te tonen op de video pagina.');
 
 // Description of each config items
-define('_MI_XTUBE_SUBCATSDSC', 'Selekteer Ja om sub-categorieën te tonen. Nee selekteren zal sub-categorieën verbergen in de indexen');
+define('_MI_XTUBE_SUBCATSDSC', 'Selekteer Ja om sub-categorie&#0235;n te tonen. Nee selekteren zal sub-categorie&#0235;n verbergen in de indexen');
 
 // Text for notifications
 define('_MI_XTUBE_GLOBAL_NOTIFY', 'Globaal');
@@ -224,8 +224,8 @@ define("_MI_XTUBE_SHOWSBOOKMARKS", "Toon Social Bookmarks?");
 define("_MI_XTUBE_SHOWSBOOKMARKSDSC", "Kies Ja om de Social Bookmark iconen te tonen.");
 define("_MI_XTUBE_TOTALCHARS", "Kies het totaal aantal karakters voor de omschrijving?");
 define("_MI_XTUBE_TOTALCHARSDSC", "Kies het totaal aantal karakters voor de omschrijving van de videos op de Index Pagina.");
-define("_MI_XTUBE_SORTCATS", "Sorteer categorieën op:");
-define("_MI_XTUBE_SORTCATSDSC", "Selekteer hoe categorieën en sub-categorieën gesorteerd moeten worden.");
+define("_MI_XTUBE_SORTCATS", "Sorteer categorie&#0235;n op:");
+define("_MI_XTUBE_SORTCATSDSC", "Selekteer hoe categorie&#0235;n en sub-categorie&#0235;n gesorteerd moeten worden.");
 define("_MI_XTUBE_USEMETADESCR", "Genereer meta description:");
 define("_MI_XTUBE_USEMETADSC", "Met deze optie wordt de meta description gebaseerd op die van de video omschrijving.");
 define("_MI_XTUBE_USERTAGDESCR", "Gebruiker kan Tags invoeren:");

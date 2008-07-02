@@ -126,7 +126,7 @@ while ( $arr = $xoopsDB -> fetchArray( $result ) ) {
 
 // Copyright notice
 if ( isset( $xoopsModuleConfig['copyright'] ) && $xoopsModuleConfig['copyright'] == 1 ) {
-    $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " &copy; " . _MD_XTUBE_COPYRIGHT . " " . formatTimestamp( time(), "Y" ) . " - " . XOOPS_URL );
+    $xoopsTpl -> assign( 'lang_copyright', "" . $video['publisher'] . " &#0169; " . _MD_XTUBE_COPYRIGHT . " " . formatTimestamp( time(), "Y" ) . " - " . XOOPS_URL );
 }
 
 // Show other videos by submitter
