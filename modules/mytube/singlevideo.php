@@ -58,7 +58,7 @@ $pathstring = "<a href='index.php'>" . _MD_XTUBE_MAIN . "</a>&nbsp;:&nbsp;";
 $pathstring .= $mytree -> getNicePathFromId( $cid, "title", "viewcat.php?op=" );
 $video['path'] = $pathstring;
 // Get video from source
-$video['showvideo'] = xtube_showvideo($video_arr['vidid'], $video_arr['vidsource'], $video_arr['screenshot']);
+$video['showvideo'] = xtube_showvideo($video_arr['vidid'], $video_arr['vidsource'], $video_arr['screenshot'], $video_arr['picurl']);
 // Get Social Bookmarks
 $video['sbmarks'] = xtube_sbmarks( $video_arr['lid'] );
 
@@ -83,12 +83,12 @@ global $xoopsTpl, $xoTheme, $xoopsModuleConfig;
       $xoTheme -> addMeta( 'meta', 'title', $video_arr['title'] );
       if ($xoopsModuleConfig['usemetadescr'] == 1) {
         $xoTheme -> addMeta( 'meta', 'description', $video_meta_description );
-          }
+      }
     } else {
       $xoopsTpl -> assign( 'xoops_meta_keywords', $video_arr['keywords'] );
       if ($xoopsModuleConfig['usemetadescr'] == 1) {
         $xoopsTpl -> assign( 'xoops_meta_description', $video_meta_description );
-          }
+      }
     }
     $xoopsTpl -> assign( 'xoops_pagetitle', $video_arr['title'] );
 // End of meta tags

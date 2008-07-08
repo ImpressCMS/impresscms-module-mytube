@@ -66,7 +66,11 @@ function b_xoopstube_top_thumbs( $bvidid, $balloon, $btitle, $bsource, $bscreens
   }
 // Determine if video source iFilm/Spike
   if ($bsource == 2) {
-  $thumbb = '<img src="http://img2.ifilmpro.com/resize/image/stills/films/resize/istd/' . $bvidid . '.jpg?width=' . $xtubeModuleConfig['shotwidth'] . ' title="' . $balloon . '" alt="' . $balloon . '" border="0" />';
+    if ($picurl) {
+      $thumbb = $picurl;
+    } else {
+      $thumbb = '<img src="http://img2.ifilmpro.com/resize/image/stills/films/resize/istd/' . $bvidid . '.jpg?width=' . $xtubeModuleConfig['shotwidth'] . ' title="' . $balloon . '" alt="' . $balloon . '" border="0" />';
+    }
   }
 // Determine if video source Photobucket
   if ($bsource == 3) {
@@ -88,6 +92,8 @@ function b_xoopstube_top_thumbs( $bvidid, $balloon, $btitle, $bsource, $bscreens
 // 			   hits for the most popular videos
 //           $block['content'] = The optional above content
 //           $options[1] = How many videos are displayes
+//           $options[2] = Length of title
+//           $options[3] = Set date format
 // Output  : Returns the most recent or most popular videos
 function b_xoopstube_top_show( $options ) {
     global $xoopsDB, $xoopsModule, $xoopsModuleConfig;

@@ -59,9 +59,10 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>DailyMotion:</b> http://www.dailymotion.com/video/<font color=#FF0000>x40bhg</font>_blondesecretary_fun<br />
 <b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
-<b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font></small>" );
+<b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
+<b>Maktoob:</b> file=http://m003.maktoob.com/files/<font color=#FF0000>23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)</small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "URL de la imagen: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>URL de la imagen cuando procede de Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish o LiveLeak.</small>" );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>URL de la imagen cuando procede de Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob o LiveLeak.</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Fuente del vídeo:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
@@ -197,5 +198,6 @@ define( "_MD_XTUBE_BLIPTV", "Blip.tv" );
 // Version 1.04 RC-2
 define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
+define( '_MD_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
 ?>
