@@ -26,7 +26,14 @@ Go to the admin panel, choose Modules -> Administration and install MyTube as an
 - Setup the modules (Preferences, Permissions, blocks, etc.)
 
 
-3. WAITING, SITEMAP & RSSFIT PLUGINS
+3. RENAMING MODULE FOLDER
+
+When you have renamed the installation folder from 'mytube' in whatever you wish,you have to open the file ../include/plugin.tag.php
+Find the line: function mytube_tag_iteminfo(&$items) {
+In this line you have to change 'mytube' into the name gave to the module folder before. 
+
+
+4. WAITING, SITEMAP & RSSFIT PLUGINS
 
 There are also plugins for GIJOE's Waiting and Sitemap module.
 You can download these modules and find more info about them, here: http://xoops.peak.ne.jp

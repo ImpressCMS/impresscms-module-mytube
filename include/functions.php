@@ -1030,8 +1030,7 @@ function xtube_updateCounter($lid) {
          $result = $xoopsDB -> queryF( $sql );
 }
 
-function xtube_substr($str, $start, $length, $trimmarker = '...')
-{
+function xtube_substr($str, $start, $length, $trimmarker = '...') {
 	$config_handler =& xoops_gethandler('config');
 	$im_multilanguageConfig =& $config_handler->getConfigsByCat(IM_CONF_MULILANGUAGE);
     
@@ -1041,13 +1040,13 @@ function xtube_substr($str, $start, $length, $trimmarker = '...')
 		$hasML = false;
 		foreach ($tags as $tag){
 			if (preg_match("/\[".$tag."](.*)\[\/".$tag."\]/sU",$str,$matches)){
-				if (count($matches) > 0){
+				if (count($matches) > 0) {
 					$hasML = true;
 					$strs[] = $matches[1];
 				}
 			}
 		}
-	}else{
+	} else {
 		$hasML = false;
 	}
 	
@@ -1055,7 +1054,7 @@ function xtube_substr($str, $start, $length, $trimmarker = '...')
         $strs = array($str);
 	}
 	
-	for ($i = 0; $i <= count($strs)-1; $i++){
+	for ($i = 0; $i <= count($strs)-1; $i++) {
 		if ( !XOOPS_USE_MULTIBYTES ) {
 			$strs[$i] = ( strlen($strs[$i]) - $start <= $length ) ? substr( $strs[$i], $start, $length ) : substr( $strs[$i], $start, $length - strlen($trimmarker) ) . $trimmarker;
 		}

@@ -30,7 +30,7 @@ if (!defined("XOOPS_ROOT_PATH")) {
  * 
  */
 
-function xoopstube_tag_iteminfo(&$items) {
+function mytube_tag_iteminfo(&$items) {
     if(empty($items) || !is_array($items)) {
         return false; 
     } 

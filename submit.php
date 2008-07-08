@@ -216,7 +216,8 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
                               102 => _MD_XTUBE_DAILYMOTION,
                               103 => _MD_XTUBE_BLIPTV,
                               104 => _MD_XTUBE_CLIPFISH,
-                              105 => _MD_XTUBE_LIVELEAK
+                              105 => _MD_XTUBE_LIVELEAK,
+                              106 => _MD_XTUBE_MAKTOOB
                               );
     $vidsource_select = new XoopsFormSelect( _MD_XTUBE_VIDSOURCE, 'vidsource', $vidsource );
     $vidsource_select -> addOptionArray( $vidsource_array );
@@ -257,12 +258,14 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
         $sform -> addElement(new XoopsFormLabel('', _MD_XTUBE_KEYWORDS_NOTE ));
 
 if ($xoopsModuleConfig['usercantag'] == 1) {
-// Insert tags if Tag-module is installed
+     // Insert tags if Tag-module is installed
     if (xtube_tag_module_included()) {
-    include_once XOOPS_ROOT_PATH . "/modules/tag/include/formtag.php";
-    $text_tags = new XoopsFormTag("item_tag", 70, 255, $video_array['item_tag'], 0);
-    $sform -> addElement( $text_tags );
+       include_once XOOPS_ROOT_PATH . "/modules/tag/include/formtag.php";
+       $text_tags = new XoopsFormTag("item_tag", 70, 255, $video_array['item_tag'], 0);
+       $sform -> addElement( $text_tags );
     }
+ } else {
+  $sform -> addElement( new XoopsFormHidden( 'item_tag', $video_array['item_tag'] ) ) ;
 }
         $option_tray = new XoopsFormElementTray( _MD_XTUBE_OPTIONS, '<br />' );
 

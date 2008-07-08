@@ -101,7 +101,8 @@ function edit( $lid = 0 )
                               102 => _AM_XTUBE_DAILYMOTION,
                               103 => _AM_XTUBE_BLIPTV,
                               104 => _AM_XTUBE_CLIPFISH,
-                              105 => _AM_XTUBE_LIVELEAK );  // #200 is reserved for MyTube's internal FLV player
+                              105 => _AM_XTUBE_LIVELEAK,
+                              106 => _AM_XTUBE_MAKTOOB );  // #200 is reserved for MyTube's internal FLV player
     $vidsource_select = new XoopsFormSelect( _AM_XTUBE_VIDSOURCE, 'vidsource', $vidsource );
     $vidsource_select -> addOptionArray( $vidsource_array );
     $sform -> addElement( $vidsource_select );
@@ -295,7 +296,7 @@ switch ( strtolower( $op ) ) {
         
 // Add item_tag to Tag-module
         if ( !$lid ) {
-        $tagupdate = xtube_tagupdate($newid, $item_tag);
+         $tagupdate = xtube_tagupdate($newid, $item_tag);
         } else {
          $tagupdate = xtube_tagupdate($lid, $item_tag);
         }

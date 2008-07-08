@@ -39,6 +39,9 @@ function xtube_returnsource($returnsource) {
     case 200:
           $returnsource = _AM_XTUBE_MYTUBE;
           break;
+    case 106:
+          $returnsource = 'Maktoob';
+          break;
     }
     return $returnsource;
 }
@@ -46,7 +49,7 @@ function xtube_returnsource($returnsource) {
 // Function for determining source for creating screenshot
 function xtube_videothumb($vidid, $title, $source, $picurl, $screenshot) {
   global $xoopsModuleConfig;
-    
+  $thumb = '';
 // Determine if video source YouTube for thumbnail
   if ($source == 0) {
      $thumb = '<img src="http://img.youtube.com/vi/' . $vidid . '/default.jpg"  title="' . $title . '" alt="' . $title . '" width="' . $xoopsModuleConfig['shotwidth'] . '" height="' . $xoopsModuleConfig['shotheight'] . '"hspace="7" vspace="2" border="0" align="left" />';
@@ -98,7 +101,7 @@ function xtube_videopublisher($vidid, $publisher, $source) {
      $publisher = '<a href="http://s39.photobucket.com/albums/' . $ppublisher['ppublisher'] . '" target="_blank">' . $publisher . '</a>';
   }
 // Determine if video source is Google Video for publisher
-  if ($source == 100 || 101 || 103) {
+  if ($source == 100 || 101 || 103 || 106) {
      $publisher = $publisher;
   }
 // Determine if video source is DailyMotion for publisher
@@ -121,8 +124,9 @@ function xtube_videopublisher($vidid, $publisher, $source) {
 }
 
 //Function for displaying videoclip (embedded code)
-function xtube_showvideo($vidid, $source, $screenshot) {
+function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
     global $xoopsModule, $xoopsModuleConfig;
+    $showvideo = '';
 // Show if source is YouTube
     if ($source == 0) {
        $showvideo = '<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/' . $vidid . '"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/' . $vidid . '" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>';
@@ -156,13 +160,17 @@ function xtube_showvideo($vidid, $source, $screenshot) {
     if ($source == 103) {
        $showvideo = '<embed src="http://blip.tv/play/' . $vidid . '" type="application/x-shockwave-flash" width="425" height="350" allowscriptaccess="always" allowfullscreen="true"></embed>';
     }
-// Show if source is CkipFish
+// Show if source is ClipFish
     if ($source == 104) {
        $showvideo = '<embed src="http://www.clipfish.de/videoplayer.swf?as=0&videoid=' . $vidid . '==&r=1&c=0067B3" quality="high" bgcolor="#0067B3" width="464" height="380" name="player" align="middle" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'; // Change c=0067B3 for different player color
     }
 // Show if source is LiveLeak
     if ($source == 105) {
        $showvideo = '<embed src="http://www.liveleak.com/e/' . $vidid . '" type="application/x-shockwave-flash" wmode="transparent" width="450" height="370"></embed>';
+    }
+// Show if source is Maktoob
+    if ($source == 106) {
+       $showvideo = '<embed width="448" height="320" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="flvplayer" bgcolor="#ffffff" devicefont="true" wmode="transparent" quality="high" src="http://clipat.maktoob.com/flvplayerOurJS.swf?file=http://m003.maktoob.com/files/' . $vidid . '.flv&enablejs=true&image=' . $picurl .'&lightcolor=0x557722&backcolor=0x000000&frontcolor=0xCCCCCC&showfsbutton=true&autostart=false&logo=http://clipat.maktoob.com/language/ar_sa/images/clipat-icon.png&displaywidth=448" />';
     }
 // Show if source is MyTube
     if ($source == 200) {
