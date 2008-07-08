@@ -196,6 +196,7 @@ define( "_MD_XTUBE_BLIPTV", "Blip.tv" );
 // Version 1.04 RC-2
 define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
+define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
 
 //define( "_MD_XTUBE_DLURL", "Código de Video Embedded: " ); //verificando remoção...
 //define( "_MD_XTUBE_DLURL_NOTE", "<small>(video embedded code = http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font>)</small>" ); //verificando remoção...

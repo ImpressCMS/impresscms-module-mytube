@@ -189,4 +189,5 @@ define( "_MD_XTUBE_BLIPTV", "Blip.tv" );
 // Version 1.04 RC-2
 define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
+define( '_MD_XTUBE_STOPIT', 'HOUDT DAAR ONMIDDELIJK MEE OP!!' );
 ?>

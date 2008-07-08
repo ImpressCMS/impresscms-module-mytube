@@ -16,6 +16,14 @@ $xoopsTpl -> assign( 'catarray', $catarray );
 
 if (isset($_GET['newvideoshowdays'])) {
 	$newvideoshowdays = $_GET['newvideoshowdays'] ? $_GET['newvideoshowdays'] : 7;
+	if ($newvideoshowdays != 7) {
+          if ($newvideoshowdays != 14) {
+            if ($newvideoshowdays != 30) {
+              redirect_header( 'newlist.php?newvideoshowdays=7', 5, _MD_XTUBE_STOPIT . '<br /><img src="' . XOOPS_URL . '/modules/' . $xoopsModule -> getvar( 'dirname' ) . '/images/icon/security.png" />' );
+              exit();
+            }
+          }
+        }
 	$time_cur = time();
 	$duration = ( $time_cur - ( 86400 * 30 ) );
 	$duration_week = ( $time_cur - ( 86400 * 7 ) );
@@ -44,7 +52,7 @@ if (isset($_GET['newvideoshowdays'])) {
 	    $dailyvideos[$key]['newvideodayRaw'] = $time;
 	    $dailyvideos[$key]['newvideoView'] = formatTimestamp( $time, $xoopsModuleConfig['dateformat'] );
             $dailyvideos[$key]['totalvideos'] = 0;
-	} 
+	}  
 }
 
 $duration = ( $time_cur - ( 86400 * (intval($newvideoshowdays) - 1) ) );
