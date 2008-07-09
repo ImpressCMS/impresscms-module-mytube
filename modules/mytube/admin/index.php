@@ -108,13 +108,18 @@ function edit( $lid = 0 )
     $sform -> addElement( $vidsource_select );
 
 // Video code
-    $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_DLVIDID, 'vidid', 70, 512, $vidid ), true);
+//    $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_DLVIDID, 'vidid', 70, 512, $vidid ), true);
+    $videocode = new XoopsFormText( _AM_XTUBE_VIDEO_DLVIDID, 'vidid', 70, 512, $vidid );
+    $videocode -> setDescription( "<br /><small>" . _AM_XTUBE_VIDEO_DLVIDIDDSC . "</small>");
+    $sform -> addElement($videocode, true);
     $note = _AM_XTUBE_VIDEO_DLVIDID_NOTE;
-    $sform -> addElement(new XoopsFormLabel('', $note));
+    $sform -> addElement(new XoopsFormLabel('',$note));
 
 // Picture url
-   $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl ), false );
-   $sform -> addElement(new XoopsFormLabel('', _AM_XTUBE_VIDEO_PICURLNOTE));
+   $picurl = new XoopsFormText( _AM_XTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
+   $picurl -> setDescription( "<br /><span style='font-weight: normal;font-size: smaller;'>" . _AM_XTUBE_VIDEO_PICURLNOTE . "</span>" );
+   $sform -> addElement($picurl, false);
+//   $sform -> addElement(new XoopsFormLabel('', _AM_XTUBE_VIDEO_PICURLNOTE));
 
 
 // Video publisher
@@ -134,8 +139,11 @@ function edit( $lid = 0 )
     $sform -> addElement( $editor, true );
     
 // Meta keywords form
-    $sform -> addElement( new XoopsFormTextArea( _AM_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60), false);
-    $sform -> addElement(new XoopsFormLabel('', _AM_XTUBE_KEYWORDS_NOTE));
+//    $sform -> addElement( new XoopsFormTextArea( _AM_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60), false);
+//    $sform -> addElement(new XoopsFormLabel('', _AM_XTUBE_KEYWORDS_NOTE));
+    $keywords = new XoopsFormTextArea( _AM_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60, false );
+    $keywords -> setDescription( "<br /><br /><br /><br /><span style='font-size: smaller;'>" . _AM_XTUBE_KEYWORDS_NOTE . "</span>" );
+    $sform -> addElement($keywords);
 
 // Insert tags if Tag-module is installed
     if (xtube_tag_module_included()) {
