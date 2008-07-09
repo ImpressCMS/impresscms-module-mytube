@@ -202,9 +202,11 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
         $sform -> addElement( new XoopsFormText( _MD_XTUBE_FILETITLE, 'title', 70, 255, $title ), true );
 
 // Video code
-    $sform -> addElement( new XoopsFormText( _MD_XTUBE_DLVIDID, 'vidid', 70, 512, $vidid ), true);
+    $videocode = new XoopsFormText( _MD_XTUBE_DLVIDID, 'vidid', 70, 512, $vidid );
+    $videocode -> setDescription( "<br /><small>" . _MD_XTUBE_VIDEO_DLVIDIDDSC . "</small>");
+    $sform -> addElement($videocode, true);
     $note = _MD_XTUBE_VIDEO_DLVIDID_NOTE;
-    $sform -> addElement(new XoopsFormLabel('', $note));
+    $sform -> addElement(new XoopsFormLabel('',$note));
     
 // Video source
     $vidsource_array = array( 0   => _MD_XTUBE_YOUTUBE,
@@ -224,8 +226,9 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
     $sform -> addElement( $vidsource_select, false );
     
 // Picture url
-   $sform -> addElement( new XoopsFormText( _MD_XTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl ), false );
-   $sform -> addElement(new XoopsFormLabel('', _MD_XTUBE_VIDEO_PICURLNOTE));
+   $picurl = new XoopsFormText( _MD_XTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
+   $picurl -> setDescription( "<br /><span style='font-weight: normal;font-size: smaller;'>" . _MD_XTUBE_VIDEO_PICURLNOTE . "</span>" );
+   $sform -> addElement($picurl, false);
 
 // Video publisher
     $sform -> addElement( new XoopsFormText( _MD_XTUBE_VIDEO_PUBLISHER, 'publisher', 70, 255, $publisher ), true );
@@ -254,8 +257,9 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
         $sform -> addElement( $editor, true );
 
 // Meta keywords form
-        $sform -> addElement( new XoopsFormTextArea( _MD_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60), false);
-        $sform -> addElement(new XoopsFormLabel('', _MD_XTUBE_KEYWORDS_NOTE ));
+        $keywords = new XoopsFormTextArea( _MD_XTUBE_KEYWORDS, 'keywords', $keywords, 5, 50, false );
+        $keywords -> setDescription( "<br /><span style='font-size: smaller;'>" . _MD_XTUBE_KEYWORDS_NOTE . "</span>" );
+        $sform -> addElement($keywords);
 
 if ($xoopsModuleConfig['usercantag'] == 1) {
      // Insert tags if Tag-module is installed

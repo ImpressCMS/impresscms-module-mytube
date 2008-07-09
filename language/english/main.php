@@ -59,7 +59,7 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
-<b>Maktoob:</b> file=http://m003.maktoob.com/files/<font color=#FF0000>23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)</small>" );
+<b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)</small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Picture url: " );
 define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak or Maktoob</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Video source:" );
@@ -180,7 +180,7 @@ define( "_MD_XTUBE_MODERATOR_OPTIONS", "Moderator Options" );
 define( "_MD_XTUBE_TIME", "Time:" );
 define( "_MD_XTUBE_TIMEB", "<b>Time:</b>" );
 define( "_MD_XTUBE_KEYWORDS", "Keywords:" );
-define( "_MD_XTUBE_KEYWORDS_NOTE", "<small>Keywords should be seperated with a comma (<i>keyword1, keyword2, keyword3</i>).</small>" );
+define( "_MD_XTUBE_KEYWORDS_NOTE", "Keywords should be seperated with a comma (keyword1, keyword2, keyword3)" );
 define( "_MD_XTUBE_NOVIDEOLOAD", "Thanks for your post!" );
 define( "_MD_XTUBE_LINKID", "Video id" );
 define( "_MD_XTUBE_ADDTO", "Add to: " );
@@ -196,4 +196,5 @@ define( '_MD_XTUBE_CLIPFISH', 'ClipFish' );
 define( '_MD_XTUBE_LIVELEAK', 'LiveLeak' );
 define( '_MD_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
+define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
 ?>

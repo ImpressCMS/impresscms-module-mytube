@@ -62,9 +62,9 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
-<b>Maktoob:</b> file=http://m003.maktoob.com/files/<font color=#FF0000>23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)</small>" );
+<b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)</small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Picture url: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Url da Foto quando for um código do Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob ou LiveLeak</small>" );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "Url da Foto quando for um código do Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob ou LiveLeak" );
 define( "_MD_XTUBE_VIDSOURCE", "Código do Video:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
@@ -183,7 +183,7 @@ define( "_MD_XTUBE_MODERATOR_OPTIONS", "Opções do Moderador" );
 define( "_MD_XTUBE_TIME", "Hora:" );
 define( "_MD_XTUBE_TIMEB", "<b>Hora:</b>" );
 define( "_MD_XTUBE_KEYWORDS", "Palavras-chave:" );
-define( "_MD_XTUBE_KEYWORDS_NOTE", "<small>Palavras-chave devem ser separadas com vírgula (palavrachave1, palavrachave2, palavrachave3).</small>" );
+define( "_MD_XTUBE_KEYWORDS_NOTE", "Palavras-chave devem ser separadas com vírgula (palavrachave1, palavrachave2, palavrachave3)" );
 define( "_MD_XTUBE_NOVIDEOLOAD", "Obrigado pelo seu envio!" );
 define( "_MD_XTUBE_LINKID", "Vídeo id" );
 define( "_MD_XTUBE_ADDTO", "Adicionar em: " );
@@ -199,6 +199,7 @@ define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
 define( '_MD_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
+define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
 
 //define( "_MD_XTUBE_DLURL", "Código de Video Embedded: " ); //verificando remoção...
 //define( "_MD_XTUBE_DLURL_NOTE", "<small>(video embedded code = http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font>)</small>" ); //verificando remoção...

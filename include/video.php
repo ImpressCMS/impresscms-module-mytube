@@ -170,7 +170,7 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
     }
 // Show if source is Maktoob
     if ($source == 106) {
-       $showvideo = '<embed width="448" height="320" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="flvplayer" bgcolor="#ffffff" devicefont="true" wmode="transparent" quality="high" src="http://clipat.maktoob.com/flvplayerOurJS.swf?file=http://m003.maktoob.com/files/' . $vidid . '.flv&enablejs=true&image=' . $picurl .'&lightcolor=0x557722&backcolor=0x000000&frontcolor=0xCCCCCC&showfsbutton=true&autostart=false&logo=http://clipat.maktoob.com/language/ar_sa/images/clipat-icon.png&displaywidth=448" />';
+       $showvideo = '<embed width="448" height="320" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="flvplayer" bgcolor="#ffffff" devicefont="true" wmode="transparent" quality="high" src="http://clipat.maktoob.com/flvplayerOurJS.swf?file=http://' . $vidid . '.flv&enablejs=true&image=' . $picurl .'&lightcolor=0x557722&backcolor=0x000000&frontcolor=0xCCCCCC&showfsbutton=true&autostart=false&logo=http://clipat.maktoob.com/language/ar_sa/images/clipat-icon.png&displaywidth=448" />';
     }
 // Show if source is MyTube
     if ($source == 200) {

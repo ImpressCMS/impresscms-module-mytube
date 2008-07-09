@@ -253,14 +253,14 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Blip.tv </b>embed code<b>:</b> http://blip.tv/play/<font color=#FF0000>Abe6EwA</font> ...<br />
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
-<b>Maktoob:</b> file=http://m003.maktoob.com/files/<font color=#FF0000>23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
+<b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "Picture url: " );
-define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak or Maktoob</small>" );
+define( "_AM_XTUBE_VIDEO_PICURLNOTE", "Picture url when source is: Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak or Maktoob" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Video Description: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Video Main Category: " );
-define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Set video offline?<br /><br /><span style='font-weight: normal;'>video will not be viewable to all users.</span>" );
-define( "_AM_XTUBE_VIDEO_SETASUPDATED", " Set video Status as Updated?<br /><br /><span style='font-weight: normal;'>video will Display updated icon.</span>" );
+define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Set video offline?<br /><br /><span style='font-weight: normal;font-size: smaller;'>Video will not be viewable to all users</span>" );
+define( "_AM_XTUBE_VIDEO_SETASUPDATED", " Set video Status as Updated?<br /><br /><span style='font-weight: normal;font-size: smaller;'>Video will display updated icon</span>" );
 define( "_AM_XTUBE_VIDEO_SHOTIMAGE", "Video Screenshot Image: " );
 define( "_AM_XTUBE_VIDEO_DISCUSSINFORUM", "Add Discuss in this Forum?" );
 define( "_AM_XTUBE_VIDEO_PUBLISHDATE", "Video Publish Date:" );
@@ -402,7 +402,7 @@ define( "_AM_XTUBE_PERM_APERMISSIONS_TEXT", "Select the groups who have moderato
 
 define( "_AM_XTUBE_TIME", "Time:" );
 define( "_AM_XTUBE_KEYWORDS", "Keywords:" );
-define( "_AM_XTUBE_KEYWORDS_NOTE", "<small><i>Keywords should be seperated with a comma (keyword1, keyword2).</i></small>" );
+define( "_AM_XTUBE_KEYWORDS_NOTE", "Keywords should be seperated with a comma (keyword1, keyword2, keyword3)" );
 define("_AM_XTUBE_VIDEO_META_DESCRIPTION", "Meta Description");
 define("_AM_XTUBE_VIDEO_META_DESCRIPTION_DSC", "In order to help Search Engines, you can customize the meta description you would like to use for this article. if you leave this field empty when creating a category, it will automatically be populated with the Summary field of this article.");
 
@@ -482,4 +482,5 @@ define( "_AM_XTUBE_LIVELEAK", "LiveLeak" );
 define( '_AM_XTUBE_MAKTOOB', 'Maktoob' );
 define( "_AM_XTUBE_FILE", "File " );
 define( "_AM_XTUBE_INFORMATION", "Video Information" );
+define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
 ?>
