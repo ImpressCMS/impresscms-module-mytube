@@ -483,4 +483,5 @@ define( '_AM_XTUBE_MAKTOOB', 'Maktoob' );
 define( "_AM_XTUBE_FILE", "File " );
 define( "_AM_XTUBE_INFORMATION", "Video Information" );
 define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
+define( "_AM_XTUBE_VIDEO_VIEWS", "Views: " );
 ?>

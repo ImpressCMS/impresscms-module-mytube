@@ -54,6 +54,7 @@ function edit( $lid = 0 )
 			   <div><b>" . _AM_XTUBE_MINDEX_SUBMITTED . ": </b>" . formatTimestamp( $video_array['date'], $xoopsModuleConfig['dateformat'] ). "</div>
 			   <div><b>" . _AM_XTUBE_MOD_MODIFYSUBMITTER . " </b>" . xoops_getLinkedUnameFromId( $video_array['submitter'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VIDEO_IP . " </b>" . $ipaddress . "</div>
+			   <div><b>" . _AM_XTUBE_VIDEO_VIEWS . " </b>" . $video_array['hits'] . "</div>
 			  </td>
 			  <td>
 			   <div><b>" . _AM_XTUBE_VOTE_TOTALRATE . ": </b>" . intval( $_vote_data['rate'] ) . "</div>
