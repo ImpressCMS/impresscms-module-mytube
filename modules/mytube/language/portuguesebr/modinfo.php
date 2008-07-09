@@ -283,4 +283,6 @@ define('_MI_XTUBE_MODULE_MANUAL', 'Manual' );
 define('_MI_XTUBE_MODULE_MANUALWIKI', 'Manual no Wiki' );
 define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Solicitar um novo Recurso' );
 define('_MI_XTUBE_MODULE_SUBMITBUG', 'Enviar um erro (Bug)' );
+define("_MI_XTUBE_BNAME9","MyTube Tag Cloud");
+define("_MI_XTUBE_BNAME10","MyTube Top Tags");
 ?>

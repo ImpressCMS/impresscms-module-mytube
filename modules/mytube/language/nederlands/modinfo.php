@@ -257,4 +257,6 @@ define('_MI_XTUBE_MODULE_MANUAL', 'Handleiding' );
 define('_MI_XTUBE_MODULE_MANUALWIKI', 'Wiki Handleiding' );
 define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Vraag een nieuwe eigenschap aan' );
 define('_MI_XTUBE_MODULE_SUBMITBUG', 'Rapporteer een bug in deze module' );
+define("_MI_XTUBE_BNAME9","MyTube Tag Cloud");
+define("_MI_XTUBE_BNAME10","MyTube Top Tags");
 ?>

@@ -132,6 +132,24 @@ $modversion['blocks'][8]['options'] = "hits|10|19";
 $modversion['blocks'][8]['template'] = 'mytube_block_banner.html';
 $modversion['blocks'][8]['can_clone'] = true ;
 
+$modversion['blocks'][9]['file'] = "mytube_block_tag.php";
+$modversion['blocks'][9]['name'] = _MI_XTUBE_BNAME9;
+$modversion['blocks'][9]['description'] = "Show tag cloud";
+$modversion['blocks'][9]['show_func'] = "mytube_tag_block_cloud_show";
+$modversion['blocks'][9]['edit_func'] = "mytube_tag_block_cloud_edit";
+$modversion['blocks'][9]['options'] = "100|0|150|80";
+$modversion['blocks'][9]['template'] = 'mytube_tag_block_cloud.html';
+$modversion['blocks'][9]['can_clone'] = true ;
+
+$modversion['blocks'][10]['file'] = "mytube_block_tag.php";
+$modversion['blocks'][10]['name'] = _MI_XTUBE_BNAME10;
+$modversion['blocks'][10]['description'] = "Show top tag";
+$modversion['blocks'][10]['show_func'] = "mytube_tag_block_top_show";
+$modversion['blocks'][10]['edit_func'] = "mytube_tag_block_top_edit";
+$modversion['blocks'][10]['options'] = "50|30|c";
+$modversion['blocks'][10]['template'] = 'mytube_tag_block_tag.html';
+$modversion['blocks'][10]['can_clone'] = true ;
+
 // Menu
 $modversion['hasMain'] = 1;
 

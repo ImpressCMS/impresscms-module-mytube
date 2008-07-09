@@ -478,4 +478,5 @@ define( "_AM_XTUBE_FILE", "File " );
 define( '_AM_XTUBE_MAKTOOB', 'Maktoob' );
 define( "_AM_XTUBE_INFORMATION", "Video Informatie" );
 define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Neem rood aangegeven gedeelte uit onderste voorbeelden over" );
+define( "_AM_XTUBE_VIDEO_VIEWS", "Bekeken: " );
 ?>
