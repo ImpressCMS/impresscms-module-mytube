@@ -27,7 +27,7 @@ $xoopsOption['template_main'] = 'xoopstube_viewcat.html';
 
 include XOOPS_ROOT_PATH . '/header.php';
 
-global $xoopsModuleConfig;
+global $xoopsModuleConfig, $xoopsModule;
 
 $catarray['imageheader'] = xtube_imageheader();
 $xoopsTpl -> assign( 'catarray', $catarray );
@@ -130,10 +130,12 @@ $images = ( $head_arr['noimages'] ) ? 0 : 1;
 $breaks = ( $head_arr['nobreak'] ) ? 1 : 0;
 $description = $xtubemyts -> displayTarea( $head_arr['description'], $html, $smiley, $xcodes, $images, $breaks );
 $xoopsTpl -> assign( 'description', $description );
+$module_handler = &xoops_gethandler( 'module' );
+$versioninfo = &$module_handler -> get( $xoopsModule -> getVar( 'mid' ) );
 if ($head_arr['title'] > '') {
-  $xoopsTpl -> assign( 'xoops_pagetitle', _MI_XTUBE_NAME . ":&nbsp;" . $head_arr['title'] );
+  $xoopsTpl -> assign( 'xoops_pagetitle', $versioninfo -> getInfo( 'name' ) . ":&nbsp;" . $head_arr['title'] );
   } else {
-  $xoopsTpl -> assign( 'xoops_pagetitle', _MI_XTUBE_NAME );
+  $xoopsTpl -> assign( 'xoops_pagetitle', $versioninfo -> getInfo( 'name' ) );
 }
 
 if ($head_arr['client_id'] > 0) {
@@ -176,7 +178,7 @@ if ( $selectdate ) {
     $list_by = 'selectdate=' . $selectdate;
 } elseif ( $list ) {
     $query = " WHERE title LIKE '$list%' 
-		AND (published > 0 AND published <= " . time() . ") 
+		AND (published > 0 AND published <= " . time() . ")
 		AND (expired = 0 OR expired > " . time() . ") 
 		AND offline = 0 
 		AND cid > 0";
