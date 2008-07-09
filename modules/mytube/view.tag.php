@@ -1,14 +1,9 @@
 <?php
 /**
- * Tag management
- *
- * @copyright	The XOOPS project http://www.xoops.org/
- * @license		http://www.fsf.org/copyleft/gpl.html GNU public license
- * @author		Taiwen Jiang (phppp or D.J.) <php_pp@hotmail.com>
- * @since		1.00
- * @version		$Id$
- * @package		module::tag
+ * $Id: view.tag.php
+ * Module: MyTube
  */
+
 include 'header.php';
 include XOOPS_ROOT_PATH . '/modules/tag/view.tag.php';
 ?>
