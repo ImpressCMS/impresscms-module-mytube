@@ -59,9 +59,10 @@ function xoopstube_search( $queryarray, $andor, $limit, $offset, $userid ) {
     $i = 0;
 
     while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
-        if ( false == xtubecheckSearchgroups( $myrow['cid'] ) ) {
-            continue;
-        } 
+// Following is commented out because it can cause a conflict with View Account function (userinfo.php)      
+//        if ( false == xtubecheckSearchgroups( $myrow['cid'] ) ) {
+//            continue;
+//        }
         $ret[$i]['image'] = "images/size2.gif";
         $ret[$i]['link'] = "singlevideo.php?cid=" . $myrow['cid'] . "&amp;lid=" . $myrow['lid'];
         $ret[$i]['title'] = $myrow['title'];
