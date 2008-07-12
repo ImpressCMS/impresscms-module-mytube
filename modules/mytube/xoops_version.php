@@ -10,8 +10,8 @@ $mydirpath = dirname( __FILE__ );
 
 $modversion['name'] = _MI_XTUBE_NAME;
 $modversion['version'] = "1.04";
-$modversion['releasedate'] = "May 27, 2008";
-$modversion['status'] = "RC-1";
+$modversion['releasedate'] = "July 12, 2008";
+$modversion['status'] = "RC-2";
 $modversion['description'] = _MI_XTUBE_DESC;
 $modversion['license'] = "GNU General Public License (GPL)";
 $modversion['official'] = 1;
