@@ -22,7 +22,7 @@ function edit( $lid = 0 )
     } 
     $video_array = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
     $directory = $xoopsModuleConfig['videodir'];
-    $vidsource = 200;
+//    $vidsource = 200;
     $lid = $video_array['lid'] ? $video_array['lid'] : 0;
     $cid = $video_array['cid'] ? $video_array['cid'] : 0;
     $title = $video_array['title'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['title'] ) : '';
@@ -43,30 +43,38 @@ function edit( $lid = 0 )
     xoops_cp_header();
     xtube_adminmenu( _AM_XTUBE_MVIDEOS );
 
-    $_vote_data = getVoteDetails( $lid );
-    if ( $lid > 0 && $_vote_data['rate'] > 0 ) {
+    if ( $lid ) {
         $_vote_data = getVoteDetails( $lid );
         $text_info = "
 			<table width='100%'>
 			 <tr>
-			  <td width='50%' valign='top'>
+			  <td width='33%' valign='top'>
+			   <div><b>" . _AM_XTUBE_VIDEO_ID . " </b>" . $lid . "</div>
+			   <div><b>" . _AM_XTUBE_MINDEX_SUBMITTED . ": </b>" . formatTimestamp( $video_array['date'], $xoopsModuleConfig['dateformat'] ). "</div>
+			   <div><b>" . _AM_XTUBE_MOD_MODIFYSUBMITTER . " </b>" . xoops_getLinkedUnameFromId( $video_array['submitter'] ) . "</div>
+			   <div><b>" . _AM_XTUBE_VIDEO_IP . " </b>" . $ipaddress . "</div>
+			   <div><b>" . _AM_XTUBE_VIDEO_VIEWS . " </b>" . $video_array['hits'] . "</div>
+			  </td>
+			  <td>
 			   <div><b>" . _AM_XTUBE_VOTE_TOTALRATE . ": </b>" . intval( $_vote_data['rate'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_USERAVG . ": </b>" . intval( round( $_vote_data['avg_rate'], 2 ) ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_MAXRATE . ": </b>" . intval( $_vote_data['min_rate'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_MINRATE . ": </b>" . intval( $_vote_data['max_rate'] ) . "</div>
+                           <div><b>&nbsp;</div>
 			  </td>
 			  <td>		 
 			   <div><b>" . _AM_XTUBE_VOTE_MOSTVOTEDTITLE . ": </b>" . intval( $_vote_data['max_title'] ) . "</div>
 		          <div><b>" . _AM_XTUBE_VOTE_LEASTVOTEDTITLE . ": </b>" . intval( $_vote_data['min_title'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_REGISTERED . ": </b>" . ( intval( $_vote_data['rate'] - $_vote_data['null_ratinguser'] ) ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_NONREGISTERED . ": </b>" . intval( $_vote_data['null_ratinguser'] ) . "</div>
+			   <div><b>&nbsp;</div>
 			  </td>
 			 </tr>
 			</table>";
         echo "
-			<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_VOTE_DISPLAYVOTES . "</legend>\n
+			<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_INFORMATION . "</legend>\n
 			<div style='padding: 8px;'>$text_info</div>\n	
-			<div style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></div>\n
+		<!--	<div style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></div>\n    -->
 			</fieldset>\n
 			<br />\n";
     } 
@@ -76,11 +84,6 @@ function edit( $lid = 0 )
 
     $sform = new XoopsThemeForm( $caption, "storyform", xoops_getenv( 'PHP_SELF' ) );
     $sform -> setExtra( 'enctype="multipart / form - data"' );
-
-    if ( $lid ) {
-        $sform -> addElement( new XoopsFormLabel( _AM_XTUBE_VIDEO_ID, $lid ) );
-        $sform -> addElement( new XoopsFormLabel( _AM_XTUBE_VIDEO_IP, $ipaddress ) );
-    }
 
 // Video title
     $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_TITLE, 'title', 70, 255, $title ), true );
@@ -99,7 +102,7 @@ function edit( $lid = 0 )
     $indeximage_select -> addOptionArray( $graph_array );
     $indeximage_select -> setExtra( "onchange = 'showImgSelected(\"image\", \"screenshot\", \"" . $xoopsModuleConfig['videoimgdir'] . "\", \"\", \"" . XOOPS_URL . "\")'" );
     $indeximage_tray = new XoopsFormElementTray( _AM_XTUBE_VIDEO_SHOTIMAGE, '&nbsp;' );
-    $indeximage_tray -> setDescription( sprintf( _AM_XTUBE_VIDEO_MUSTBEVALID, "<b>" . $directory . "</b>" ));
+    $indeximage_tray -> setDescription( sprintf( "<small>" . _AM_XTUBE_VIDEO_MUSTBEVALID . "</small>", "<b>" . $directory . "</b>" ));
     $indeximage_tray -> addElement( $indeximage_select );
     if ( !empty( $imgurl ) ) {
         $indeximage_tray -> addElement( new XoopsFormLabel( '', " <br /><br />< img src='" . XOOPS_URL . "/" . $xoopsModuleConfig['videoimgdir'] . "/" . $screenshot . "' name = 'image' id = 'image' alt = '' / > " ) );
@@ -127,8 +130,11 @@ function edit( $lid = 0 )
     $sform -> addElement( $editor, true );
     
 // Meta keywords form
-    $sform -> addElement( new XoopsFormTextArea( _AM_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60), false);
-    $sform -> addElement(new XoopsFormLabel('', _AM_XTUBE_KEYWORDS_NOTE));
+//    $sform -> addElement( new XoopsFormTextArea( _AM_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60), false);
+//    $sform -> addElement(new XoopsFormLabel('', _AM_XTUBE_KEYWORDS_NOTE));
+    $keywords = new XoopsFormTextArea( _AM_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60, false );
+    $keywords -> setDescription( "<br /><br /><br /><br /><span style='font-size: smaller;'>" . _AM_XTUBE_KEYWORDS_NOTE . "</span>" );
+    $sform -> addElement($keywords);
 
 // Insert tags if Tag-module is installed
     if (xtube_tag_module_included()) {
