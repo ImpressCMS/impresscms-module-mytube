@@ -14,7 +14,7 @@ $i=0;
 //Make changes to table xoopstube_videos
 $i++;
 $ret[$i] = true;
-$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_videos') . " CHANGE forumid vidsource TINYINT(1) NOT NULL default '0'");
+$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_videos') . " CHANGE forumid vidsource INT(11) NOT NULL default '0'");
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 $i++;
 $ret[$i] = true;
@@ -42,7 +42,7 @@ $query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_videos') . 
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 $i++;
 $ret[$i] = true;
-$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_videos') . " MODIFY vidsource TINYINT(1) UNSIGNED NOT NULL default '0'");
+$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_videos') . " MODIFY vidsource INT(11) UNSIGNED NOT NULL default '0'");
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 
 
