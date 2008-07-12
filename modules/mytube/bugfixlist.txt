@@ -8,7 +8,12 @@ xx.xx.2008   1.04 RC-2
 - Corrected date used for showing clips in blocks
 - Added support for videoclips from ClipFish
 - Added support for videoclips from LiveLeak
+- Added support for videoclips from Maktoob
+- Added Tag Cloud & Top Tags blocks
+- Added Portugese language files (utf-8) [gibaphp]
 - Added Portuguese-Brazilian language files utf-8 [gibaphp]
+- Added Spanish language files (utf-8) [juancj]
+- Fixed bug in block settings
 
 =========================================================
 27.05.2008   1.04 RC-1
