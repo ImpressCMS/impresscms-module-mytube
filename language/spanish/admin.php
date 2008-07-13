@@ -477,4 +477,5 @@ define( "_AM_XTUBE_FILE", "Archivo " );
 define( "_AM_XTUBE_INFORMATION", "Información del video" );
 define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
 define( "_AM_XTUBE_VIDEO_VIEWS", "Views: " );
+define( "_AM_XTUBE_ERROR_CATISCAT", "You can NOT set a category as a sub-category of itself!" );
 ?>
