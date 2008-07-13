@@ -80,7 +80,7 @@ function createcat($cid = 0) {
     if ($totalcats > 0) {
        $mytreechose = new XoopsTree($xoopsDB -> prefix('xoopstube_cat'), "cid", "pid");
        ob_start();
-          $mytreechose -> makeMySelBox("title", "title", 0 , 1, "pid");
+          $mytreechose -> makeMySelBox("title", "title", $cat_arr['pid'] , 1, "pid");
           $sform -> addElement(new XoopsFormLabel(_AM_XTUBE_FCATEGORY_SUBCATEGORY, ob_get_contents()));
        ob_end_clean();
     }
@@ -288,7 +288,8 @@ switch ($op) {
             $database_mess = _AM_XTUBE_CCATEGORY_CREATED;
         } else {
           if ($cid == $pid) {
-            $pid = 0;
+            redirect_header("category.php", 1, _AM_XTUBE_ERROR_CATISCAT);
+            exit();
             }
             $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " SET title ='$title', imgurl='$imgurl', pid =$pid, description='$descriptionb', spotlighthis='$spotlighthis' , spotlighttop='$spotlighttop', nohtml='$nohtml', nosmiley='$nosmiley', noxcodes='$noxcodes', noimages='$noimages', nobreak='$nobreak', weight='$weight', client_id='$client_id', banner_id='$banner_id' WHERE cid=" . intval($cid) ;
             $database_mess = _AM_XTUBE_CCATEGORY_MODIFIED;
