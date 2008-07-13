@@ -61,14 +61,14 @@ function edit( $lid = 0 )
 			   <div><b>" . _AM_XTUBE_VOTE_USERAVG . ": </b>" . intval( round( $_vote_data['avg_rate'], 2 ) ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_MAXRATE . ": </b>" . intval( $_vote_data['min_rate'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_MINRATE . ": </b>" . intval( $_vote_data['max_rate'] ) . "</div>
-                           <div><b>&nbsp;</div>
+                           <div>&nbsp;</div>
 			  </td>
 			  <td>		 
 			   <div><b>" . _AM_XTUBE_VOTE_MOSTVOTEDTITLE . ": </b>" . intval( $_vote_data['max_title'] ) . "</div>
 		          <div><b>" . _AM_XTUBE_VOTE_LEASTVOTEDTITLE . ": </b>" . intval( $_vote_data['min_title'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_REGISTERED . ": </b>" . ( intval( $_vote_data['rate'] - $_vote_data['null_ratinguser'] ) ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_NONREGISTERED . ": </b>" . intval( $_vote_data['null_ratinguser'] ) . "</div>
-			   <div><b>&nbsp;</div>
+			   <div>&nbsp;</div>
 			  </td>
 			 </tr>
 			</table>";
