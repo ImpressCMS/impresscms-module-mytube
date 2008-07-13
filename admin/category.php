@@ -46,7 +46,7 @@ function createcat($cid = 0) {
     $totalcats = xtube_totalcategory();
 
     if ($cid) {
-        $sql = "SELECT * FROM " . $xoopsDB -> prefix('xoopstube_cat') . " WHERE cid=$cid";
+        $sql = "SELECT * FROM " . $xoopsDB -> prefix('xoopstube_cat') . " WHERE cid=" . intval($cid);
         $cat_arr = $xoopsDB -> fetchArray($xoopsDB -> query($sql));
         $title = $xtubemyts -> htmlSpecialChars($cat_arr['title']);
         $imgurl = $xtubemyts -> htmlSpecialChars($cat_arr['imgurl']);
@@ -153,9 +153,9 @@ function createcat($cid = 0) {
     
 //    $sform -> addElement(new XoopsFormSelectGroup(_AM_XTUBE_FCATEGORY_GROUPPROMPT, "groups", true, $groups, 5, true));
 
-    $sform -> addElement(new XoopsFormHidden('cid', $cid));
+    $sform -> addElement( new XoopsFormHidden( 'cid', intval($cid) ) );
 
-    $sform -> addElement(new XoopsFormHidden('spotlighttop', $cid));
+    $sform -> addElement( new XoopsFormHidden( 'spotlighttop', intval($cid) ) );
 
     $button_tray = new XoopsFormElementTray('', '');
     $hidden = new XoopsFormHidden('op', 'save');
@@ -287,7 +287,10 @@ switch ($op) {
             $notification_handler -> triggerEvent( 'global', 0, 'new_category', $tags );
             $database_mess = _AM_XTUBE_CCATEGORY_CREATED;
         } else {
-            $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " SET title ='$title', imgurl='$imgurl', pid =$pid, description='$descriptionb', spotlighthis='$spotlighthis' , spotlighttop='$spotlighttop', nohtml='$nohtml', nosmiley='$nosmiley', noxcodes='$noxcodes', noimages='$noimages', nobreak='$nobreak', weight='$weight', client_id='$client_id', banner_id='$banner_id' WHERE cid=" . $cid;
+          if ($cid == $pid) {
+            $pid = 0;
+            }
+            $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " SET title ='$title', imgurl='$imgurl', pid =$pid, description='$descriptionb', spotlighthis='$spotlighthis' , spotlighttop='$spotlighttop', nohtml='$nohtml', nosmiley='$nosmiley', noxcodes='$noxcodes', noimages='$noimages', nobreak='$nobreak', weight='$weight', client_id='$client_id', banner_id='$banner_id' WHERE cid=" . intval($cid) ;
             $database_mess = _AM_XTUBE_CCATEGORY_MODIFIED;
         } 
         if ( !$result = $xoopsDB -> query( $sql ) ) {
@@ -312,41 +315,41 @@ switch ($op) {
 
             for ($i = 0; $i < $lcount; $i++) {
                 // get all links in each subcategory
-                $result = $xoopsDB -> query("SELECT lid FROM " . $xoopsDB -> prefix('xoopstube_videos') . " WHERE cid=" . $arr[$i] . "");
+                $result = $xoopsDB -> query("SELECT lid FROM " . $xoopsDB -> prefix('xoopstube_videos') . " WHERE cid=" . intval($arr[$i]) . "");
                 // now for each linkload, delete the text data and vote ata associated with the linkload
                 while (list($lid) = $xoopsDB -> fetchRow($result)) {
-                    $sql = sprintf("DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_votedata'), $lid);
+                    $sql = sprintf( "DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_votedata'), intval($lid) );
                     $xoopsDB -> query($sql);
-                    $sql = sprintf("DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_videos'), $lid);
+                    $sql = sprintf( "DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_videos'), intval($lid) );
                     $xoopsDB -> query($sql);
                     // delete comments
                     xoops_comment_delete($xoopsModule -> getVar('mid'), $lid);
                 } 
                 // all links for each subcategory is deleted, now delete the subcategory data
-                $sql = sprintf("DELETE FROM %s WHERE cid = %u", $xoopsDB -> prefix('xoopstube_cat'), $arr[$i]);
+                $sql = sprintf( "DELETE FROM %s WHERE cid = %u", $xoopsDB -> prefix('xoopstube_cat'), intval($arr[$i]) );
                 $xoopsDB -> query($sql);
             } 
             // all subcategory and associated data are deleted, now delete category data and its associated data
-            $result = $xoopsDB -> query("SELECT lid FROM " . $xoopsDB -> prefix('xoopstube_videos') . " WHERE cid=" . $cid . "");
+            $result = $xoopsDB -> query( "SELECT lid FROM " . $xoopsDB -> prefix('xoopstube_videos') . " WHERE cid=" . intval($cid) . "" );
             while (list($lid) = $xoopsDB -> fetchRow($result)) {
-                $sql = sprintf("DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_videos'), $lid);
+                $sql = sprintf( "DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_videos'), intval($lid) );
                 $xoopsDB -> query($sql);
                 // delete comments
-                xoops_comment_delete($xoopsModule -> getVar('mid'), $lid);
-                $sql = sprintf("DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_votedata'), $lid);
+                xoops_comment_delete( $xoopsModule -> getVar('mid'), intval($lid) );
+                $sql = sprintf( "DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_votedata'), intval($lid) );
                 $xoopsDB -> query($sql);
             } 
-            $sql = sprintf("DELETE FROM %s WHERE cid = %u", $xoopsDB -> prefix('xoopstube_cat'), $cid);
+            $sql = sprintf( "DELETE FROM %s WHERE cid = %u", $xoopsDB -> prefix('xoopstube_cat'), intval($cid) );
             $error = _AM_XTUBE_DBERROR . ": <br /><br />" . $sql;
-            xoops_groupperm_deletebymoditem ($xoopsModule -> getVar('mid'), 'XTubeCatPerm', $cid);
-            if (!$result = $xoopsDB -> query($sql)) {
+            xoops_groupperm_deletebymoditem( $xoopsModule -> getVar('mid'), 'XTubeCatPerm', intval($cid) );
+            if ( !$result = $xoopsDB -> query($sql) ) {
                 trigger_error($error, E_USER_ERROR);
             } 
             redirect_header("category.php", 1, _AM_XTUBE_CCATEGORY_DELETED);
             exit();
         } else {
             xoops_cp_header();
-            xoops_confirm(array('op' => 'del', 'cid' => $cid, 'ok' => 1), 'category.php', _AM_XTUBE_CCATEGORY_AREUSURE);
+            xoops_confirm(array('op' => 'del', 'cid' => intval($cid) , 'ok' => 1), 'category.php', _AM_XTUBE_CCATEGORY_AREUSURE);
             xoops_cp_footer();
         } 
         break;
