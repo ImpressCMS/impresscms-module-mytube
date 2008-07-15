@@ -65,7 +65,7 @@ $modversion['blocks'][1]['name'] = _MI_XTUBE_BNAME1;
 $modversion['blocks'][1]['description'] = "Shows recently added video";
 $modversion['blocks'][1]['show_func'] = "b_xoopstube_top_show";
 $modversion['blocks'][1]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][1]['options'] = "published|10|19|d/m/Y";
+$modversion['blocks'][1]['options'] = "published|10|19|d/m/Y|0";
 $modversion['blocks'][1]['template'] = 'xoopstube_block_new_t.html';
 $modversion['blocks'][1]['can_clone'] = true ;
 
@@ -74,7 +74,7 @@ $modversion['blocks'][2]['name'] = _MI_XTUBE_BNAME2;
 $modversion['blocks'][2]['description'] = "Shows recently added video";
 $modversion['blocks'][2]['show_func'] = "b_xoopstube_top_show";
 $modversion['blocks'][2]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][2]['options'] = "published|10|19|d/m/Y";
+$modversion['blocks'][2]['options'] = "published|10|19|d/m/Y|0";
 $modversion['blocks'][2]['template'] = 'xoopstube_block_new.html';
 $modversion['blocks'][2]['can_clone'] = true ;
 
@@ -83,7 +83,7 @@ $modversion['blocks'][3]['name'] = _MI_XTUBE_BNAME3;
 $modversion['blocks'][3]['description'] = "Shows top clicked videos";
 $modversion['blocks'][3]['show_func'] = "b_xoopstube_top_show";
 $modversion['blocks'][3]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][3]['options'] = "hits|10|19|d/m/Y";
+$modversion['blocks'][3]['options'] = "hits|10|19|d/m/Y|0";
 $modversion['blocks'][3]['template'] = 'xoopstube_block_top_t.html';
 $modversion['blocks'][3]['can_clone'] = true ;
 
@@ -92,7 +92,7 @@ $modversion['blocks'][4]['name'] = _MI_XTUBE_BNAME4;
 $modversion['blocks'][4]['description'] = "Shows top clicked videos";
 $modversion['blocks'][4]['show_func'] = "b_xoopstube_top_show";
 $modversion['blocks'][4]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][4]['options'] = "hits|10|19|d/m/Y";
+$modversion['blocks'][4]['options'] = "hits|10|19|d/m/Y|0";
 $modversion['blocks'][4]['template'] = 'xoopstube_block_top.html';
 $modversion['blocks'][4]['can_clone'] = true ;
 
@@ -101,7 +101,7 @@ $modversion['blocks'][5]['name'] = _MI_XTUBE_BNAME5;
 $modversion['blocks'][5]['description'] = "Shows recently added video";
 $modversion['blocks'][5]['show_func'] = "b_xoopstube_top_show";
 $modversion['blocks'][5]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][5]['options'] = "published|5|19|d/m/Y";
+$modversion['blocks'][5]['options'] = "published|5|19|d/m/Y|0";
 $modversion['blocks'][5]['template'] = 'xoopstube_block_new_h.html';
 $modversion['blocks'][5]['can_clone'] = true ;
 
@@ -110,7 +110,7 @@ $modversion['blocks'][6]['name'] = _MI_XTUBE_BNAME6;
 $modversion['blocks'][6]['description'] = "Shows random video";
 $modversion['blocks'][6]['show_func'] = "b_xoopstube_random";
 $modversion['blocks'][6]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][6]['options'] = "random|5|19|d/m/Y";
+$modversion['blocks'][6]['options'] = "random|5|19|d/m/Y|0";
 $modversion['blocks'][6]['template'] = 'xoopstube_block_random.html';
 $modversion['blocks'][6]['can_clone'] = true ;
 
@@ -119,7 +119,7 @@ $modversion['blocks'][7]['name'] = _MI_XTUBE_BNAME7;
 $modversion['blocks'][7]['description'] = "Shows random video";
 $modversion['blocks'][7]['show_func'] = "b_xoopstube_randomh";
 $modversion['blocks'][7]['edit_func'] = "b_xoopstube_top_edit";
-$modversion['blocks'][7]['options'] = "randomh|5|19|d/m/Y";
+$modversion['blocks'][7]['options'] = "randomh|5|19|d/m/Y|0";
 $modversion['blocks'][7]['template'] = 'xoopstube_block_random_h.html';
 $modversion['blocks'][7]['can_clone'] = true ;
 

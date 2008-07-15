@@ -22,4 +22,6 @@ define( "_MB_XTUBE_CATTITLE", "Category" );
 define( "_MB_XTUBE_UNLIMIT", "Unlimited" );
 define( "_MB_XTUBE_DATEFORMAT", "Date format" );
 define( "_MB_XTUBE_DATEFORMATMANUAL", 'See <a href="http://jp.php.net/manual/en/function.date.php" target="_blank">PHP manual</a>' );
+define( "_MB_XTUBE_ALLCAT", "All categories");
+define( "_MB_XTUBE_SELECTCAT", "Display the videos of:");
 ?>
