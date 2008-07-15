@@ -105,7 +105,22 @@ function b_xoopstube_top_show( $options ) {
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();
 
-    $result = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, hits, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 AND published <= " . time() . " AND (expired = 0 OR expired > " . time() . ") AND offline = 0 ORDER BY " . $options[0] . " DESC", $options[1], 0 );
+    if ($options[4]>0) {
+      $result = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, hits, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published>0
+      AND published<=" . time() . "
+      AND (expired=0 OR expired>" . time() . ")
+      AND offline=0
+      AND cid=" . $options[4] . "
+      ORDER BY " . $options[0] . "
+      DESC", $options[1], 0 );
+    } else {
+      $result = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, hits, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published>0
+      AND published<=" . time() . "
+      AND (expired=0 OR expired>" . time() . ")
+      AND offline=0
+      ORDER BY " . $options[0] . "
+      DESC", $options[1], 0 );
+    }
     while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
         if ( false == checkXTubeBlockGroups( $myrow['cid'] ) || $myrow['cid'] == 0 ) {
             continue;
@@ -148,7 +163,21 @@ function b_xoopstube_random( $options ) {
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();
 
-    $result2 = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 AND published <= " . time() . " AND (expired = 0 OR expired > " . time() . ") AND offline = 0 ORDER BY RAND() LIMIT " . $options[1] );
+    if ($options[4]>0) {
+      $result2 = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0
+      AND published<=" . time() . "
+      AND (expired=0 OR expired>" . time() . ")
+      AND offline=0
+      AND cid=" . $options[4] . "
+      ORDER BY RAND() LIMIT " . $options[1] );
+    } else {
+      $result2 = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0
+      AND published<=" . time() . "
+      AND (expired=0 OR expired>" . time() . ")
+      AND offline=0
+      AND cid=" . $options[4] . "
+      ORDER BY RAND() LIMIT " . $options[1] );
+    }
     while ( $myrow = $xoopsDB -> fetchArray( $result2 ) ) {
         if ( false == checkXTubeBlockGroups( $myrow['cid'] ) || $myrow['cid'] == 0 ) {
             continue;
@@ -184,7 +213,21 @@ function b_xoopstube_randomh( $options ) {
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();
 
-    $result2 = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 AND published <= " . time() . " AND (expired = 0 OR expired > " . time() . ") AND offline = 0 ORDER BY RAND() LIMIT " . $options[1] );
+    if ($options[4]>0) {
+      $result2 = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0
+      AND published<=" . time() . "
+      AND (expired=0 OR expired>" . time() . ")
+      AND offline=0
+      AND cid=" . $options[4] . "
+      ORDER BY RAND() LIMIT " . $options[1] );
+    } else {
+      $result2 = $xoopsDB -> query( "SELECT lid, cid, title, vidid, screenshot, published, vidsource, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0
+      AND published<=" . time() . "
+      AND (expired=0 OR expired>" . time() . ")
+      AND offline=0
+      ORDER BY RAND() LIMIT " . $options[1] );
+    }
+
     while ( $myrow = $xoopsDB -> fetchArray( $result2 ) ) {
         if ( false == checkXTubeBlockGroups( $myrow['cid'] ) || $myrow['cid'] == 0 ) {
             continue;
@@ -230,6 +273,29 @@ function b_xoopstube_top_edit( $options ) {
     $form .= "<input type='text' name='options[]' value='" . $options[1] . "' />&nbsp;" . _MB_XTUBE_FILES . "";
     $form .= "&nbsp;<br />" . _MB_XTUBE_CHARS . "&nbsp;<input type='text' name='options[]' value='" . $options[2] . "' />&nbsp;" . _MB_XTUBE_LENGTH . "";
     $form .= "&nbsp;<br />" . _MB_XTUBE_DATEFORMAT . "&nbsp;<input type='text' name='options[]' value='" . $options[3] . "' />&nbsp;" . _MB_XTUBE_DATEFORMATMANUAL;
+
+    global $xoopsDB;
+    $cat_arr=array();
+    include_once XOOPS_ROOT_PATH . '/class/xoopstree.php';
+    $xt = new XoopsTree( $xoopsDB -> prefix( 'xoopstube_cat' ), 'cid', 'pid');
+    $cat_arr = $xt -> getChildTreeArray( 0, 'title');
+
+    $form .= "<br />" . _MB_XTUBE_SELECTCAT . "<br /><select name=\"options[]\" multiple=\"multiple\" size=\"5\">";
+	if (array_search(0, $options) === false) {
+		$form .= "<option value=\"0\">" . _MB_XTUBE_ALLCAT . "</option>";
+	} else {
+		$form .= "<option value=\"0\" selected=\"selected\">" . _MB_XTUBE_ALLCAT . "</option>";
+	}
+
+	foreach($cat_arr as $catlist) {
+		if(array_search($catlist, $options) === false) {
+			$form .= "<option value=\"" . $catlist['cid'] . "\">" . $catlist['title'] . "</option>";
+		} else {
+			$form .= "<option value=\"" . $catlist['cid'] . "\" selected=\"selected\">" . $catlist['title'] . "</option>";
+		}
+	}
+    $form .= "</select>";
+
     return $form;
 }
 
