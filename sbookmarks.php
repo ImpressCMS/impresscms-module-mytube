@@ -4,8 +4,7 @@
  * Module: MyTube
  */
 
-function xtube_sbmarks($lid)
-{ 
+function xtube_sbmarks($lid) { 
     global $xoopsDB, $xoopsModule, $xtubemyts;
 
     $sbmark_arr = $xoopsDB -> fetchArray( $xoopsDB -> query( "SELECT lid, title FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . intval($lid) . "") );
