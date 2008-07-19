@@ -42,6 +42,7 @@ $sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_SUPPORT, "<a href='" 
 $sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_BUG, "<a href='" . $versioninfo -> getInfo( 'submit_bug' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_SUBMITBUG . "</a>" ) );
 $sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_FEATURE, "<a href='" . $versioninfo -> getInfo( 'submit_feature' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_REQUESTNEWFEATURE . "</a>" ) );
 $sform -> addElement( new XoopsFormLabel( _MI_XTUBE_MODULE_MANUAL, "<a href='" . $versioninfo -> getInfo( 'manual_wiki' ) . "' target='_blank'>" . _MI_XTUBE_MODULE_MANUALWIKI . "</a>" ) );
+$sform -> addElement( new XoopsFormLabel( _MI_XTUBE_FLVPLAYER_MANUAL, "<a href='http://code.longtailvideo.com/trac/' target='_blank'>" . _MI_XTUBE_FLVPLAYER_WIKI . "</a>" ) );
 $sform -> display();
 
 $sform = new XoopsThemeForm( _MI_XTUBE_AUTHOR_CREDITS, "", "" );
