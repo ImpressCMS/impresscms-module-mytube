@@ -259,4 +259,6 @@ define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Vraag een nieuwe eigenschap aan' )
 define('_MI_XTUBE_MODULE_SUBMITBUG', 'Rapporteer een bug in deze module' );
 define("_MI_XTUBE_BNAME9","MyTube Tag Cloud");
 define("_MI_XTUBE_BNAME10","MyTube Top Tags");
+define('_MI_XTUBE_FLVPLAYER_MANUAL', 'FLV Speler Handleiding');
+define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW Player Wiki');
 ?>
