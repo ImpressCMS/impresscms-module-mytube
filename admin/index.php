@@ -56,16 +56,16 @@ function edit( $lid = 0 )
 			   <div><b>" . _AM_XTUBE_VIDEO_IP . " </b>" . $ipaddress . "</div>
 			   <div><b>" . _AM_XTUBE_VIDEO_VIEWS . " </b>" . $video_array['hits'] . "</div>
 			  </td>
-			  <td>
+			  <td width='33%' valign='top'>
 			   <div><b>" . _AM_XTUBE_VOTE_TOTALRATE . ": </b>" . intval( $_vote_data['rate'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_USERAVG . ": </b>" . intval( round( $_vote_data['avg_rate'], 2 ) ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_MAXRATE . ": </b>" . intval( $_vote_data['min_rate'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_MINRATE . ": </b>" . intval( $_vote_data['max_rate'] ) . "</div>
                            <div>&nbsp;</div>
 			  </td>
-			  <td>		 
+			  <td width='33%' valign='top'>
 			   <div><b>" . _AM_XTUBE_VOTE_MOSTVOTEDTITLE . ": </b>" . intval( $_vote_data['max_title'] ) . "</div>
-		          <div><b>" . _AM_XTUBE_VOTE_LEASTVOTEDTITLE . ": </b>" . intval( $_vote_data['min_title'] ) . "</div>
+		           <div><b>" . _AM_XTUBE_VOTE_LEASTVOTEDTITLE . ": </b>" . intval( $_vote_data['min_title'] ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_REGISTERED . ": </b>" . ( intval( $_vote_data['rate'] - $_vote_data['null_ratinguser'] ) ) . "</div>
 			   <div><b>" . _AM_XTUBE_VOTE_NONREGISTERED . ": </b>" . intval( $_vote_data['null_ratinguser'] ) . "</div>
 			   <div>&nbsp;</div>
@@ -74,8 +74,7 @@ function edit( $lid = 0 )
 			</table>";
         echo "
 			<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_INFORMATION . "</legend>\n
-			<div style='padding: 8px;'>$text_info</div>\n	
-		<!--	<div style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></div>\n    -->
+			  <div style='padding: 8px;'>$text_info</div>\n
 			</fieldset>\n
 			<br />\n";
     } 
@@ -106,7 +105,6 @@ function edit( $lid = 0 )
     $sform -> addElement( $vidsource_select );
 
 // Video code
-//    $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_DLVIDID, 'vidid', 70, 512, $vidid ), true);
     $videocode = new XoopsFormText( _AM_XTUBE_VIDEO_DLVIDID, 'vidid', 70, 512, $vidid );
     $videocode -> setDescription( "<br /><small>" . _AM_XTUBE_VIDEO_DLVIDIDDSC . "</small>");
     $sform -> addElement($videocode, true);
@@ -117,8 +115,6 @@ function edit( $lid = 0 )
    $picurl = new XoopsFormText( _AM_XTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
    $picurl -> setDescription( "<br /><span style='font-weight: normal;font-size: smaller;'>" . _AM_XTUBE_VIDEO_PICURLNOTE . "</span>" );
    $sform -> addElement($picurl, false);
-//   $sform -> addElement(new XoopsFormLabel('', _AM_XTUBE_VIDEO_PICURLNOTE));
-
 
 // Video publisher
     $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_PUBLISHER, 'publisher', 70, 255, $publisher ), true );
@@ -137,8 +133,6 @@ function edit( $lid = 0 )
     $sform -> addElement( $editor, true );
     
 // Meta keywords form
-//    $sform -> addElement( new XoopsFormTextArea( _AM_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60), false);
-//    $sform -> addElement(new XoopsFormLabel('', _AM_XTUBE_KEYWORDS_NOTE));
     $keywords = new XoopsFormTextArea( _AM_XTUBE_KEYWORDS, 'keywords', $keywords, 7, 60, false );
     $keywords -> setDescription( "<br /><br /><br /><br /><span style='font-size: smaller;'>" . _AM_XTUBE_KEYWORDS_NOTE . "</span>" );
     $sform -> addElement($keywords);
@@ -240,7 +234,7 @@ switch ( strtolower( $op ) ) {
         $vidrating = ( !empty( $_POST['vidrating'] ) ) ? $_POST['vidrating'] : 6;
         $status = ( !empty( $_POST['status'] ) ) ? $_POST['status'] : 2;
 
-// Get data from form
+        // Get data from form
         $vidid = $xtubemyts -> addslashes( trim( $_POST["vidid"] ) );
         $picurl = ( $_POST["picurl"] != "http://" ) ? $xtubemyts -> addslashes( $_POST["picurl"] ) : '';
         $title = $xtubemyts -> addslashes( trim( $_POST["title"] ) );
@@ -286,10 +280,14 @@ switch ( strtolower( $op ) ) {
             $date = time();
             $publishdate = time();
             $ipaddress = $_SERVER['REMOTE_ADDR'];
+
             $sql = "INSERT INTO " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " (lid, cid, title, vidid, screenshot, submitter, publisher, status, date, hits, rating, votes, comments, vidsource, published, expired, updated, offline, description, ipaddress, notifypub, vidrating, time, keywords, item_tag, picurl )";
+
             $sql .= " VALUES 	('', $cid, '$title', '$vidid', '', '$submitter', '$publisher', '$status', '$date', 0, 0, 0, 0, '$vidsource', '$published', '$expiredate', '$updated', '$offline', '$descriptionb', '$ipaddress', '0', '$vidrating', '$time', '$keywords', '$item_tag', '$picurl')";
         //    $newid = $xoopsDB -> getInsertId();
+
         } else {
+
             $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " SET cid = $cid, title='$title', vidid='$vidid', screenshot='', publisher='$publisher', status='$status', vidsource='$vidsource', published='$published', expired='$expiredate', updated='$updated', offline='$offline', description='$descriptionb', vidrating='$vidrating', time='$time', keywords='$keywords', item_tag='$item_tag', picurl='$picurl' WHERE lid=" . $lid;
         }
 
@@ -302,9 +300,9 @@ switch ( strtolower( $op ) ) {
         
 // Add item_tag to Tag-module
         if ( !$lid ) {
-         $tagupdate = xtube_tagupdate($newid, $item_tag);
+          $tagupdate = xtube_tagupdate($newid, $item_tag);
         } else {
-         $tagupdate = xtube_tagupdate($lid, $item_tag);
+          $tagupdate = xtube_tagupdate($lid, $item_tag);
         }
 
 // Send notifications
@@ -456,8 +454,8 @@ switch ( strtolower( $op ) ) {
             xtube_linklistpagenavleft( $published_array_count, $start, 'art' );
             if ( $published_array_count > 0 ) {
                 while ( $published = $xoopsDB -> fetchArray( $published_array ) ) {
-                    xtube_videolistbody( $published );
-                } 
+                  xtube_videolistbody( $published );
+                }
             } else {
                 xtube_videolistfooter();
             } 
@@ -466,5 +464,4 @@ switch ( strtolower( $op ) ) {
         xoops_cp_footer();
         break;
 } 
-
 ?>
