@@ -31,6 +31,9 @@ if (!defined("XOOPS_ROOT_PATH")) {
  */
 
 function mytube_tag_iteminfo(&$items) {
+  
+    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
+
     if(empty($items) || !is_array($items)) {
         return false; 
     } 
@@ -56,7 +59,7 @@ function mytube_tag_iteminfo(&$items) {
             $row = $xoopsDB -> fetchArray($result);
             $lcid = $row['lcid'];
             $items[$cat_id][$item_id] = array(
-                "title"      => $row['ltitle'],
+                "title"      => '<img src="' . XOOPS_URL . '/modules/' . $mydirname . '/images/icon/film.png" alt="" />&nbsp;' . $row['ltitle'],
                 "uid"        => $row['submitter'],
                 "link"       => "singlevideo.php?cid=$lcid&amp;lid=$item_id",
                 "time"       => $row['published'],
