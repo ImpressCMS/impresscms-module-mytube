@@ -59,7 +59,7 @@
 			<{/if}> 
 			<a href="<{$xoops_url}>/modules/<{$video.module_dir}>/brokenvideo.php?lid=<{$video.id}>"><{$smarty.const._MD_XTUBE_REPORTBROKEN}></a> |
 			<{if $video.useradminvideo}>
-			 <a href="<{$xoops_url}>/modules/<{$video.module_dir}>/submit.php?lid=<{$video.id}>"> <{$smarty.const._MD_XTUBE_MODIFY}></a> | 
+			 <{$video.usermodify}> 
 			<{/if}> 
 			<a href="mailto:?subject=<{$video.mail_subject}>&body=<{$video.mail_body}>" target="_top"><{$smarty.const._MD_XTUBE_TELLAFRIEND}></a>
                        <{if $video.comment_rules > 0}>
