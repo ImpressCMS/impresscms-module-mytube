@@ -30,7 +30,7 @@ define( "_MD_XTUBE_DESCRIPTIONC", "Description: " );
 define( "_MD_XTUBE_CATEGORYC", "Category: " );
 define( "_MD_XTUBE_VERSION", "Version" );
 define( "_MD_XTUBE_SUBMITDATE", "Submitted" );
-define( "_MD_XTUBE_VIDEOHITS", "<b>Viewed:</b> %s times" );
+define( "_MD_XTUBE_VIDEOHITS", "<b>Views:</b> %s" );
 define( "_MD_XTUBE_PUBLISHERC", "Publisher: " );
 define( "_MD_XTUBE_RATINGC", "Rating: " );
 define( "_MD_XTUBE_ONEVOTE", "1 Vote" );
