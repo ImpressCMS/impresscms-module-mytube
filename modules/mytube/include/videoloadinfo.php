@@ -68,13 +68,16 @@ if ( $video['isadmin'] == true && $moderate == 0 ) {
 } 
 $votestring = ( $video_arr['votes'] == 1 ) ? _MD_XTUBE_ONEVOTE : sprintf( _MD_XTUBE_NUMVOTES, $video_arr['votes'] );
 
+$video['useradminvideo'] = 0;
 if ( is_object( $xoopsUser ) && !empty( $xoopsUser ) ) {
-    $video['useradminvideo'] = 0;
-    $_user_submitter = ( $xoopsUser -> getvar( 'uid' ) == $video_arr['submitter'] ) ? true : false;
-    if ( true == checkgroups( $cid ) ) {
-        $video['useradminvideo'] = 1;
-    } 
-} 
+  $_user_submitter = ( $xoopsUser -> getvar( 'uid' ) == $video_arr['submitter'] ) ? true : false;
+  if ( true == checkgroups( $cid ) ) {
+    $video['useradminvideo'] = 1;
+    if ( $xoopsUser -> getvar( 'uid' ) == $video_arr['submitter'] ) {
+      $video['usermodify'] = '<a href="' . XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/submit.php?lid=' . $video_arr['lid'] . '"> ' . _MD_XTUBE_MODIFY . '</a> |';
+    }
+  }
+}
 
 $video['icons'] = xtube_displayicons( $video_arr['published'], $video_arr['status'], $video_arr['hits'] );
 $video['allow_rating'] = ( checkgroups( $cid, 'XTubeRatePerms' ) ) ? true : false;
