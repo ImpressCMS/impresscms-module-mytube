@@ -79,7 +79,7 @@ $query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_mod') . " M
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 $i++;
 $ret[$i] = true;
-$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_mod') . " CHANGE forumid vidsource TINYINT(1) NOT NULL default '0'");
+$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_mod') . " CHANGE forumid vidsource INT(11) NOT NULL default '0'");
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 $i++;
 $ret[$i] = true;
@@ -95,7 +95,7 @@ $query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_mod') . " M
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 $i++;
 $ret[$i] = true;
-$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_mod') . " MODIFY vidsource TINYINT(1) UNSIGNED NOT NULL default '0'");
+$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_mod') . " MODIFY vidsource INT(11) UNSIGNED NOT NULL default '0'");
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 
 ?>
