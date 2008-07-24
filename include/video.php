@@ -40,7 +40,10 @@ function xtube_returnsource($returnsource) {
           $returnsource = _AM_XTUBE_MYTUBE;
           break;
     case 106:
-          $returnsource = 'Maktoob';
+          $returnsource = _AM_XTUBE_MAKTOOB;
+          break;
+    case 107:
+          $returnsource = _AM_XTUBE_VEOH;
           break;
     }
     return $returnsource;
@@ -68,7 +71,7 @@ function xtube_videothumb($vidid, $title, $source, $picurl, $screenshot) {
   if ($source == 3) {
      $thumb = '<img src="http://i153.photobucket.com/albums/' . $vidid . '.jpg" width="' . $xoopsModuleConfig['shotwidth'] . '" height="' . $xoopsModuleConfig['shotheight'] . '"  title="' . $title . '" alt="' . $title . '" hspace="7" vspace="2" border="0" align="left" />';
   }
-// Determine if video source is Google Video, MySpace TV, DailyMotion, BrightCove, Blip.tv, ClipFish, LiveLeak for thumbnail
+// Determine if video source is Google Video, MySpace TV, DailyMotion, BrightCove, Blip.tv, ClipFish, LiveLeak, Maktoob, Veoh for thumbnail
   if ($source >= 100 & $source < 200) {
      $thumb = '<img src="' . $picurl . '" width="' . $xoopsModuleConfig['shotwidth'] . '" height="' . $xoopsModuleConfig['shotheight'] . '"  title="' . $title . '" alt="' . $title . '" hspace="7" vspace="2" border="0" align="left" />';
   }
@@ -115,6 +118,10 @@ function xtube_videopublisher($vidid, $publisher, $source) {
 // Determine if video source is LiveLeak for publisher
   if ($source == 105) {
      $publisher = '<a href="http://www.liveleak.com/user/' . $publisher .'" target="_blank">' . $publisher . '</a>';
+  }
+// Determine if video source is Veoh for publisher
+  if ($source == 107) {
+     $publisher = '<a href="http://www.veoh.com/users/' . $publisher .'" target="_blank">' . $publisher . '</a>';
   }
 // Determine if video source is MyTube for publisher
   if ($source == 200) {
@@ -171,6 +178,10 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 // Show if source is Maktoob
     if ($source == 106) {
        $showvideo = '<embed width="448" height="320" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="flvplayer" bgcolor="#ffffff" devicefont="true" wmode="transparent" quality="high" src="http://clipat.maktoob.com/flvplayerOurJS.swf?file=http://' . $vidid . '.flv&enablejs=true&image=' . $picurl .'&lightcolor=0x557722&backcolor=0x000000&frontcolor=0xCCCCCC&showfsbutton=true&autostart=false&logo=http://clipat.maktoob.com/language/ar_sa/images/clipat-icon.png&displaywidth=448" />';
+    }
+// Show if source is Veoh
+    if ($source == 107) {
+       $showvideo = '<embed src="http://www.veoh.com/veohplayer.swf?permalinkId=' . $vidid . '&id=anonymous&player=videodetailsembedded&affiliateId=&videoAutoPlay=0" allowFullScreen="true" width="400" height="345" bgcolor="#FFFFFF" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>';
     }
 // Show if source is MyTube
     if ($source == 200) {

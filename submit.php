@@ -219,7 +219,8 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
                               103 => _MD_XTUBE_BLIPTV,
                               104 => _MD_XTUBE_CLIPFISH,
                               105 => _MD_XTUBE_LIVELEAK,
-                              106 => _MD_XTUBE_MAKTOOB
+                              106 => _MD_XTUBE_MAKTOOB,
+                              107 => _MD_XTUBE_VEOH
                               );
     $vidsource_select = new XoopsFormSelect( _MD_XTUBE_VIDSOURCE, 'vidsource', $vidsource );
     $vidsource_select -> addOptionArray( $vidsource_array );
