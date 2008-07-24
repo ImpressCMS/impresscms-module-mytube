@@ -258,9 +258,10 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
+<b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...<br />
 <b>MyTube: </b><font color=#FF0000>Neem over van bovenstaand selektie menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "Afbeeldings url" );
-define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob of LiveLeak is.</small>" );
+define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob, Veoh of LiveLeak is.</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Video omschrijving: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Video categorie: " );
 define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Video offline plaatsen?<br /><br /><small><span style='font-weight: normal;'>Video zal niet zichbaar zijn.</span></small>" );
@@ -476,6 +477,7 @@ define( "_AM_XTUBE_CLIPFISH", "ClipFish" );
 define( "_AM_XTUBE_LIVELEAK", "LiveLeak" );
 define( "_AM_XTUBE_FILE", "File " );
 define( '_AM_XTUBE_MAKTOOB', 'Maktoob' );
+define( '_AM_XTUBE_VEOH', 'Veoh' );
 define( "_AM_XTUBE_INFORMATION", "Video Informatie" );
 define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Neem rood aangegeven gedeelte uit onderste voorbeelden over" );
 define( "_AM_XTUBE_VIDEO_VIEWS", "Bekeken: " );

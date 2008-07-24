@@ -6,13 +6,15 @@ xx.xx.2008   1.04 RC-2
 - Folder name can be changed [stranger]
 - Replaced date() by formatTimestamp() [stranger]
 - Corrected date used for showing clips in blocks
-- Updated JW FLV Player to version 4
+- Modify option visible for submitter only
+- Updated JW FLV Player to version 4, needs Adobe Flash 9 or higher
 - Added support for videoclips from ClipFish
 - Added support for videoclips from LiveLeak
 - Added support for videoclips from Maktoob
+- Added support for videoclips from Veoh
 - Added Tag Cloud & Top Tags blocks
 - Added Portugese language files (utf-8) [gibaphp]
-- Added Portuguese-Brazilian language files utf-8 [gibaphp]
+- Added Portuguese-Brazilian language files (utf-8) [gibaphp]
 - Added Spanish language files (utf-8) [juancj]
 - Fixed bug in block settings
 
