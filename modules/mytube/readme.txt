@@ -28,9 +28,10 @@ Go to the admin panel, choose Modules -> Administration and install MyTube as an
 
 3. RENAMING MODULE FOLDER
 
-When you have renamed the installation folder from 'mytube' in whatever you wish,you have to open the file ../include/plugin.tag.php
+When you have renamed the installation folder from 'mytube' in whatever you wish, you have to open the file ../include/plugin.tag.php
 Find the line: function mytube_tag_iteminfo(&$items) {
-In this line you have to change 'mytube' into the name gave to the module folder before. 
+In this line you have to change 'mytube' into the name gave to the module folder before.
+Also for other plugins you might have to change 'mytube' into the new folder name. 
 
 
 4. WAITING, SITEMAP & RSSFIT PLUGINS

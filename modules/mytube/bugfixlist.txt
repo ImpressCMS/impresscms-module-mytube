@@ -1,7 +1,7 @@
 Bug fix list history:
 
 =========================================================
-xx.xx.2008   1.04 RC-2
+25.07.2008   1.04 RC-2
 =========================================================
 - Folder name can be changed [stranger]
 - Replaced date() by formatTimestamp() [stranger]
