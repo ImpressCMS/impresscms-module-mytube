@@ -62,7 +62,7 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...</small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Bild url: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "Bild wenn das Ziel Google Video, MySpace TV, Maktoob, LiveLeak, ClipFish, Blip.tv, Veoh oder DailyMotion ist." );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Bild wenn das Ziel Google Video, MySpace TV oder DailyMotion ist.</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Video Herkunft:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
@@ -181,7 +181,7 @@ define( "_MD_XTUBE_MODERATOR_OPTIONS", "Moderator Optionen" );
 define( "_MD_XTUBE_TIME", "Zeit:" );
 define( "_MD_XTUBE_TIMEB", "<b>Zeit:</b>" );
 define( "_MD_XTUBE_KEYWORDS", "Schlüsselwörter:" );
-define( "_MD_XTUBE_KEYWORDS_NOTE", "Schlüsselwörter müssen mit einem Komma unterteilt werden (Wort1, Wort2, Wort3)" );
+define( "_MD_XTUBE_KEYWORDS_NOTE", "<small>Schlüsselwörter müssen mit einem Komma unterteilt werden (<i>Wort1, Wort2, Wort3</i>).</small>" );
 define( "_MD_XTUBE_NOVIDEOLOAD", "Danke für den Eintrag!" );
 define( "_MD_XTUBE_LINKID", "Video ID" );
 define( "_MD_XTUBE_ADDTO", "Erstellen in: " );
@@ -189,7 +189,7 @@ define( "_MD_XTUBE_NEWVIDEOS", "Letzte Videos" );
 define( "_MD_XTUBE_TAKINGUBACK", "Sie werden zurückgeleitet." );
 define( "_MD_XTUBE_ADMINSECTION", "Administration" );
 
-// Version 1.04
+// Version 1.04 RC-1
 define( "_MD_XTUBE_BLIPTV", "Blip.tv" );
 
 // Version 1.04 RC-2
@@ -198,5 +198,5 @@ define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
 define( '_MD_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_MD_XTUBE_VEOH', 'Veoh' );
 define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
-define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
+define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Benutzen Sie den roten Teil, wie im unteren Beispiel" );
 ?>

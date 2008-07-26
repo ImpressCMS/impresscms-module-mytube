@@ -241,9 +241,9 @@ define( "_AM_XTUBE_VIDEO_ALLOWEDAMIME", "<div style='padding-top: 4px; padding-b
 define( "_AM_XTUBE_VIDEO_MODIFYFILE", "Ändern der Video Information" );
 define( "_AM_XTUBE_VIDEO_CREATENEWFILE", "Neues Video erstellen" );
 define( "_AM_XTUBE_VIDEO_TITLE", "Video Titel: " );
-define( "_AM_XTUBE_VIDEO_DLVIDID", "Video id-code: " );
+define( "_AM_XTUBE_VIDEO_DLVIDID", "Video URL: " );
 define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
-<small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
+<small><small><small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
 <b>MetaCafe:</b> http://www.metacafe.com/watch/<font color=#FF0000>191543/sperm_whale_encounters_underwater_robot</font>/<br />
 <b>SPIKE/ifilm:</b> http://www.ifilm.com/video/<font color=#FF0000>2718605</font><br />
 <b>Photobucket:</b> http://i39.photobucket.com/albums/<font color=#FF0000>e168/vailtom/th_BigSquid</font>.jpg<br />
@@ -256,8 +256,8 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...<br />
 <b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
-define( "_AM_XTUBE_VIDEO_PICURL", "Picture url: " );
-define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Bilder URL wenn das Video von Google Video, MySpace TV, LiveLeak, Maktoob oder DailyMotion ist.</small>" );
+define( "_AM_XTUBE_VIDEO_PICURL", "Bild URL: " );
+define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Bilder URL wenn das Video von Google Video, MySpace TV oder DailyMotion ist.</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Videobeschreibung: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Hauptkategorie des Videos: " );
 define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Video offline setzen?<br /><br /><span style='font-weight: normal;'>Video ist unsichtbar für alle Benutzer.</span>" );
@@ -316,6 +316,7 @@ define( "_AM_XTUBE_BROKEN_DATESUBMITTED", "Einsendedatum" );
 define( "_AM_XTUBE_BROKEN_ACTION", "Aktion" );
 define( "_AM_XTUBE_BROKEN_NOFILEMATCH", "Es gibt keinen Bericht über defekte Videos mit dieses kriterien" );
 define( "_AM_XTUBE_BROKENFILEDELETED", "Video und Bericht über defektes Video wurden gelöscht" );
+define( "_AM_XTUBE_BROKEN_VIDSOURCE", "Video Quelle" );
 /**
  * About defines
  */
@@ -400,7 +401,6 @@ define( "_AM_XTUBE_PERM_SPERMISSIONS_TEXT", "Wählt die Gruppe die Videos in die
 define( "_AM_XTUBE_PERM_APERMISSIONS", "Moderatoren Gruppe" );
 define( "_AM_XTUBE_PERM_APERMISSIONS_TEXT", "Wählt die Gruppe mit Moderatorenstatus für die ausgewählten Kategorien." );
 
-// added by McDonald
 define( "_AM_XTUBE_TIME", "Zeit:" );
 define( "_AM_XTUBE_KEYWORDS", "Schlüsselwörter:" );
 define( "_AM_XTUBE_KEYWORDS_NOTE", "Schlüsselwörter durch Komma trennen (Wort1, Wort2, Wort3, ..)" );
@@ -417,7 +417,7 @@ define( "_AM_XTUBE_MYSPAVETV", "MySpace TV" );
 define( "_AM_XTUBE_PHOTOBUCKET", "Photobucket" );
 define( "_AM_XTUBE_DAILYMOTION", "DailyMotion" );
 
-// Version 1.04
+// Version 1.04 RC-1
 define( "_AM_XTUBE_BLIPTV", "Blip.tv" );
 define( "_AM_XTUBE_MYTUBE", "MyTube" );
 define( "_AM_XTUBE_ICO_EXPIRE", "Abgelaufen" );
@@ -483,8 +483,8 @@ define( "_AM_XTUBE_LIVELEAK", "LiveLeak" );
 define( '_AM_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_AM_XTUBE_VEOH', 'Veoh' );
 define( "_AM_XTUBE_FILE", "Datei " );
-define( "_AM_XTUBE_INFORMATION", "Video Information" );
-define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
-define( "_AM_XTUBE_VIDEO_VIEWS", "Views: " );
-define( "_AM_XTUBE_ERROR_CATISCAT", "You can NOT set a category as a sub-category of itself!" );
+define( "_AM_XTUBE_INFORMATION", "Video-Infos" );
+define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Benutzen Sie den roten Teil, wie im unteren Beispiel" );
+define( "_AM_XTUBE_VIDEO_VIEWS", "angesehen: " );
+define( "_AM_XTUBE_ERROR_CATISCAT", "Sie können eine Kategorie nicht als eine Unterkategorie von sich selbst setzen!" );
 ?>

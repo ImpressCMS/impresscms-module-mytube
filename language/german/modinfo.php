@@ -2,7 +2,7 @@
 /**
  * $Id: modinfo.php
  * Module: MyTube
- * Language: german by wuddel (myxoops.org/impresscms.de)
+ * Language: german
  */
 
 // Module Info
@@ -228,8 +228,6 @@ define('_MI_XTUBE_MODULE_BUG', "Melde einen Fehler im Modul");
 define('_MI_XTUBE_MODULE_FEATURE', "Melde ein neues Feature für das Modul");
 define('_MI_XTUBE_MODULE_DISCLAIMER', "Ausschlussklausel");
 define('_MI_XTUBE_RELEASE', "Release Datum: ");
-define('_MI_XTUBE_ICONS_CREDITS', "Icons von");
-define('_MI_XTUBE_SUBMITABUG', "Melde einen Fehler");
 
 define('_MI_XTUBE_MODULE_MAILLIST', "WF-Project E-Mail Liste");
 define('_MI_XTUBE_MODULE_MAILANNOUNCEMENTS', "Announcements Mailing List");
@@ -264,7 +262,7 @@ define("_MI_XTUBE_FORM_DHTMLEXT", "erweiterter DHTML");
 define('_MI_XTUBE_DATEFORMATADMIN', 'Datumformat Administration:');
 define('_MI_XTUBE_DATEFORMATADMINDSC', 'Standard Datumanzeige für MyTube');
 
-// Version 1.04
+// Version 1.04 RC-1
 define('_MI_XTUBE_VIDEODIR', 'Videoupload Ordner:');
 define('_MI_XTUBE_VIDEODIRDSC', 'Setze den Ordner für die MyTube Videodateien');
 define('_MI_XTUBE_VIDEOIMGDIR', 'Vorschaubilder Ordner:');
