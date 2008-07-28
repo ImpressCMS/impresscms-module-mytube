@@ -795,9 +795,9 @@ function xtube_videolistpagenav( $pubrowamount, $start, $art = "art", $_this = '
     } 
     // Display Page Nav if published is > total display pages amount.
     include_once XOOPS_ROOT_PATH . '/class/pagenav.php';
-    $page = ( $pubrowamount > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
+//    $page = ( $pubrowamount > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
     $pagenav = new XoopsPageNav( $pubrowamount, $xoopsModuleConfig['admin_perpage'], $start, 'st' . $art, $_this );
-    echo '<div align="right" style="padding: 8px;">' . $page . '' . $pagenav -> renderNav() . '</div>';
+    echo '<div align="right" style="padding: 8px;">' . $pagenav -> renderNav() . '</div>';
 }
 
 function xtube_linklistpagenavleft( $pubrowamount, $start, $art = "art", $_this = '' ) {
@@ -808,9 +808,9 @@ function xtube_linklistpagenavleft( $pubrowamount, $start, $art = "art", $_this 
     } 
     // Display Page Nav if published is > total display pages amount.
     include_once XOOPS_ROOT_PATH . '/class/pagenav.php';
-    $page = ( $pubrowamount > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
+//    $page = ( $pubrowamount > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
     $pagenav = new XoopsPageNav( $pubrowamount, $xoopsModuleConfig['admin_perpage'], $start, 'st' . $art, $_this );
-    echo '<div align="left" style="padding: 8px;">' . $page . '' . $pagenav -> renderNav() . '</div>';
+    echo '<div align="left" style="padding: 8px;">' . $pagenav -> renderNav() . '</div>';
 }
 
 // Retreive an editor according to the module's option "form_options"
