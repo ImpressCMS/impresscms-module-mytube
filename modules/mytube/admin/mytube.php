@@ -44,7 +44,7 @@ function edit( $lid = 0 )
     xtube_adminmenu( _AM_XTUBE_MVIDEOS );
 
     if ( $lid ) {
-        $_vote_data = getVoteDetails( $lid );
+        $_vote_data = xtube_getVoteDetails( $lid );
         $text_info = "
 			<table width='100%'>
 			 <tr>

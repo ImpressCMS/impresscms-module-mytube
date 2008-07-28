@@ -29,7 +29,7 @@ function &xtube_gethandler( $name, $optional = false ) {
     return isset( $handlers[$name] ) ? $handlers[$name] : false;
 } 
 
-function checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
+function xtube_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
     global $xoopsUser, $xoopsModule;
 
     $groups = is_object( $xoopsUser ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
@@ -45,7 +45,7 @@ function checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) 
     return true;
 } 
 
-function getVoteDetails( $lid = 0 ) {
+function xtube_getVoteDetails( $lid = 0 ) {
     global $xoopsDB;
 
     $sql = "SELECT 
@@ -69,11 +69,11 @@ function getVoteDetails( $lid = 0 ) {
     return $ret;
 } 
 
-function calcVoteData( $sel_id = 0 ) {
+function xtube_calcVoteData( $sel_id = 0 ) {
     $ret = array();
     $ret['useravgrating'] = 0;
 
-    $sql = 'SELECT rating FROM ' . $xoopsDB -> prefix( 'xoopstube_votedata' );
+    $sql = "SELECT rating FROM " . $xoopsDB -> prefix( 'xoopstube_votedata' );
     if ( $sel_id != 0 ) {
         " WHERE lid = " . $sel_id;
     } 
@@ -133,7 +133,7 @@ function xtube_cleanRequestVars( &$array, $name = null, $def = null, $strict = f
 
 function xtube_toolbar( $cid = 0 ) {
     $toolbar = "[ ";
-    if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
+    if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
         $toolbar .= "<a href='submit.php?cid=" . $cid . "'>" . _MD_XTUBE_SUBMITVIDEO . "</a> | ";
     } 
     $toolbar .= "<a href='newlist.php?newvideoshowdays=7'>" . _MD_XTUBE_LATESTLIST . "</a> | <a href='topten.php?list=hit'>" . _MD_XTUBE_POPULARITY . "</a> | <a href='topten.php?list=rate'>" . _MD_XTUBE_TOPRATED . "</a> ]";
@@ -307,7 +307,7 @@ function xtube_totalcategory( $pid = 0 ) {
     $result = $xoopsDB -> query( $sql );
     $catlisting = 0;
     while ( list( $cid ) = $xoopsDB -> fetchRow( $result ) ) {
-        if ( checkgroups( $cid ) ) {
+        if ( xtube_checkgroups( $cid ) ) {
             $catlisting++;
         } 
     } 
@@ -341,7 +341,7 @@ function xtube_getTotalItems( $sel_id = 0, $get_child = 0, $return_sql = 0 ) {
     $arr = array();
     $result = $xoopsDB -> query( $sql );
     while ( list( $lid, $cid, $published ) = $xoopsDB -> fetchRow( $result ) ) {
-        if ( true == checkgroups() ) {
+        if ( true == xtube_checkgroups() ) {
             $count++;
             $published_date = ( $published > $published_date ) ? $published : $published_date;
         } 

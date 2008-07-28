@@ -17,7 +17,7 @@ $mytree = new XoopsTree( $xoopsDB -> prefix( 'xoopstube_cat' ), 'cid', 'pid' );
 $arr = $mytree -> getFirstChild( $cid, $catsort );
 
 if ( is_array( $arr ) > 0 && !$list && !$selectdate ) {
-    if ( false == checkgroups( $cid ) ) {
+    if ( false == xtube_checkgroups( $cid ) ) {
         redirect_header( "index.php", 1, _MD_XTUBE_MUSTREGFIRST );
         exit();
     } 
@@ -42,7 +42,7 @@ $xoopsTpl -> assign( 'category_id', $cid );
 if ( is_array( $arr ) > 0 && !$list && !$selectdate ) {
     $scount = 1;
     foreach( $arr as $ele ) {
-        if ( checkgroups( $ele['cid'] ) == false ) {
+        if ( xtube_checkgroups( $ele['cid'] ) == false ) {
             continue;
         } 
         $sub_arr = array();
@@ -54,7 +54,7 @@ if ( is_array( $arr ) > 0 && !$list && !$selectdate ) {
             // Subitem file count
             $hassubitems = xtube_getTotalItems( $sub_ele['cid'] );
             // Filter group permissions
-            if ( true == checkgroups( $sub_ele['cid'] ) ) {
+            if ( true == xtube_checkgroups( $sub_ele['cid'] ) ) {
                 // If subcategory count > 5 then finish adding subcats to $infercategories and end
                 if ( $chcount > 5 ) {
                     $infercategories .= "...";
