@@ -30,7 +30,7 @@ function checkXTubeBlockgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect 
     return true;
 }
 
-function b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
+function xtube_b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
     $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
     global $xoopsUser;
 
@@ -125,7 +125,7 @@ function b_xoopstube_top_show( $options ) {
         if ( false == checkXTubeBlockGroups( $myrow['cid'] ) || $myrow['cid'] == 0 ) {
             continue;
         }
-        if ( b_checkgroups( $myrow['cid'] ) == false ) {
+        if ( xtube_b_checkgroups( $myrow['cid'] ) == false ) {
             exit;
         }
         $videoload = array();

@@ -23,7 +23,7 @@ switch ( strtolower($op) ) {
 	$start = xtube_cleanRequestVars( $_REQUEST, 'start', 0 );
         xoops_cp_header();
         xtube_adminmenu( _AM_XTUBE_VOTE_RATINGINFOMATION );
-        $_vote_data = getVoteDetails( $lid );
+        $_vote_data = xtube_getVoteDetails( $lid );
 
         $text_info = "
 		<table width='100%'>

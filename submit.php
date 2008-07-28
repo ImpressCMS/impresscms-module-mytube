@@ -19,14 +19,14 @@ $lid = xtube_cleanRequestVars( $_REQUEST, 'lid', 0 );
 $cid = intval($cid);
 $lid = intval($lid);
 
-if ( false == checkgroups( $cid, 'XTubeSubPerm' ) ) {
+if ( false == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
     redirect_header( "index.php", 1, _MD_XTUBE_NOPERMISSIONTOPOST );
     exit();
 } 
 
-if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
+if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
     if ( xtube_cleanRequestVars( $_REQUEST, 'submit', 0 ) ) {
-        if ( false == checkgroups( $cid, 'XTubeSubPerm' ) ) {
+        if ( false == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
             redirect_header( "index.php", 1, _MD_XTUBE_NOPERMISSIONTOPOST );
             exit();
         } 
@@ -53,7 +53,7 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
             $status = 0;
             $publishdate = 0;
             $message = _MD_XTUBE_THANKSFORINFO;
-            if ( true == checkgroups( $cid, 'XTubeAutoApp' ) ) {
+            if ( true == xtube_checkgroups( $cid, 'XTubeAutoApp' ) ) {
                 $publishdate = time();
                 $status = 1;
                 $message = _MD_XTUBE_ISAPPROVED;
@@ -86,7 +86,7 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
 
             $tags['CATEGORY_NAME'] = $row['title'];
             $tags['CATEGORY_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/viewcat.php?cid=' . $cid;
-            if ( true == checkgroups( $cid, 'XTubeAutoApp' ) ) {
+            if ( true == xtube_checkgroups( $cid, 'XTubeAutoApp' ) ) {
                 $notification_handler -> triggerEvent( 'global', 0, 'new_video', $tags );
                 $notification_handler -> triggerEvent( 'category', $cid, 'new_video', $tags );
                 redirect_header( 'index.php', 2, _MD_XTUBE_ISAPPROVED );
@@ -101,7 +101,7 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
                 redirect_header( 'index.php', 2, _MD_XTUBE_THANKSFORINFO );
             } 
         } else {
-            if ( true == checkgroups( $cid, 'XTubeAutoApp' ) || $approve == 1 ) {
+            if ( true == xtube_checkgroups( $cid, 'XTubeAutoApp' ) || $approve == 1 ) {
                 $updated = time();
                 $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " SET cid=$cid, title='$title', vidid='$vidid', publisher='$publisher', updated='$updated', offline='$offline', description='$descriptionb', ipaddress='$ipaddress', notifypub='$notifypub', vidrating='$vidrating', time='$time', keywords='$keywords', item_tag='$item_tag', picurl='$picurl' WHERE lid =" . $lid;
                 if ( !$result = $xoopsDB -> query( $sql ) ) {
@@ -241,7 +241,7 @@ if ( true == checkgroups( $cid, 'XTubeSubPerm' ) ) {
         $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " ORDER BY title";
         $result = $xoopsDB -> query( $sql );
         while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
-            if ( true == checkgroups( $myrow['cid'], 'XTubeSubPerm' ) ) {
+            if ( true == xtube_checkgroups( $myrow['cid'], 'XTubeSubPerm' ) ) {
                 $submitcats[$myrow['cid']] = $myrow['title'];
             } 
         }
@@ -282,11 +282,11 @@ if ($xoopsModuleConfig['usercantag'] == 1) {
             $sform -> addElement( new XoopsFormHidden( 'notifypub', 0 ) );
         } 
 
-        if ( true == checkgroups( $cid, 'XTubeAppPerm' ) && $lid > 0 ) {
+        if ( true == xtube_checkgroups( $cid, 'XTubeAppPerm' ) && $lid > 0 ) {
             $approve_checkbox = new XoopsFormCheckBox( '', 'approve', $approve );
             $approve_checkbox -> addOption( 1, _MD_XTUBE_APPROVE );
             $option_tray -> addElement( $approve_checkbox );
-        } else if ( true == checkgroups( $cid, 'XTubeAutoApp' ) ) {
+        } else if ( true == xtube_checkgroups( $cid, 'XTubeAutoApp' ) ) {
             $sform -> addElement( new XoopsFormHidden( 'approve', 1 ) );
         } else {
             $sform -> addElement( new XoopsFormHidden( 'approve', 0 ) );

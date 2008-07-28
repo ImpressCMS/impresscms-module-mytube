@@ -50,7 +50,7 @@ while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
     $subtotalvideoload = 0;
     $totalvideoload = xtube_getTotalItems( $myrow['cid'], 1 );
     $indicator = xtube_isnewimage( $totalvideoload['published'] );
-    if ( checkgroups( $myrow['cid'] ) ) {
+    if ( xtube_checkgroups( $myrow['cid'] ) ) {
         $title = $xtubemyts -> htmlSpecialCharsStrip( $myrow['title'] );
 
         $arr = array();
@@ -60,7 +60,7 @@ while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
         $chcount = 1;
         $subcategories = "";
         foreach( $arr as $ele ) {
-            if ( true == checkgroups( $ele['cid'] ) ) {
+            if ( true == xtube_checkgroups( $ele['cid'] ) ) {
                 if ( $xoopsModuleConfig['subcats'] == 1 ) {
                     $chtitle = $xtubemyts -> htmlSpecialCharsStrip( $ele['title'] );
                     if ( $chcount > 5 ) {

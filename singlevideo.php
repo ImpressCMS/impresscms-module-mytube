@@ -19,7 +19,7 @@ $sql2 = "SELECT count(*) FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " a
  . " AND (b.cid=a.cid OR (a.cid=" . intval($cid) . " OR b.cid=" . intval($cid) . "))";
 list( $count ) = $xoopsDB -> fetchRow( $xoopsDB -> query( $sql2 ) );
 
-if ( false == checkgroups( $cid ) && $count == 0 ) {
+if ( false == xtube_checkgroups( $cid ) && $count == 0 ) {
     redirect_header( "index.php", 1, _MD_XTUBE_MUSTREGFIRST );
     exit();
 } 

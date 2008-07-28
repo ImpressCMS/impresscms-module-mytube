@@ -71,7 +71,7 @@ function mytube_tag_iteminfo(&$items) {
 }
 
 /** Remove orphan tag-item links **/
-function xoopstube_tag_synchronization($mid) {
+function mytube_tag_synchronization($mid) {
   // Optional
 }
 ?>
