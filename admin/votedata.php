@@ -45,7 +45,7 @@ switch ( strtolower($op) ) {
 
         echo "
 		<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_VOTE_DISPLAYVOTES . "</legend>\n
-		<div style='padding: 8px;'>$text_info</div>\n	
+		<div style='padding: 8px;'>$text_info</div>\n
 		<div style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></div>\n
 		</fieldset>\n
 		<br />\n
@@ -90,9 +90,9 @@ switch ( strtolower($op) ) {
         echo "</table>"; 
         // Include page navigation
         include_once XOOPS_ROOT_PATH . '/class/pagenav.php';
-        $page = ( $votes > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
+//        $page = ( $votes > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
         $pagenav = new XoopsPageNav( $page, $xoopsModuleConfig['admin_perpage'], $start, 'start' );
-        echo '<div align="right" style="padding: 8px;">' . $page . '' . $pagenav -> renderNav() . '</div>';
+        echo '<div align="right" style="padding: 8px;">' . $pagenav -> renderNav() . '</div>';
         break;
 } 
 xoops_cp_footer();
