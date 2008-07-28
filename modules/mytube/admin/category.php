@@ -77,10 +77,16 @@ function createcat($cid = 0) {
     $sform -> addElement(new XoopsFormText(_AM_XTUBE_FCATEGORY_TITLE, 'title', 50, 80, $title), true);
     $sform -> addElement(new XoopsFormText(_AM_XTUBE_FCATEGORY_WEIGHT, 'weight', 10, 80, $weight), false);
     
-    if ($totalcats > 0) {
+    if ($totalcats > 0 && $cid) {
        $mytreechose = new XoopsTree($xoopsDB -> prefix('xoopstube_cat'), "cid", "pid");
        ob_start();
           $mytreechose -> makeMySelBox("title", "title", $cat_arr['pid'] , 1, "pid");
+          $sform -> addElement(new XoopsFormLabel(_AM_XTUBE_FCATEGORY_SUBCATEGORY, ob_get_contents()));
+       ob_end_clean();
+    } else {
+      $mytreechose = new XoopsTree($xoopsDB -> prefix('xoopstube_cat'), 'cid', 'pid');
+       ob_start();
+          $mytreechose -> makeMySelBox("title", "title", $cid, 1, "pid");
           $sform -> addElement(new XoopsFormLabel(_AM_XTUBE_FCATEGORY_SUBCATEGORY, ob_get_contents()));
        ob_end_clean();
     }
@@ -178,7 +184,7 @@ function createcat($cid = 0) {
         $button_tray -> addElement($butt_create);
 
         $butt_delete = new XoopsFormButton('', '', _AM_XTUBE_BDELETE, 'submit');
-        $butt_delete -> setExtra('onclick="this.form.elements.op.value=\'delCat\'"');
+        $butt_delete -> setExtra('onclick="this.form.elements.op.value=\'del\'"');
         $button_tray -> addElement($butt_delete);
 
         $butt_cancel = new XoopsFormButton('', '', _AM_XTUBE_BCANCEL, 'button');
