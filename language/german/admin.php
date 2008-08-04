@@ -487,4 +487,12 @@ define( "_AM_XTUBE_INFORMATION", "Video-Infos" );
 define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Benutzen Sie den roten Teil, wie im unteren Beispiel" );
 define( "_AM_XTUBE_VIDEO_VIEWS", "angesehen: " );
 define( "_AM_XTUBE_ERROR_CATISCAT", "Sie können eine Kategorie nicht als eine Unterkategorie von sich selbst setzen!" );
+
+// Version 1.04 RC-3
+define( "_AM_XTUBE_MOD_VIDID", "Video id-code: " );
+define( "_AM_XTUBE_MOD_VIDSOURCE", "Video source: " );
+define( "_AM_XTUBE_MOD_TIME", "Time: " );
+define( "_AM_XTUBE_MOD_KEYWORDS", "Keywords: " );
+define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
+define( "_AM_XTUBE_MOD_PICURL", "Picture url: " );
 ?>

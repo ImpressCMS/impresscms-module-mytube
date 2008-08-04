@@ -127,8 +127,8 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
                 $requestid = $modifysubmitter;
                 $requestdate = time();
                 $updated = xtube_cleanRequestVars( $_REQUEST, 'up_dated', time() );
-                $sql = "INSERT INTO " . $xoopsDB -> prefix( 'xoopstube_mod' ) . " (requestid, lid, cid, title, vidid, publisher, vidsource, description, modifysubmitter, requestdate)";
-                $sql .= " VALUES ('', $lid, $cid, '$title', '$vidid', '$publisher', '$vidsource', '$descriptionb', '$vidrating', '$modifysubmitter', '$requestdate')";
+                $sql = "INSERT INTO " . $xoopsDB -> prefix( 'xoopstube_mod' ) . " (requestid, lid, cid, title, vidid, publisher, vidsource, description, modifysubmitter, requestdate, time, keywords, item_tag, picurl)";
+                $sql .= " VALUES ('', $lid, $cid, '$title', '$vidid', '$publisher', '$vidsource', '$descriptionb', '$modifysubmitter', '$requestdate', '$time', '$keywords', '$item_tag', '$picurl')";
                 if ( !$result = $xoopsDB -> query( $sql ) ) {
                     $_error = $xoopsDB -> error() . " : " . $xoopsDB -> errno();
                     XoopsErrorHandler_HandleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );

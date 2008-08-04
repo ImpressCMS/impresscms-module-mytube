@@ -17,11 +17,11 @@ switch ( strtolower( $op ) ) {
         xoops_cp_header();
         xtube_adminmenu( _AM_XTUBE_MOD_MODREQUESTS );
 
-        $sql = "SELECT modifysubmitter, requestid, lid, cid, title, url, description, screenshot, vidsource, urlrating FROM " . $xoopsDB -> prefix( 'xoopstube_mod' ) . " WHERE requestid=" . $requestid;
+        $sql = "SELECT modifysubmitter, requestid, lid, cid, title, vidid, submitter, publisher, vidsource, description, time, keywords, item_tag, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_mod' ) . " WHERE requestid=" . $requestid;
         $mod_array = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
         unset( $sql );
 
-        $sql = "SELECT submitter, lid, cid, title, url, description, screenshot, vidsource, urlrating, country FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $mod_array['lid'] ;
+        $sql = "SELECT submitter, lid, cid, title, vidid, submitter, publisher, vidsource, description, time, keywords, item_tag, picurl FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $mod_array['lid'] ;
         $orig_array = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
         unset( $sql );
 
@@ -42,12 +42,13 @@ switch ( strtolower( $op ) ) {
                 $sql = "SELECT title FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " WHERE cid=" . $content;
                 $row = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
                 $content = $row['title'];
-            } 
+            }
 
-            if ( $key == "urlrating" ) {
-                $urlrating_array = xtube_rating_system();
-                $content = $urlrating_array[ $content ];
-            } 
+            if ( $key == "vidsource") {
+              include_once XOOPS_ROOT_PATH . '/modules/' . $xoopsModule -> getVar('dirname') . '/include/video.php';
+              $content = xtube_returnsource( $content );
+            }
+
             $sform -> addElement( new XoopsFormLabel( $lang_def, $content ) );
         } 
         $sform -> display();
@@ -68,12 +69,13 @@ switch ( strtolower( $op ) ) {
                 $sql = "SELECT title FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " WHERE cid=" . $content;
                 $row = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
                 $content = $row['title'];
-            } 
- 
-            if ( $key == "urlrating" ) {
-                $urlrating_array = xtube_rating_system();
-                $content = $urlrating_array[ $content ];
-            } 
+            }
+            
+            if ( $key == "vidsource") {
+              include_once XOOPS_ROOT_PATH . '/modules/' . $xoopsModule -> getVar('dirname') . '/include/video.php';
+              $content = xtube_returnsource( $content );
+            }
+
             $sform -> addElement( new XoopsFormLabel( $lang_def, $content ) );
         } 
         $button_tray = new XoopsFormElementTray( '', '' );
@@ -100,17 +102,20 @@ switch ( strtolower( $op ) ) {
         $lid = $video_array['lid'];
         $cid = $video_array['cid'];
         $title = $video_array['title'];
-        $url = $video_array['url'];
         $publisher = $xoopsUser -> uname();
         $screenshot = $video_array['screenshot'];
         $vidsource = $video_array['vidsource'];
-        $description = $video_array['description'];
+        $descriptionb = $video_array['description'];
         $submitter = $video_array['modifysubmitter'];
-        $urlrating = $video_array['urlrating'];
         $keywords = $video_array['keywords'];
+        $vidid = $video_array['vidid'];
+        $item_tag = $video_array['item_tag'];
+        $picurl = $video_array['picurl'];
+        $title = $video_array['title'];
+        $time = $video_array['time'];
         $updated = time();
 
-        $xoopsDB -> query( "UPDATE " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " SET cid = $cid, title='$title', url='$url', submitter='$submitter', screenshot='', publisher='$publisher', status='2', vidsource='$vidsource', updated='$updated', description='$description', urlrating='$urlrating', keywords='$keywords' WHERE lid = " . $lid );
+        $xoopsDB -> query( "UPDATE " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " SET cid = $cid, title='$title', vidid='$vidid', screenshot='', publisher='$publisher', vidsource='$vidsource', description='$descriptionb', time='$time', keywords='$keywords', item_tag='$item_tag', picurl='$picurl', updated='$updated' WHERE lid = " . $lid );
         $sql = "DELETE FROM " . $xoopsDB -> prefix( 'xoopstube_mod' ) . " WHERE requestid=" . $requestid;
         $result = $xoopsDB -> query( $sql );
         redirect_header( 'index.php', 1, _AM_XTUBE_MOD_REQUPDATED );

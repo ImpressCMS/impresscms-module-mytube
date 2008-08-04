@@ -493,4 +493,12 @@ define( "_AM_XTUBE_ERROR_CATISCAT", "You can NOT set a category as a sub-categor
 //define( "_AM_XTUBE_VIDEO_DLURL", "Código do Vídeo Embedded: " ); //Verificando remoção...
 //define( "_AM_XTUBE_VIDEO_DLURL_NOTE", "<small>(video embedded code = http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font>)</small>" ); //Verificando remoção...
 //define( "_AM_XTUBE_VIDEO_DIRCA", " Avaliação do Conteúdo pela internet: " ); //Verificando remoção...
+
+// Version 1.04 RC-3
+define( "_AM_XTUBE_MOD_VIDID", "Video id-code: " );
+define( "_AM_XTUBE_MOD_VIDSOURCE", "Video source: " );
+define( "_AM_XTUBE_MOD_TIME", "Time: " );
+define( "_AM_XTUBE_MOD_KEYWORDS", "Keywords: " );
+define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
+define( "_AM_XTUBE_MOD_PICURL", "Picture url: " );
 ?>
