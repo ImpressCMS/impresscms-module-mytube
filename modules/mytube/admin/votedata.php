@@ -22,7 +22,7 @@ switch ( strtolower($op) ) {
     default:
 	$start = xtube_cleanRequestVars( $_REQUEST, 'start', 0 );
         xoops_cp_header();
-        xtube_adminmenu( _AM_XTUBE_VOTE_RATINGINFOMATION );
+        xtube_adminmenu( "<h4>" . _AM_XTUBE_VOTE_RATINGINFOMATION . "</h4>" );
         $_vote_data = xtube_getVoteDetails( $lid );
 
         $text_info = "
@@ -43,11 +43,11 @@ switch ( strtolower($op) ) {
 		 </tr>
 		</table>";
 
-        echo "
-		<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_VOTE_DISPLAYVOTES . "</legend>\n
-		<div style='padding: 8px;'>$text_info</div>\n
-		<div style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></div>\n
-		</fieldset>\n
+        echo "  <div style='padding:5px; background-color: #EEEEEE; border: 1px solid #D9D9D9;'>
+		<span style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_VOTE_DISPLAYVOTES . "<br /><br /></span>\n
+		<span style='padding: 8px;'>$text_info</dspaniv><br />\n
+		<span style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></span>\n
+		</div>\n
 		<br />\n
 
 		<table width='100%' cellspacing='1' cellpadding='2' class='outer'>\n
@@ -90,7 +90,7 @@ switch ( strtolower($op) ) {
         echo "</table>"; 
         // Include page navigation
         include_once XOOPS_ROOT_PATH . '/class/pagenav.php';
-//        $page = ( $votes > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
+        $page = ( $votes > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
         $pagenav = new XoopsPageNav( $page, $xoopsModuleConfig['admin_perpage'], $start, 'start' );
         echo '<div align="right" style="padding: 8px;">' . $pagenav -> renderNav() . '</div>';
         break;

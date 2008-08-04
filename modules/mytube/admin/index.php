@@ -11,8 +11,7 @@ $mytree = new XoopsTree( $xoopsDB -> prefix( 'xoopstube_cat' ), 'cid', 'pid' );
 $op = xtube_cleanRequestVars( $_REQUEST, 'op', '' );
 $lid = xtube_cleanRequestVars( $_REQUEST, 'lid', 0 );
 
-function edit( $lid = 0 )
-{
+function edit( $lid = 0 ) {
     global $xoopsDB, $xtubemyts, $mytree, $imagearray, $xoopsModuleConfig, $xoopsModule;
 
     $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $lid;
@@ -419,17 +418,17 @@ switch ( strtolower( $op ) ) {
         list( $totalvideos ) = $xoopsDB -> fetchRow( $result4 );
 
         xoops_cp_header();
-        xtube_adminmenu( _AM_XTUBE_BINDEX );
-        echo "
-			<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_MINDEX_VIDEOSUMMARY . "</legend>\n
-			<div style='padding: 8px;'><small>\n
+        xtube_adminmenu( "<h4>" . _AM_XTUBE_BINDEX . "</h4>" );
+        echo "          <div style='padding:5px; background-color: #EEEEEE; border: 1px solid #D9D9D9;'>
+			<span style='font-weight: bold; color: #0A3760;'>" ._AM_XTUBE_MINDEX_VIDEOSUMMARY . "<br /><br /></span>\n
+			<span style='padding: 8px;'><small>\n
 			<a href='category.php'>" . _AM_XTUBE_SCATEGORY . "</a><b>" . $totalcats . "</b> | \n
 			<a href='index.php'>" . _AM_XTUBE_SFILES . "</a><b>" . $totalvideos . "</b> | \n
 			<a href='newvideos.php'>" . _AM_XTUBE_SNEWFILESVAL . "</a><b>" . $totalnewvideos . "</b> | \n
 			<a href='modifications.php'>" . _AM_XTUBE_SMODREQUEST . "</a><b>" . $totalmodrequests . "</b> | \n
 			<a href='brokenvideo.php'>" . _AM_XTUBE_SBROKENSUBMIT . "</a><b>" . $totalbrokenvideos . "</b>\n
-			</small></div></fieldset><br />\n
-		";
+			</small></span></div><br />\n
+	     ";
 
         if ( $totalcats > 0 ) {
             $sform = new XoopsThemeForm( _AM_XTUBE_CCATEGORY_MODIFY, "category", "category.php" );
@@ -453,7 +452,7 @@ switch ( strtolower( $op ) ) {
             $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0  ORDER BY lid DESC" ;
             $published_array = $xoopsDB -> query( $sql, $xoopsModuleConfig['admin_perpage'], $start );
             $published_array_count = $xoopsDB -> getRowsNum( $xoopsDB -> query( $sql ) );
-            xtube_videolistheader( _AM_XTUBE_MINDEX_PUBLISHEDVIDEO );
+            xtube_videolistheader( "<h4>" . _AM_XTUBE_MINDEX_PUBLISHEDVIDEO . "</h4>" );
             xtube_linklistpagenavleft( $published_array_count, $start, 'art' );
             if ( $published_array_count > 0 ) {
                 while ( $published = $xoopsDB -> fetchArray( $published_array ) ) {

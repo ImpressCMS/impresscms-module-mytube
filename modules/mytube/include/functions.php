@@ -141,9 +141,9 @@ function xtube_toolbar( $cid = 0 ) {
 } 
 
 function xtube_serverstats() {
-    echo "<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_VIDEO_IMAGEINFO . "</legend>\n
-		<div style='padding: 8px;'>\n
-		<div>" . _AM_XTUBE_VIDEO_SPHPINI . "</div>\n";
+    echo "  <div style='padding:5px; background-color: #EEEEEE; border: 1px solid #D9D9D9;'>
+            <span style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_VIDEO_IMAGEINFO . "<br /><br /></span>\n
+	    <span style='padding: 12px;'>" . _AM_XTUBE_VIDEO_SPHPINI . "<br /><br /><span>\n";
 
     $safemode = ( ini_get( 'safe_mode' ) ) ? _AM_XTUBE_VIDEO_ON . _AM_XTUBE_VIDEO_SAFEMODEPROBLEMS : _AM_XTUBE_VIDEO_OFF;
     $registerglobals = ( ini_get( 'register_globals' ) == '' ) ? _AM_XTUBE_VIDEO_OFF : _AM_XTUBE_VIDEO_ON;
@@ -160,7 +160,7 @@ function xtube_serverstats() {
     echo "<li>" . _AM_XTUBE_VIDEO_REGISTERGLOBALS . $registerglobals;
     echo "<li>" . _AM_XTUBE_VIDEO_SERVERUPLOADSTATUS . $videos;
     echo "</div>";
-    echo "</fieldset><br />";
+    echo "<br />";
 } 
 
 // displayicons()

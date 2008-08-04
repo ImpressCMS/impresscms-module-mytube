@@ -59,7 +59,7 @@ switch ( strtolower($op) ) {
         $namearray = array( 1 => _AM_XTUBE_VIDEO_CATIMAGE , 2 => _AM_XTUBE_VIDEO_MAINIMAGEDIR, 3 => _AM_XTUBE_VIDEO_CATVIDEOIMG );
         $listarray = array( 1 => _AM_XTUBE_VIDEO_FCATIMAGE , 2 => _AM_XTUBE_VIDEO_FMAINIMAGEDIR, 3 => _AM_XTUBE_VIDEO_FCATVIDEOIMG );
 
-        xtube_adminmenu( _AM_XTUBE_MUPLOADS );
+        xtube_adminmenu( "<h4>" . _AM_XTUBE_MUPLOADS . "</h4>" );
         xtube_serverstats();
         if ( $rootpath > 0 ) {
             echo "<div><b>" . _AM_XTUBE_VIDEO_FUPLOADPATH . "</b> " . XOOPS_ROOT_PATH . "/" . $dirarray[$rootpath] . "</div>\n";

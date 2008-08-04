@@ -62,15 +62,16 @@ switch ( strtolower( $op ) ) {
         $new_array_count = $xoopsDB -> getRowsNum( $xoopsDB -> query( $sql ) );
 
         xoops_cp_header();
-        xtube_adminmenu( _AM_XTUBE_SUB_SUBMITTEDFILES );
+        xtube_adminmenu("<h4>" . _AM_XTUBE_SUB_SUBMITTEDFILES . "</h4>" );
 
-        echo "<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_SUB_FILESWAITINGINFO . "</legend>\n";
-        echo "<div style='padding: 8px;'>" . _AM_XTUBE_SUB_FILESWAITINGVALIDATION . "&nbsp;<b>$new_array_count</b><div>\n";
-        echo "<div div style='padding: 8px;'>\n";
-        echo "<li>" . $imagearray['approve'] . " " . _AM_XTUBE_SUB_APPROVEWAITINGFILE . "\n";
-        echo "<li>" . $imagearray['editimg'] . " " . _AM_XTUBE_SUB_EDITWAITINGFILE . "\n";
-        echo "<li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_SUB_DELETEWAITINGFILE . "</div>\n";
-        echo "</fieldset><br />\n";
+        echo "  <div style='padding:5px; background-color: #EEEEEE; border: 1px solid #D9D9D9;'>
+                <span style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_SUB_FILESWAITINGINFO . "<br /><br /></span>\n
+                <span style='padding: 12px;'>" . _AM_XTUBE_SUB_FILESWAITINGVALIDATION . "<b>$new_array_count</b><br /><br /><span>\n
+                <div style='padding: 8px;'><li>&nbsp;&nbsp;" . $imagearray['approve'] . " " . _AM_XTUBE_SUB_APPROVEWAITINGFILE . "<br />
+                <li>&nbsp;&nbsp;" . $imagearray['editimg'] . " " . _AM_XTUBE_SUB_EDITWAITINGFILE . "<br />
+                <li>&nbsp;&nbsp;" . $imagearray['deleteimg'] . " " . _AM_XTUBE_SUB_DELETEWAITINGFILE . "</div>\n
+                </div><br />\n
+             ";
 
         echo "<table width='100%' cellspacing='1' class='outer'>\n";
         echo "<tr style='text-align: center;'>\n";
