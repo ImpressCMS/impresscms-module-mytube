@@ -137,10 +137,14 @@ switch ( strtolower( $op ) ) {
         $totalmodrequests = $xoopsDB -> getRowsNum( $xoopsDB -> query( $sql ) );
 
         xoops_cp_header();
-        xtube_adminmenu( _AM_XTUBE_MOD_MODREQUESTS );
-        echo "<fieldset><legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_MOD_MODREQUESTSINFO . "</legend>\n";
-        echo "<div style='padding: 8px;'>" . _AM_XTUBE_MOD_TOTMODREQUESTS . " <b>$totalmodrequests</></div>\n";
-        echo "</fieldset><br />\n";
+        xtube_adminmenu( "<h4>" . _AM_XTUBE_MOD_MODREQUESTS . "</h4>" );
+
+        echo "  <div style='padding:5px; background-color: #EEEEEE; border: 1px solid #D9D9D9;'>
+                <span style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_MOD_MODREQUESTSINFO . "<br /><br /></span>\n
+                <span style='padding: 12px;'>" . _AM_XTUBE_MOD_TOTMODREQUESTS . "<b>$totalmodrequests</b><br /><br /><span>\n
+                </div><br />\n
+             ";
+
         echo "<table width='100%' cellspacing='1' class='outer'>\n";
         echo "<tr style='text-align: center;'>\n";
         echo "<th>" . _AM_XTUBE_MOD_MODID . "</th>\n";

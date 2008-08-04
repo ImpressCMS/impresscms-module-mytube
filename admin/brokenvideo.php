@@ -63,32 +63,28 @@ switch ( strtolower( $op ) ) {
         $totalbrokenvideos = $xoopsDB -> getRowsNum( $result );
 
         xoops_cp_header();
-        xtube_adminmenu( _AM_XTUBE_BROKEN_FILE );
-        echo "
-		<fieldset>
-		 <legend style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_BROKEN_REPORTINFO . "</legend>\n
-		  <div style='padding: 8px;'>" . _AM_XTUBE_BROKEN_REPORTSNO . "&nbsp;<b>$totalbrokenvideos</b><div>\n
-		  <div style='padding: 8px;'>\n
-		   <ul>
-		    <li>" . $imagearray['ignore'] . " " . _AM_XTUBE_BROKEN_IGNOREDESC . "</li>\n
-		    <li>" . $imagearray['editimg'] . " " . _AM_XTUBE_BROKEN_EDITDESC . "</li>
-		    <li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_BROKEN_DELETEDESC . "</li>\n
-		   </ul>
-		  </div>\n
-		 </fieldset>
-		<br />\n
+        xtube_adminmenu( "<h4>" . _AM_XTUBE_BROKEN_FILE . "</h4>" );
 
-		<table width='100%' border='0' cellspacing='1' cellpadding='2' class='outer'>\n
-		<tr style='text-align: center;'>\n
-		<th width='3%' style='text-align: center;'>" . _AM_XTUBE_BROKEN_ID . "</th>\n
-		<th width='35%' style='text-align: left;'>" . _AM_XTUBE_BROKEN_TITLE . "</th>\n
-		<th>" . _AM_XTUBE_BROKEN_REPORTER . "</th>\n
-		<th>" . _AM_XTUBE_BROKEN_FILESUBMITTER . "</th>\n
-		<th>" . _AM_XTUBE_BROKEN_DATESUBMITTED . "</th>\n
-		<th>" . _AM_XTUBE_BROKEN_ACKNOWLEDGED . "</th>\n
-		<th>" . _AM_XTUBE_BROKEN_DCONFIRMED . "</th>\n		
-		<th style='text-align: center;'>" . _AM_XTUBE_BROKEN_ACTION . "</th>\n
-		</tr>\n";
+        echo "  <div style='padding:5px; background-color: #EEEEEE; border: 1px solid #D9D9D9;'>
+                <span style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_BROKEN_REPORTINFO . "<br /><br /></span>\n
+                <span style='padding: 12px;'>" . _AM_XTUBE_BROKEN_REPORTSNO . "<b>$totalbrokenvideos</b><br /><br /><span>\n
+                <div style='padding: 8px;'><li>&nbsp;&nbsp;" . $imagearray['ignore'] . " " . _AM_XTUBE_BROKEN_IGNOREDESC . "<br />
+                <li>&nbsp;&nbsp;" . $imagearray['editimg'] . " " . _AM_XTUBE_BROKEN_EDITDESC . "<br />
+                <li>&nbsp;&nbsp;" . $imagearray['deleteimg'] . " " . _AM_XTUBE_BROKEN_DELETEDESC . "</div>\n
+                </div><br />\n
+             ";
+
+        echo "<table width='100%' border='0' cellspacing='1' cellpadding='2' class='outer'>\n";
+        echo "<tr style='text-align: center;'>\n";
+        echo "<th width='3%' style='text-align: center;'>" . _AM_XTUBE_BROKEN_ID . "</th>\n";
+        echo "<th width='35%' style='text-align: left;'>" . _AM_XTUBE_BROKEN_TITLE . "</th>\n";
+        echo "<th>" . _AM_XTUBE_BROKEN_REPORTER . "</th>\n";
+        echo "<th>" . _AM_XTUBE_BROKEN_FILESUBMITTER . "</th>\n";
+        echo "<th>" . _AM_XTUBE_BROKEN_DATESUBMITTED . "</th>\n";
+        echo "<th>" . _AM_XTUBE_BROKEN_ACKNOWLEDGED . "</th>\n";
+        echo "<th>" . _AM_XTUBE_BROKEN_DCONFIRMED . "</th>\n";
+        echo "<th style='text-align: center;'>" . _AM_XTUBE_BROKEN_ACTION . "</th>\n";
+        echo "</tr>\n";
 
         if ( $totalbrokenvideos == 0 ) {
             echo "<tr style='text-align: center;'><td style='text-align: center;' class='head' colspan='8'>" . _AM_XTUBE_BROKEN_NOFILEMATCH . "</td></tr>";

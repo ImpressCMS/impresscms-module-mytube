@@ -11,7 +11,7 @@ include_once '../../../include/cp_header.php';
 include_once XOOPS_ROOT_PATH . '/class/xoopsform/grouppermform.php';
 
 xoops_cp_header();
-xtube_adminmenu( _AM_XTUBE_PERM_MANAGEMENT );
+xtube_adminmenu( "<h4>" . _AM_XTUBE_PERM_MANAGEMENT . "</h4>" );
 
 $permtoset = isset($_POST['permtoset']) ? intval($_POST['permtoset']) : 1;
 $selected = array('','','','','');
