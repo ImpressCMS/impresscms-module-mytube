@@ -482,4 +482,12 @@ define( "_AM_XTUBE_INFORMATION", "Video Informatie" );
 define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Neem rood aangegeven gedeelte uit onderste voorbeelden over" );
 define( "_AM_XTUBE_VIDEO_VIEWS", "Bekeken: " );
 define( "_AM_XTUBE_ERROR_CATISCAT", "Je kan een categorie NIET als sub-categorie van zichzelf maken!" );
+
+// Version 1.04 RC-3
+define( "_AM_XTUBE_MOD_VIDID", "Video id-code: " );
+define( "_AM_XTUBE_MOD_VIDSOURCE", "Video bron: " );
+define( "_AM_XTUBE_MOD_TIME", "Tijd: " );
+define( "_AM_XTUBE_MOD_KEYWORDS", "Keywords: " );
+define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
+define( "_AM_XTUBE_MOD_PICURL", "Afbeeldings url: " );
 ?>

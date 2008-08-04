@@ -35,7 +35,7 @@ $imagearray = array(
 	'ack_no' => "<img src='../images/icon/film_off.png' alt='" . _AM_XTUBE_ICO_REPORT . "' align='middle'>",
         'con_yes' => "<img src='../images/icon/film_on.png' alt='" . _AM_XTUBE_ICO_CONFIRM . "' align='middle'>",
 	'con_no' => "<img src='../images/icon/film_off.png' alt='" . _AM_XTUBE_ICO_CONBROKEN . "' align='middle'>",
-	'view' => "<img src='../images/icon/view.gif' alt='" . _AM_XTUBE_ICO_VIEW . "' align='middle'>"
+	'view' => "<img src='../images/icon/view.png' alt='" . _AM_XTUBE_ICO_VIEW . "' align='middle'>"
 	);
 
 ?>
