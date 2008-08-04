@@ -37,7 +37,7 @@ function edit( $lid = 0 )
     $vidsource = $video_array['vidsource'] ? $video_array['vidsource'] : 0;
     $ipaddress = $video_array['ipaddress'] ? $video_array['ipaddress'] : 0;
     $notifypub = $video_array['notifypub'] ? $video_array['notifypub'] : 0;
-    $time = $video_array['time'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['time'] ) : '00:00';
+    $time = $video_array['time'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['time'] ) : '0:00:00';
     $keywords = $video_array['keywords'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['keywords'] ) : '';
     $item_tag = $video_array['item_tag'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['item_tag'] ) : '';
 
@@ -121,7 +121,9 @@ function edit( $lid = 0 )
     $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_PUBLISHER, 'publisher', 70, 255, $publisher ), true );
     
 // Time form
-    $sform -> addElement( new XoopsFormText( _AM_XTUBE_TIME, 'time', 5, 5, $time ), false);
+    $timeform = new XoopsFormText( _AM_XTUBE_TIME, 'time', 7, 7, $time );
+    $timeform -> setDescription( "<small>(h:mm:ss)</small>" );
+    $sform -> addElement($timeform, false);
 
 // Category menu
     ob_start();

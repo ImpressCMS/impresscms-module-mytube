@@ -190,7 +190,7 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
         $ipaddress = $video_array['ipaddress'] ? $video_array['ipaddress'] : 0;
         $notifypub = $video_array['notifypub'] ? $video_array['notifypub'] : 0;
         $vidrating = $video_array['vidrating'] ? $video_array['vidrating'] : 1;
-        $time = $video_array['time'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['time'] ) : '00:00';
+        $time = $video_array['time'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['time'] ) : '0:00:00';
         $keywords = $video_array['keywords'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['keywords'] ) : '';
         $item_tag = $video_array['item_tag'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['item_tag'] ) : '';
         $picurl = $video_array['picurl'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['picurl'] ) : 'http://';
@@ -198,17 +198,17 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
      	$sform = new XoopsThemeForm( '', "storyform", xoops_getenv( 'PHP_SELF' ) );
         $sform -> setExtra( 'enctype="multipart/form-data"' );
         
-// Video title
+// Video title form
         $sform -> addElement( new XoopsFormText( _MD_XTUBE_FILETITLE, 'title', 70, 255, $title ), true );
 
-// Video code
+// Video code form
     $videocode = new XoopsFormText( _MD_XTUBE_DLVIDID, 'vidid', 70, 512, $vidid );
     $videocode -> setDescription( "<br /><small>" . _MD_XTUBE_VIDEO_DLVIDIDDSC . "</small>");
     $sform -> addElement($videocode, true);
     $note = _MD_XTUBE_VIDEO_DLVIDID_NOTE;
     $sform -> addElement(new XoopsFormLabel('',$note));
     
-// Video source
+// Video source form
     $vidsource_array = array( 0   => _MD_XTUBE_YOUTUBE,
                               1   => _MD_XTUBE_METACAFE,
                               2   => _MD_XTUBE_IFILM,
@@ -226,15 +226,15 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
     $vidsource_select -> addOptionArray( $vidsource_array );
     $sform -> addElement( $vidsource_select, false );
     
-// Picture url
+// Picture url form
    $picurl = new XoopsFormText( _MD_XTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
    $picurl -> setDescription( "<br /><span style='font-weight: normal;font-size: smaller;'>" . _MD_XTUBE_VIDEO_PICURLNOTE . "</span>" );
    $sform -> addElement($picurl, false);
 
-// Video publisher
+// Video publisher form
     $sform -> addElement( new XoopsFormText( _MD_XTUBE_VIDEO_PUBLISHER, 'publisher', 70, 255, $publisher ), true );
 
-// Select category
+// Category tree
         $mytree = new XoopsTree( $xoopsDB -> prefix( 'xoopstube_cat' ), 'cid', 'pid' );
 
         $submitcats = array();
@@ -246,8 +246,12 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
             } 
         }
 
-// Video time
-        $sform -> addElement( new XoopsFormText( _MD_XTUBE_TIME, 'time', 5, 5, $time ), false);
+// Video time form
+        $timeform = new XoopsFormText( _MD_XTUBE_TIME, 'time', 7, 7, $time );
+        $timeform -> setDescription( "<small>(h:mm:ss)</small>" );
+        $sform -> addElement( $timeform, false );
+        
+// Video category form
         ob_start();
     	  $mytree -> makeMySelBox( 'title', 'title', $cid, 0 );
           $sform -> addElement( new XoopsFormLabel( _MD_XTUBE_CATEGORYC, ob_get_contents() ) );
@@ -260,7 +264,7 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
 // Meta keywords form
         $keywords = new XoopsFormTextArea( _MD_XTUBE_KEYWORDS, 'keywords', $keywords, 5, 50, false );
         $keywords -> setDescription( "<br /><span style='font-size: smaller;'>" . _MD_XTUBE_KEYWORDS_NOTE . "</span>" );
-        $sform -> addElement($keywords);
+        $sform -> addElement( $keywords );
 
 if ($xoopsModuleConfig['usercantag'] == 1) {
      // Insert tags if Tag-module is installed
