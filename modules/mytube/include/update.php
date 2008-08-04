@@ -44,6 +44,10 @@ $i++;
 $ret[$i] = true;
 $query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_videos') . " MODIFY vidsource INT(11) UNSIGNED NOT NULL default '0'");
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
+$i++;
+$ret[$i] = true;
+$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_videos') . " MODIFY time VARCHAR(7) NOT NULL default '0:00:00'");
+$ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 
 
 //Make changes to table xoopstube_cat
@@ -97,5 +101,8 @@ $i++;
 $ret[$i] = true;
 $query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_mod') . " MODIFY vidsource INT(11) UNSIGNED NOT NULL default '0'");
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
-
+$i++;
+$ret[$i] = true;
+$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_mod') . " MODIFY time VARCHAR(7) NOT NULL default '0:00:00'");
+$ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 ?>
