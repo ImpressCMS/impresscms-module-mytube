@@ -482,16 +482,16 @@ define( '_AM_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_AM_XTUBE_VEOH', 'Veoh' );
 define( "_AM_XTUBE_FILE", "Arquivo " );
 define( "_AM_XTUBE_INFORMATION", "Informações do Video" ); //1.06RC-1
-define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
-define( "_AM_XTUBE_VIDEO_VIEWS", "Views: " );
-define( "_AM_XTUBE_ERROR_CATISCAT", "You can NOT set a category as a sub-category of itself!" );
+define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Assumir a parte vermelha como um dado adquirido nos exemplos a seguir" );
+define( "_AM_XTUBE_VIDEO_VIEWS", "Exibições: " );
+define( "_AM_XTUBE_ERROR_CATISCAT", "Não é possível definir uma categoria como uma sub-categoria de si mesmo!" );
 
 // Version 1.04 RC-3
-define( "_AM_XTUBE_MOD_VIDID", "Video id-code: " );
-define( "_AM_XTUBE_MOD_VIDSOURCE", "Video source: " );
-define( "_AM_XTUBE_MOD_TIME", "Time: " );
-define( "_AM_XTUBE_MOD_KEYWORDS", "Keywords: " );
+define( "_AM_XTUBE_MOD_VIDID", "Código do Video: " );
+define( "_AM_XTUBE_MOD_VIDSOURCE", "Fonte do Video: " );
+define( "_AM_XTUBE_MOD_TIME", "Tempo: " );
+define( "_AM_XTUBE_MOD_KEYWORDS", "Palavras-chave: " );
 define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
-define( "_AM_XTUBE_MOD_PICURL", "Picture url: " );
+define( "_AM_XTUBE_MOD_PICURL", "Url da Figura: " );
 
 ?>
