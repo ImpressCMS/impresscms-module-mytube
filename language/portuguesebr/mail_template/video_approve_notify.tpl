@@ -1,18 +1,18 @@
 Olá {X_UNAME},
 
-The submitted video "{LINK_NAME}" has been approved at {X_SITENAME}.
+O vídeo apresentado "{LINK_NAME}" foi aprovado no {X_SITENAME}.
 
-You can view this video here:
+Você pode ver o vídeo aqui:
 {LINK_URL}
 
 -----------
 
-You are receiving this message because you selected to be notified when this video was approved.
+Você está recebendo esta mensagem porque você escolheu para ser notificado quando o vídeo for aprovado.
 
-If this is an error or you wish not to receive further such notifications, please update your subscriptions by visiting the link below:
+Se este é um erro ou não desejar receber mais essas notificações, atualize suas inscrições, acesse o link abaixo:
 {X_UNSUBSCRIBE_URL}
 
-Please do not reply to this message.
+FAVOR NÃO RESPONDER ESTA MENSAGEM.
 
 -----------
 
