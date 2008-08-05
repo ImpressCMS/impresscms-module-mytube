@@ -203,4 +203,7 @@ define( '_MD_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_MD_XTUBE_VEOH', 'Veoh' );
 define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
 define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
+
+//Version 1.04 RC-3
+define( "_MD_XTUBE_MODIFYNOTALLOWED", "You're not allowed to modify others videos!!" );
 ?>
