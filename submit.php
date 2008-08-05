@@ -14,10 +14,8 @@ global $xoopsModule, $xtubemyts, $xoopsModuleConfig;
 
 $xoopsTpl->assign("xoops_module_header", '<link rel="stylesheet" type="text/css" href="' .  xoopstube_url . '/xtubestyle.css" />');
 
-$cid = xtube_cleanRequestVars( $_REQUEST, 'cid', 0 );
-$lid = xtube_cleanRequestVars( $_REQUEST, 'lid', 0 );
-$cid = intval($cid);
-$lid = intval($lid);
+$cid = intval( xtube_cleanRequestVars( $_REQUEST, 'cid', 0 ) );
+$lid = intval( xtube_cleanRequestVars( $_REQUEST, 'lid', 0 ) );
 
 if ( false == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
     redirect_header( "index.php", 1, _MD_XTUBE_NOPERMISSIONTOPOST );
@@ -123,16 +121,21 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
                 $notification_handler -> triggerEvent( 'category', $cid, 'new_video', $tags );
                 $_message = _MD_XTUBE_ISAPPROVED;
             } else {
+                $submitter_array = $xoopsDB -> fetchArray( $xoopsDB -> query( "SELECT submitter FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . intval( $lid ) ) );
                 $modifysubmitter = $xoopsUser -> uid();
                 $requestid = $modifysubmitter;
                 $requestdate = time();
                 $updated = xtube_cleanRequestVars( $_REQUEST, 'up_dated', time() );
-                $sql = "INSERT INTO " . $xoopsDB -> prefix( 'xoopstube_mod' ) . " (requestid, lid, cid, title, vidid, publisher, vidsource, description, modifysubmitter, requestdate, time, keywords, item_tag, picurl)";
-                $sql .= " VALUES ('', $lid, $cid, '$title', '$vidid', '$publisher', '$vidsource', '$descriptionb', '$modifysubmitter', '$requestdate', '$time', '$keywords', '$item_tag', '$picurl')";
-                if ( !$result = $xoopsDB -> query( $sql ) ) {
+                if ( $modifysubmitter == $submitter_array['submitter'] ) {
+                  $sql = "INSERT INTO " . $xoopsDB -> prefix( 'xoopstube_mod' ) . " (requestid, lid, cid, title, vidid, publisher, vidsource, description, modifysubmitter, requestdate, time, keywords, item_tag, picurl)";
+                  $sql .= " VALUES ('', $lid, $cid, '$title', '$vidid', '$publisher', '$vidsource', '$descriptionb', '$modifysubmitter', '$requestdate', '$time', '$keywords', '$item_tag', '$picurl')";
+                  if ( !$result = $xoopsDB -> query( $sql ) ) {
                     $_error = $xoopsDB -> error() . " : " . $xoopsDB -> errno();
                     XoopsErrorHandler_HandleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
-                } 
+                  }
+                } else {
+                  redirect_header( "index.php", 2, _MD_XTUBE_MODIFYNOTALLOWED );
+                }
 
                 $tags = array();
                 $tags['MODIFYREPORTS_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/admin/index.php?op=listModReq';
@@ -172,6 +175,7 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
         echo "<br /><div style='text-align: center;'>" . xtube_imageheader() . "</div><br />\n";
         echo "<div>" . _MD_XTUBE_SUB_SNEWMNAMEDESC . "</div>\n<br />\n";
         echo "<div class='xoopstube_singletitle'>" . _MD_XTUBE_SUBMITCATHEAD . "</div>\n";
+
         $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . intval( $lid );
         $video_array = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
 
