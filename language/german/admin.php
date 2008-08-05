@@ -149,10 +149,10 @@ define( "_AM_XTUBE_VIDEO_FUPLOADIMAGE", "Neues Bild zum gewählten Ordner hochla
 // Main Index defines
 define( "_AM_XTUBE_MINDEX_VIDEOSUMMARY", "Zusammenfassung Modul Administration" );
 define( "_AM_XTUBE_MINDEX_PUBLISHEDVIDEO", "Publizierte Videos:" );
-define( "_AM_XTUBE_MINDEX_AUTOPUBLISHEDLINK", "Auto - Publizierte Videos:" );
+define( "_AM_XTUBE_MINDEX_AUTOPUBLISHEDVIDEO", "Auto - Publizierte Videos:" );
 define( "_AM_XTUBE_MINDEX_AUTOEXPIRE", "Automatisch abgelaufene Videos:" );
 define( "_AM_XTUBE_MINDEX_EXPIRED", "Abgelaufene Videos:" );
-define( "_AM_XTUBE_MINDEX_OFFLINELINK", "Offline Videos:" );
+define( "_AM_XTUBE_MINDEX_OFFLINEVIDEO", "Offline Videos:" );
 define( "_AM_XTUBE_MINDEX_ID", "ID" );
 define( "_AM_XTUBE_MINDEX_TITLE", "Video Titel" );
 define( "_AM_XTUBE_MINDEX_POSTER", "Veröffentlicht von" );
@@ -165,7 +165,7 @@ define( "_AM_XTUBE_MINDEX_NOTSET", "Datum nicht gesetzt" );
 define( "_AM_XTUBE_MINDEX_SUBMITTED", "Einsendedatum" );
 
 define( "_AM_XTUBE_MINDEX_ACTION", "Aktion" );
-define( "_AM_XTUBE_MINDEX_NOLINKSFOUND", "BEACHTE: Keine Videos vorhanden, die diese Bedingung erfüllen" );
+define( "_AM_XTUBE_MINDEX_NOVIDEOSFOUND", "BEACHTE: Keine Videos vorhanden, die diese Bedingung erfüllen" );
 define( "_AM_XTUBE_MINDEX_PAGE", "<b>Seite:<b> " );
 define( '_AM_XTUBE_MINDEX_PAGEINFOTXT', '<ul><li>MyTube Übersichtsseite Details.</li><li>Sie können hier das Logo, den Kopfbereich, die Hauptüberschrift und den Fußtext leicht Ihren Wünschen anpassen.</li></ul><br />Anmerkung: Das Logo wird bei jedem Seitenaufruf von myTube angezeigt.' );
 define( "_AM_XTUBE_MINDEX_RESPONSE", "Antwortzeit" );
@@ -221,11 +221,7 @@ define( "_AM_XTUBE_MOD_LID", "Video ID: " );
 define( "_AM_XTUBE_MOD_CID", "Kategorie: " );
 define( "_AM_XTUBE_MOD_URL", "Video Url: " );
 define( "_AM_XTUBE_MOD_PUBLISHER", "Veröffentlicht von: " );
-define( "_AM_XTUBE_MOD_FORUMID", "Forum: " );
 define( "_AM_XTUBE_MOD_SCREENSHOT", "Bildschirmfoto: " );
-define( "_AM_XTUBE_MOD_HOMEPAGE", "Homepage: " );
-define( "_AM_XTUBE_MOD_HOMEPAGETITLE", "Name der Homepage: " );
-define( "_AM_XTUBE_MOD_SHOTIMAGE", "Bildschrimfoto: " );
 define( "_AM_XTUBE_MOD_DESCRIPTION", "Beschreibung: " );
 define( "_AM_XTUBE_MOD_MODIFYSUBMITTER", "Einsender: " );
 define( "_AM_XTUBE_MOD_MODIFYSUBMIT", "Einsender" );
@@ -243,7 +239,7 @@ define( "_AM_XTUBE_VIDEO_CREATENEWFILE", "Neues Video erstellen" );
 define( "_AM_XTUBE_VIDEO_TITLE", "Video Titel: " );
 define( "_AM_XTUBE_VIDEO_DLVIDID", "Video URL: " );
 define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
-<small><small><small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
+<small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
 <b>MetaCafe:</b> http://www.metacafe.com/watch/<font color=#FF0000>191543/sperm_whale_encounters_underwater_robot</font>/<br />
 <b>SPIKE/ifilm:</b> http://www.ifilm.com/video/<font color=#FF0000>2718605</font><br />
 <b>Photobucket:</b> http://i39.photobucket.com/albums/<font color=#FF0000>e168/vailtom/th_BigSquid</font>.jpg<br />
@@ -346,7 +342,7 @@ define( "_AM_XTUBE_ICO_OFFLINE", "Offline" );
 define( "_AM_XTUBE_ICO_APPROVED", "Bestätigt" );
 define( "_AM_XTUBE_ICO_NOTAPPROVED", "Nicht bestätigt" );
 
-define( "_AM_XTUBE_ICO_LINK", "Verwandtes Video" );
+define( "_AM_XTUBE_ICO_VIDEO", "Verwandtes Video" );
 define( "_AM_XTUBE_ICO_URL", "Verwandte URL hinzufügen" );
 define( "_AM_XTUBE_ICO_ADD", "Hinzufügen" );
 define( "_AM_XTUBE_ICO_APPROVE", "Bestätigen" );
@@ -489,10 +485,10 @@ define( "_AM_XTUBE_VIDEO_VIEWS", "angesehen: " );
 define( "_AM_XTUBE_ERROR_CATISCAT", "Sie können eine Kategorie nicht als eine Unterkategorie von sich selbst setzen!" );
 
 // Version 1.04 RC-3
-define( "_AM_XTUBE_MOD_VIDID", "Video id-code: " );
-define( "_AM_XTUBE_MOD_VIDSOURCE", "Video source: " );
-define( "_AM_XTUBE_MOD_TIME", "Time: " );
-define( "_AM_XTUBE_MOD_KEYWORDS", "Keywords: " );
+define( "_AM_XTUBE_MOD_VIDID", "Video ID-Code: " );
+define( "_AM_XTUBE_MOD_VIDSOURCE", "Video Quelle: " );
+define( "_AM_XTUBE_MOD_TIME", "Zeit: " );
+define( "_AM_XTUBE_MOD_KEYWORDS", "Schlüsselwörter: " );
 define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
-define( "_AM_XTUBE_MOD_PICURL", "Picture url: " );
+define( "_AM_XTUBE_MOD_PICURL", "Bild URL: " );
 ?>

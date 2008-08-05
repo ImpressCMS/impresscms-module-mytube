@@ -195,9 +195,9 @@ define( "_MD_XTUBE_BLIPTV", "Blip.tv" );
 // Version 1.04 RC-2
 define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
-define( '_MD_XTUBE_MAKTOOB', 'Maktoob' );
-define( '_MD_XTUBE_VEOH', 'Veoh' );
-define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
+define( "_MD_XTUBE_MAKTOOB", "Maktoob" );
+define( "_MD_XTUBE_VEOH", "Veoh" );
+define( "_MD_XTUBE_STOPIT", "STOP IT YOU FOOL!!" );
 define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Benutzen Sie den roten Teil, wie im unteren Beispiel" );
 
 //Version 1.04 RC-3
