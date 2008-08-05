@@ -223,11 +223,7 @@ define( "_AM_XTUBE_MOD_LID", "ID do Vídeo: " );
 define( "_AM_XTUBE_MOD_CID", "Categoria: " );
 define( "_AM_XTUBE_MOD_URL", "Url do Vídeo: " );
 define( "_AM_XTUBE_MOD_PUBLISHER", "Publicador: " );
-define( "_AM_XTUBE_MOD_FORUMID", "Fórum: " );
 define( "_AM_XTUBE_MOD_SCREENSHOT", "Imagem ScreenShot: " );
-define( "_AM_XTUBE_MOD_HOMEPAGE", "Home Page: " );
-define( "_AM_XTUBE_MOD_HOMEPAGETITLE", "Título da Home Page: " );
-define( "_AM_XTUBE_MOD_SHOTIMAGE", "Imagem ScreenShot: " );
 define( "_AM_XTUBE_MOD_DESCRIPTION", "Descrição: " );
 define( "_AM_XTUBE_MOD_MODIFYSUBMITTER", "Enviado por: " );
 define( "_AM_XTUBE_MOD_MODIFYSUBMIT", "Enviado por" );
@@ -489,9 +485,6 @@ define( "_AM_XTUBE_INFORMATION", "Informações do Video" ); //1.06RC-1
 define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
 define( "_AM_XTUBE_VIDEO_VIEWS", "Views: " );
 define( "_AM_XTUBE_ERROR_CATISCAT", "You can NOT set a category as a sub-category of itself!" );
-//define( "_AM_XTUBE_VIDEO_DLURL", "Código do Vídeo Embedded: " ); //Verificando remoção...
-//define( "_AM_XTUBE_VIDEO_DLURL_NOTE", "<small>(video embedded code = http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font>)</small>" ); //Verificando remoção...
-//define( "_AM_XTUBE_VIDEO_DIRCA", " Avaliação do Conteúdo pela internet: " ); //Verificando remoção...
 
 // Version 1.04 RC-3
 define( "_AM_XTUBE_MOD_VIDID", "Video id-code: " );
@@ -500,4 +493,5 @@ define( "_AM_XTUBE_MOD_TIME", "Time: " );
 define( "_AM_XTUBE_MOD_KEYWORDS", "Keywords: " );
 define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
 define( "_AM_XTUBE_MOD_PICURL", "Picture url: " );
+
 ?>

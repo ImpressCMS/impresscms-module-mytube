@@ -230,7 +230,6 @@ define("_MI_XTUBE_MODULE_BUG", "Relatar um erro (Bug) sobre este módulo");
 define("_MI_XTUBE_MODULE_FEATURE", "Sugira uma nova funcionalidade para este módulo");
 define("_MI_XTUBE_MODULE_DISCLAIMER", "Disclaimer");
 define("_MI_XTUBE_RELEASE", "Data do lançamento: ");
-define('_MI_XTUBE_ICONS_CREDITS', "Ícones");
 
 define("_MI_XTUBE_MODULE_MAILLIST", "Boletins do WF-Project");
 define("_MI_XTUBE_MODULE_MAILANNOUNCEMENTS", "Bolentins informativos");
