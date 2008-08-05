@@ -199,6 +199,6 @@ define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
 define( '_MD_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_MD_XTUBE_VEOH', 'Veoh' );
-define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
-define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
+define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' ); //não tenho certeza para traduzir - GibaPhp
+define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Assumir a parte vermelha como um dado adquirido nos exemplos a seguir" );
 ?>
