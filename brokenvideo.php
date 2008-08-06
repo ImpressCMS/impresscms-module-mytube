@@ -123,7 +123,14 @@ switch ( strtolower($op) ) {
             $xoopsTpl -> assign( 'lang_subdate' , $is_updated );
             $xoopsTpl -> assign( 'video', $video );
         } 
-		$xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
+	
+        if ( is_object($xoTheme) ) {
+          $xoTheme -> addMeta( 'meta', 'robots', 'noindex,nofollow' );
+        } else {
+          $xoopsTpl -> assign( 'xoops_meta_robots', 'noindex,nofollow' );
+        }
+                	
+        $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
         include XOOPS_ROOT_PATH . '/footer.php';
         break;
 }

@@ -90,7 +90,14 @@ if ( !empty( $_POST['submit'] ) ) {
     list( $title ) = $xoopsDB -> fetchRow( $result );
     $xoopsTpl -> assign( 'video', array( 'id' => intval($lid), 'cid' => intval($cid), 'title' => $xtubemyts -> htmlSpecialCharsStrip( $title ) ) );
     include XOOPS_ROOT_PATH . '/footer.php';
-} 
+}
+
+if ( is_object($xoTheme) ) {
+  $xoTheme -> addMeta( 'meta', 'robots', 'noindex,nofollow' );
+} else {
+  $xoopsTpl -> assign( 'xoops_meta_robots', 'noindex,nofollow' );
+}
+
 $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
 include XOOPS_ROOT_PATH . '/footer.php';
 ?>
