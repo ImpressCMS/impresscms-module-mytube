@@ -6,7 +6,8 @@
 
 include 'header.php';
 
-global $xtubemyts;
+global $xtubemyts, $xoTheme;
+
 // Check if videoload POSTER is voting (UNLESS Anonymous users allowed to post)
 $lid = xtube_cleanRequestVars( $_REQUEST, 'lid', 0 );
 $lid = intval($lid);
@@ -89,13 +90,14 @@ if ( !empty( $_POST['submit'] ) ) {
     $result = $xoopsDB -> query( 'SELECT title FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE lid=' . intval($lid) );
     list( $title ) = $xoopsDB -> fetchRow( $result );
     $xoopsTpl -> assign( 'video', array( 'id' => intval($lid), 'cid' => intval($cid), 'title' => $xtubemyts -> htmlSpecialCharsStrip( $title ) ) );
-    include XOOPS_ROOT_PATH . '/footer.php';
-}
+    
+    if ( is_object($xoTheme) ) {
+      $xoTheme -> addMeta( 'meta', 'robots', 'noindex,nofollow' );
+    } else {
+      $xoopsTpl -> assign( 'xoops_meta_robots', 'noindex,nofollow' );
+    }
 
-if ( is_object($xoTheme) ) {
-  $xoTheme -> addMeta( 'meta', 'robots', 'noindex,nofollow' );
-} else {
-  $xoopsTpl -> assign( 'xoops_meta_robots', 'noindex,nofollow' );
+    include XOOPS_ROOT_PATH . '/footer.php';
 }
 
 $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
