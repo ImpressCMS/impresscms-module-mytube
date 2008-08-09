@@ -125,6 +125,23 @@ switch ( $total_cat ) {
         $lang_thereare = _MD_XTUBE_THEREARE;
         break;
 }
+
+$time = time();
+
+$sql = $xoopsDB -> query( "SELECT lastvideosyn, lastvideostotal FROM " . $xoopsDB -> prefix( 'xoopstube_indexpage' ));
+$lastvideos = $xoopsDB -> fetchArray( $sql );
+
+if ($lastvideos['lastvideosyn'] == 1) {
+  $result = $xoopsDB -> query( "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 AND published <= " . time() . " AND (expired = 0 OR expired > " . time() . ") AND offline = 0 ORDER BY published DESC", $lastvideos['lastvideostotal'], 0 );
+  while ( $video_arr = $xoopsDB -> fetchArray( $result ) ) {
+        $res_type = 0;
+        $moderate = 0;
+        $cid = $video_arr['cid'];
+        require XOOPS_ROOT_PATH . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/include/videoloadinfo.php';
+        $xoopsTpl -> append( 'video', $video );
+  }
+}
+$xoopsTpl -> assign( 'showlatest', $lastvideos['lastvideosyn'] );
 $xoopsTpl -> assign( 'lang_thereare', sprintf( $lang_thereare, $total_cat, $listings['count'] ) );
 $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
  

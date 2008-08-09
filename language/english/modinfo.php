@@ -284,4 +284,8 @@ define("_MI_XTUBE_BNAME9","MyTube Tag Cloud");
 define("_MI_XTUBE_BNAME10","MyTube Top Tags");
 define('_MI_XTUBE_FLVPLAYER_MANUAL', 'FLV Player Manual');
 define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW Player Wiki');
+
+// Version 1.04 RC-3
+define( "_MI_XTUBE_AUTOPLAYDESCR", "Autoplay videos" );
+define( "_MI_XTUBE_AUTOPLAYDSC", "Select Yes to have videos autoplay" );
 ?>

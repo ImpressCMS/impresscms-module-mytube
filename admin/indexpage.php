@@ -24,21 +24,23 @@ switch ( strtolower( $op ) ) {
         $nobreak = isset( $_REQUEST['nobreak'] ) ? 1 : 0;
         $indexheaderalign = $xtubemyts -> addslashes( $_REQUEST['indexheaderalign'] );
         $indexfooteralign = $xtubemyts -> addslashes( $_REQUEST['indexfooteralign'] );
-        $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_indexpage' ) . " SET indexheading='$indexheading', indexheader='$indexheader', indexfooter='$indexfooter', indeximage='$indeximage', indexheaderalign='$indexheaderalign ', indexfooteralign='$indexfooteralign', nohtml='$nohtml', nosmiley='$nosmiley', noxcodes='$noxcodes', noimages='$noimages', nobreak='$nobreak'";
+		$lastvideosyn = $_REQUEST['lastvideosyn'];
+        $lastvideostotal = $xtubemyts -> addslashes( $_REQUEST['lastvideostotal'] );
+        $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_indexpage' ) . " SET indexheading='$indexheading', indexheader='$indexheader', indexfooter='$indexfooter', indeximage='$indeximage', indexheaderalign='$indexheaderalign ', indexfooteralign='$indexfooteralign', nohtml='$nohtml', nosmiley='$nosmiley', noxcodes='$noxcodes', noimages='$noimages', nobreak='$nobreak', lastvideosyn='$lastvideosyn', lastvideostotal='$lastvideostotal'";
         if ( !$result = $xoopsDB -> query( $sql ) ) {
             XoopsErrorHandler_HandleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
             return false;
         } 
-        redirect_header( xoops_getenv( 'PHP_SELF' ), 1, _AM_XTUBE_IPAGE_UPDATED );
+        redirect_header( "index.php", 1, _AM_XTUBE_IPAGE_UPDATED );
         break;
 
     default:
-        $sql = "SELECT indeximage, indexheading, indexheader, indexfooter, nohtml, nosmiley, noxcodes, noimages, nobreak, indexheaderalign, indexfooteralign FROM " . $xoopsDB -> prefix( 'xoopstube_indexpage' );
+        $sql = "SELECT indeximage, indexheading, indexheader, indexfooter, nohtml, nosmiley, noxcodes, noimages, nobreak, indexheaderalign, indexfooteralign, lastvideosyn, lastvideostotal FROM " . $xoopsDB -> prefix( 'xoopstube_indexpage' );
         if ( !$result = $xoopsDB -> query( $sql ) ) {
             XoopsErrorHandler_HandleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
             return false;
         } 
-        list( $indeximage, $indexheading, $indexheader, $indexfooter, $nohtml, $nosmiley, $noxcodes, $noimages, $nobreak, $indexheaderalign, $indexfooteralign ) = $xoopsDB -> fetchrow( $result );
+        list( $indeximage, $indexheading, $indexheader, $indexfooter, $nohtml, $nosmiley, $noxcodes, $noimages, $nobreak, $indexheaderalign, $indexfooteralign, $lastvideosyn, $lastvideostotal ) = $xoopsDB -> fetchrow( $result );
 
         xoops_cp_header();
         xtube_adminmenu( "<h4>" . _AM_XTUBE_INDEXPAGE . "</h4>" );
@@ -97,6 +99,11 @@ switch ( strtolower( $op ) ) {
         $breaks_checkbox -> addOption( 1, _AM_XTUBE_DISABLEBREAK );
         $options_tray -> addElement( $breaks_checkbox );
         $sform -> addElement( $options_tray );
+		
+		$sform -> addElement(  new XoopsFormRadioYN( _AM_XTUBE_IPAGE_SHOWLATEST, 'lastvideosyn', $lastvideosyn, ' ' . _YES . '', ' ' . _NO . '' ) );
+
+        $lastvideostotalform = new XoopsFormText( _AM_XTUBE_IPAGE_LATESTTOTAL, 'lastvideostotal', 2, 2, $lastvideostotal );
+        $sform -> addElement( $lastvideostotalform, false );
 
         $button_tray = new XoopsFormElementTray( '', '' );
         $hidden = new XoopsFormHidden( 'op', 'save' );

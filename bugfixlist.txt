@@ -3,7 +3,12 @@ Bug fix list history:
 =========================================================
 xx.xx.2008   1.04 RC-3
 =========================================================
+- Added noindex,nofollow meta-tag to broken- and rating pages
+- Added option to Index Page to show Latest Videos
+
 - Fixed modification feature, user+admin side
+- Fixed rating page, removed closing div-tag
+
 
 =========================================================
 25.07.2008   1.04 RC-2
@@ -13,6 +18,7 @@ xx.xx.2008   1.04 RC-3
 - Corrected date used for showing clips in blocks
 - Modify option visible for submitter only
 - Updated JW FLV Player to version 4, needs Adobe Flash 9 or higher
+
 - Added support for videoclips from ClipFish
 - Added support for videoclips from LiveLeak
 - Added support for videoclips from Maktoob
@@ -21,7 +27,9 @@ xx.xx.2008   1.04 RC-3
 - Added Portugese language files (utf-8) [gibaphp]
 - Added Portuguese-Brazilian language files (utf-8) [gibaphp]
 - Added Spanish language files (utf-8) [juancj]
+
 - Fixed bug in block settings
+
 
 =========================================================
 27.05.2008   1.04 RC-1
@@ -40,12 +48,14 @@ xx.xx.2008   1.04 RC-3
 - Fixed multilanguage issue in impressCMS
 - German language files updated [wuddel]
 
+
 =========================================================
 08.03.2008   1.03.1
 =========================================================
 - Fixed XSS vulnerability [Vaughan/McDonald]
 - Fixed bug in sub-cat listing
 - Fixed bug in page nav of Recent Videos
+
 
 =========================================================
 26.02.2008   1.03
@@ -59,6 +69,7 @@ xx.xx.2008   1.04 RC-3
 - Updated German langfiles [wuddel]
 - Updated Spanish langfiles [debianus]
 - Updated English & Dutch langfiles
+
 
 =========================================================
 21.02.2008   1.02
