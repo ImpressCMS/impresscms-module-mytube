@@ -490,4 +490,6 @@ define( "_AM_XTUBE_MOD_TIME", "Tijd: " );
 define( "_AM_XTUBE_MOD_KEYWORDS", "Keywords: " );
 define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
 define( "_AM_XTUBE_MOD_PICURL", "Afbeeldings url: " );
+define( "_AM_XTUBE_IPAGE_SHOWLATEST", "Laat Laatste Videos zien?" );
+define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "Hoeveel videos laten zien?" );
 ?>

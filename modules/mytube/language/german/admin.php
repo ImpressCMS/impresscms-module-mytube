@@ -491,4 +491,6 @@ define( "_AM_XTUBE_MOD_TIME", "Zeit: " );
 define( "_AM_XTUBE_MOD_KEYWORDS", "Schlüsselwörter: " );
 define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
 define( "_AM_XTUBE_MOD_PICURL", "Bild URL: " );
+define( "_AM_XTUBE_IPAGE_SHOWLATEST", "Show Latest Listings?" );
+define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "How many videos to show?" );
 ?>

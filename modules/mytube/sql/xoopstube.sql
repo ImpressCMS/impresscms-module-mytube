@@ -72,6 +72,8 @@ CREATE TABLE `xoopstube_indexpage` (
   `nobreak` tinyint(4) NOT NULL default '0',
   `indexheaderalign` varchar(25) NOT NULL default 'left',
   `indexfooteralign` varchar(25) NOT NULL default 'center',
+  lastvideosyn tinyint(1) NOT NULL default '0',
+  lastvideostotal varchar(2) NOT NULL default '5',
   FULLTEXT KEY `indexheading` (`indexheading`),
   FULLTEXT KEY `indexheader` (`indexheader`),
   FULLTEXT KEY `indexfooter` (`indexfooter`)
@@ -79,7 +81,7 @@ CREATE TABLE `xoopstube_indexpage` (
 
 
 
-INSERT INTO `xoopstube_indexpage` (`indeximage`,`indexheading`,`indexheader`,`indexfooter`,`nohtml`,`nosmiley`,`noxcodes`,`noimages`,`nobreak`,`indexheaderalign`,`indexfooteralign`) VALUES ('logo-en.png','','Please report any unavailable video clips by using the [i]Report Broken[/i] option. Thanks!','<a href=\"http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&promoid=BIOW\" target=\"_blank\"><img src=\"images/get_flash_player.png\" alt=\"Get Adobe Flash Player\" border=\"0\" /></a>','0','0','0','0','1','left','left');
+INSERT INTO `xoopstube_indexpage` (`indeximage`,`indexheading`,`indexheader`,`indexfooter`,`nohtml`,`nosmiley`,`noxcodes`,`noimages`,`nobreak`,`indexheaderalign`,`indexfooteralign`) VALUES ('logo-en.png','','Please report any unavailable video clips by using the [i]Report Broken[/i] option. Thanks!','<a href=\"http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&promoid=BIOW\" target=\"_blank\"><img src=\"images/get_flash_player.png\" alt=\"Get Adobe Flash Player\" border=\"0\" /></a>','0','0','0','0','1','left','left', 0, 5);
 
 
 #
