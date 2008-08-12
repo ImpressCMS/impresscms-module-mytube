@@ -73,7 +73,7 @@ CREATE TABLE `xoopstube_indexpage` (
   `indexheaderalign` varchar(25) NOT NULL default 'left',
   `indexfooteralign` varchar(25) NOT NULL default 'center',
   lastvideosyn tinyint(1) NOT NULL default '0',
-  lastvideostotal varchar(2) NOT NULL default '5',
+  lastvideostotal varchar(5) NOT NULL default '5',
   FULLTEXT KEY `indexheading` (`indexheading`),
   FULLTEXT KEY `indexheader` (`indexheader`),
   FULLTEXT KEY `indexfooter` (`indexfooter`)

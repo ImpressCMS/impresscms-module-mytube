@@ -112,6 +112,6 @@ $query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_indexpage')
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 $i++;
 $ret[$i] = true;
-$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_indexpage') . " ADD COLUMN lastvideostotal VARCHAR(2) NOT NULL default '5' AFTER lastvideosyn");
+$query[$i] = sprintf("ALTER TABLE " . $xoopsDB -> prefix( 'xoopstube_indexpage') . " ADD COLUMN lastvideostotal VARCHAR(5) NOT NULL default '5' AFTER lastvideosyn");
 $ret[$i] = $ret[$i] && $xoopsDB->query($query[$i]);
 ?>
