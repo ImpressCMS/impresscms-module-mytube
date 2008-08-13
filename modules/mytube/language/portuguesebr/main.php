@@ -203,5 +203,5 @@ define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' ); //não tenho certeza para tr
 define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Assumir a parte vermelha como um dado adquirido nos exemplos a seguir" );
 
 //Version 1.04 RC-3
-define( "_MD_XTUBE_MODIFYNOTALLOWED", "You're not allowed to modify others videos!!" );
+define( "_MD_XTUBE_MODIFYNOTALLOWED", "Você não está autorizado a modificar outros vídeos!!" );
 ?>
