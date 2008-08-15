@@ -1,8 +1,9 @@
-<?php
+﻿<?php
 /**
  * $Id: blocks.php
  * Module: MyTube
  * Language: english
+ * Format: UTF-8
  */
  
 // Blocks
