@@ -103,6 +103,7 @@ switch ( strtolower( $op ) ) {
 		$sform -> addElement(  new XoopsFormRadioYN( _AM_XTUBE_IPAGE_SHOWLATEST, 'lastvideosyn', $lastvideosyn, ' ' . _YES . '', ' ' . _NO . '' ) );
 
         $lastvideostotalform = new XoopsFormText( _AM_XTUBE_IPAGE_LATESTTOTAL, 'lastvideostotal', 2, 2, $lastvideostotal );
+		$lastvideostotalform -> setDescription( "<small>" . _AM_XTUBE_IPAGE_LATESTTOTAL_DSC . "</small>" );
         $sform -> addElement( $lastvideostotalform, false );
 
         $button_tray = new XoopsFormElementTray( '', '' );
