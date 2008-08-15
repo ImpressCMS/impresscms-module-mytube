@@ -47,6 +47,10 @@
     <br /><br />
 	<div class="odd" style="font-size: bigger; font-weight: bold;"><{$smarty.const._MD_XTUBE_LATESTLIST}></div>
 	<br />
+	<{if $pagenav}>
+    <div><{$pagenav}></div>
+	<br />
+	<{/if}>
 	<table width="100%" cellspacing="0" cellpadding="10" border="0">
 		<tr>
 			<td width="100%">
@@ -58,6 +62,9 @@
 			</td>
 		</tr>
 	</table>
+	<{if $pagenav}>
+    <div align="right"><{$pagenav}></div>
+    <{/if}>
 <{/if}>
 
 <{include file="db:system_notification_select.html"}>

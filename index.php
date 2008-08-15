@@ -6,6 +6,9 @@
 
 include 'header.php';
 
+$start = xtube_cleanRequestVars( $_REQUEST, 'start', 0 );
+$start = intval( $start );
+
 $xoopsOption['template_main'] = 'xoopstube_index.html';
 include XOOPS_ROOT_PATH . '/header.php';
 
@@ -131,8 +134,23 @@ $time = time();
 $sql = $xoopsDB -> query( "SELECT lastvideosyn, lastvideostotal FROM " . $xoopsDB -> prefix( 'xoopstube_indexpage' ));
 $lastvideos = $xoopsDB -> fetchArray( $sql );
 
-if ($lastvideos['lastvideosyn'] == 1) {
-  $result = $xoopsDB -> query( "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 AND published <= " . time() . " AND (expired = 0 OR expired > " . time() . ") AND offline = 0 ORDER BY published DESC", $lastvideos['lastvideostotal'], 0 );
+if ($lastvideos['lastvideosyn'] == 1 && $lastvideos['lastvideostotal'] > 0) {
+
+  $result = $xoopsDB -> query( "SELECT COUNT(*) FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 
+								AND published <= " . $time . " 
+								AND (expired = 0 OR expired > " . $time . ") 
+								AND offline = 0 
+								ORDER BY published DESC", 0, 0 );
+  list( $count ) = $xoopsDB -> fetchRow( $result );
+
+  $count = (($count > $lastvideos['lastvideostotal']) && ($lastvideos['lastvideostotal'] != 0)) ? $lastvideos['lastvideostotal'] : $count;
+  $limit = (($start + $xoopsModuleConfig['perpage']) > $count) ? ($count - $start ) : $xoopsModuleConfig['perpage'];
+
+  $result = $xoopsDB -> query( "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 
+								AND published <= " . time() . " 
+								AND (expired = 0 OR expired > " . time() . ") 
+								AND offline = 0 
+								ORDER BY published DESC", $limit , $start );
   while ( $video_arr = $xoopsDB -> fetchArray( $result ) ) {
         $res_type = 0;
         $moderate = 0;
@@ -140,8 +158,13 @@ if ($lastvideos['lastvideosyn'] == 1) {
         require XOOPS_ROOT_PATH . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/include/videoloadinfo.php';
         $xoopsTpl -> append( 'video', $video );
   }
+  
+  $pagenav = new XoopsPageNav( $count, $xoopsModuleConfig['perpage'] , $start, 'start' );
+  $xoopsTpl -> assign( 'pagenav', $pagenav -> renderNav() );
+  
+  $xoopsTpl -> assign( 'showlatest', $lastvideos['lastvideosyn'] );
 }
-$xoopsTpl -> assign( 'showlatest', $lastvideos['lastvideosyn'] );
+
 $xoopsTpl -> assign( 'lang_thereare', sprintf( $lang_thereare, $total_cat, $listings['count'] ) );
 $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
  
