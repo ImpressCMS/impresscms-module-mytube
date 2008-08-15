@@ -1,7 +1,10 @@
-<?php
+﻿<?php
 /**
+ * $Id: main.php
  * Module: MyTube
- * Language: Nederlands (Dutch)
+ * Language: nederlands (dutch)
+ * Author: McDonald
+ * Format: UTF-8
  */
 
 define( "_MD_XTUBE_NOVIDEO", "Deze video bestaat niet!" );
@@ -42,7 +45,7 @@ define( "_MD_XTUBE_SUBMITBROKEN", "Verzend" );
 define( "_MD_XTUBE_BEFORESUBMIT", "Voordat u een gebroken bestand of bron rapporteerd, kontroleer dan eerst of de video of bron daadwerkelijk niet meer bestaat of dat het een tijdelijk probleem betreft." );
 define( "_MD_XTUBE_TELLAFRIEND", "Aanbevelen" );
 define( "_MD_XTUBE_EDIT", "Aanpassen" );
-define( "_MD_XTUBE_THEREARE", "Er zijn <b>%s</b> <i>categorie&#0235;n</i> en <b>%s</b> <i>videos</i> geindexeerd" );
+define( "_MD_XTUBE_THEREARE", "Er zijn <b>%s</b> <i>categorieën</i> en <b>%s</b> <i>videos</i> geindexeerd" );
 define( "_MD_XTUBE_THEREIS", "Er is <b>%s</b> <i>categorie</i> en <b>%s</b> <i>video</i> geindexeerd" );
 define( "_MD_XTUBE_LATESTLIST", "Recent toegevoegde videos" );
 define( "_MD_XTUBE_FILETITLE", "Video titel: " );

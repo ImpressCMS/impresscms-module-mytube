@@ -1,6 +1,10 @@
-<?php
+﻿<?php
 /**
+ * $Id: admin.php
  * Module: MyTube
+ * Language: nederlands (dutch)
+ * Author: McDonald
+ * Format: UTF-8
  */
  
 define( "_AM_XTUBE_WARNINSTALL1", "WAARSCHUWING: Map %s bestaat op uw server. <br />Verwijder deze map om veiligheidsrederen aub." );
@@ -104,8 +108,8 @@ define( "_AM_XTUBE_IPAGE_CRIGHT", "Uitlijnen rechts" );
 define( "_AM_XTUBE_PERM_MANAGEMENT", "Rechten instellingen" );
 define( "_AM_XTUBE_PERM_PERMSNOTE", "<div><b>Opmerking:</b> Stel hier de juiste rechten in, anders kunnen gebruikersgroepen mogelijk bepaalde artikelen en blokken niet of juist wel zien. Let tevens op de module toegangsrechten! Om deze in te stellen ga naar <b>System admin > Groepen</b>, kies de gewenste groep en selekteer de checkboxen om de toegang te wijzigen.</div>" );
 define( "_AM_XTUBE_PERM_CPERMISSIONS", "Categorie rechten" );
-define( "_AM_XTUBE_PERM_CSELECTPERMISSIONS", "Selekteer categorie&#0235;n die alle groepen mogen zien" );
-define( "_AM_XTUBE_PERM_CNOCATEGORY", "Kan geen rechten instellen: Er zijn geen categorie&#0235;n aangemaakt!" );
+define( "_AM_XTUBE_PERM_CSELECTPERMISSIONS", "Selekteer categorieën die alle groepen mogen zien" );
+define( "_AM_XTUBE_PERM_CNOCATEGORY", "Kan geen rechten instellen: Er zijn geen categorieën aangemaakt!" );
 define( "_AM_XTUBE_PERM_FPERMISSIONS", "Video rechten" );
 define( "_AM_XTUBE_PERM_FNOFILES", "Kan geen rechten instellen: er zijn geen videos aangemaakt!" );
 define( "_AM_XTUBE_PERM_FSELECTPERMISSIONS", "Selekteer videos die alle groepen mogen zien" );
@@ -373,8 +377,8 @@ define( "_AM_XTUBE_ICO_RES", "Bronnen/videos bij dit item aanpassen" );
 define( "_AM_XTUBE_ALTCAT_CREATEF", "Alternatieve categorie toevoegen" );
 define( "_AM_XTUBE_MALTCAT", "Alternatieve categorie management" );
 define( "_AM_XTUBE_ALTCAT_MODIFYF", "Alternatieve categorie management" );
-define( "_AM_XTUBE_ALTCAT_INFOTEXT", "<ul><li>Alternatieve categorie&#0235;n kunnen via dit formulier eenvoudig worden toegevoegd of verwijderd.</li></ul>" );
-define( '_AM_XTUBE_ALTCAT_CREATED', 'Alternatieve categorie(&#0235;n) is(zijn) opgeslagen!' );
+define( "_AM_XTUBE_ALTCAT_INFOTEXT", "<ul><li>Alternatieve categorieën kunnen via dit formulier eenvoudig worden toegevoegd of verwijderd.</li></ul>" );
+define( '_AM_XTUBE_ALTCAT_CREATED', 'Alternatieve categorie(ën) is(zijn) opgeslagen!' );
 
 define( "_AM_XTUBE_MRESOURCES", "Bronnen management" );
 define( "_AM_XTUBE_RES_CREATED", "Bronnen management" );
@@ -396,16 +400,16 @@ define( "_AM_XTUBE_RES_INFOTEXT", "<ul><li>Nieuwe bronnen kunnen via dit formuli
 define( "_AM_XTUBE_LISTBROKEN", "Toon videos die mogelijk zijn gebroken. NB: Deze gegevens zijn mogelijk niet korrect/kompleet en moeten worden gezien als grove handreiking.<br /><br />Kontroleer eerst of de video bestaat voordat aktie wordt ondernomen.<br /><br />" );
 
 define( "_AM_XTUBE_PERM_RATEPERMISSIONS", "Beoordelingsrechten" );
-define( "_AM_XTUBE_PERM_RATEPERMISSIONS_TEXT", "Selekteer de groepen die videos mogen beoordelen in de geselekteerde categorie(&#0235;n)." );
+define( "_AM_XTUBE_PERM_RATEPERMISSIONS_TEXT", "Selekteer de groepen die videos mogen beoordelen in de geselekteerde categorie(ën)." );
 
 define( "_AM_XTUBE_PERM_AUTOPERMISSIONS", "Videos automatisch goedkeuren" );
 define( "_AM_XTUBE_PERM_AUTOPERMISSIONS_TEXT", "Selekteer de groepen waarvan de ingezonden videos automatisch worden goedgekeurd." );
 
 define( "_AM_XTUBE_PERM_SPERMISSIONS", "Inzend rechten" );
-define( "_AM_XTUBE_PERM_SPERMISSIONS_TEXT", "Selekteer de groepen die nieuwe videos mogen inzenden in de geselekteerde categorie(&#0235;n)." );
+define( "_AM_XTUBE_PERM_SPERMISSIONS_TEXT", "Selekteer de groepen die nieuwe videos mogen inzenden in de geselekteerde categorie(ën)." );
 
 define( "_AM_XTUBE_PERM_APERMISSIONS", "Beheerder groepen" );
-define( "_AM_XTUBE_PERM_APERMISSIONS_TEXT", "Selekteer de groepen die beheerdersrechten hebben voor de geselekteerde categorie(&#0235;n)." );
+define( "_AM_XTUBE_PERM_APERMISSIONS_TEXT", "Selekteer de groepen die beheerdersrechten hebben voor de geselekteerde categorie(ën)." );
 
 define( "_AM_XTUBE_TIME", "Tijd:" );
 define( "_AM_XTUBE_KEYWORDS", "Keywords:" );
@@ -492,4 +496,5 @@ define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
 define( "_AM_XTUBE_MOD_PICURL", "Afbeeldings url: " );
 define( "_AM_XTUBE_IPAGE_SHOWLATEST", "Laat Laatste Videos zien?" );
 define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "Hoeveel videos laten zien?" );
+define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "0 schakelt deze optie uit." );
 ?>
