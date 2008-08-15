@@ -1,8 +1,9 @@
-<?php
+﻿<?php
 /**
  * $Id: main.php
  * Module: MyTube
  * Language: english
+ * Format: UTF-8
  */
 
 define( "_MD_XTUBE_NOVIDEO", "This video does not exist!" );

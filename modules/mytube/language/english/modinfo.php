@@ -1,8 +1,9 @@
-<?php
+﻿<?php
 /**
  * $Id: modinfo.php
  * Module: MyTube
  * Language: english
+ * Format: UTF-8
  */
 
 // Module Info
