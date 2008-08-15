@@ -495,5 +495,5 @@ define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
 define( "_AM_XTUBE_MOD_PICURL", "Url da Figura: " );
 define( "_AM_XTUBE_IPAGE_SHOWLATEST", "Mostrar últimas listagens?" );
 define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "Quantos videos para mostrar?" );
-define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "0 Turns this option off." );
+define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "0 total de videos nesta opção." );
 ?>
