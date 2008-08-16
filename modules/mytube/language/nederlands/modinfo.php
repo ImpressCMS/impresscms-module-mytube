@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 /**
  * $Id: modinfo.php
  * Module: MyTube
@@ -40,7 +40,7 @@ define("_MI_XTUBE_BLOCKADMIN","Blok instellingen");
 define("_MI_XTUBE_MVOTEDATA","Stemmen");
 
 // Title of config items
-define('_MI_XTUBE_POPULAR', 'Videos populairiteit teller');
+define('_MI_XTUBE_POPULAR', 'Videos populariteit teller');
 define('_MI_XTUBE_POPULARDSC', "Aantal keren bekeken waarna een video de status 'populair' krijgt.");
 
 //Display Icons
@@ -84,7 +84,7 @@ define('_MI_XTUBE_ALLOWSUBMISSDSC','Gebruikers toestaan nieuwe videos in te zend
 define('_MI_XTUBE_ALLOWUPLOADS','Gebruikers uploads:');
 define('_MI_XTUBE_ALLOWUPLOADSDSC','Gebruikers toestaan nieuwe videos direct te uploaden in de website');
 define('_MI_XTUBE_SCREENSHOTS','Screenshots upload bestand');
-define('_MI_XTUBE_CATEGORYIMG','categorieën afbeelding uploadbestand');
+define('_MI_XTUBE_CATEGORYIMG','categorieÃ«n afbeelding uploadbestand');
 define('_MI_XTUBE_MAINIMGDIR','Hoofd afbeeldingen bestand');
 define('_MI_XTUBE_USETHUMBS', 'Gebruik thumbnails:');
 define("_MI_XTUBE_USETHUMBSDSC", "Ondersteunde afbeeldingstypen: JPG, GIF, PNG.<div style='padding-top: 8px;'>MyTube gebruikt thumbnails voor afbeeldingen. Selekteer 'Nee' Om het orgineel te gebruiken wanneer de server deze optie niet ondersteund.</div>");
@@ -96,7 +96,7 @@ define('_MI_XTUBE_SHOWVIDEODISCL', 'Toon disclaimer voordat een gebruiker kan li
 define('_MI_XTUBE_SHOWVIDEODISCLDSC', 'Toon richtlijnen voor videos voordat een video opend?');
 define('_MI_XTUBE_DISCLAIMER', 'Voer de inzend disclaimer tekst in:');
 define('_MI_XTUBE_VIDEODISCLAIMER', 'Voer de video disclaimer tekst in:');
-define('_MI_XTUBE_SUBCATS', 'Sub-categorieën:');
+define('_MI_XTUBE_SUBCATS', 'Sub-categorieÃ«n:');
 define("_MI_XTUBE_SUBMITART", "video inzenden:");
 define("_MI_XTUBE_SUBMITARTDSC", "Selekteer de groep die nieuwe videos kan inzenden.");
 define("_MI_XTUBE_RATINGGROUPS", "video beoordeling:");
@@ -114,13 +114,13 @@ define("_MI_XTUBE_ARTICLESSORTDSC", "Selekteer de standaard volgorde voor de vid
 define("_MI_XTUBE_TITLE", "Titel");
 define("_MI_XTUBE_RATING", "Beoordeling");
 define("_MI_XTUBE_WEIGHT", "Gewicht");
-define("_MI_XTUBE_POPULARITY", "Populairiteit");
+define("_MI_XTUBE_POPULARITY", "Populariteit");
 define("_MI_XTUBE_SUBMITTED2", "inzenddatum");
 define('_MI_XTUBE_COPYRIGHT', 'Copyright opmerking:');
 define('_MI_XTUBE_COPYRIGHTDSC', 'Selekteer om een copyright opmerking te tonen op de video pagina.');
 
 // Description of each config items
-define('_MI_XTUBE_SUBCATSDSC', 'Selekteer Ja om sub-categorieën te tonen. Nee selekteren zal sub-categorieën verbergen in de indexen');
+define('_MI_XTUBE_SUBCATSDSC', 'Selekteer Ja om sub-categorieÃ«n te tonen. Nee selekteren zal sub-categorieÃ«n verbergen in de indexen');
 
 // Text for notifications
 define('_MI_XTUBE_GLOBAL_NOTIFY', 'Globaal');
@@ -227,10 +227,10 @@ define("_MI_XTUBE_SHOWSBOOKMARKS", "Toon Social Bookmarks?");
 define("_MI_XTUBE_SHOWSBOOKMARKSDSC", "Kies Ja om de Social Bookmark iconen te tonen.");
 define("_MI_XTUBE_TOTALCHARS", "Kies het totaal aantal karakters voor de omschrijving?");
 define("_MI_XTUBE_TOTALCHARSDSC", "Kies het totaal aantal karakters voor de omschrijving van de videos op de Index Pagina.");
-define("_MI_XTUBE_SORTCATS", "Sorteer categorieën op:");
-define("_MI_XTUBE_SORTCATSDSC", "Selekteer hoe categorieën en sub-categorieën gesorteerd moeten worden.");
-define("_MI_XTUBE_USEMETADESCR", "Genereer meta description:");
-define("_MI_XTUBE_USEMETADSC", "Met deze optie wordt de meta description gebaseerd op die van de video omschrijving.");
+define("_MI_XTUBE_SORTCATS", "Sorteer categorieÃ«n op:");
+define("_MI_XTUBE_SORTCATSDSC", "Selekteer hoe categorieÃ«n en sub-categorieÃ«n gesorteerd moeten worden.");
+define("_MI_XTUBE_USEMETADESCR", "Genereer meta omschrijving:");
+define("_MI_XTUBE_USEMETADSC", "Met deze optie wordt de meta omschrijving gebaseerd op die van de video omschrijving.");
 define("_MI_XTUBE_USERTAGDESCR", "Gebruiker kan Tags invoeren:");
 define("_MI_XTUBE_USERTAGDSC", "Kies Ja als de gebruiker tags mag inzenden.");
 
