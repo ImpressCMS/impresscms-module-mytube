@@ -1,10 +1,12 @@
-Bug fix list history:
+﻿Changelog:
 
 =========================================================
-xx.xx.2008   1.04 RC-3
+18.08.2008   1.04 RC-3
 =========================================================
 - Added noindex,nofollow meta-tag to broken- and rating pages
-- Added option to Index Page to show Latest Videos
+- Added option to Index Page to show Latest Videos [trabis & mcdonald]
+
+- Convert Dutch & English language files to UTF-8
 
 - Fixed modification feature, user+admin side
 - Fixed rating page, removed closing div-tag
