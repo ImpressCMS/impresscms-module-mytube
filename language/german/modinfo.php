@@ -2,7 +2,8 @@
 /**
  * $Id: modinfo.php
  * Module: MyTube
- * Language: german
+ * Language: english
+ * Format: UTF-8
  */
 
 // Module Info
@@ -283,4 +284,8 @@ define("_MI_XTUBE_BNAME9","MyTube Tag Cloud");
 define("_MI_XTUBE_BNAME10","MyTube Top Tags");
 define('_MI_XTUBE_FLVPLAYER_MANUAL', 'FLV Player Manual');
 define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW Player Wiki');
+
+// Version 1.04 RC-3
+define( "_MI_XTUBE_AUTOPLAYDESCR", "Videos automatisch starten?" );
+define( "_MI_XTUBE_AUTOPLAYDSC", "Wenn JA gewählt wird, spielen die Videos automatisch ab." );
 ?>

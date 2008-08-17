@@ -2,7 +2,8 @@
 /**
  * $Id: main.php
  * Module: MyTube
-* Language: german by wuddel (myxoops.org/impresscms.de)
+ * Language: english
+ * Format: UTF-8
  */
 
 define( "_MD_XTUBE_NOVIDEO", "Das Video existiert nicht!" );
@@ -197,9 +198,9 @@ define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
 define( "_MD_XTUBE_MAKTOOB", "Maktoob" );
 define( "_MD_XTUBE_VEOH", "Veoh" );
-define( "_MD_XTUBE_STOPIT", "STOP IT YOU FOOL!!" );
+define( "_MD_XTUBE_STOPIT", "Hör damit auf, Du Idiot!!" );
 define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Benutzen Sie den roten Teil, wie im unteren Beispiel" );
 
 //Version 1.04 RC-3
-define( "_MD_XTUBE_MODIFYNOTALLOWED", "You're not allowed to modify others videos!!" );
+define( "_MD_XTUBE_MODIFYNOTALLOWED", "Sie sind nicht berechtigt andere Videos zu bearbeiten!!" );
 ?>

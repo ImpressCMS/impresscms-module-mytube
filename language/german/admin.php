@@ -1,9 +1,10 @@
 ﻿<?php
 /**
- * $Id: admin.php v 1.00 21 June 2005 John N Exp $
+ * $Id: admin.php
  * Module: MyTube
- * Version: v1.0.1
-  */
+ * Language: english
+ * Format: UTF-8
+ */
 
 define( "_AM_XTUBE_WARNINSTALL1", "WARNUNG: Verzeichnis %s existiert auf dem Server! <br />Aus Sicherheitsgründen sollte das Verzeichnis gelöscht werden." );
 define( "_AM_XTUBE_WARNINSTALL2", "WARNUNG: Datei %s existiert auf dem Server! <br />/>Aus Sicherheitsgründen sollte das Verzeichnis gelöscht werden." );
@@ -491,7 +492,7 @@ define( "_AM_XTUBE_MOD_TIME", "Zeit: " );
 define( "_AM_XTUBE_MOD_KEYWORDS", "Schlüsselwörter: " );
 define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
 define( "_AM_XTUBE_MOD_PICURL", "Bild URL: " );
-define( "_AM_XTUBE_IPAGE_SHOWLATEST", "Show Latest Listings?" );
-define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "How many videos to show?" );
-define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "0 Turns this option off." );
+define( "_AM_XTUBE_IPAGE_SHOWLATEST", "Zeige letzte Einträge?" );
+define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "Wie viele Videos sollen dargestellt werden?" );
+define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "Wenn '0' eingetragen werden, ist die Option ausgeschaltet." );
 ?>
