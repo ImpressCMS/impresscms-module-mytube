@@ -2,7 +2,8 @@
 /**
  * $Id: blocks.php
  * Module: MyTube
-* Language: german by wuddel (myxoops.org/impresscms.de)
+ * Language: english
+ * Format: UTF-8
  */
  
 // Blocks
@@ -23,5 +24,5 @@ define( "_MB_XTUBE_UNLIMIT", "Unbegrenzt" );
 define( "_MB_XTUBE_DATEFORMAT", "Datumformat" );
 define( "_MB_XTUBE_DATEFORMATMANUAL", 'Siehe <a href="http://jp.php.net/manual/de/function.date.php" target="_blank">PHP Syntax</a>' );
 define( "_MB_XTUBE_ALLCAT", "Alle Kategorien");
-define( "_MB_XTUBE_SELECTCAT", "Display the videos of:");
+define( "_MB_XTUBE_SELECTCAT", "Zeige Videos von:");
 ?>
