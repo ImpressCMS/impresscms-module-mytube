@@ -335,6 +335,9 @@ switch ($op) {
                 // all links for each subcategory is deleted, now delete the subcategory data
                 $sql = sprintf( "DELETE FROM %s WHERE cid = %u", $xoopsDB -> prefix('xoopstube_cat'), intval($arr[$i]) );
                 $xoopsDB -> query($sql);
+				// delete altcat entries
+				$sql = sprintf("DELETE FROM %s WHERE cid = %u", $xoopsDB -> prefix('xoopstube_altcat'), $arr[$i]);
+                $xoopsDB -> query($sql);
             } 
             // all subcategory and associated data are deleted, now delete category data and its associated data
             $result = $xoopsDB -> query( "SELECT lid FROM " . $xoopsDB -> prefix('xoopstube_videos') . " WHERE cid=" . intval($cid) . "" );
@@ -345,7 +348,11 @@ switch ($op) {
                 xoops_comment_delete( $xoopsModule -> getVar('mid'), intval($lid) );
                 $sql = sprintf( "DELETE FROM %s WHERE lid = %u", $xoopsDB -> prefix('xoopstube_votedata'), intval($lid) );
                 $xoopsDB -> query($sql);
-            } 
+            }
+			// delete altcat entries
+			$sql = sprintf("DELETE FROM %s WHERE cid = %u", $xoopsDB -> prefix('xoopstube_altcat'), intval($cid));
+            $xoopsDB -> query($sql);
+			// delete category			
             $sql = sprintf( "DELETE FROM %s WHERE cid = %u", $xoopsDB -> prefix('xoopstube_cat'), intval($cid) );
             $error = _AM_XTUBE_DBERROR . ": <br /><br />" . $sql;
             xoops_groupperm_deletebymoditem( $xoopsModule -> getVar('mid'), 'XTubeCatPerm', intval($cid) );
