@@ -353,19 +353,32 @@ switch ( strtolower( $op ) ) {
     case "delete":
         if ( xtube_cleanRequestVars( $_REQUEST, 'confirm', 0 ) ) {
             $title = xtube_cleanRequestVars( $_REQUEST, 'title', 0 );
+			
+			// delete video
             $sql = "DELETE FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $lid;
             if ( !$result = $xoopsDB -> query( $sql ) ) {
                 XoopsErrorHandler_HandleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
                 return false;
             } 
+			
+			// delete altcat
+            $sql = "DELETE FROM " . $xoopsDB -> prefix( 'xoopstube_altcat' ) . " WHERE lid=" . $lid;
+            if ( !$result = $xoopsDB -> query( $sql ) ) {
+                XoopsErrorHandler_HandleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
+                return false;
+            } 			
+			
+			// delete vote data
             $sql = "DELETE FROM " . $xoopsDB -> prefix( 'xoopstube_votedata' ) . " WHERE lid=" . $lid;
             if ( !$result = $xoopsDB -> query( $sql ) ) {
                 XoopsErrorHandler_HandleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
                 return false;
             } 
+			
             // delete comments
             xoops_comment_delete( $xoopsModule -> getVar( 'mid' ), $lid );
             redirect_header( "index.php", 1, sprintf( _AM_XTUBE_VIDEO_FILEWASDELETED, $title ) );
+			
             exit();
         } else {
             $sql = "SELECT lid, title, item_tag, vidid FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $lid;
