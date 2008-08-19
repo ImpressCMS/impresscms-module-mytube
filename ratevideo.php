@@ -16,7 +16,7 @@ $ip = getenv( "REMOTE_ADDR" );
 $ratinguser = ( !is_object( $xoopsUser ) ) ? 0 : $xoopsUser -> getVar( 'uid' );
 
 if ( $ratinguser != 0 ) {
-    $result = $xoopsDB -> query( 'SELECT cid, submitter FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE lid=' . intval($lid) );
+    $result = $xoopsDB -> query( "SELECT cid, submitter FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . intval($lid) );
     while ( list( $cid, $ratinguserDB ) = $xoopsDB -> fetchRow( $result ) ) {
         if ( $ratinguserDB == $ratinguser ) {
             $ratemessage = _MD_XTUBE_CANTVOTEOWN;
@@ -25,7 +25,7 @@ if ( $ratinguser != 0 ) {
         } 
     } 
     // Check if REG user is trying to vote twice.
-    $result = $xoopsDB -> query( 'SELECT cid, ratinguser FROM ' . $xoopsDB -> prefix( 'xoopstube_votedata' ) . ' WHERE lid=' . intval($lid) );
+    $result = $xoopsDB -> query( "SELECT cid, ratinguser FROM " . $xoopsDB -> prefix( 'xoopstube_votedata' ) . " WHERE lid=" . intval($lid) );
     while ( list( $cid, $ratinguserDB ) = $xoopsDB -> fetchRow( $result ) ) {
         if ( $ratinguserDB == $ratinguser ) {
             $ratemessage = _MD_XTUBE_VOTEONCE;
@@ -36,7 +36,7 @@ if ( $ratinguser != 0 ) {
 } else {
     // Check if ANONYMOUS user is trying to vote more than once per day.
     $yesterday = ( time() - ( 86400 * $anonwaitdays ) );
-    $result = $xoopsDB -> query( 'SELECT COUNT(*) FROM ' . $xoopsDB -> prefix( 'xoopstube_votedata' ) . ' WHERE lid=' . intval($lid) . ' AND ratinguser=0 AND ratinghostname=' . $ip . '  AND ratingtimestamp > ' . $yesterday );
+    $result = $xoopsDB -> query( "SELECT COUNT(*) FROM " . $xoopsDB -> prefix( 'xoopstube_votedata' ) . " WHERE lid=" . intval($lid) . " AND ratinguser=0 AND ratinghostname=" . $ip . " AND ratingtimestamp > " . $yesterday );
     list( $anonvotecount ) = $xoopsDB -> fetchRow( $result );
     if ( $anonvotecount >= 1 ) {
         $ratemessage = _MD_XTUBE_VOTEONCE;
@@ -66,7 +66,7 @@ if ( !empty( $_POST['submit'] ) ) {
     // All is well.  Add to Line Item Rate to DB.
     $newid = $xoopsDB -> genId( $xoopsDB -> prefix( 'xoopstube_votedata' ) . "_ratingid_seq" );
     $datetime = time();
-    $sql = sprintf( 'INSERT INTO %s (ratingid, lid, ratinguser, rating, ratinghostname, ratingtimestamp, title) VALUES (%u, %u, %u, %u, %s, %u, %s)', $xoopsDB -> prefix( 'xoopstube_votedata' ), $newid, intval($lid), $ratinguser, $rating, $xoopsDB -> quoteString( $ip ), $datetime, $xoopsDB -> quoteString( $title ) );
+    $sql = sprintf( "INSERT INTO %s (ratingid, lid, ratinguser, rating, ratinghostname, ratingtimestamp, title) VALUES (%u, %u, %u, %u, %s, %u, %s)", $xoopsDB -> prefix( 'xoopstube_votedata' ), $newid, intval($lid), $ratinguser, $rating, $xoopsDB -> quoteString( $ip ), $datetime, $xoopsDB -> quoteString( $title ) );
     if ( !$result = $xoopsDB -> query( $sql ) ) {
         $ratemessage = _MD_XTUBE_ERROR;
     } else {
@@ -87,7 +87,7 @@ if ( !empty( $_POST['submit'] ) ) {
     $catarray['imageheader'] = xtube_imageheader();
     $xoopsTpl -> assign( 'catarray', $catarray );
 
-    $result = $xoopsDB -> query( 'SELECT title FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE lid=' . intval($lid) );
+    $result = $xoopsDB -> query( "SELECT title FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . intval($lid) );
     list( $title ) = $xoopsDB -> fetchRow( $result );
     $xoopsTpl -> assign( 'video', array( 'id' => intval($lid), 'cid' => intval($cid), 'title' => $xtubemyts -> htmlSpecialCharsStrip( $title ) ) );
     
