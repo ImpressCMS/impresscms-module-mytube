@@ -4,6 +4,7 @@
 xx.xx.2008   1.04 xxxx
 =========================================================
 - Fixed bug: alternative cats were not deleted
+- Fixed bug: blank page with Cancel button ratingpage
 
 =========================================================
 18.08.2008   1.04 RC-3
