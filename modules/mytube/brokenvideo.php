@@ -24,7 +24,7 @@ switch ( strtolower($op) ) {
         /**
          * Check if REG user is trying to report twice.
          */
-        $result = $xoopsDB -> query( 'SELECT COUNT(*) FROM ' . $xoopsDB -> prefix( 'xoopstube_broken' ) . ' WHERE lid=' . $lid );
+        $result = $xoopsDB -> query( "SELECT COUNT(*) FROM " . $xoopsDB -> prefix( 'xoopstube_broken' ) . " WHERE lid=" . $lid );
         list ( $count ) = $xoopsDB -> fetchRow( $result );
         if ( $count > 0 ) {
             $ratemessage = _MD_XTUBE_ALREADYREPORTED;
@@ -89,11 +89,11 @@ switch ( strtolower($op) ) {
         $catarray['imageheader'] = xtube_imageheader();
         $xoopsTpl -> assign( 'catarray', $catarray );
 
-        $sql = 'SELECT * FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE lid =' . $lid;
+        $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $lid;
         $video_arr = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
         unset( $sql );
 
-        $sql = 'SELECT * FROM ' . $xoopsDB -> prefix( 'xoopstube_broken' ) . ' WHERE lid =' . $lid;
+        $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_broken' ) . " WHERE lid=" . $lid;
         $broke_arr = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
 
         if ( is_array( $broke_arr ) ) {
