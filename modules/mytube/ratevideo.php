@@ -16,8 +16,8 @@ $ip = getenv( "REMOTE_ADDR" );
 $ratinguser = ( !is_object( $xoopsUser ) ) ? 0 : $xoopsUser -> getVar( 'uid' );
 
 if ( $ratinguser != 0 ) {
-    $result = $xoopsDB -> query( 'SELECT submitter FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE lid=' . intval($lid) );
-    while ( list( $ratinguserDB ) = $xoopsDB -> fetchRow( $result ) ) {
+    $result = $xoopsDB -> query( 'SELECT cid, submitter FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE lid=' . intval($lid) );
+    while ( list( $cid, $ratinguserDB ) = $xoopsDB -> fetchRow( $result ) ) {
         if ( $ratinguserDB == $ratinguser ) {
             $ratemessage = _MD_XTUBE_CANTVOTEOWN;
             redirect_header( 'singlevideo.php?cid=' . intval($cid) . '&amp;lid=' . intval($lid), 4, $ratemessage );
@@ -25,8 +25,8 @@ if ( $ratinguser != 0 ) {
         } 
     } 
     // Check if REG user is trying to vote twice.
-    $result = $xoopsDB -> query( 'SELECT ratinguser FROM ' . $xoopsDB -> prefix( 'xoopstube_votedata' ) . ' WHERE lid=' . intval($lid) );
-    while ( list( $ratinguserDB ) = $xoopsDB -> fetchRow( $result ) ) {
+    $result = $xoopsDB -> query( 'SELECT cid, ratinguser FROM ' . $xoopsDB -> prefix( 'xoopstube_votedata' ) . ' WHERE lid=' . intval($lid) );
+    while ( list( $cid, $ratinguserDB ) = $xoopsDB -> fetchRow( $result ) ) {
         if ( $ratinguserDB == $ratinguser ) {
             $ratemessage = _MD_XTUBE_VOTEONCE;
             redirect_header( 'singlevideo.php?cid=' . intval($cid) . '&amp;lid=' . intval($lid), 4, $ratemessage );
@@ -96,10 +96,17 @@ if ( !empty( $_POST['submit'] ) ) {
     } else {
       $xoopsTpl -> assign( 'xoops_meta_robots', 'noindex,nofollow' );
     }
-
+	
+    $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
     include XOOPS_ROOT_PATH . '/footer.php';
 }
 
+if ( is_object($xoTheme) ) {
+    $xoTheme -> addMeta( 'meta', 'robots', 'noindex,nofollow' );
+} else {
+    $xoopsTpl -> assign( 'xoops_meta_robots', 'noindex,nofollow' );
+}
+	
 $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
 include XOOPS_ROOT_PATH . '/footer.php';
 ?>
