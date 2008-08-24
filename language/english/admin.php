@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * $Id: admin.php
  * Module: MyTube
@@ -103,7 +103,7 @@ define( "_AM_XTUBE_IPAGE_CRIGHT", "Align Right" );
  * Permissions defines
  */
 define( "_AM_XTUBE_PERM_MANAGEMENT", "Permissions Management" );
-define( "_AM_XTUBE_PERM_PERMSNOTE", "<div><b>NOTE:</b> Please be aware that even if you&#8217ve set correct viewing permissions here, a group might not see the articles or blocks if you don&#8217t also grant that group permissions to access the module. To do that, go to <b>System admin > Groups</b>, choose the appropriate group and click the checkboxes to grant its members the access.</div>" );
+define( "_AM_XTUBE_PERM_PERMSNOTE", "<div><b>NOTE:</b> Please be aware that even if you've set correct viewing permissions here, a group might not see the articles or blocks if you don't also grant that group permissions to access the module. To do that, go to <b>System admin > Groups</b>, choose the appropriate group and click the checkboxes to grant its members the access.</div>" );
 define( "_AM_XTUBE_PERM_CPERMISSIONS", "Category Permissions" );
 define( "_AM_XTUBE_PERM_CSELECTPERMISSIONS", "Select categories that each group is allowed to view" );
 define( "_AM_XTUBE_PERM_CNOCATEGORY", "Cannot set permission's: No Categories's have been created yet!" );
@@ -231,7 +231,7 @@ define( "_AM_XTUBE_MOD_ORIGINAL", "Orginal video Details" );
 define( "_AM_XTUBE_MOD_REQDELETED", "Modification request removed from the database" );
 define( "_AM_XTUBE_MOD_REQUPDATED", "Selected video Modified and Database Updated Successfully" );
 define( '_AM_XTUBE_MOD_VIEW', 'View' );
-// Link management
+// Video management
 define( "_AM_XTUBE_VIDEO_ID", "Video ID: " );
 define( "_AM_XTUBE_VIDEO_IP", "Uploaders IP Address: " );
 define( "_AM_XTUBE_VIDEO_ALLOWEDAMIME", "<div style='padding-top: 4px; padding-bottom: 4px;'><b>Allowed Admin Video Extensions</b>:</div>" );
