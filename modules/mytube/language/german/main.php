@@ -88,7 +88,7 @@ define( "_MD_XTUBE_RATINGSCALE", "Die Bewertungsskala reicht von 1 - 10, wobei 1
 define( "_MD_XTUBE_BEOBJECTIVE", "Seien Sie objektiv, denn wenn jeder mit 1 oder 10 abstimmt sind die Ergebnisse wenig aussagekräftig." );
 define( "_MD_XTUBE_DONOTVOTE", "Bitte stimmen Sie nicht für Ihren eigenes Video." );
 define( "_MD_XTUBE_RATEIT", "Bewerten!" );
-define( "_MD_XTUBE_INTFILEFOUND", "Hier findesn Sie ein interesantes Video auf %s" ); // %s is your site name
+define( "_MD_XTUBE_INTFILEFOUND", "Hier ist ein interesantes Video bei %s" ); // %s is your site name
 define( "_MD_XTUBE_RANK", "Rang" );
 define( "_MD_XTUBE_CATEGORY", "Kategorie" );
 define( "_MD_XTUBE_HITS", "Aufrufe" );
