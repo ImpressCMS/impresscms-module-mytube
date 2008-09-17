@@ -10,7 +10,7 @@ $mydirpath = dirname( __FILE__ );
 
 $modversion['name'] = _MI_XTUBE_NAME;
 $modversion['version'] = "1.04";
-$modversion['releasedate'] = "August 18, 2008";
+$modversion['releasedate'] = "September 19, 2008";
 $modversion['status'] = "RC-3";
 $modversion['description'] = _MI_XTUBE_DESC;
 $modversion['license'] = "GNU General Public License (GPL)";
@@ -225,9 +225,6 @@ $modversion['templates'][$i]['file'] = 'xoopstube_viewcat.html';
 $modversion['templates'][$i]['description'] = '';
 $i++;
 $modversion['templates'][$i]['file'] = 'xoopstube_newlistindex.html';
-$modversion['templates'][$i]['description'] = '';
-$i++;
-$modversion['templates'][$i]['file'] = 'xoopstube_videoloadsimple.html';
 $modversion['templates'][$i]['description'] = '';
 $i=0;
 

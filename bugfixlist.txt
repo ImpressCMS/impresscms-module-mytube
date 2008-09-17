@@ -1,9 +1,10 @@
 ﻿Changelog:
 
 =========================================================
-xx.xx.2008   1.04 xxxx
+19.09.2008   1.04 xxxx
 =========================================================
 - Updated JW FLV Player to version 4.1
+- Removed file templates/xoopstube_videoloadsimple.html
 
 - Fixed bug: alternative cats were not deleted
 - Fixed bug: blank page with Cancel button ratingpage
