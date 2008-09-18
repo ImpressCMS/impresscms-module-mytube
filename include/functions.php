@@ -815,12 +815,12 @@ function xtube_linklistpagenavleft( $pubrowamount, $start, $art = "art", $_this 
 
 // Retreive an editor according to the module's option "form_options"
 function &xtube_getWysiwygForm($caption, $name, $value = "", $width = '100%', $height = '400px', $supplemental='') {
-        global $xoopsModuleConfig, $xoopsUser, $xoopsModule;
+    global $xoopsModuleConfig, $xoopsUser, $xoopsModule;
 
 	$editor = false;
-	$x22=false;
-	$xv=str_replace('XOOPS ','',XOOPS_VERSION);
-	if(substr($xv,2,1)=='2') {
+	$x22 = false;
+	$xv = str_replace('XOOPS ','',XOOPS_VERSION);
+	if (substr($xv,2,1) == '2') {
 		$x22=true;
 	}
 	$editor_configs=array();
@@ -964,11 +964,12 @@ function xtube_html2text($document){
 		// and white space. It will also convert some
 		// common HTML entities to their text equivalent.
 		// Credits : newbb2
-		$search = array ("'<script[^>]*?>.*?</script>'si",  // Strip out javascript
-		"'<img.*?/>'si",       // Strip out img tags
-		"'<[\/\!]*?[^<>]*?>'si",          // Strip out HTML tags
-		"'([\r\n])[\s]+'",                // Strip out white space
-		"'&(quot|#34);'i",                // Replace HTML entities
+		$search = array (
+		"'<script[^>]*?>.*?</script>'si",	// Strip out javascript
+		"'<img.*?/>'si",       				// Strip out img tags
+		"'<[\/\!]*?[^<>]*?>'si",          	// Strip out HTML tags
+		"'([\r\n])[\s]+'",                	// Strip out white space
+		"'&(quot|#34);'i",                	// Replace HTML entities
 		"'&(amp|#38);'i",
 		"'&(lt|#60);'i",
 		"'&(gt|#62);'i",
@@ -979,7 +980,8 @@ function xtube_html2text($document){
 		"'&(copy|#169);'i",
 		);                    // evaluate as php
 
-		$replace = array ("",
+		$replace = array (
+		"",
 		"",
 		"",
 		"\\1",
@@ -1016,23 +1018,23 @@ function xtube_tag_module_included() {
 
 // Add item_tag to Tag-module
 function xtube_tagupdate($lid, $item_tag) {
-         global $xoopsModule;
-         if (xtube_tag_module_included()) {
-            include_once XOOPS_ROOT_PATH . "/modules/tag/include/formtag.php";
-            $tag_handler = xoops_getmodulehandler('tag', 'tag');
-            $tag_handler -> updateByItem($item_tag, $lid, $xoopsModule -> getVar( 'dirname' ), 0);
-         }
+	global $xoopsModule;
+    if (xtube_tag_module_included()){
+	  include_once XOOPS_ROOT_PATH . "/modules/tag/include/formtag.php";
+	  $tag_handler = xoops_getmodulehandler('tag', 'tag');
+	  $tag_handler -> updateByItem($item_tag, $lid, $xoopsModule -> getVar( 'dirname' ), 0);
+	}
 }
 
 function xtube_updateCounter($lid) {
-         global $xoopsDB;
-	 $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " SET hits=hits+1 WHERE lid=" . intval($lid);
-         $result = $xoopsDB -> queryF( $sql );
+	global $xoopsDB;
+	$sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " SET hits=hits+1 WHERE lid=" . intval($lid);
+    $result = $xoopsDB -> queryF( $sql );
 }
 
 function xtube_substr($str, $start, $length, $trimmarker = '...') {
 	$config_handler =& xoops_gethandler('config');
-	$im_multilanguageConfig =& $config_handler->getConfigsByCat(IM_CONF_MULILANGUAGE);
+	$im_multilanguageConfig =& $config_handler -> getConfigsByCat(IM_CONF_MULILANGUAGE);
     
 	if ($im_multilanguageConfig['ml_enable']) {
 		$tags = explode(',',$im_multilanguageConfig['ml_tags']);
@@ -1050,7 +1052,7 @@ function xtube_substr($str, $start, $length, $trimmarker = '...') {
 		$hasML = false;
 	}
 	
-	if (!$hasML){
+	if (!$hasML) {
         $strs = array($str);
 	}
 	
@@ -1065,17 +1067,17 @@ function xtube_substr($str, $start, $length, $trimmarker = '...') {
 		}
 
 		// phppp patch
-		$DEP_CHAR=127;
-		$pos_st=0;
+		$DEP_CHAR = 127;
+		$pos_st = 0;
 		$action = false;
 		for ( $pos_i = 0; $pos_i < strlen($strs[$i]); $pos_i++ ) {
 			if ( ord( substr( $strs[$i], $pos_i, 1) ) > 127 ) {
 				$pos_i++;
 			}
-			if ($pos_i<=$start) {
-				$pos_st=$pos_i;
+			if ($pos_i <= $start) {
+				$pos_st = $pos_i;
 			}
-			if ($pos_i>=$pos_st+$length) {
+			if ($pos_i >= $pos_st + $length) {
 				$action = true;
 				break;
 			}
@@ -1089,8 +1091,7 @@ function xtube_substr($str, $start, $length, $trimmarker = '...') {
 	return $str;
 }
 
-function xtube_getbanner_from_id_banner($banner_id)
-{
+function xtube_getbanner_from_id_banner($banner_id) {
 ###### Hack by www.stefanosilvestrini.com ######
 global $xoopsConfig;
 $db =& Database::getInstance();
@@ -1139,8 +1140,7 @@ if ( $numrows > 0 ) {
   }
 }
 
-function xtube_getbanner_from_id_client($client_id)
-{
+function xtube_getbanner_from_id_client($client_id) {
 ###### Hack by www.stefanosilvestrini.com ######
 global $xoopsConfig;
 $db =& Database::getInstance();
