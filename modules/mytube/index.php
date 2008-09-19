@@ -165,6 +165,7 @@ if ($lastvideos['lastvideosyn'] == 1 && $lastvideos['lastvideostotal'] > 0) {
   $xoopsTpl -> assign( 'showlatest', $lastvideos['lastvideosyn'] );
 }
 
+$xoopsTpl -> assign( 'cat_columns', $xoopsModuleConfig['catcolumns'] );
 $xoopsTpl -> assign( 'lang_thereare', sprintf( $lang_thereare, $total_cat, $listings['count'] ) );
 $xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
  

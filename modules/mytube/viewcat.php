@@ -252,6 +252,8 @@ if ( $count > 0 ) {
 } 
 unset( $video_arr );
 
+$xoopsTpl -> assign( 'cat_columns', $xoopsModuleConfig['catcolumns'] );
+
 include XOOPS_ROOT_PATH . '/footer.php';
 
 ?>
