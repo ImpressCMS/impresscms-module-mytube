@@ -1,12 +1,12 @@
 ﻿Changelog:
 
 =========================================================
-19.09.2008   1.04 xxxx
+19.09.2008   1.04 Final
 =========================================================
 - Updated JW FLV Player to version 4.1
 - Removed file templates/xoopstube_videoloadsimple.html
 
-- Fixed bug: alternative cats were not deleted
+- Fixed bug: alternative categories were not deleted
 - Fixed bug: blank page with Cancel button ratingpage
 
 =========================================================
@@ -61,7 +61,7 @@
 
 
 =========================================================
-08.03.2008   1.03.1
+08.03.2008   1.03.1 Final
 =========================================================
 - Fixed XSS vulnerability [Vaughan/McDonald]
 - Fixed bug in sub-cat listing
@@ -69,7 +69,7 @@
 
 
 =========================================================
-26.02.2008   1.03
+26.02.2008   1.03 Final
 =========================================================
 - Fixed bug in sql-file
 - Fixed bug in WYSIWYG editors (FCKEditor)
@@ -83,7 +83,7 @@
 
 
 =========================================================
-21.02.2008   1.02
+21.02.2008   1.02 Final
 =========================================================
 - Added Spanish language files [debianus]
 - Added German language files [wuddel]
