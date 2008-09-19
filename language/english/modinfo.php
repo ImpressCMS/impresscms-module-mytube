@@ -289,4 +289,8 @@ define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW Player Wiki');
 // Version 1.04 RC-3
 define( "_MI_XTUBE_AUTOPLAYDESCR", "Autoplay videos" );
 define( "_MI_XTUBE_AUTOPLAYDSC", "Select Yes to have videos autoplay" );
+
+// Version 1.05 RC-1
+define( "_MI_XTUBE_CATCOLUMNS", "Select amount of category columns:" );
+define( "_MI_XTUBE_CATCOLUMNSDSC", "Select the amount of columns, default is 2" );
 ?>

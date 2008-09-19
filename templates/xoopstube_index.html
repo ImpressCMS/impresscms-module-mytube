@@ -24,7 +24,7 @@
      <div style="margin-bottom: 3px; margin-left: 16px; font-size: smaller; vertical-align: top;"><{$category.subcategories}></div> 
     <{/if}> 
    </td> 
-  <{if $category.count is div by 2}> 
+  <{if $category.count is div by $cat_columns}> 
  </tr> 
  <tr> <{/if}> <{/foreach}> 
   <!-- End category loop --> 

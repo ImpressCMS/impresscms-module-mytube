@@ -300,7 +300,7 @@ $modversion['config'][$i]['title'] = '_MI_XTUBE_SORTCATS';
 $modversion['config'][$i]['description'] = '_MI_XTUBE_SORTCATSDSC';
 $modversion['config'][$i]['formtype'] = 'select';
 $modversion['config'][$i]['valuetype'] = 'text';
-$modversion['config'][$i]['default'] = 'weight';
+$modversion['config'][$i]['default'] = 'title';
 $modversion['config'][$i]['options'] = array( 'Weight' => 'weight',
                                              'Title' => 'title'
                                             );
@@ -311,6 +311,14 @@ $modversion['config'][$i]['description'] = '_MI_XTUBE_SUBCATSDSC';
 $modversion['config'][$i]['formtype'] = 'yesno';
 $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 0;
+$i++;
+$modversion['config'][$i]['name'] = 'catcolumns';
+$modversion['config'][$i]['title'] = '_MI_XTUBE_CATCOLUMNS';
+$modversion['config'][$i]['description'] = '_MI_XTUBE_CATCOLUMNSDSC';
+$modversion['config'][$i]['formtype'] = 'select';
+$modversion['config'][$i]['valuetype'] = 'int';
+$modversion['config'][$i]['default'] = 2;
+$modversion['config'][$i]['options'] = array( '1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5 );
 $i++;
 $modversion['config'][$i]['name'] = 'form_options';
 $modversion['config'][$i]['title'] = '_MI_XTUBE_EDITOR';
