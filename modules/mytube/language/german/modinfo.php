@@ -11,7 +11,7 @@
 define("_MI_XTUBE_NAME","MyTube");
 
 // A brief description of this module
-define("_MI_XTUBE_DESC","Integriere Videos von YouTube in deiner Seite.");
+define("_MI_XTUBE_DESC","Integriere Videos von Videoportalen in deiner Seite.");
 
 // Names of blocks for this module (Not all module has blocks)
 define("_MI_XTUBE_BNAME1","Neuste Videos (t)");
@@ -74,7 +74,7 @@ define('_MI_XTUBE_EDITORCHOICE', "Wähle den Editor für den Administrator. Ohne
 define('_MI_XTUBE_EDITORUSER', "Editor (Mitglied):");
 define('_MI_XTUBE_EDITORCHOICEUSER', "Wähle den Editor für die Mitglieder. Ohne installierte Editoren können nur die Standard Editoren gewählt werden (z.B. DHTML und Compact");
 define("_MI_XTUBE_FORM_DHTML","DHTML");
-define("_MI_XTUBE_FORM_COMPACT","Compact");
+define("_MI_XTUBE_FORM_COMPACT","Kompakt");
 define("_MI_XTUBE_FORM_SPAW","Spaw Editor");
 define("_MI_XTUBE_FORM_HTMLAREA","HtmlArea Editor");
 define("_MI_XTUBE_FORM_FCK","FCK Editor");
