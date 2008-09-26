@@ -22,7 +22,7 @@ tr.xoopstube_even td {
   font-size: 130%; 
   font-weight: bold; 
   font-variant: small-caps; 
-  color: #FFFFFF; 
+  color: #FFFFFF;
   background-color: transparent;}
 
 .xoopstube_header {
@@ -41,14 +41,14 @@ tr.xoopstube_even td {
 .xoopstube_title {
   font-size: 16px; 
   font-weight: bold;
-  font-align: left;
+  text-align: left;
   color: #72B8FF;
   padding: 2px;}
   
 .xoopstube_singletitle {
   font-size: 16px; 
   font-weight: bold;
-  font-align: left;
+  text-align: left;
   color: #72B8FF;
   padding: 5px;
   background-color: #DEE3E7;}
@@ -67,7 +67,7 @@ tr.xoopstube_even td {
   height: 26px;
   padding-top: 4px;
   padding-left: 5px;
-  vertical-align: center; }
+  vertical-align: middle; }
   
 .xoopstube_tablebackground {
   }
@@ -79,7 +79,7 @@ tr.xoopstube_even td {
   color: #D9D9D9;
   height: 18px;
   padding-top: 1px;
-  vertical-align: center; }
+  vertical-align: middle; }
   
 .xoopstube_tablehdrleft {
   font-size: 12px;
@@ -88,17 +88,15 @@ tr.xoopstube_even td {
   color: #D9D9D9;
   height: 18px;
   padding-top: 1px;
-  vertical-align: center; }
+  vertical-align: middle; }
 
 /* Bookmark tags */
-div.xoopstube_socbookmark a img
-	{
+div.xoopstube_socbookmark a img {
 	opacity: .4;
 	-moz-opacity: .4;
 	filter: alpha(opacity=40);
 	}
-div.xoopstube_socbookmark a:hover img
-	{
+div.xoopstube_socbookmark a:hover img {
 	opacity: 1;
 	-moz-opacity: 1;
 	filter: alpha(opacity=100);
