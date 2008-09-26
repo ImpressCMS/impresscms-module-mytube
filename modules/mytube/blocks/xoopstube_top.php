@@ -11,13 +11,13 @@
 // @param boolean $redirect
 // @return
 function checkXTubeBlockgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
-    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
+    $mydirname = basename( dirname( dirname( __FILE__ ) ) );
     global $xoopsUser;
 
     $groups = is_object( $xoopsUser ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
     $gperm_handler = &xoops_gethandler( 'groupperm' );
     $module_handler = &xoops_gethandler( 'module' );
-    $module = &$module_handler -> getByDirname($mydirname);
+    $module = &$module_handler -> getByDirname( $mydirname );
     if ( !$gperm_handler -> checkRight( $permType, $cid, $groups, $module -> getVar( 'mid' ) ) )     {
         if ( $redirect == false ) {
             return false;
@@ -31,12 +31,12 @@ function checkXTubeBlockgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect 
 }
 
 function xtube_b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = false ) {
-    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
+    $mydirname = basename( dirname( dirname( __FILE__ ) ) );
     global $xoopsUser;
 
     $groups = is_object( $xoopsUser ) ? $xoopsUser -> getGroups() : XOOPS_GROUP_ANONYMOUS;
     $modhandler = xoops_gethandler( 'module' );
-    $xtubeModule = $modhandler -> getByDirname($mydirname);
+    $xtubeModule = $modhandler -> getByDirname( $mydirname );
     $gperm_handler = &xoops_gethandler( 'groupperm' );
     if ( !$gperm_handler -> checkRight( $permType, $cid, $groups, $xtubeModule -> getVar( 'mid' ) ) ) {
         if ( $redirect == false ) {
@@ -47,10 +47,10 @@ function xtube_b_checkgroups( $cid = 0, $permType = 'XTubeCatPerm', $redirect = 
 }
 
 function b_xoopstube_top_thumbs( $bvidid, $balloon, $btitle, $bsource, $bscreenshot, $bpicurl ) {
-  $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
+  $mydirname = basename( dirname( dirname( __FILE__ ) ) );
   $thumbb='';
   $modhandler = xoops_gethandler( 'module' );
-  $xtubeModule = $modhandler -> getByDirname($mydirname);
+  $xtubeModule = $modhandler -> getByDirname( $mydirname );
   $config_handler = xoops_gethandler( 'config' );
   $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
 
@@ -97,10 +97,10 @@ function b_xoopstube_top_thumbs( $bvidid, $balloon, $btitle, $bsource, $bscreens
 // Output  : Returns the most recent or most popular videos
 function b_xoopstube_top_show( $options ) {
     global $xoopsDB, $xoopsModule, $xoopsModuleConfig;
-    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
+    $mydirname = basename( dirname( dirname( __FILE__ ) ) );
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
-    $xtubeModule = $modhandler -> getByDirname($mydirname);
+    $xtubeModule = $modhandler -> getByDirname( $mydirname );
     $config_handler = xoops_gethandler( 'config' );
     $xtubeModuleConfig = $config_handler -> getConfigsByCat( 0, $xtubeModule -> getVar( 'mid' ) );
     $xtubemyts = &MyTextSanitizer :: getInstance();
@@ -155,7 +155,7 @@ function b_xoopstube_top_show( $options ) {
 // Output  : Returns random video
 function b_xoopstube_random( $options ) {
     global $xoopsDB, $xoopsModuleConfig, $xtubemyts;
-    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
+    $mydirname = basename( dirname( dirname( __FILE__ ) ) );
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
     $xtubeModule = $modhandler -> getByDirname( $mydirname );
@@ -175,9 +175,9 @@ function b_xoopstube_random( $options ) {
       AND published<=" . time() . "
       AND (expired=0 OR expired>" . time() . ")
       AND offline=0
-      AND cid=" . $options[4] . "
       ORDER BY RAND() LIMIT " . $options[1] );
     }
+	
     while ( $myrow = $xoopsDB -> fetchArray( $result2 ) ) {
         if ( false == checkXTubeBlockGroups( $myrow['cid'] ) || $myrow['cid'] == 0 ) {
             continue;
@@ -205,7 +205,7 @@ function b_xoopstube_random( $options ) {
 // Output  : Returns random video in horizontal block
 function b_xoopstube_randomh( $options ) {
     global $xoopsDB, $xoopsModuleConfig, $xtubemyts;
-    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
+    $mydirname = basename( dirname( dirname( __FILE__ ) ) );
     $block = array();
     $modhandler = xoops_gethandler( 'module' );
     $xtubeModule = $modhandler -> getByDirname( $mydirname );
@@ -275,7 +275,7 @@ function b_xoopstube_top_edit( $options ) {
     $form .= "&nbsp;<br />" . _MB_XTUBE_DATEFORMAT . "&nbsp;<input type='text' name='options[]' value='" . $options[3] . "' />&nbsp;" . _MB_XTUBE_DATEFORMATMANUAL;
 
     global $xoopsDB;
-    $cat_arr=array();
+    $cat_arr = array();
     include_once XOOPS_ROOT_PATH . '/class/xoopstree.php';
     $xt = new XoopsTree( $xoopsDB -> prefix( 'xoopstube_cat' ), 'cid', 'pid');
     $cat_arr = $xt -> getChildTreeArray( 0, 'title');
