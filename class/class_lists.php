@@ -108,7 +108,7 @@ class fileList {
                     $this -> filelist[0] = _AM_XTUBE_NOIMAGE;
                 break;
             case "media":
-                $types = "[.flv]";
+                $types = "[.aac|.flv|.mp3|.mp4]";
                 if ( $this -> noselection )
                     $this -> filelist[0] = _AM_XTUBE_NOVIDEO;
                 break;
