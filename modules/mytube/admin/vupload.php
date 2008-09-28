@@ -17,7 +17,7 @@ switch ( strtolower($op) ) {
             if ( file_exists( XOOPS_ROOT_PATH . "/" . $_POST['uploadpath'] . "/" . $_FILES['uploadfile']['name'] ) ) {
                 redirect_header( 'vupload.php', 2, _AM_XTUBE_VUPLOAD_VIDEOEXIST );
             } 
-            $allowed_mimetypes = 'media/flv';
+            $allowed_mimetypes = 'media/aac, media/flv, media/mp3, media/mp4';
             xtube_uploading( $_FILES, $_POST['uploadpath'], $allowed_mimetypes, "vupload.php", 1, 0 );
             redirect_header( "vupload.php", 2 , _AM_XTUBE_VUPLOAD_VIDEOUPLOAD );
             exit();
