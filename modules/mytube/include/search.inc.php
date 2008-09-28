@@ -53,7 +53,7 @@ function xoopstube_search( $queryarray, $andor, $limit, $offset, $userid ) {
         } 
         $sql .= ") ";
     } 
-    $sql .= "ORDER BY date DESC";
+    $sql .= "ORDER BY published DESC";
     $result = $xoopsDB -> query( $sql, $limit, $offset );
     $ret = array();
     $i = 0;
