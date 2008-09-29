@@ -6,7 +6,7 @@
  * Language: spanish
  */
 
-define( "_MD_XTUBE_NOVIDEO", "Este video no existe" );
+define( "_MD_XTUBE_NOVIDEO", "Este vídeo no existe" );
 define( "_MD_XTUBE_SUBCATLISTING", "Lista de categorías" );
 define( "_MD_XTUBE_ISADMINNOTICE", "Administrador: hay un problema con esta imagen." );
 define( "_MD_XTUBE_THANKSFORINFO", "Gracias por su envío.<br />Recibirá una notificación cuando el administrador lo haya aprobado." );
@@ -14,7 +14,7 @@ define( "_MD_XTUBE_ISAPPROVED", "Gracias por su envío.<br />Ha sido aprobado y 
 define( "_MD_XTUBE_THANKSFORHELP", "Gracias por colaborar en el mantenimiento de este directorio." );
 define( "_MD_XTUBE_FORSECURITY", "Por razones de seguridad, su nombre de usuario y dirección IP serán conservadas de forma temporal." );
 define( "_MD_XTUBE_DESCRIPTION", "Descripción" );
-define( "_MD_XTUBE_SUBMITCATHEAD", "Enviar formulario video" );
+define( "_MD_XTUBE_SUBMITCATHEAD", "Enviar formulario vídeo" );
 define( "_MD_XTUBE_MAIN", "Inicio" );
 define( "_MD_XTUBE_POPULAR", "Popular" );
 define( "_MD_XTUBE_NEWTHISWEEK", "Nuevo esta semana" );
@@ -36,12 +36,12 @@ define( "_MD_XTUBE_PUBLISHERC", "Publicado: " );
 define( "_MD_XTUBE_RATINGC", "Valoración: " );
 define( "_MD_XTUBE_ONEVOTE", "1 Voto" );
 define( "_MD_XTUBE_NUMVOTES", "%s Votos" );
-define( "_MD_XTUBE_RATETHISFILE", "Puntúa este video" );
+define( "_MD_XTUBE_RATETHISFILE", "Puntúa este vídeo" );
 define( "_MD_XTUBE_MODIFY", "Modifica" );
 define( "_MD_XTUBE_REPORTBROKEN", "Informa del daño" );
-define( "_MD_XTUBE_BROKENREPORT", "Informa que el video está dañado" );
+define( "_MD_XTUBE_BROKENREPORT", "Informa que el vídeo está dañado" );
 define( "_MD_XTUBE_SUBMITBROKEN", "Envíar" );
-define( "_MD_XTUBE_BEFORESUBMIT", "Antes de comunicar que un video está dañado, por favor, compruebe que el video aún sigue en el sitio y que éste no está temporalmente fuera de servicio." );
+define( "_MD_XTUBE_BEFORESUBMIT", "Antes de comunicar que un vídeo está dañado, por favor, compruebe que el vídeo aún sigue en el sitio y que éste no está temporalmente fuera de servicio." );
 define( "_MD_XTUBE_TELLAFRIEND", "Recomendado" );
 define( "_MD_XTUBE_EDIT", "Modificar" );
 define( "_MD_XTUBE_THEREARE", "Hay <b>%s</b> <i>Categorías</i> y <b>%s</b> <i>Videos</i> en la lista" );
@@ -80,7 +80,7 @@ define( "_MD_XTUBE_UPDATEDON", "Subido el" );
 define( "_MD_XTUBE_PRICEFREE", "Gratis" );
 define( "_MD_XTUBE_VIEWDETAILS", "Ver Video Clip" );
 define( "_MD_XTUBE_OPTIONS", 'Opciones: ' );
-define( "_MD_XTUBE_NOTIFYAPPROVE", 'Notificarme cuando el video sea aprobado' );
+define( "_MD_XTUBE_NOTIFYAPPROVE", 'Notificarme cuando el vídeo sea aprobado' );
 define( "_MD_XTUBE_VOTEAPPRE", "Se agradece tu voto." );
 define( "_MD_XTUBE_THANKYOU", "Gracias por tomarse la molestia de votar aquí a %s" ); // %s is your site name
 define( "_MD_XTUBE_VOTEONCE", "Por favor, no vote más de una vez al mismo recurso." );
@@ -88,7 +88,7 @@ define( "_MD_XTUBE_RATINGSCALE", "La escala es de 1 - 10, donde 1 es pobre y 10 
 define( "_MD_XTUBE_BEOBJECTIVE", "Por favor, sea objetivo, si todos reciben un 1 o un 10 la puntuación no es muy útil." );
 define( "_MD_XTUBE_DONOTVOTE", "No vote por tu propio recurso." );
 define( "_MD_XTUBE_RATEIT", "Puntúalo" );
-define( "_MD_XTUBE_INTFILEFOUND", "Aquí hay un video que merece la pena ver %s" ); // %s es el nombre de tu sitio
+define( "_MD_XTUBE_INTFILEFOUND", "Aquí hay un vídeo que merece la pena ver %s" ); // %s es el nombre de tu sitio
 define( "_MD_XTUBE_RANK", "Ranking" );
 define( "_MD_XTUBE_CATEGORY", "Categoría" );
 define( "_MD_XTUBE_HITS", "Visualizaciones" );
@@ -104,10 +104,10 @@ define( "_MD_XTUBE_CANCEL", "Cancelar" );
 define( "_MD_XTUBE_ALREADYREPORTED", "Acaba de enviar un aviso de error de este recurso." );
 define( "_MD_XTUBE_MUSTREGFIRST", "<Lo siento, no está autorizado por realizar esta acción.<br />Regístrese primero" );
 define( "_MD_XTUBE_NORATING", "No ha seleccionado puntuación." );
-define( "_MD_XTUBE_VOTEFORTITLE", "Puntúe este video: " );
+define( "_MD_XTUBE_VOTEFORTITLE", "Puntúe este vídeo: " );
 define( "_MD_XTUBE_CANTVOTEOWN", "No puede votar los recursos que ha subido.<br />Todos los votos son registrados y revisados." );
 define( "_MD_XTUBE_SUBMITVIDEO", "Enviar vídeo" );
-define( "_MD_XTUBE_SUB_SNEWMNAMEDESC", "<ul><li>Todos los videos estan sometidos a validación que se verifica en 24 horas. Hasta entonces no aparecerá en nuestros listados.</li><li>Nos reservamos el derecho a rechazar cualquier video enviado, o a cambiar su contenido sin autorización del remitente.</li></ul>" );
+define( "_MD_XTUBE_SUB_SNEWMNAMEDESC", "<ul><li>Todos los vídeos estan sometidos a validación que se verifica en 24 horas. Hasta entonces no aparecerá en nuestros listados.</li><li>Nos reservamos el derecho a rechazar cualquier vídeo enviado, o a cambiar su contenido sin autorización del remitente.</li></ul>" );
 define( "_MD_XTUBE_MAINLISTING", "Principal" );
 define( "_MD_XTUBE_LASTWEEK", "Ultima semana" );
 define( "_MD_XTUBE_LAST30DAYS", "Ultimos 30 días" );
@@ -127,8 +127,8 @@ define( "_MD_XTUBE_RESOURCEID", "ID del recurso#: " );
 define( "_MD_XTUBE_REPORTER", "Informe original: " );
 define( "_MD_XTUBE_DATEREPORTED", "Fecha del informe: " );
 define( "_MD_XTUBE_RESOURCEREPORTED", "Informe de recurso dañado" );
-define( "_MD_XTUBE_RESOURCEREPORTED2", "Se ha informado que este video está dañado. Estamos trabajando para solucionarlo" );
-define( "_MD_XTUBE_BROWSETOTOPIC", "<b>Colocar los videos por orden alfabetico</b>" );
+define( "_MD_XTUBE_RESOURCEREPORTED2", "Se ha informado que este vídeo está dañado. Estamos trabajando para solucionarlo" );
+define( "_MD_XTUBE_BROWSETOTOPIC", "<b>Colocar los vídeos por orden alfabetico</b>" );
 define( "_MD_XTUBE_WEBMASTERACKNOW", "Acuses de recibo de comunicaciones de daños: " );
 define( "_MD_XTUBE_WEBMASTERCONFIRM", "Informes de daños confirmados: " );
 define( "_MD_XTUBE_ERRORSENDEMAIL", "Confirmado el informe de daños, pero se ha producido un error en la notificación mediante email al administrador de la web." );
@@ -139,8 +139,8 @@ define( "_MD_XTUBE_LEGENDTEXTNEW", "Novedad de hoy" );
 define( "_MD_XTUBE_LEGENDTEXTNEWTHREE", "Novedades de los últimos 3 días" );
 define( "_MD_XTUBE_LEGENDTEXTTHISWEEK", "Novedades de la semana" );
 define( "_MD_XTUBE_LEGENDTEXTNEWLAST", "Más de una semana" );
-define( "_MD_XTUBE_THISFILEDOESNOTEXIST", "Error: este video no existe" );
-define( "_MD_XTUBE_BROKENREPORTED", "Aviso de video dañado" );
+define( "_MD_XTUBE_THISFILEDOESNOTEXIST", "Error: este vídeo no existe" );
+define( "_MD_XTUBE_BROKENREPORTED", "Aviso de vídeo dañado" );
 
 define( "_MD_XTUBE_REV_SNEWMNAMEDESC", " 
 Por favor, rellene integramente el formulario de arriba, y añadiremos su revisión tan pronto como sea posible.<br /><br />
@@ -152,7 +152,7 @@ define( "_MD_XTUBE_SCREENSHOT", "Captura de pantalla:" );
 define( "_MD_XTUBE_SCREENSHOTCLICK", "Cambiar a pantalla completa" );
 define( "_MD_XTUBE_OTHERBYUID", "Otros vídeos por: " );
 define( "_MD_XTUBE_NOOTHERBYUID", "No otros vídeos por: " );
-define( "_MD_XTUBE_LINKTIMES", "Dirección del video: " );
+define( "_MD_XTUBE_LINKTIMES", "Dirección del vídeo: " );
 define( "_MD_XTUBE_MAINTOTAL", "Videos totales: " );
 define( "_MD_XTUBE_VIDEONOW", "Ver vídeo" );
 define( "_MD_XTUBE_PAGES", "<b>Páginas</b>" );
@@ -201,9 +201,9 @@ define( "_MD_XTUBE_CLIPFISH", "ClipFish" );
 define( "_MD_XTUBE_LIVELEAK", "LiveLeak" );
 define( '_MD_XTUBE_MAKTOOB', 'Maktoob' );
 define( '_MD_XTUBE_VEOH', 'Veoh' );
-define( '_MD_XTUBE_STOPIT', 'STOP IT YOU FOOL!!' );
-define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the examples below" );
+define( '_MD_XTUBE_STOPIT', 'Detenlo' );//STOP IT YOU FOOL!!
+define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Tenga en cuenta que la parte roja debe estar como en los ejemplos que se muestran más abajo." );
 
 //Version 1.04 RC-3
-define( "_MD_XTUBE_MODIFYNOTALLOWED", "You're not allowed to modify others videos!!" );
+define( "_MD_XTUBE_MODIFYNOTALLOWED", "No está autorizado para modificar otros vídeos" );
 ?>
