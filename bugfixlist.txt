@@ -1,4 +1,4 @@
-﻿Changelog:
+Changelog:
 
 =========================================================
 xx.xx.200x   1.05 xxxx
@@ -7,6 +7,8 @@ xx.xx.200x   1.05 xxxx
 
 - Fixed bug: Random vertical block not working properly
 - Fixed some typos in css [xoops-magazine/mcdonald]
+
+- changed: references to class/xoopsmodule.php to kernel/module.php (vaughan)
 
 =========================================================
 19.09.2008   1.04 Final
