@@ -16,7 +16,7 @@
  <tr> 
   <!-- Start category loop --> 
   <{foreach item=category from=$categories}> 
-   <td width="5%" style="text-align: center; vertical-align: text-top;">
+   <td width="5%" style="text-align: center;">
     <a href="<{$xoops_url}>/modules/<{$module_dir}>/viewcat.php?cid=<{$category.id}>"><img src="<{$category.image}>" title="<{$category.alttext}>" alt="<{$category.alttext}>"     align="top" /></a>
    </td> 
    <td width="35%" style="text-align: left; vertical-align: text-top;"> <a href="<{$xoops_url}>/modules/<{$module_dir}>/viewcat.php?cid=<{$category.id}>"><b><{$category.title}></b></a>&nbsp;(<{$category.totalvideos}>)<br />
