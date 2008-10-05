@@ -24,7 +24,7 @@ $catarray['imageheader'] = xtube_imageheader();
 $xoopsTpl -> assign( 'catarray', $catarray );
 
 $arr = array();
-$result = $xoopsDB -> query( "SELECT cid, title, pid FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " WHERE pid=0" );
+$result = $xoopsDB -> query( "SELECT cid, title, pid FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " WHERE pid=0 ORDER BY " . $xoopsModuleConfig['sortcats'] );
 
 $e = 0;
 while ( list( $cid, $ctitle ) = $xoopsDB -> fetchRow( $result ) ) {
