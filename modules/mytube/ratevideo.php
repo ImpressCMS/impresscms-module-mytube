@@ -9,11 +9,17 @@ include 'header.php';
 global $xtubemyts, $xoTheme;
 
 // Check if videoload POSTER is voting (UNLESS Anonymous users allowed to post)
-$lid = xtube_cleanRequestVars( $_REQUEST, 'lid', 0 );
+$lid = xtube_cleanRequestVars( $_REQUEST, 'lid', '' );
 $lid = intval($lid);
 
 $ip = getenv( "REMOTE_ADDR" );
 $ratinguser = ( !is_object( $xoopsUser ) ) ? 0 : $xoopsUser -> getVar( 'uid' );
+
+if ( $xoopsModuleConfig['showrating'] == 0 || $lid == '' ) {
+	$ratemessage = _MD_XTUBE_CANTVOTEOWN;
+	redirect_header( 'index.php', 4, $ratemessage );
+	exit();
+}
 
 if ( $ratinguser != 0 ) {
     $result = $xoopsDB -> query( "SELECT cid, submitter FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . intval($lid) );
