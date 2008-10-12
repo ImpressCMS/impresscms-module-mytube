@@ -290,4 +290,10 @@ define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW tocador Wiki');
 // Version 1.04 RC-3
 define( "_MI_XTUBE_AUTOPLAYDESCR", "Tocar automáticamente videos" );
 define( "_MI_XTUBE_AUTOPLAYDSC", "Escolher Sim para ter os videos tocados automáticamente" );
+
+// Version 1.05 RC-1
+define( "_MI_XTUBE_CATCOLUMNS", "Select amount of category columns:" );
+define( "_MI_XTUBE_CATCOLUMNSDSC", "Select the amount of columns, default is 2" );
+define( "_MI_XTUBE_RATINGDISPLAY", "Display rating features?" );
+define( "_MI_XTUBE_RATINGDISPLAYDSC", "Select <em>Yes</em> to display the Rating features. Select <em>No</em> if you don't want to display the Rating features." );
 ?>

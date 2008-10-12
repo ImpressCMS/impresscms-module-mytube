@@ -85,5 +85,6 @@ $video['screen_shot'] = $xoopsModuleConfig['screenshot'];
 $video['total_chars'] = $xoopsModuleConfig['totalchars'];
 $video['module_dir'] = $xoopsModule -> getVar( 'dirname' );
 $video['comment_rules'] = $xoopsModuleConfig['com_rule'];
+$video['showrating'] = $xoopsModuleConfig['showrating'];
 
 ?>

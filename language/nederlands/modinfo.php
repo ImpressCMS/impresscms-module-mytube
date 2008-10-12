@@ -268,4 +268,6 @@ define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW Player Wiki');
 // Version 1.05 RC-1
 define( "_MI_XTUBE_CATCOLUMNS", "Kies het aantal categorie kolommen:" );
 define( "_MI_XTUBE_CATCOLUMNSDSC", "Kies het aantal kolommen, standaard is 2" );
+define( "_MI_XTUBE_RATINGDISPLAY", "Stem opties laten zien?" );
+define( "_MI_XTUBE_RATINGDISPLAYDSC", "Kies <em>Ja</em> om de Stem opties te laten zien. Kies <em>Nee</em> om de Stem oties niet te laten zien. <em>Nee</em> blokeert ook de toegang tot de Stem Pagina." );
 ?>

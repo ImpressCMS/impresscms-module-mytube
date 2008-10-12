@@ -4,6 +4,7 @@ Changelog:
 xx.xx.200x   1.05 xxxx
 =========================================================
 - Amount of category columns can be set from Preferences
+- Displaying Rating features can be turned off
 
 - Fixed bug: Random vertical block not working properly
 - Fixed some typos in css [xoops-magazine/mcdonald]
