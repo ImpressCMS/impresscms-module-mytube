@@ -4,6 +4,7 @@
  * Module: MyTube
  * Author:  mcdonald
  * Language: Portuguesebr
+ * Translator: GibaPhp - http://br.impresscms.org
  * Licence: GNU
  */
 
@@ -13,10 +14,10 @@ define( "_AM_XTUBE_WARNINSTALL3", "AVISO: a pasta %s não existe em seu servidor
 
 define( "_AM_XTUBE_MODULE_NAME", "MyTube" );
 
-define( "_AM_XTUBE_BMODIFY", "Modificar" );
+define( "_AM_XTUBE_BMODIFY", "Alterar" );
 define( "_AM_XTUBE_BDELETE", "Excluir" );
 define( "_AM_XTUBE_BCREATE", "Criar" );
-define( "_AM_XTUBE_BADD", "Adicionar" );
+define( "_AM_XTUBE_BADD", "Incluir" );
 define( "_AM_XTUBE_BAPPROVE", "Aprovar" );
 define( "_AM_XTUBE_BIGNORE", "Ignorar" );
 define( "_AM_XTUBE_BCANCEL", "Cancelar" );
@@ -25,8 +26,8 @@ define( "_AM_XTUBE_BRESET", "Limpar" );
 define( "_AM_XTUBE_BMOVE", "Mover Vídeos" );
 define( "_AM_XTUBE_BUPLOAD", "Upload" );
 define( "_AM_XTUBE_BDELETEIMAGE", "Excluir imagem selecionada" );
-define( "_AM_XTUBE_BRETURN", "Retornar para onde você estava!" );
-define( "_AM_XTUBE_DBERROR", "Erros de acesso a Base de Dados" );
+define( "_AM_XTUBE_BRETURN", "Retornar onde você estava!" );
+define( "_AM_XTUBE_DBERROR", "Erro de acesso a Base de Dados" );
 // Other Options
 define( "_AM_XTUBE_TEXTOPTIONS", "Opções de Texto:" );
 define( "_AM_XTUBE_DISABLEHTML", " Desabilitar tags HTML" );
@@ -34,7 +35,7 @@ define( "_AM_XTUBE_DISABLESMILEY", " Desabilitar Ícones Smilie" );
 define( "_AM_XTUBE_DISABLEXCODE", " Desabilitar xCode" );
 define( "_AM_XTUBE_DISABLEIMAGES", " Desabilitar Imagens" );
 define( "_AM_XTUBE_DISABLEBREAK", " Usar conversão de quebra de linha xCode?" );
-define( "_AM_XTUBE_UPLOADFILE", "Upload de Vídeo bem-sucedido" );
+define( "_AM_XTUBE_UPLOADFILE", "Vídeo enviado corretamente" );
 define( "_AM_XTUBE_NOMENUITEMS", "Não há ítens no menu" );
 // Admin Bread crumb
 define( "_AM_XTUBE_PREFS", "Preferências" );
@@ -50,14 +51,14 @@ define( "_AM_XTUBE_SCATEGORY", "Categoria: " );
 define( "_AM_XTUBE_SFILES", "Vídeos: " );
 define( "_AM_XTUBE_SNEWFILESVAL", "Enviado em: " );
 define( "_AM_XTUBE_SMODREQUEST", "Modificado em: " );
-define( "_AM_XTUBE_SREVIEWS", "Visualizações: " );
+define( "_AM_XTUBE_SREVIEWS", "Acessos: " );
 
 // Admin Main Menu
-define( "_AM_XTUBE_MCATEGORY", "Gerenciamento de Categorias" );
-define( "_AM_XTUBE_MVIDEOS", "Gerenciamento de Vídeos" );
+define( "_AM_XTUBE_MCATEGORY", "Gestor de Categorias" );
+define( "_AM_XTUBE_MVIDEOS", "Gestor de Vídeos" );
 define( "_AM_XTUBE_MLISTBROKEN", "Vídeo com Problemas" );
 define( "_AM_XTUBE_MLISTPINGTIMES", "Lista de Links Pingtime" );
-define( "_AM_XTUBE_INDEXPAGE", "Gerenciamento da Páginal Principal" );
+define( "_AM_XTUBE_INDEXPAGE", "Gerência da Páginal Principal" );
 define( "_AM_XTUBE_MCOMMENTS", "Comentários" );
 define( "_AM_XTUBE_MVOTEDATA", "Dados de Votação" );
 define( "_AM_XTUBE_MUPLOADS", "Upload de Imagens" );
@@ -74,7 +75,7 @@ define( "_AM_XTUBE_CCATEGORY_CREATED", "Nova categoria criada e Base de Dados at
 define( "_AM_XTUBE_CCATEGORY_MODIFIED", "A categoria selecionada foi modificada e a Base de Dados atualizada com sucesso" );
 define( "_AM_XTUBE_CCATEGORY_DELETED", "A categoria selecionada foi excluída e a Base de Dados atualizada com sucesso" );
 define( "_AM_XTUBE_CCATEGORY_AREUSURE", "ADVERTÊNCIA: você tem certeza de que quer excluir esta Categoria e TODAS as informações dos vídeos e os comentários?" );
-define( "_AM_XTUBE_CCATEGORY_NOEXISTS", "Você deve criar pelo menos uma Categoria, antes de poder adicionar um novo vídeo" );
+define( "_AM_XTUBE_CCATEGORY_NOEXISTS", "Você deve criar pelo menos uma Categoria, antes de poder Incluir um novo vídeo" );
 define( "_AM_XTUBE_FCATEGORY_GROUPPROMPT", "Premissões de Acesso às Categorias:<div style='padding-top: 8px;'><span style='font-weight: normal;'>Selecione os grupos de usuários que terão acesso a esta categoria.</span></div>" );
 define( "_AM_XTUBE_FCATEGORY_SUBGROUPPROMPT", "Premissões de Envio às Categorias:<div style='padding-top: 8px;'><span style='font-weight: normal;'>Selecione os grupos de usuários que terão permissão para enviar novos vídeos para esta categoria.</span></div>" );
 define( "_AM_XTUBE_FCATEGORY_MODGROUPPROMPT", "Premissões de Moderação das Categorias:<div style='padding-top: 8px;'><span style='font-weight: normal;'>Selecione os grupos de usuários que terão permissão para moderar esta categoria.</span></div>" );
@@ -88,7 +89,7 @@ define( "_AM_XTUBE_FCATEGORY_SUMMARY", "Defina o sumário da Categoria:" );
 /**
  * Index page Defines
  */
-define( "_AM_XTUBE_IPAGE_UPDATED", "Página Principal modificada e Base de Dados atualizada com sucesso!" );
+define( "_AM_XTUBE_IPAGE_UPDATED", "Página Principal modificada e a Base de Dados foi atualizada com sucesso!" );
 define( "_AM_XTUBE_IPAGE_INFORMATION", "Informações da Página Principal" );
 define( "_AM_XTUBE_IPAGE_MODIFY", "Modificar Página Principal" );
 define( "_AM_XTUBE_IPAGE_CIMAGE", "Selecione uma imagem para a Página Principal:" );
@@ -103,7 +104,7 @@ define( "_AM_XTUBE_IPAGE_CRIGHT", "Alinhar a Direita" );
 /**
  * Permissions defines
  */
-define( "_AM_XTUBE_PERM_MANAGEMENT", "Gerenciamento de Permissões" );
+define( "_AM_XTUBE_PERM_MANAGEMENT", "Gerência de Permissões" );
 define( "_AM_XTUBE_PERM_PERMSNOTE", "<div><b>NOTA:</b> Por favor, esteja ciente de que mesmo que você ajuste corretamente aqui as permissões de visualização, um grupo pode não ver os vídeos ou blocos se você não der também ao grupo permissão para acessar o módulo. Para fazer isso, vá em <b>System > Grupos</b>, escolha o grupo apropriado e clique nos checkboxes que permitem esse acesso.</div>" );
 define( "_AM_XTUBE_PERM_CPERMISSIONS", "Permissões das Categorias" );
 define( "_AM_XTUBE_PERM_CSELECTPERMISSIONS", "Selecione as categorias que cada grupo tem permissão de ver" );
@@ -114,7 +115,7 @@ define( "_AM_XTUBE_PERM_FSELECTPERMISSIONS", "Selecione os vídeos que cada grup
 /**
  * Upload defines
  */
-define( "_AM_XTUBE_VIDEO_IMAGEUPLOAD", "Imagem subida com suceso ao destino no servidor" );
+define( "_AM_XTUBE_VIDEO_IMAGEUPLOAD", "Imagem enviada com suceso ao seu destino no servidor" );
 define( "_AM_XTUBE_VIDEO_NOIMAGEEXIST", "Erro: nenhum vídeo foi selecionado para upload. Por favor, tente novamente!" );
 define( "_AM_XTUBE_VIDEO_IMAGEEXIST", "A Imagem já existe na área de upload!" );
 define( "_AM_XTUBE_VIDEO_FILEDELETED", "O Vídeo foi excluído." );
@@ -126,11 +127,11 @@ define( "_AM_XTUBE_VIDEO_SPHPINI", "<b>Informação obtida do PHP ini Link:</b>"
 define( "_AM_XTUBE_VIDEO_SAFEMODESTATUS", "Status do Modo Seguro: " );
 define( "_AM_XTUBE_VIDEO_REGISTERGLOBALS", "Registros Globais: " );
 define( "_AM_XTUBE_VIDEO_SERVERUPLOADSTATUS", "Status de Upload do Servidor: " );
-define( "_AM_XTUBE_VIDEO_MAXUPLOADSIZE", "Máximo tamanho de arquivo para upload: " );
-define( "_AM_XTUBE_VIDEO_MAXPOSTSIZE", "Tamanho máximo permitido para um post: " );
+define( "_AM_XTUBE_VIDEO_MAXUPLOADSIZE", "Tamanho Máximo de arquivos para upload: " );
+define( "_AM_XTUBE_VIDEO_MAXPOSTSIZE", "Tamanho máximo permitido para uma mensagem/envio: " );
 define( "_AM_XTUBE_VIDEO_SAFEMODEPROBLEMS", " (isto pode causar problemas)" );
-define( "_AM_XTUBE_VIDEO_GDLIBSTATUS", "Suporte a GD Library: " );
-define( "_AM_XTUBE_VIDEO_GDLIBVERSION", "Versão do GD Library: " );
+define( "_AM_XTUBE_VIDEO_GDLIBSTATUS", "Suporte a biblioteca GD: " );
+define( "_AM_XTUBE_VIDEO_GDLIBVERSION", "Versão do biblioteca GD: " );
 define( "_AM_XTUBE_VIDEO_GDON", "<b>Habilitado</b> (Thumbs Nails disponível)" );
 define( "_AM_XTUBE_VIDEO_GDOFF", "<b>Desabilitado</b> (Thumb Nails indisponível)" );
 define( "_AM_XTUBE_VIDEO_OFF", "<b>Desligado</b>" );
@@ -157,7 +158,7 @@ define( "_AM_XTUBE_MINDEX_EXPIRED", "Vídeos Expirados:" );
 define( "_AM_XTUBE_MINDEX_OFFLINEVIDEO", "Vídeos Offline:" );
 define( "_AM_XTUBE_MINDEX_ID", "ID" );
 define( "_AM_XTUBE_MINDEX_TITLE", "título do Vídeo" );
-define( "_AM_XTUBE_MINDEX_POSTER", "Postado por" );
+define( "_AM_XTUBE_MINDEX_POSTER", "Enviado por" );
 define( "_AM_XTUBE_MINDEX_ONLINE", "Status" );
 define( "_AM_XTUBE_MINDEX_ONLINESTATUS", "Status Online" );
 define( "_AM_XTUBE_MINDEX_PUBLISH", "Publicado" );
@@ -261,7 +262,7 @@ define( "_AM_XTUBE_VIDEO_CATEGORY", "Categoria Principal dos Vídeos: " );
 define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Definir vídeo offline?<br /><br /><span style='font-weight: normal;'>o vídeo não será visível a todos os usuários.</span>" );
 define( "_AM_XTUBE_VIDEO_SETASUPDATED", " Definir Status do vídeo como Atualizado?<br /><br /><span style='font-weight: normal;'>o vídeo exibirá o ícone de Atualizado.</span>" );
 define( "_AM_XTUBE_VIDEO_SHOTIMAGE", "Imagem ScreenShot do Vídeo: " );
-define( "_AM_XTUBE_VIDEO_DISCUSSINFORUM", "Adicionar discussão neste Fórum?" );
+define( "_AM_XTUBE_VIDEO_DISCUSSINFORUM", "Incluir discussão neste Fórum?" );
 define( "_AM_XTUBE_VIDEO_PUBLISHDATE", "Data da Publicação do Vídeo:" );
 define( "_AM_XTUBE_VIDEO_EXPIREDATE", "Data da Expiração do Vídeo:" );
 define( "_AM_XTUBE_VIDEO_CLEARPUBLISHDATE", "<br /><br />Remover data da publicação:" );
@@ -346,33 +347,33 @@ define( "_AM_XTUBE_ICO_NOTAPPROVED", "Não Aprovado" );
 
 define( "_AM_XTUBE_ICO_VIDEO", "Vídeo relatado" );
 define( "_AM_XTUBE_ICO_URL", "Adicionar URL Relatada" );
-define( "_AM_XTUBE_ICO_ADD", "Adicionar" );
+define( "_AM_XTUBE_ICO_ADD", "Incluir" );
 define( "_AM_XTUBE_ICO_APPROVE", "Aprovar" );
 define( "_AM_XTUBE_ICO_STATS", "Estatísticas" );
 define( "_AM_XTUBE_ICO_VIEW", "Ver este Item" );
 
 define( "_AM_XTUBE_ICO_IGNORE", "Ignorar" );
-define( "_AM_XTUBE_ICO_ACK", "Reconhecimento de Relatório de Problemas" );
+define( "_AM_XTUBE_ICO_ACK", "Reconhecimento do Relatório de Problemas" );
 define( "_AM_XTUBE_ICO_REPORT", "Reconher o Relatório de Problemas?" );
 define( "_AM_XTUBE_ICO_CONFIRM", "Relatório de Problemas Confirmado" );
 define( "_AM_XTUBE_ICO_CONBROKEN", "Confirma Relatório de Problemas?" );
-define( "_AM_XTUBE_ICO_RES", "Editar Recurso/Vídeos para este Item" );
+define( "_AM_XTUBE_ICO_RES", "Editar Recursos/Vídeos para este Item" );
 define( "_AM_XTUBE_MOD_URLRATING", "Avaliação do Conteudo pela Internet:" );
 // Alternate category
-define( "_AM_XTUBE_ALTCAT_CREATEF", "Adicionar Categoria Alternativa" );
+define( "_AM_XTUBE_ALTCAT_CREATEF", "Incluir Categoria Alternativa" );
 define( "_AM_XTUBE_MALTCAT", "Gerenciar Categoria Alternativa" );
-define( "_AM_XTUBE_ALTCAT_MODIFYF", "Gerenciamento de Categoria Alternativa" );
+define( "_AM_XTUBE_ALTCAT_MODIFYF", "Gerência de Categoria Alternativa" );
 define( "_AM_XTUBE_ALTCAT_INFOTEXT", "<ul><li>Categorias Alternativas podem ser adicionadas ou removidas facilmente, através deste formulário.</li></ul>" );
-define( "_AM_XTUBE_ALTCAT_CREATED", "Categorias Alternativas oram salvas!" );
+define( "_AM_XTUBE_ALTCAT_CREATED", "Categorias Alternativas foram salvas!" );
 
-define( "_AM_XTUBE_MRESOURCES", "Gerenciamento de Recursos" );
+define( "_AM_XTUBE_MRESOURCES", "Gerenciar Recursos" );
 define( "_AM_XTUBE_RES_CREATED", "Gerenciamento de Recurso" );
 define( "_AM_XTUBE_RES_ID", "ID" );
 define( "_AM_XTUBE_RES_DESC", "Descrição" );
 define( "_AM_XTUBE_RES_NAME", "Nome do Recurso" );
 define( "_AM_XTUBE_RES_TYPE", "Tipo do Recurso" );
 define( "_AM_XTUBE_RES_USER", "Usuário" );
-define( "_AM_XTUBE_RES_CREATEF", "Adicionar Recurso" );
+define( "_AM_XTUBE_RES_CREATEF", "Incluir Recurso" );
 define( "_AM_XTUBE_RES_MODIFYF", "Modificar Recurso" );
 define( "_AM_XTUBE_RES_NAMEF", "Nome do recurso:" );
 define( "_AM_XTUBE_RES_DESCF", "Descrição do recurso:" );
@@ -453,7 +454,7 @@ define( "_AM_XTUBE_FBANNER", "Banner" );
 define( "_AM_XTUBE_BANNERID", "Escolha um código de Banner:" );
 define( "_AM_XTUBE_BANNERIDDSC", "Se você tiver selecionado um cliente, sob a forma acima do código do banner não serão salvos!" );
 // Uploader class
-define( "_AM_XTUBE_READWRITEERROR", "Você não escolheu um arquivo para fazer o upload ou o servidor não tem permissões suficientes para ler/escrever para carregar este arquivo!" );
+define( "_AM_XTUBE_READWRITEERROR", "Você não escolheu um arquivo para fazer o upload ou o servidor não tem permissões suficientes para ler/escrever, assim, não poderá carregar este arquivo!" );
 define( "_AM_XTUBE_INVALIDFILESIZE", "Tamanho do Arquivo Inválido" );
 define( "_AM_XTUBE_FILENAMEEMPTY", "Nome do arquivo está vazio" );
 define( "_AM_XTUBE_NOFILEUPLOAD", "Nenhum arquivo uploaded, isto é um erro" );
@@ -466,12 +467,12 @@ define( "_AM_XTUBE_UPLOADERRORFIVE", "Nenhum arquivo selecionado para upload. Er
 define( "_AM_XTUBE_NOUPLOADDIR", "Diretório de Upload não definido" );
 define( "_AM_XTUBE_FAILOPENDIR", "Falha na abertura diretório: " );
 define( "_AM_XTUBE_FAILOPENDIRWRITEPERM", "Falha na abertura diretório com permissão escrita: " );
-define( "_AM_XTUBE_FILESIZEMAXSIZE", "Tamanho do arquivo: %u. O tamanho máximo permitido: %u" );
-define( "_AM_XTUBE_FILESIZEMAXWIDTH", "Largura do Arquivo: %u. Largura máxima permitida: %u" );
-define( "_AM_XTUBE_FILESIZEMAXHEIGHT", "Altura do arquivo: %u. A altura máxima permitida: %u" );
+define( "_AM_XTUBE_FILESIZEMAXSIZE", "Tamanho do arquivo: %u. O tamanho máximo permitido é: %u" );
+define( "_AM_XTUBE_FILESIZEMAXWIDTH", "Largura do Arquivo: %u. Largura máxima permitida é: %u" );
+define( "_AM_XTUBE_FILESIZEMAXHEIGHT", "Altura do arquivo: %u. A altura máxima permitida é: %u" );
 define( "_AM_XTUBE_MIMENOTALLOW", "MIME type Não é permitido: " );
 define( "_AM_XTUBE_FAILEDUPLOADING", "Falhou ao carregar o arquivo: " );
-define( "_AM_XTUBE_ALREADYEXISTTRYAGAIN", " Já existe no servidor. Por favor, renomear esse arquivo e tentar novamente.<br />" );
+define( "_AM_XTUBE_ALREADYEXISTTRYAGAIN", " Já existe no servidor. Por favor, renomear esse arquivo e tentar novamente mais tarde.<br />" );
 define( "_AM_XTUBE_ERRORSRETURNUPLOAD", "<h4>Erros retornados ao fazer o upload</h4>" );
 define( "_AM_XTUBE_DOESNOTEXIST", " não existe!" );
 
@@ -484,7 +485,7 @@ define( "_AM_XTUBE_FILE", "Arquivo " );
 define( "_AM_XTUBE_INFORMATION", "Informações do Video" ); //1.06RC-1
 define( "_AM_XTUBE_VIDEO_DLVIDIDDSC", "Assumir a parte vermelha como um dado adquirido nos exemplos a seguir" );
 define( "_AM_XTUBE_VIDEO_VIEWS", "Exibições: " );
-define( "_AM_XTUBE_ERROR_CATISCAT", "Não é possível definir uma categoria como uma sub-categoria de si mesmo!" );
+define( "_AM_XTUBE_ERROR_CATISCAT", "Não foi possível definir a categoria como sendo uma sub-categoria de si mesmo!" );
 
 // Version 1.04 RC-3
 define( "_AM_XTUBE_MOD_VIDID", "Código do Video: " );
@@ -494,6 +495,6 @@ define( "_AM_XTUBE_MOD_KEYWORDS", "Palavras-chave: " );
 define( "_AM_XTUBE_MOD_ITEM_TAG", "Tags: " );
 define( "_AM_XTUBE_MOD_PICURL", "Url da Figura: " );
 define( "_AM_XTUBE_IPAGE_SHOWLATEST", "Mostrar últimas listagens?" );
-define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "Quantos videos para mostrar?" );
+define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "Quantos videos deve mostrar?" );
 define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "0 total de videos nesta opção." );
 ?>

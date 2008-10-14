@@ -4,6 +4,7 @@
  * Module: MyTube
  * Author: mcdonald
  * Language: Portuguesebr
+ * Translator: GibaPhp - http://br.impresscms.org
  * Licence: GNU
  */
  

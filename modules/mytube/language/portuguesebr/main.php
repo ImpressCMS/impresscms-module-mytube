@@ -4,6 +4,7 @@
  * Module: MyTube
  * Author: mcdonald
  * Language: Portuguesebr
+ * Translator: GibaPhp - http://br.impresscms.org
  * Licence: GNU
  */
 
@@ -32,15 +33,15 @@ define( "_MD_XTUBE_DESCRIPTIONC", "Descrição: " );
 define( "_MD_XTUBE_CATEGORYC", "Categoria: " );
 define( "_MD_XTUBE_VERSION", "Versão" );
 define( "_MD_XTUBE_SUBMITDATE", "Enviado em " );
-define( "_MD_XTUBE_VIDEOHITS", "<b>Visualizado:</b> %s vezes" );
+define( "_MD_XTUBE_VIDEOHITS", "<b>Exibido:</b> %s vezes" );
 define( "_MD_XTUBE_PUBLISHERC", "Publicado por: " );
 define( "_MD_XTUBE_RATINGC", "Classificação: " );
 define( "_MD_XTUBE_ONEVOTE", "1 Voto" );
 define( "_MD_XTUBE_NUMVOTES", "%s Votos" );
 define( "_MD_XTUBE_RATETHISFILE", "Classifique este vídeo" );
 define( "_MD_XTUBE_MODIFY", "Modificado" );
-define( "_MD_XTUBE_REPORTBROKEN", "Reporte link quebrado" );
-define( "_MD_XTUBE_BROKENREPORT", "Reporte vídeo defeituoso" );
+define( "_MD_XTUBE_REPORTBROKEN", "Relatar link quebrado" );
+define( "_MD_XTUBE_BROKENREPORT", "Relatar vídeo defeituoso" );
 define( "_MD_XTUBE_SUBMITBROKEN", "Enviar" );
 define( "_MD_XTUBE_BEFORESUBMIT", "Antes de informar um vídeo com problemas, por favor verifique se o problema é no link ou no site de origem do vídeo, e se este site não está apenas temporariamente off-line." );
 define( "_MD_XTUBE_TELLAFRIEND", "Recomendar" );
@@ -81,8 +82,8 @@ define( "_MD_XTUBE_UPDATEDON", "Atualizado em" );
 define( "_MD_XTUBE_PRICEFREE", "Gratuíto" );
 define( "_MD_XTUBE_VIEWDETAILS", "Ver Vídeo-Clip" );
 define( "_MD_XTUBE_OPTIONS", "Opções: " );
-define( "_MD_XTUBE_NOTIFYAPPROVE", "Notifique-me quando este vídeo for aprovado" );
-define( "_MD_XTUBE_VOTEAPPRE", "Seu voto é apreciado." );
+define( "_MD_XTUBE_NOTIFYAPPROVE", "Avise-me quando este vídeo for aprovado" );
+define( "_MD_XTUBE_VOTEAPPRE", "Seu voto é bem-vindo." );
 define( "_MD_XTUBE_THANKYOU", "Obrigado por votar aqui no %s" ); // %s é o nome do seu site
 define( "_MD_XTUBE_VOTEONCE", "Por favor, não vote no mesmo vídeo mais de uma vez." );
 define( "_MD_XTUBE_RATINGSCALE", "A escala é de 1 a 10, com 1 sendo fraco e 10 sendo excelente." );
@@ -122,11 +123,11 @@ define( "_MD_XTUBE_TOTALNEWVIDEOS", "Total de novos vídeos" );
 define( "_MD_XTUBE_DTOTALFORLAST", "Total dos últimos novos vídeos" );
 define( "_MD_XTUBE_AGREE", "Eu concordo" );
 define( "_MD_XTUBE_DOYOUAGREE", "Você concorda com os termos acima?" );
-define( "_MD_XTUBE_DISCLAIMERAGREEMENT", "Disclaimer" );
+define( "_MD_XTUBE_DISCLAIMERAGREEMENT", "Retratação" );
 define( "_MD_XTUBE_DUPLOADSCRSHOT", "Upload de ScreenShot de Imagem:" );
 define( "_MD_XTUBE_RESOURCEID", "Vídeo id#: " );
-define( "_MD_XTUBE_REPORTER", "Informe Original: " );
-define( "_MD_XTUBE_DATEREPORTED", "Data do Informe: " );
+define( "_MD_XTUBE_REPORTER", "Relato Original: " );
+define( "_MD_XTUBE_DATEREPORTED", "Data do Relato: " );
 define( "_MD_XTUBE_RESOURCEREPORTED", "Vídeo informado com problemas" );
 define( "_MD_XTUBE_RESOURCEREPORTED2", "Este vídeo foi informado estar com problemas. Nós estamos trabalhando para corrigir isso." );
 define( "_MD_XTUBE_BROWSETOTOPIC", "<b>Navegue pelos vídeos listados em ordem alfabética.</b>" );
