@@ -4,6 +4,7 @@
  * Module: MyTube
  * Author: mcdonald
  * Language: Portuguesebr
+ * Translator: GibaPhp - http://br.impresscms.org
  * Licence: GNU
  */
 
@@ -31,17 +32,17 @@ define("_MI_XTUBE_SMNAME4","Recentes");
 
 // Names of admin menu items
 define("_MI_XTUBE_BINDEX","Página Inicial");
-define("_MI_XTUBE_INDEXPAGE","Gerenciamento da Página Inicial");
-define("_MI_XTUBE_MCATEGORY","Gerenciamento das Categorias");
-define("_MI_XTUBE_MVIDEOS","Gerenciamento dos Vídeos");
+define("_MI_XTUBE_INDEXPAGE","Gerência da Página Inicial");
+define("_MI_XTUBE_MCATEGORY","Gerência das Categorias");
+define("_MI_XTUBE_MVIDEOS","Gerência dos Vídeos");
 define("_MI_XTUBE_MUPLOADS","Upload de Imagem");
 define("_MI_XTUBE_PERMISSIONS","Ajuste das Permissões");
 define("_MI_XTUBE_BLOCKADMIN","Ajuste dos Blocos");
 define("_MI_XTUBE_MVOTEDATA","Votos");
 
 // Title of config items
-define("_MI_XTUBE_POPULAR", "Contagem como vídeo popular");
-define("_MI_XTUBE_POPULARDSC", "O número de exibições para que o vídeo seja considerado popular.");
+define("_MI_XTUBE_POPULAR", "Contagem de vídeo popular");
+define("_MI_XTUBE_POPULARDSC", "O número de exibições necessárias para que o vídeo seja considerado como popular.");
 
 define("_MI_XTUBE_ICONDISPLAY","Vídeos Popular e Novo:");
 define("_MI_XTUBE_DISPLAYICONDSC", "Selecione como exibir os ícones de popular e novo nas listagens de vídeos.");
@@ -70,10 +71,10 @@ define("_MI_XTUBE_SORTCATSDSC", "Selecione como as categorias e sub-categorias s
 define("_MI_XTUBE_SUBCATS", "Sub-Categorias:");
 define("_MI_XTUBE_SUBCATSDSC", "selecione 'Sim' para exibir sub-categorias. Selecione 'Não' para ocultar as sub-categorias das listagens");
 
-define("_MI_XTUBE_EDITOR", "Editor para usar:");
-define("_MI_XTUBE_EDITORCHOICE", "Selecione o editor para usar. Se você tem uma instalação 'simples' (i.e. se você usa somente o editor que vem com o núcleo do pacote padrão), então você somente poderá selecionar DHTML e Compacto");
-define('_MI_XTUBE_EDITORUSER', "Editor para uso (usuário):");
-define('_MI_XTUBE_EDITORCHOICEUSER', "Selecione o editor a ser usado para o lado do usuário. Se você tem uma instalação 'simples' (por exemplo, você usa apenas a classe do núcleo de editores, isto é o padrão de editores no pacote.), então você pode selecionar apenas DHTML e compacto.");
+define("_MI_XTUBE_EDITOR", "Usar Editor:");
+define("_MI_XTUBE_EDITORCHOICE", "Selecione o editor que deseja usar. Se você tem uma instalação 'simples' (i.e. se você usa somente o editor que vem com o núcleo do pacote padrão), então você somente poderá selecionar DHTML e Compacto");
+define('_MI_XTUBE_EDITORUSER', "Editor para uso (do usuário):");
+define('_MI_XTUBE_EDITORCHOICEUSER', "Selecione o editor a ser usado no lado do usuário. Se você tem uma instalação 'simples' (por exemplo, você usa apenas a classe do núcleo de editores, isto é o padrão de editores no pacote.), então você pode selecionar apenas DHTML e compacto.");
 define("_MI_XTUBE_FORM_DHTML","DHTML");
 define("_MI_XTUBE_FORM_COMPACT","Compacto");
 define("_MI_XTUBE_FORM_SPAW","Spaw");
