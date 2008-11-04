@@ -69,7 +69,7 @@ class xtubeLists {
                     $filelist[""] = _AM_XTUBE_NOIMAGE;
                 break;
             case "media":
-                $types = "[.aac|.flv|.mp3|.mp4]";
+                $types = "[.aac|.flv|.mp3|.mp4|.swf]";
                 if ($noselection)
                     $filelist[""] = _AM_XTUBE_NOVIDEO;
                 break;
