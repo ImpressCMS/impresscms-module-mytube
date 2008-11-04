@@ -89,7 +89,7 @@ function edit( $lid = 0 )
     $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_TITLE, 'title', 70, 255, $title ), true );
 
 //MyTube menu
-    $file_array = &xtubeLists :: getListTypeAsArray( XOOPS_ROOT_PATH . "/" . $xoopsModuleConfig['videodir'], $type = "movie" );
+    $file_array = &xtubeLists :: getListTypeAsArray( XOOPS_ROOT_PATH . "/" . $xoopsModuleConfig['videodir'], $type = 'media' );
     $indexfile_select = new XoopsFormSelect( '', 'vidid', $vidid );
     $indexfile_select -> addOptionArray( $file_array );
     $indexfile_tray = new XoopsFormElementTray( _AM_XTUBE_MYTUBEVIDEO, '&nbsp;' );
