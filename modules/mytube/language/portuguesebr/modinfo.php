@@ -33,10 +33,10 @@ define("_MI_XTUBE_SMNAME4","Recentes");
 // Names of admin menu items
 define("_MI_XTUBE_BINDEX","Página Inicial");
 define("_MI_XTUBE_INDEXPAGE","Gerência da Página Inicial");
-define("_MI_XTUBE_MCATEGORY","Gerência das Categorias");
-define("_MI_XTUBE_MVIDEOS","Gerência dos Vídeos");
+define("_MI_XTUBE_MCATEGORY","Categorias");
+define("_MI_XTUBE_MVIDEOS","Vídeos");
 define("_MI_XTUBE_MUPLOADS","Upload de Imagem");
-define("_MI_XTUBE_PERMISSIONS","Ajuste das Permissões");
+define("_MI_XTUBE_PERMISSIONS","Permissões");
 define("_MI_XTUBE_BLOCKADMIN","Ajuste dos Blocos");
 define("_MI_XTUBE_MVOTEDATA","Votos");
 
@@ -118,7 +118,7 @@ define("_MI_XTUBE_USEMETADESCR", "Gerar meta descrição:");
 define("_MI_XTUBE_USEMETADSC", "Com esta opção, a meta descrição será baseada na descrição do vídeo.");
 
 define("_MI_XTUBE_USERTAGDESCR", "O usuário pode enviar Tags:");
-define("_MI_XTUBE_USERTAGDSC", "Selecione Sim se o usuário está autorizado a enviar tags.");
+define("_MI_XTUBE_USERTAGDSC", "Selecione Sim se o usuário está autorizado a enviar tags."); //I think here is necessary change for work with imtagging...
 
 define("_MI_XTUBE_SHOWDISCLAIMER", "Exibir Disclaimer antes do envio do vídeo pelo usuário?");
 define("_MI_XTUBE_SHOWDISCLAIMERDSC", "Antes do usuário enviar um vídeo, mostrar as condições de participação?");
