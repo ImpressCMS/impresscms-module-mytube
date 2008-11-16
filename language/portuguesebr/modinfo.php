@@ -272,7 +272,7 @@ define('_MI_XTUBE_VIDEOIMGDIR', 'Diretório de Upload de ScreenShots de Videos:'
 define('_MI_XTUBE_VIDEOIMGDIRDSC', 'Defina o diretório para ScreenShots de vídeos do MyTube');
 define('_MI_XTUBE_FLVPLAYER_CREDITS', 'FLV Player');
 define('_MI_XTUBE_FLVPLAYER_CREDITDSC', 'JW FLV Media Player por Jeroen Wijering');
-define('_MI_XTUBE_VUPLOADS', 'Video upload');
+define('_MI_XTUBE_VUPLOADS', 'Enviar Video');
 define('_MI_XTUBE_CATEGORYIMGDSC', '');
 define('_MI_XTUBE_MAINIMGDIRDSC', '');
 define("_MI_XTUBE_BNAME8","MyTube - Estatísticas do Patrocinador ");
@@ -283,7 +283,7 @@ define('_MI_XTUBE_MODULE_MANUAL', 'Manual' );
 define('_MI_XTUBE_MODULE_MANUALWIKI', 'Manual no Wiki' );
 define('_MI_XTUBE_MODULE_REQUESTNEWFEATURE', 'Solicitar um novo Recurso' );
 define('_MI_XTUBE_MODULE_SUBMITBUG', 'Enviar um erro (Bug)' );
-define("_MI_XTUBE_BNAME9","MyTube Tag Cloud");
+define("_MI_XTUBE_BNAME9","Tag MyTube");
 define("_MI_XTUBE_BNAME10","MyTube Melhores Tags");
 define('_MI_XTUBE_FLVPLAYER_MANUAL', 'FLV tocador Manual');
 define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW tocador Wiki');
@@ -293,8 +293,8 @@ define( "_MI_XTUBE_AUTOPLAYDESCR", "Tocar automáticamente videos" );
 define( "_MI_XTUBE_AUTOPLAYDSC", "Escolher Sim para ter os videos tocados automáticamente" );
 
 // Version 1.05 RC-1
-define( "_MI_XTUBE_CATCOLUMNS", "Select amount of category columns:" );
-define( "_MI_XTUBE_CATCOLUMNSDSC", "Select the amount of columns, default is 2" );
-define( "_MI_XTUBE_RATINGDISPLAY", "Display rating features?" );
-define( "_MI_XTUBE_RATINGDISPLAYDSC", "Select <em>Yes</em> to display the Rating features. Select <em>No</em> if you don't want to display the Rating features." );
+define( "_MI_XTUBE_CATCOLUMNS", "Escolha a quantidade de colunas para categoria :" );
+define( "_MI_XTUBE_CATCOLUMNSDSC", "Selecione a quantidade de colunas, o padrão é 2" );
+define( "_MI_XTUBE_RATINGDISPLAY", "Mostrar o recurso de votação?" );
+define( "_MI_XTUBE_RATINGDISPLAYDSC", "Escolha <em>Sim</em> para apresentar a funcionalidades de votação ou Nota. Escolha <em>Não</em> se você não quiser exibir a funcionalidades de votos ou notas neste módulo." );
 ?>

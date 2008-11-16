@@ -64,7 +64,7 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...</small>" );
-define( "_MD_XTUBE_VIDEO_PICURL", "Picture url: " );
+define( "_MD_XTUBE_VIDEO_PICURL", "Url da Imagem: " );
 define( "_MD_XTUBE_VIDEO_PICURLNOTE", "Url da Foto quando for um código do Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob, Veoh ou LiveLeak" );
 define( "_MD_XTUBE_VIDSOURCE", "Código do Video:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
