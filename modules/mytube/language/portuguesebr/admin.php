@@ -24,7 +24,7 @@ define( "_AM_XTUBE_BCANCEL", "Cancelar" );
 define( "_AM_XTUBE_BSAVE", "Salvar" );
 define( "_AM_XTUBE_BRESET", "Limpar" );
 define( "_AM_XTUBE_BMOVE", "Mover Vídeos" );
-define( "_AM_XTUBE_BUPLOAD", "Upload" );
+define( "_AM_XTUBE_BUPLOAD", "Enviar" );
 define( "_AM_XTUBE_BDELETEIMAGE", "Excluir imagem selecionada" );
 define( "_AM_XTUBE_BRETURN", "Retornar onde você estava!" );
 define( "_AM_XTUBE_DBERROR", "Erro de acesso a Base de Dados" );
@@ -232,7 +232,7 @@ define( "_AM_XTUBE_MOD_PROPOSED", "Detalhes do Vídeo Propostos" );
 define( "_AM_XTUBE_MOD_ORIGINAL", "Detalhes Originais do Vídeo" );
 define( "_AM_XTUBE_MOD_REQDELETED", "solicitação de Modificação removida da Base de Dados" );
 define( "_AM_XTUBE_MOD_REQUPDATED", "O vídeo selecionado foi modificado e a Base de Dados foi atualizada com sucesso" );
-define( '_AM_XTUBE_MOD_VIEW', 'View' );
+define( '_AM_XTUBE_MOD_VIEW', 'Ver' );
 // Link management
 define( "_AM_XTUBE_VIDEO_ID", "ID do Vídeo: " );
 define( "_AM_XTUBE_VIDEO_IP", "Endereço IP do Uploader: " );
@@ -255,7 +255,7 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...<br />
 <b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
-define( "_AM_XTUBE_VIDEO_PICURL", "Picture url: " );
+define( "_AM_XTUBE_VIDEO_PICURL", "Url da Imagem: " );
 define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Url da Foto quando o código for do Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob, Veoh ou LiveLeak</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Descrição do Vídeo: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Categoria Principal dos Vídeos: " );
@@ -424,7 +424,7 @@ define( "_AM_XTUBE_MMYTUBE", "Incluir Clip no MyTube" );
 define( "_AM_XTUBE_VIDEO_CATVIDEOIMG", "Video imagens" );
 define( "_AM_XTUBE_VIDEO_FCATVIDEOIMG", "Caminho das Imagens de Video" );
 define( "_AM_XTUBE_VUPLOAD_VIDEOEXIST", "Video já existe" );
-define( "_AM_XTUBE_VUPLOAD_VIDEOUPLOAD", "Video uploaded" );
+define( "_AM_XTUBE_VUPLOAD_VIDEOUPLOAD", "Video carregado" );
 define( "_AM_XTUBE_VUPLOAD_NOVIDEOEXIST", "Não existe Video" );
 define( "_AM_XTUBE_VUPLOAD_FILEDELETED", "Video apagado" );
 define( "_AM_XTUBE_VUPLOAD_FILEERRORDELETE", "Erro" );
@@ -432,10 +432,10 @@ define( "_AM_XTUBE_VUPLOAD_NOFILEERROR", "Nenhum Arquivo" );
 define( "_AM_XTUBE_VUPLOAD_DELETEFILE", "Apagar o arquivo de Vídeo" );
 define( "_AM_XTUBE_VUPLOAD_CATVIDEO", "Arquivos de Video" );
 define( "_AM_XTUBE_VUPLOAD_FCATVIDEO", "Diretório de Upload de Video" );
-define( "_AM_XTUBE_VUPLOADS", "Video Upload" );
+define( "_AM_XTUBE_VUPLOADS", "Enviar Video" );
 define( "_AM_XTUBE_VUPLOAD_FUPLOADPATH", "Caminho para o Upload de Video:" );
 define( "_AM_XTUBE_VUPLOAD_FUPLOADURL", "Url de Upload do Video:" );
-define( "_AM_XTUBE_VUPLOAD_FUPLOADVIDEOTO", "Upload video: " );
+define( "_AM_XTUBE_VUPLOAD_FUPLOADVIDEOTO", "Enviar video: " );
 define( "_AM_XTUBE_VUPLOAD_FOLDERSELECTION", "Escolha o destino deste Upload" );
 define( "_AM_XTUBE_VUPLOAD_FUPLOADVIDEO", "Video para upload" );
 define( "_AM_XTUBE_VUPLOAD_FSHOWSELECTEDFILE", "Escolha um arquivo de Vídeo" );
