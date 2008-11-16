@@ -194,7 +194,7 @@ if ( $selectdate ) {
     list( $count ) = $xoopsDB -> fetchRow( $xoopsDB -> query( $sql ) );
     $list_by = "list=$list";
 } else {
-    $sql = "SELECT DISTINCT a.* FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " a LEFT JOIN "
+    $sql = "SELECT a.* FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " a LEFT JOIN "
      . $xoopsDB -> prefix( 'xoopstube_altcat' ) . " b "
      . " ON b.lid = a.lid"
      . " WHERE a.published > 0 AND a.published <= " . time()
