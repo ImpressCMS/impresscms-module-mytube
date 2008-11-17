@@ -41,7 +41,7 @@ define( "_MD_XTUBE_MODIFY", "Modify" );
 define( "_MD_XTUBE_REPORTBROKEN", "Report Broken" );
 define( "_MD_XTUBE_BROKENREPORT", "Report Broken Video" );
 define( "_MD_XTUBE_SUBMITBROKEN", "Submit" );
-define( "_MD_XTUBE_BEFORESUBMIT", "Before submitting a broken video request, please check that the actual source of the video you intend reporting broken, is no longer there and that the website is not temporally video." );
+define( "_MD_XTUBE_BEFORESUBMIT", "Before submitting a broken video request, please check that the actual source of the video you intend reporting broken, is no longer there." );
 define( "_MD_XTUBE_TELLAFRIEND", "Recommend" );
 define( "_MD_XTUBE_EDIT", "Edit" );
 define( "_MD_XTUBE_THEREARE", "There are <b>%s</b> <i>Categories</i> and <b>%s</b> <i>Videos</i> listed" );
