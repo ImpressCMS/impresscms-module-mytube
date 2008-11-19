@@ -25,10 +25,10 @@
 //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA //
 //  ------------------------------------------------------------------------ //
 
-if( ! defined( 'ICMS_ROOT_PATH' ) ) exit;
+if( ! defined( 'XOOPS_ROOT_PATH' ) ) exit;
 
-require_once ICMS_ROOT_PATH . "/class/xoopsformloader.php";
-//$form = new XoopsThemeForm($block['form_title'], 'blockform', ICMS_URL."/modules/blocksadmin/admin/admin.php" ) ;
+require_once XOOPS_ROOT_PATH . "/class/xoopsformloader.php";
+//$form = new XoopsThemeForm($block['form_title'], 'blockform', XOOPS_URL."/modules/blocksadmin/admin/admin.php" ) ;
 $form = new XoopsThemeForm( $block['form_title'], 'blockform', "admin.php" );
 if ( isset( $block['name'] ) ) {
 	$form -> addElement( new XoopsFormLabel( _AM_NAME, $block['name'] ) );
@@ -64,9 +64,9 @@ $form -> addElement( new XoopsFormText( _AM_TITLE, 'btitle', 50, 255, $block['ti
 if ( $block['is_custom'] ) {
 
 	// Custom Block's textarea
-	$notice_for_tags = '<span style="font-size:x-small;font-weight:bold;">' . _AM_USEFULTAGS . '</span><br /><span style="font-size:x-small;font-weight:normal;">' . sprintf(_AM_BLOCKTAG1, '{X_SITEURL}', ICMS_URL . '/') . '</span>';
+	$notice_for_tags = '<span style="font-size:x-small;font-weight:bold;">' . _AM_USEFULTAGS . '</span><br /><span style="font-size:x-small;font-weight:normal;">' . sprintf(_AM_BLOCKTAG1, '{X_SITEURL}', XOOPS_URL . '/') . '</span>';
 	$current_op = @$_GET['op'] == 'clone' ? 'clone' : 'edit';
-	$uri_to_myself = ICMS_URL . "/modules/blocksadmin/admin/admin.php?fct=blocksadmin&amp;op=$current_op&amp;bid={$block['bid']}";
+	$uri_to_myself = XOOPS_URL . "/modules/blocksadmin/admin/admin.php?fct=blocksadmin&amp;op=$current_op&amp;bid={$block['bid']}";
 	// $can_use_spaw = check_browser_can_use_spaw() ;
 		$myts =& MyTextSanitizer::getInstance();
 		$textarea = new XoopsFormDhtmlTextArea( _AM_CONTENT, 'bcontent', $myts -> htmlSpecialChars( $block['content'] ), 15, 70 );
@@ -85,11 +85,11 @@ if ( $block['is_custom'] ) {
 		$tplfile_handler =& xoops_gethandler( 'tplfile' );
 		$btemplate =& $tplfile_handler -> find( $GLOBALS['xoopsConfig']['template_set'], 'block', $block['bid'] );
 		if ( count($btemplate) > 0 ) {
-			$form -> addElement( new XoopsFormLabel( _AM_CONTENT, '<a href="' . ICMS_URL . '/modules/system/admin.php?fct=tplsets&op=edittpl&id=' . $btemplate[0] -> getVar('tpl_id') . '">' . _AM_EDITTPL . '</a>' ) );
+			$form -> addElement( new XoopsFormLabel( _AM_CONTENT, '<a href="' . XOOPS_URL . '/modules/system/admin.php?fct=tplsets&op=edittpl&id=' . $btemplate[0] -> getVar('tpl_id') . '">' . _AM_EDITTPL . '</a>' ) );
 		} else {
 			$btemplate2 =& $tplfile_handler -> find( 'default', 'block', $block['bid'] );
 			if ( count( $btemplate2 ) > 0 ) {
-				$form -> addElement( new XoopsFormLabel( _AM_CONTENT, '<a href="' . ICMS_URL . '/modules/system/admin.php?fct=tplsets&op=edittpl&id=' . $btemplate2[0] -> getVar( 'tpl_id' ) . '" target="_blank">' . _AM_EDITTPL . '</a>' ) );
+				$form -> addElement( new XoopsFormLabel( _AM_CONTENT, '<a href="' . XOOPS_URL . '/modules/system/admin.php?fct=tplsets&op=edittpl&id=' . $btemplate2[0] -> getVar( 'tpl_id' ) . '" target="_blank">' . _AM_EDITTPL . '</a>' ) );
 			}
 		}
 	}

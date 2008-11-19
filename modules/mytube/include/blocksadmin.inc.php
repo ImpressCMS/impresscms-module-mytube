@@ -12,11 +12,11 @@
 if ( !is_object( $xoopsUser ) || !is_object( $xoopsModule ) || !$xoopsUser -> isAdmin( $xoopsModule -> mid() ) ) {
 	exit( 'Access Denied' );
 }
-include_once ICMS_ROOT_PATH . '/class/xoopsblock.php';
-include ICMS_ROOT_PATH . '/modules/system/admin/blocksadmin/blocksadmin.php';
+include_once XOOPS_ROOT_PATH . '/class/xoopsblock.php';
+include XOOPS_ROOT_PATH . '/modules/system/admin/blocksadmin/blocksadmin.php';
 
 $op = 'list';
-$adv_pages = @file_exists( ICMS_ROOT_PATH . '/kernel/page.php'); // test to see if ImpressCMS 1.1+
+$adv_pages = @file_exists( XOOPS_ROOT_PATH . '/kernel/page.php'); // test to see if ImpressCMS 1.1+
 if ( isset( $_POST ) ) {
 	foreach ( $_POST as $k => $v ) {
 		$$k = $v;
@@ -32,7 +32,7 @@ if ( isset( $_GET['op'] ) ) {
 
 if ( isset( $previewblock ) ) {
 	xoops_cp_header();
-	include_once ICMS_ROOT_PATH . '/class/template.php';
+	include_once XOOPS_ROOT_PATH . '/class/template.php';
 	$xoopsTpl = new XoopsTpl();
 	$xoopsTpl -> xoops_setCaching(0);
 	if ( isset( $bid ) ) {
@@ -71,12 +71,12 @@ if ( isset( $previewblock ) ) {
 	$block['is_custom'] = true;
 	$block['cachetime'] = intval( $bcachetime );
 	echo '<a href="admin.php?fct=blocksadmin">' . _AM_BADMIN . '</a>&nbsp;<span style="font-weight:bold;">&raquo;&raquo;</span>&nbsp;' . $block['form_title'] . '<br /><br />';
-	include ICMS_ROOT_PATH . '/modules/system/admin/blocksadmin/blockform.php';
+	include XOOPS_ROOT_PATH . '/modules/system/admin/blocksadmin/blockform.php';
 	$form -> display();
 	xoops_cp_footer();
 	echo '<script type="text/javascript">
 	<!--//
-	preview_window = openWithSelfMain("' . ICMS_URL . '/modules/system/admin.php?fct=blocksadmin&op=previewpopup&file=' . $dummyfile . '", "popup", 250, 200);
+	preview_window = openWithSelfMain("' . XOOPS_URL . '/modules/system/admin.php?fct=blocksadmin&op=previewpopup&file=' . $dummyfile . '", "popup", 250, 200);
 	//-->
 	</script>';
 	exit();
@@ -220,7 +220,7 @@ if ($op == 'clone_ok') {
 				$sql = sprintf( 'INSERT INTO %s (block_id, module_id) VALUES (%u, %d)', $db -> prefix( 'block_module_link' ), $bid, intval( $bmid ) );
 				$db -> query( $sql );
 			}
-			include_once ICMS_ROOT_PATH . '/class/template.php';
+			include_once XOOPS_ROOT_PATH . '/class/template.php';
 			$xoopsTpl = new XoopsTpl();
 			$xoopsTpl -> xoops_setCaching(2);
 			if ( $myblock -> getVar( 'template' ) != '' ) {
@@ -306,7 +306,7 @@ if ($op == 'clone_ok') {
             	$sql = "INSERT INTO " . $db -> prefix( 'block_module_link' ) . " (block_id, module_id, page_id) VALUES ('" . intval( $bid ) . "', '" . intval( $mid ) . "', '" . intval( $pageid ) . "' )";
             	$db -> query( $sql );
             }
-            include_once ICMS_ROOT_PATH . '/class/template.php';
+            include_once XOOPS_ROOT_PATH . '/class/template.php';
             $xoopsTpl = new XoopsTpl();
             $xoopsTpl -> xoops_setCaching(2);
             if ( $myblock -> getVar( 'template' ) != '' ) {

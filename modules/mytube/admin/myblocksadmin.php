@@ -15,16 +15,16 @@ include_once '../../../include/cp_header.php';
 /** include the group permissions form */
 include_once 'mygrouppermform.php';
 /** include the blocks class */
-include_once ICMS_ROOT_PATH . '/class/xoopsblock.php';
+include_once XOOPS_ROOT_PATH . '/class/xoopsblock.php';
 
-$icms_system_path = ICMS_ROOT_PATH . '/modules/system';
+$icms_system_path = XOOPS_ROOT_PATH . '/modules/system';
 
 // language files
 $language = $xoopsConfig['language'] ;
-//if ( file_exists( ICMS_ROOT_PATH . '/language/' . $language . '/admin/blocksadmin.php' ) ) {
-//	include ICMS_ROOT_PATH . '/language/' . $language . '/admin/blocksadmin.php';
+//if ( file_exists( XOOPS_ROOT_PATH . '/language/' . $language . '/admin/blocksadmin.php' ) ) {
+//	include XOOPS_ROOT_PATH . '/language/' . $language . '/admin/blocksadmin.php';
 //} else {
-//	include ICMS_ROOT_PATH . '/language/english/admin/blocksadmin.php';
+//	include XOOPS_ROOT_PATH . '/language/english/admin/blocksadmin.php';
 //}
 
 // to prevent from notice that constants already defined
@@ -40,11 +40,11 @@ foreach ( $group_defs as $def ) {
 }
 
 // check $xoopsModule
-if ( !is_object( $xoopsModule ) ) redirect_header( ICMS_URL . '/user.php', 1, _NOPERM ) ;
+if ( !is_object( $xoopsModule ) ) redirect_header( XOOPS_URL . '/user.php', 1, _NOPERM ) ;
 
 // check access right (needs system_admin of BLOCK)
 $sysperm_handler =& xoops_gethandler('groupperm');
-if ( !$sysperm_handler -> checkRight( 'system_admin', XOOPS_SYSTEM_BLOCK, $xoopsUser -> getGroups() ) ) redirect_header( ICMS_URL . '/user.php', 1, _NOPERM );
+if ( !$sysperm_handler -> checkRight( 'system_admin', XOOPS_SYSTEM_BLOCK, $xoopsUser -> getGroups() ) ) redirect_header( XOOPS_URL . '/user.php', 1, _NOPERM );
 
 // get blocks owned by the module
 $block_arr =& XoopsBlock::getByModule( $xoopsModule -> mid() );
@@ -72,9 +72,9 @@ function list_blocks() {
 			<th>" . _AM_ACTION . "</th>
 		</tr>\n";
 //  if (method_exists('XoopsBlock','getBlockPositions')) {echo 'You are using ImpressCMS and can have custom block positions<br />';}
-//	if (file_exists(ICMS_ROOT_PATH.'/kernel/page.php')) {echo 'You are using ImpressCMS 1.1 and can have custom page links <br />';}
+//	if (file_exists(XOOPS_ROOT_PATH.'/kernel/page.php')) {echo 'You are using ImpressCMS 1.1 and can have custom page links <br />';}
 	$adv_blocks = method_exists( 'XoopsBlock', 'getBlockPositions' );
-	$adv_pages = @file_exists( ICMS_ROOT_PATH . '/kernel/page.php' );
+	$adv_pages = @file_exists( XOOPS_ROOT_PATH . '/kernel/page.php' );
 // blocks displaying loop
 	$class = 'even';
 	foreach ( array_keys( $block_arr ) as $i ) {
@@ -232,7 +232,7 @@ function list_groups() {
 
 if ( ! empty( $_POST['submit'] ) ) {
 	include 'mygroupperm.php';
-	redirect_header( ICMS_URL . '/modules/' . $xoopsModule -> dirname() . '/admin/myblocksadmin.php', 1, _MD_AM_DBUPDATED );
+	redirect_header( XOOPS_URL . '/modules/' . $xoopsModule -> dirname() . '/admin/myblocksadmin.php', 1, _MD_AM_DBUPDATED );
 }
 
 include XOOPS_ROOT_PATH . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/include/functions.php';
