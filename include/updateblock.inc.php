@@ -1,6 +1,6 @@
 <?php
 
-	if( ! defined( 'ICMS_ROOT_PATH' ) ) exit ;
+	if( ! defined( 'XOOPS_ROOT_PATH' ) ) exit ;
 
 	// Keep Block option values when update (by nobunobu)
 	global $xoopsDB;

@@ -29,13 +29,13 @@
 // Project: The XOOPS Project                                                //
 // ------------------------------------------------------------------------- //
 
-if ( !defined( 'ICMS_ROOT_PATH' ) && !defined( 'ICMS_ROOT_PATH' ) ) exit();
+if ( !defined( 'XOOPS_ROOT_PATH' ) && !defined( 'XOOPS_ROOT_PATH' ) ) exit();
 
-require_once ICMS_ROOT_PATH . '/class/xoopsform/formelement.php';
-require_once ICMS_ROOT_PATH . '/class/xoopsform/formhidden.php';
-require_once ICMS_ROOT_PATH . '/class/xoopsform/formbutton.php';
-require_once ICMS_ROOT_PATH . '/class/xoopsform/formelementtray.php';
-require_once ICMS_ROOT_PATH . '/class/xoopsform/form.php';
+require_once XOOPS_ROOT_PATH . '/class/xoopsform/formelement.php';
+require_once XOOPS_ROOT_PATH . '/class/xoopsform/formhidden.php';
+require_once XOOPS_ROOT_PATH . '/class/xoopsform/formbutton.php';
+require_once XOOPS_ROOT_PATH . '/class/xoopsform/formelementtray.php';
+require_once XOOPS_ROOT_PATH . '/class/xoopsform/form.php';
 
 /**
  * Renders a form for setting module specific group permissions
@@ -78,7 +78,7 @@ class MyXoopsGroupPermForm extends XoopsForm {
 	 * Constructor
 	 */
 	function MyXoopsGroupPermForm( $title, $modid, $permname, $permdesc ) {
-//		$this->XoopsForm($title, 'groupperm_form', ICMS_URL.'/modules/system/admin/groupperm.php', 'post'); GIJ
+//		$this->XoopsForm($title, 'groupperm_form', XOOPS_URL.'/modules/system/admin/groupperm.php', 'post'); GIJ
 		$this -> XoopsForm( $title, 'groupperm_form', '' , 'post' );
 		$this -> _modid = intval( $modid );
 		$this -> _permName = $permname;
