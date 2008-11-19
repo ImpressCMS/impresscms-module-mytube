@@ -1,9 +1,6 @@
 <?php
-/**
- * $Id: updateblock.inc.php
- * Module: MyTube
- */
-	if( ! defined( 'XOOPS_ROOT_PATH' ) ) exit ;
+
+	if( ! defined( 'ICMS_ROOT_PATH' ) ) exit ;
 
 	// Keep Block option values when update (by nobunobu)
 	global $xoopsDB;
@@ -13,7 +10,7 @@
 	if ($record) {
 		$mid = $record['mid'];
 		$count = count($modversion['blocks']);
-		
+
 		$sql = "SELECT * FROM ".$xoopsDB->prefix('newblocks')." WHERE mid=".$mid." AND block_type <>'D' AND func_num > $count";
 		$fresult = $xoopsDB->query($sql);
 		while ($fblock = $xoopsDB->fetchArray($fresult)) {
@@ -50,5 +47,4 @@
 		$msgs = array_merge( $msgs , $local_msgs ) ;
 		$myblocksadmin_parsed_updateblock = true ;
 	}
-
 ?>
