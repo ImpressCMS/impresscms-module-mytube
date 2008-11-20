@@ -5,31 +5,31 @@
 ##:###########################################################################################################
 
 --------------------------------------------------------------------------------------------------------------
-Reported by.: GibaPhp in SVN direct.
-Icms........: 1.1.1 SVN revision 7073
-Mytube......: version 1.04 - Revision SVN 7058
+Reported by.: 
+Icms........: 
+Mytube......: 
 
-Bug.........: Problem with translations in the conversion of special characters of stress, UTF-8.
-Status......: In research
-Priority....: average
-Where.......: Adjustments of Blocks (mytube/admin/myblocksadmin.php)
+Bug.........: 
+Status......: 
+Priority....: 
+Where.......: 
 
-When there..: Only happens when you make a change in the position of the blocks. After submit, to reload the page, 
-............: the area of groups and description of the blocks loses the conversion to utf-8 and accent is uneven.
-............: <<<Only affects title block.>>>
+When there..: 
+............: 
+............: 
 
-Details.....: Multilanguage actived.
+Details.....: 
 
-Checks......: Conference of all files for translation are recorded in utf-8. Checked whether there is a page header
-............: from inside the module that could be in with another type of charset and not found anything.
-............: Language now is portuguesebr.
+Checks......: 
+............: 
+............: 
 
-Example.....: VÃ­deos Recentes - correct is:  (Vídeos Recentes)
+Example.....: 
 
-Solution indicated..: Not available
+Solution indicated..: 
 
-Recommendation......: Use the system of blocks and permissions of groups kernel of VAT. 
-....................: If you record using the module's myblocksadmin problem will occur if using a language that 
-....................: needs different accent.
+Recommendation......: 
+....................: 
+....................: 
 --------------------------------------------------------------------------------------------------------------
 
