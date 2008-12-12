@@ -8,79 +8,72 @@
 </div>
 <div>&nbsp;</div>
 <div class="xoopstube_singletitle"> <font color="#72B8FF"><{$video.title}></font><{$video.icons}><span><{if $xoops_isadmin}> <small><{$video.adminvideo}></small><{/if}></span> </div><div>&nbsp;</div>
-<table width="100%" cellspacing="0" cellpadding="2">
-  <tr> 
-    <td colspan="2"> <table width="100%" border="0" cellspacing="0" cellpadding="2"> 
-        <tr> 
-          <td width="45%">
-            <div align="center"><{$video.showvideo}></div>
-            <div>&nbsp;</div>
-            <{if $video.showsbookmarx > 0}>
-            <div align="center">
-              <table border="0"cellpadding="0" cellspacing="0">
-                <tr>
-                  <td align="center"><div class="xoopstube_socbookmark"><{$video.sbmarks}></div></td>
-                </tr>
-              </table>
-            </div>
-            <{/if}>
-          </td> 
-          <td width="55%">
-              <div class='xoopstube_description'>
-                    <div><small><b><{$smarty.const._MD_XTUBE_SUBMITTER}>:</b>&nbsp;<{$video.submitter}></small></div>
-                    <div><small><b><{$smarty.const._MD_XTUBE_PUBLISHER}>:</b>&nbsp;<{$video.publisher}></small></div>
-                    <div><small><b><{$lang_subdate}>:</b>&nbsp;<{$video.updated|wordwrap:50:"\n":true}></small></div>
-                    <div><small><{$video.hits|wordwrap:50:"\n":true}></small></div>
-                    <div><small><{$smarty.const._MD_XTUBE_TIMEB}>&nbsp;<{$video.time}></small></div>
-                    <br />
-                    <hr noshade="noshade">
-                    <br />
-                    <div><b><{$smarty.const._MD_XTUBE_DESCRIPTIONC}></b><br /><{$video.description2}></div><br />
-              </div>
-			  
-			 <{if $video.showrating}>
-            <br /> 
-            <div style="margin-left: 10px; margin-right: 10px; padding: 4px;" class="xoopstube_description"> <small> <b><{$smarty.const._MD_XTUBE_RATINGC}></b>&nbsp;<img src="<{$xoops_url}>/modules/<{$video.module_dir}>/images/icon/<{$video.rateimg}>" alt="" align="middle" />&nbsp;&nbsp;(<{$video.votes}>) </small> </div><{/if}>
+
+<div align="center">
+	<{$video.showvideo}>
+</div>
+
+<div>&nbsp;</div>
+<{if $video.showsbookmarx > 0}>
+	<div class="xoopstube_socbookmark" align="center"><{$video.sbmarks}></div>
+<{/if}>
+
+<div style="clear: both;">&nbsp;</div>
+
+<fieldset class="xoopstube_description">	
+	<span style="float: left; width: 48%;">
+		<small><b><{$smarty.const._MD_XTUBE_SUBMITTER}>:</b>&nbsp;<{$video.submitter}></small><br />
+		<small><b><{$smarty.const._MD_XTUBE_PUBLISHER}>:</b>&nbsp;<{$video.publisher}></small><br />
+		<small><b><{$lang_subdate}>:</b>&nbsp;<{$video.updated|wordwrap:50:"\n":true}></small>
+	</span>
+
+	<span style="float: right; width: 48%;">
+		<small><{$video.hits|wordwrap:50:"\n":true}></small><br />
+		<small><{$smarty.const._MD_XTUBE_TIMEB}>&nbsp;<{$video.time}></small>
+		<{if $video.showrating}>
+			<br />
+			<small> <b><{$smarty.const._MD_XTUBE_RATINGC}></b>&nbsp;<img src="<{$xoops_url}>/modules/<{$video.module_dir}>/images/icon/<{$video.rateimg}>" alt="" align="middle" />&nbsp;&nbsp;(<{$video.votes}>)</small> 
+		<{/if}>
             
-           <{if $tagbar}>
-		   <br />
-	        <div style="margin-left: 10px; margin-right: 10px; padding: 4px; font-size: smaller;" class="xoopstube_description">
-                 <{include file="db:tag_bar.html"}>
-                </div>
-	    <{/if}>
-	    <br />
-            </td>
-        </tr> 
-        <tr> 
-         <td colspan="2" valign="top">&nbsp;</td> 
-        </tr> 
-        <tr>
-         <td colspan="2" class="even" style="text-valign: top; text-align: center;">
-		  <div class="even" align="center">
-		   <small>[&nbsp;<{if $video.showrating}><{if $video.allow_rating}> 
-			 <a href="<{$xoops_url}>/modules/<{$video.module_dir}>/ratevideo.php?cid=<{$video.cid}>&amp;lid=<{$video.id}>"><{$smarty.const._MD_XTUBE_RATETHISFILE}></a> |
-			<{/if}><{/if}> 
-			<a href="<{$xoops_url}>/modules/<{$video.module_dir}>/brokenvideo.php?lid=<{$video.id}>"><{$smarty.const._MD_XTUBE_REPORTBROKEN}></a> |
-			<{if $video.useradminvideo}>
-			 <{$video.usermodify}> 
-			<{/if}> 
-			<a href="mailto:?subject=<{$video.mail_subject}>&body=<{$video.mail_body}>" target="_top"><{$smarty.const._MD_XTUBE_TELLAFRIEND}></a>
-                       <{if $video.comment_rules > 0}>
-                            | <a href="<{$xoops_url}>/modules/<{$video.module_dir}>/singlevideo.php?cid=<{$video.cid}>&amp;lid=<{$video.id}>"><{$smarty.const._COMMENTS}> (<{$video.comments}>)</a>
-                       <{/if}>&nbsp;]
-		   </small>
-		   </div>
-		  </td> 
-        </tr> 
-       </table>
-  </tr> 
-</table>
+		<{if $tagbar}>
+			<br />
+			<{include file="db:tag_bar.html"}>
+		<{/if}>
+	</span>
+
+	<div style="clear: both; height: 5px;">&nbsp;</div> 
+	<b><{$smarty.const._MD_XTUBE_DESCRIPTIONC}></b><br />
+	<{$video.description2}>
+</fieldset>
+
+<br />	
+
+<div class="even" align="center">
+	<small>[&nbsp;
+	<{if $video.showrating}>
+		<{if $video.allow_rating}> 
+	<a href="<{$xoops_url}>/modules/<{$video.module_dir}>/ratevideo.php?cid=<{$video.cid}>&amp;lid=<{$video.id}>"><{$smarty.const._MD_XTUBE_RATETHISFILE}></a> |
+		<{/if}>
+	<{/if}> 
+	<a href="<{$xoops_url}>/modules/<{$video.module_dir}>/brokenvideo.php?lid=<{$video.id}>"><{$smarty.const._MD_XTUBE_REPORTBROKEN}></a> |
+	<{if $video.useradminvideo}>
+		<{$video.usermodify}> 
+	<{/if}> 
+	<a href="mailto:?subject=<{$video.mail_subject}>&body=<{$video.mail_body}>" target="_top"><{$smarty.const._MD_XTUBE_TELLAFRIEND}></a>
+	<{if $video.comment_rules > 0}>
+		| <a href="<{$xoops_url}>/modules/<{$video.module_dir}>/singlevideo.php?cid=<{$video.cid}>&amp;lid=<{$video.id}>"><{$smarty.const._COMMENTS}> (<{$video.comments}>)</a>
+	<{/if}>&nbsp;]
+	</small>
+</div>
+
 <br /> 
 <{if $video.othervideox > 0}>
-<{$other_videos}>
-<{foreach item=video_user from=$video_uid}>
-   <div style="margin-left: 10px;"> <a href="<{$xoops_url}>/modules/<{$video.module_dir}>/singlevideo.php?cid=<{$video_user.cid}>&amp;lid=<{$video_user.lid}>"><{$video_user.title}></a> (<{$video_user.published}>) </div>
-<{/foreach}>
+	<{$other_videos}>
+	<{foreach item=video_user from=$video_uid}>
+		<div style="margin-left: 10px;">
+		<a href="<{$xoops_url}>/modules/<{$video.module_dir}>/singlevideo.php?cid=<{$video_user.cid}>&amp;lid=<{$video_user.lid}>"><{$video_user.title}></a> (<{$video_user.published}>) 
+		</div>
+	<{/foreach}>
 <{/if}>
 <br /><br /> 
 <div align="center"><{$lang_copyright}></div>
