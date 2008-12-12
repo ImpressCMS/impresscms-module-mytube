@@ -43,7 +43,7 @@ tr.xoopstube_even td {
   font-weight: bold;
   text-align: left;
   color: #72B8FF;
-  padding: 2px;}
+  padding: 2px; }
   
 .xoopstube_singletitle {
   font-size: 16px; 
@@ -51,11 +51,9 @@ tr.xoopstube_even td {
   text-align: left;
   color: #72B8FF;
   padding: 5px;
-  background-color: #DEE3E7;}
+  background-color: #DEE3E7; }
 
 .xoopstube_description {
-  margin-left: 10px;
-  margin-right: 10px;
   padding: 4px; 
   background-color:#E9E9E9;
   border: 1px solid #999999; }
@@ -69,8 +67,7 @@ tr.xoopstube_even td {
   padding-left: 5px;
   vertical-align: middle; }
   
-.xoopstube_tablebackground {
-  }
+.xoopstube_tablebackground {}
 
 .xoopstube_tablehdr {
   font-size: 12px;
@@ -90,7 +87,6 @@ tr.xoopstube_even td {
   padding-top: 1px;
   vertical-align: middle; }
 
-/* Bookmark tags */
 div.xoopstube_socbookmark a img {
 	opacity: .4;
 	-moz-opacity: .4;
@@ -99,7 +95,4 @@ div.xoopstube_socbookmark a img {
 div.xoopstube_socbookmark a:hover img {
 	opacity: 1;
 	-moz-opacity: 1;
-	filter: alpha(opacity=100);
-	}
-
-/* end bd */
+	filter: alpha(opacity=100);	}

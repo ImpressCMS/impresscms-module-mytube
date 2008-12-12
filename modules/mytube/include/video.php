@@ -156,7 +156,7 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	
 // Show if source is YouTube
     if ($source == 0) {
-       $showvideo = '<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/' . $vidid . '"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/' . $vidid . '" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>';
+       $showvideo = '<object width="480" height="295"><param name="movie" value="http://www.youtube.com/v/' . $vidid . '"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/' . $vidid . '" type="application/x-shockwave-flash" wmode="transparent" width="480" height="295"></embed></object>';
     }
 	
 // Show if source is MetaCafe
