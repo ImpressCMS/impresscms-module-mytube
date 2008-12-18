@@ -156,9 +156,11 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	if ( $xoopsModuleConfig['autoplay'] ) {
 		$autoplay2 = 'yes';
 		$photobucket = '&ap=1';
+		$google = 'FlashVars="autoPlay=true"';
 	} else {
 		$autoplay2 = 'no';
 		$photobucket = '';
+		$google = '';
 	}
 	
 // Show if source is YouTube
@@ -181,19 +183,20 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
        $vidid = str_replace( 'th_', '', $vidid);
        $showvideo = '<embed width="448" height="361" type="application/x-shockwave-flash" wmode="transparent" src="http://i51.photobucket.com/player.swf?file=http://vid51.photobucket.com/albums/' . $vidid . '.flv' . $photobucket . '"></embed>';
     }
+	
 // Show if source is Google Video
     if ($source == 100) {
-       $showvideo = '<embed style="width:400px; height:326px;" id="VideoPlayback" type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docId=' . $vidid . '&hl=en" flashvars="autoPlay=' . $autoplay2 . '"> </embed>';
+       $showvideo = '<embed style="width:480px; height:295px;" id="VideoPlayback" type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docId=' . $vidid . '&hl=en" ' . $google . '> </embed>';
     }
 	
 // Show if source is MySpace TV
     if ($source == 101) {
-       $showvideo = '<embed src="http://lads.myspace.com/videos/vplayer.swf" flashvars="m=' . $vidid . '&v=2&type=video" type="application/x-shockwave-flash" width="430" height="346"></embed>';
+       $showvideo = '<embed src="http://mediaservices.myspace.com/services/media/embed.aspx/m=' . $vidid . ',t=1,mt=video,ap=' . $autoplay . '" width="480" height="295" allowFullScreen="true" type="application/x-shockwave-flash"></embed>';
     }
 	
 // Show if source is DailyMotion
     if ($source == 102) {
-       $showvideo = '<embed src="http://www.dailymotion.com/swf/' . $vidid . '" type="application/x-shockwave-flash" width="420" height="331" allowFullScreen="true" allowScriptAccess="always"></embed>';
+       $showvideo = '<embed src="http://www.dailymotion.com/swf/' . $vidid . '&autoPlay=' . $autoplay . '" type="application/x-shockwave-flash" width="480" height="295" allowFullScreen="true" allowScriptAccess="always"></embed>';
     }
 	
 // Show if source is Blip.tv
