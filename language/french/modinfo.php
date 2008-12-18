@@ -291,4 +291,6 @@ define( "_MI_XTUBE_CATCOLUMNS", "Select amount of category columns:" );
 define( "_MI_XTUBE_CATCOLUMNSDSC", "Select the amount of columns, default is 2" );
 define( "_MI_XTUBE_RATINGDISPLAY", "Display rating features?" );
 define( "_MI_XTUBE_RATINGDISPLAYDSC", "Select <em>Yes</em> to display the Rating features. Select <em>No</em> if you don't want to display the Rating features." );
+define( "_MI_XTUBE_AUTOPLAY", "Autoplay the video" );
+define( "_MI_XTUBE_AUTOPLAYDSC", "Select <em>Yes</em> to have the videoclips play automatically." );
 ?>

@@ -148,35 +148,42 @@ function xtube_videopublisher($vidid, $publisher, $source) {
   return $publisher;
 }
 
-
 //Function for displaying videoclip (embedded code)
 function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
     global $xoopsModule, $xoopsModuleConfig;
     $showvideo = '';
+	$autoplay = $xoopsModuleConfig['autoplay'];
+	if ( $xoopsModuleConfig['autoplay'] ) {
+		$autoplay2 = 'yes';
+		$photobucket = '&ap=1';
+	} else {
+		$autoplay2 = 'no';
+		$photobucket = '';
+	}
 	
 // Show if source is YouTube
     if ($source == 0) {
-       $showvideo = '<object width="480" height="295"><param name="movie" value="http://www.youtube.com/v/' . $vidid . '"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/' . $vidid . '" type="application/x-shockwave-flash" wmode="transparent" width="480" height="295"></embed></object>';
+       $showvideo = '<object width="480" height="295"><param name="movie" value="http://www.youtube.com/v/' . $vidid . '&ap=%2526fmt%3D18&&autoplay=' . $autoplay . '&rel=1&fs=1&color1=0x999999&color2=0x999999&border=0&loop=0"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/' . $vidid . '&ap=%2526fmt%3D18&&autoplay=' . $autoplay . '&rel=1&fs=1&color1=0x999999&color2=0x999999&border=0&loop=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" width="480" height="295"></embed></object>';
     }
 	
 // Show if source is MetaCafe
     if ($source == 1) {
-       $showvideo = '<embed src="http://www.metacafe.com/fplayer/' . $vidid . '.swf" width="400" height="345" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>';
+       $showvideo = '<embed flashVars="playerVars=showStats=no|autoPlay=' . $autoplay2 . '" src="http://www.metacafe.com/fplayer/' . $vidid . '.swf" width="400" height="345" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>';
     }
 	
 // Show if source is iFilm/Spike
     if ($source == 2) {
-       $showvideo = '<embed width="448" height="365" src="http://www.ifilm.com/efp" quality="high" bgcolor="000000" name="efp" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="flvbaseclip=' . $vidid . '&"> </embed>';
+       $showvideo = '<embed width="480" height="360" src="http://www.spike.com/efp" quality="high" bgcolor="000000" name="efp" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="flvbaseclip=' . $vidid . '" allowfullscreen="true"> </embed>';
     }
 	
 // Show if source is Photobucket
     if ($source == 3) {
        $vidid = str_replace( 'th_', '', $vidid);
-       $showvideo = '<embed width="448" height="361" type="application/x-shockwave-flash" wmode="transparent" src="http://i51.photobucket.com/player.swf?file=http://vid51.photobucket.com/albums/' . $vidid . '.flv&amp;sr=1"></embed>';
+       $showvideo = '<embed width="448" height="361" type="application/x-shockwave-flash" wmode="transparent" src="http://i51.photobucket.com/player.swf?file=http://vid51.photobucket.com/albums/' . $vidid . '.flv' . $photobucket . '"></embed>';
     }
 // Show if source is Google Video
     if ($source == 100) {
-       $showvideo = '<embed style="width:400px; height:326px;" id="VideoPlayback" type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docId=' . $vidid . '&hl=en" flashvars=""> </embed>';
+       $showvideo = '<embed style="width:400px; height:326px;" id="VideoPlayback" type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docId=' . $vidid . '&hl=en" flashvars="autoPlay=' . $autoplay2 . '"> </embed>';
     }
 	
 // Show if source is MySpace TV
