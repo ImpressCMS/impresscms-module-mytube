@@ -285,13 +285,11 @@ define("_MI_XTUBE_BNAME10","MyTube Top Tags");
 define('_MI_XTUBE_FLVPLAYER_MANUAL', 'FLV Player Manual');
 define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW Player Wiki');
 
-// Version 1.04 RC-3
-define( "_MI_XTUBE_AUTOPLAYDESCR", "Videos automatisch starten?" );
-define( "_MI_XTUBE_AUTOPLAYDSC", "Wenn JA gewählt wird, spielen die Videos automatisch ab." );
-
 // Version 1.05 RC-1
 define( "_MI_XTUBE_CATCOLUMNS", "Select amount of category columns:" );
 define( "_MI_XTUBE_CATCOLUMNSDSC", "Select the amount of columns, default is 2" );
 define( "_MI_XTUBE_RATINGDISPLAY", "Display rating features?" );
 define( "_MI_XTUBE_RATINGDISPLAYDSC", "Select <em>Yes</em> to display the Rating features. Select <em>No</em> if you don't want to display the Rating features." );
+define( "_MI_XTUBE_AUTOPLAY", "Autoplay the video" );
+define( "_MI_XTUBE_AUTOPLAYDSC", "Select <em>Yes</em> to have the videoclips play automatically." );
 ?>

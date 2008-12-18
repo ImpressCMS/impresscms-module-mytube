@@ -288,13 +288,11 @@ define("_MI_XTUBE_BNAME10","MyTube Melhores Tags");
 define('_MI_XTUBE_FLVPLAYER_MANUAL', 'FLV tocador Manual');
 define('_MI_XTUBE_FLVPLAYER_WIKI', 'JW tocador Wiki');
 
-// Version 1.04 RC-3
-define( "_MI_XTUBE_AUTOPLAYDESCR", "Tocar automáticamente videos" );
-define( "_MI_XTUBE_AUTOPLAYDSC", "Escolher Sim para ter os videos tocados automáticamente" );
-
 // Version 1.05 RC-1
 define( "_MI_XTUBE_CATCOLUMNS", "Escolha a quantidade de colunas para categoria :" );
 define( "_MI_XTUBE_CATCOLUMNSDSC", "Selecione a quantidade de colunas, o padrão é 2" );
 define( "_MI_XTUBE_RATINGDISPLAY", "Mostrar o recurso de votação?" );
 define( "_MI_XTUBE_RATINGDISPLAYDSC", "Escolha <em>Sim</em> para apresentar a funcionalidades de votação ou Nota. Escolha <em>Não</em> se você não quiser exibir a funcionalidades de votos ou notas neste módulo." );
+define( "_MI_XTUBE_AUTOPLAY", "Autoplay the video" );
+define( "_MI_XTUBE_AUTOPLAYDSC", "Select <em>Yes</em> to have the videoclips play automatically." );
 ?>
