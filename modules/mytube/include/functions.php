@@ -1021,7 +1021,7 @@ function xtube_tag_module_included() {
 function xtube_tagupdate($lid, $item_tag) {
 	global $xoopsModule;
     if (xtube_tag_module_included()){
-	  include_once XOOPS_ROOT_PATH . "/modules/tag/include/formtag.php";
+	  include_once XOOPS_ROOT_PATH . '/modules/tag/include/formtag.php';
 	  $tag_handler = xoops_getmodulehandler('tag', 'tag');
 	  $tag_handler -> updateByItem($item_tag, $lid, $xoopsModule -> getVar( 'dirname' ), 0);
 	}
@@ -1031,65 +1031,6 @@ function xtube_updateCounter($lid) {
 	global $xoopsDB;
 	$sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " SET hits=hits+1 WHERE lid=" . intval($lid);
     $result = $xoopsDB -> queryF( $sql );
-}
-
-function xtube_substr($str, $start, $length, $trimmarker = '...') {
-	$config_handler =& xoops_gethandler('config');
-	$im_multilanguageConfig =& $config_handler -> getConfigsByCat(IM_CONF_MULILANGUAGE);
-    
-	if ($im_multilanguageConfig['ml_enable']) {
-		$tags = explode(',',$im_multilanguageConfig['ml_tags']);
-		$strs = array();
-		$hasML = false;
-		foreach ($tags as $tag){
-			if (preg_match("/\[".$tag."](.*)\[\/".$tag."\]/sU",$str,$matches)){
-				if (count($matches) > 0) {
-					$hasML = true;
-					$strs[] = $matches[1];
-				}
-			}
-		}
-	} else {
-		$hasML = false;
-	}
-	
-	if (!$hasML) {
-        $strs = array($str);
-	}
-	
-	for ($i = 0; $i <= count($strs)-1; $i++) {
-		if ( !XOOPS_USE_MULTIBYTES ) {
-			$strs[$i] = ( strlen($strs[$i]) - $start <= $length ) ? substr( $strs[$i], $start, $length ) : substr( $strs[$i], $start, $length - strlen($trimmarker) ) . $trimmarker;
-		}
-
-		if (function_exists('mb_internal_encoding') && @mb_internal_encoding(_CHARSET)) {
-			$str2 = mb_strcut( $strs[$i] , $start , $length - strlen( $trimmarker ) );
-			$strs[$i] = $str2 . ( mb_strlen($strs[$i])!=mb_strlen($str2) ? $trimmarker : '' );
-		}
-
-		// phppp patch
-		$DEP_CHAR = 127;
-		$pos_st = 0;
-		$action = false;
-		for ( $pos_i = 0; $pos_i < strlen($strs[$i]); $pos_i++ ) {
-			if ( ord( substr( $strs[$i], $pos_i, 1) ) > 127 ) {
-				$pos_i++;
-			}
-			if ($pos_i <= $start) {
-				$pos_st = $pos_i;
-			}
-			if ($pos_i >= $pos_st + $length) {
-				$action = true;
-				break;
-			}
-		}
-		$strs[$i] = ($action) ? substr( $strs[$i], $pos_st, $pos_i - $pos_st - strlen($trimmarker) ) . $trimmarker : $strs[$i];
-
-		$strs[$i] = ($hasML)?'['.$tags[$i].']'.$strs[$i].'[/'.$tags[$i].']':$strs[$i];
-	}
-	$str = implode('',$strs);
-
-	return $str;
 }
 
 function xtube_getbanner_from_id_banner($banner_id) {
