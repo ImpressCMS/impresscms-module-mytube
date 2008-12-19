@@ -476,13 +476,13 @@ function xtube_adminmenu( $header = '', $menu = '', $extra = '', $scount = 4 ) {
 		<table width='100%' cellspacing='0' cellpadding='0' border='0' class='outer'>\n
 		<tr>\n
 		<td style='font-size: 10px; text-align: left; color: #2F5376; padding: 2px 6px; line-height: 18px;'>\n
-		<a href='../../system/admin.php?fct=modulesadmin&op=update&module=" . $xoopsModule -> getVar( 'dirname' ) . "'>" . _AM_XTUBE_BUPDATE . "</a> | \n
-		<a href='../../system/admin.php?fct=preferences&op=showmod&mod=" . $xoopsModule -> getVar( 'mid' ) . "'>" . _AM_XTUBE_PREFS . "</a> | \n
 		<a href='../admin/index.php'>" . _AM_XTUBE_BINDEX . "</a> | \n
+		<a href='../index.php'>" . _AM_XTUBE_GOMODULE . "</a> | \n
+		<a href='../../system/admin.php?fct=preferences&op=showmod&mod=" . $xoopsModule -> getVar( 'mid' ) . "'>" . _AM_XTUBE_PREFS . "</a> | \n
 		<a href='../admin/permissions.php'>" . _AM_XTUBE_BPERMISSIONS . "</a> | \n
 		<a href='../admin/myblocksadmin.php'>" . _AM_XTUBE_BLOCKADMIN . "</a> | \n
-		<a href='../index.php'>" . _AM_XTUBE_GOMODULE . "</a> | \n
-                <a href='../admin/about.php'>" . _AM_XTUBE_ABOUT . "</a> \n
+		<a href='../../system/admin.php?fct=modulesadmin&op=update&module=" . $xoopsModule -> getVar( 'dirname' ) . "'>" . _AM_XTUBE_BUPDATE . "</a> | \n
+        <a href='../admin/about.php'>" . _AM_XTUBE_ABOUT . "</a> \n
 		</td>\n
 		</tr>\n
 		</table><br />\n
