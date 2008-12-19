@@ -203,27 +203,27 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	
 // Show if source is Blip.tv
     if ($source == 103) {
-       $showvideo = '<embed src="http://blip.tv/play/' . $vidid . '" type="application/x-shockwave-flash" width="480" height="295" allowscriptaccess="always" allowfullscreen="true"></embed>';
+       $showvideo = '<embed src="http://blip.tv/play/' . $vidid . '" type="application/x-shockwave-flash" width="480" height="295" allowscriptaccess="always" allowfullscreen="true" flashvars="autostart=' . $autoplay3 . '"></embed>';
     }
 	
 // Show if source is ClipFish
     if ($source == 104) {
-       $showvideo = '<embed src="http://www.clipfish.de/videoplayer.swf?as=0&videoid=' . $vidid . '==&r=1&c=0067B3" quality="high" bgcolor="#0067B3" width="464" height="380" name="player" align="middle" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'; // Change c=0067B3 for different player color
+       $showvideo = '<embed src="http://www.clipfish.de/videoplayer.swf?as=' . $autoplay . '&videoid=' . $vidid . '==&r=1&c=0067B3" quality="high" bgcolor="#0067B3" width="464" height="380" name="player" align="middle" allowFullScreen="true" allowScriptAccess="always"  type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'; // Change c=0067B3 for different player color
     }
 	
 // Show if source is LiveLeak
     if ($source == 105) {
-       $showvideo = '<embed src="http://www.liveleak.com/e/' . $vidid . '" type="application/x-shockwave-flash" wmode="transparent" width="450" height="370"></embed>';
+       $showvideo = '<embed src="http://www.liveleak.com/e/' . $vidid . '" type="application/x-shockwave-flash" flashvars="autostart=' . $autoplay3 . '" wmode="transparent" width="450" height="370"></embed>';
     }
 	
 // Show if source is Maktoob
     if ($source == 106) {
-       $showvideo = '<embed width="448" height="320" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="flvplayer" bgcolor="#ffffff" devicefont="true" wmode="transparent" quality="high" src="http://clipat.maktoob.com/flvplayerOurJS.swf?file=http://' . $vidid . '.flv&enablejs=true&image=' . $picurl .'&lightcolor=0x557722&backcolor=0x000000&frontcolor=0xCCCCCC&showfsbutton=true&autostart=false&logo=http://clipat.maktoob.com/language/ar_sa/images/clipat-icon.png&displaywidth=448" />';
+       $showvideo = '<embed width="448" height="320" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="flvplayer" bgcolor="#ffffff" devicefont="true" wmode="transparent" quality="high" src="http://clipat.maktoob.com/flvplayerOurJS.swf?file=http://' . $vidid . '.flv&enablejs=true&image=' . $picurl .'&lightcolor=0x557722&backcolor=0x000000&frontcolor=0xCCCCCC&showfsbutton=true&autostart=' . $autoplay3 . '&logo=http://clipat.maktoob.com/language/ar_sa/images/clipat-icon.png&displaywidth=448" />';
     }
 	
 // Show if source is Veoh
     if ($source == 107) {
-       $showvideo = '<embed src="http://www.veoh.com/veohplayer.swf?permalinkId=' . $vidid . '&id=anonymous&player=videodetailsembedded&affiliateId=&videoAutoPlay=0" allowFullScreen="true" width="400" height="345" bgcolor="#FFFFFF" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>';
+       $showvideo = '<embed src="http://www.veoh.com/veohplayer.swf?permalinkId=' . $vidid . '&id=anonymous&player=videodetailsembedded&affiliateId=&videoAutoPlay=' . $autoplay . '" allowFullScreen="true" width="400" height="345" bgcolor="#FFFFFF" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>';
     }
 	
 // Show if source is MyTube
