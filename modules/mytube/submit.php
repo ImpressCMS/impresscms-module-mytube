@@ -204,13 +204,6 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
         
 // Video title form
         $sform -> addElement( new XoopsFormText( _MD_XTUBE_FILETITLE, 'title', 70, 255, $title ), true );
-
-// Video code form
-    $videocode = new XoopsFormText( _MD_XTUBE_DLVIDID, 'vidid', 70, 512, $vidid );
-    $videocode -> setDescription( "<br /><small>" . _MD_XTUBE_VIDEO_DLVIDIDDSC . "</small>");
-    $sform -> addElement($videocode, true);
-    $note = _MD_XTUBE_VIDEO_DLVIDID_NOTE;
-    $sform -> addElement(new XoopsFormLabel('',$note));
     
 // Video source form
     $vidsource_array = array( 0   => _MD_XTUBE_YOUTUBE,
@@ -224,12 +217,20 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
                               104 => _MD_XTUBE_CLIPFISH,
                               105 => _MD_XTUBE_LIVELEAK,
                               106 => _MD_XTUBE_MAKTOOB,
-                              107 => _MD_XTUBE_VEOH
+                              107 => _MD_XTUBE_VEOH,
+							  108 => _MD_XTUBE_VIMEO
                               );
     $vidsource_select = new XoopsFormSelect( _MD_XTUBE_VIDSOURCE, 'vidsource', $vidsource );
     $vidsource_select -> addOptionArray( $vidsource_array );
     $sform -> addElement( $vidsource_select, false );
-    
+	
+// Video code form
+    $videocode = new XoopsFormText( _MD_XTUBE_DLVIDID, 'vidid', 70, 512, $vidid );
+    $videocode -> setDescription( "<br /><small>" . _MD_XTUBE_VIDEO_DLVIDIDDSC . "</small>");
+    $sform -> addElement($videocode, true);
+    $note = _MD_XTUBE_VIDEO_DLVIDID_NOTE;
+    $sform -> addElement(new XoopsFormLabel('',$note));
+
 // Picture url form
    $picurl = new XoopsFormText( _MD_XTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
    $picurl -> setDescription( "<br /><span style='font-weight: normal;font-size: smaller;'>" . _MD_XTUBE_VIDEO_PICURLNOTE . "</span>" );

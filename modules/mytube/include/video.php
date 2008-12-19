@@ -45,6 +45,9 @@ function xtube_returnsource($returnsource) {
     case 107:
           $returnsource = _AM_XTUBE_VEOH;
           break;
+	case 108:
+		  $returnsource = _AM_XTUBE_VIMEO;
+		  break;
     }
     return $returnsource;
 }
@@ -116,7 +119,7 @@ function xtube_videopublisher($vidid, $publisher, $source) {
   }
   
 // Determine if video source is Google Video for publisher
-  if ($source == 100 || 101 || 103 || 106) {
+  if ($source == 100 || 101 || 103 || 106 || 108) {
      $publisher = $publisher;
   }
   
@@ -223,7 +226,12 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	
 // Show if source is Veoh
     if ($source == 107) {
-       $showvideo = '<embed src="http://www.veoh.com/veohplayer.swf?permalinkId=' . $vidid . '&id=anonymous&player=videodetailsembedded&affiliateId=&videoAutoPlay=' . $autoplay . '" allowFullScreen="true" width="400" height="345" bgcolor="#FFFFFF" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>';
+       $showvideo = '<embed src="http://www.veoh.com/veohplayer.swf?permalinkId=' . $vidid . '&id=anonymous&player=videodetailsembedded&affiliateId=&videoAutoPlay=' . $autoplay . '" allowFullScreen="true" width="480" height="295" bgcolor="#FFFFFF" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>';
+    }
+	
+// Show if source is Vimeo 
+    if ($source == 108) { 
+       $showvideo = '<embed src="http://vimeo.com/moogaloop.swf?clip_id=' . $vidid . '&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1&autoplay=' . $autoplay . '" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" quality="best" width="400" height="321"></embed>'; 
     }
 	
 // Show if source is MyTube

@@ -254,9 +254,10 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...<br />
+<b>Vimeo:</b> http://www.vimeo.com/<font color=#FF0000>2246499</font><br />
 <b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "Url da Imagem: " );
-define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Url da Foto quando o código for do Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob, Veoh ou LiveLeak</small>" );
+define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Url da Foto quando o código for do Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob, Veoh, Vimeo ou LiveLeak</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Descrição do Vídeo: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Categoria Principal dos Vídeos: " );
 define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Definir vídeo offline?<br /><br /><span style='font-weight: normal;'>o vídeo não será visível a todos os usuários.</span>" );
@@ -497,4 +498,7 @@ define( "_AM_XTUBE_MOD_PICURL", "Url da Figura: " );
 define( "_AM_XTUBE_IPAGE_SHOWLATEST", "Mostrar últimas listagens?" );
 define( "_AM_XTUBE_IPAGE_LATESTTOTAL", "Quantos videos deve mostrar?" );
 define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "0 total de videos nesta opção." );
+
+// Version 1.05 RC-1
+define( '_AM_XTUBE_VIMEO', 'Vimeo' );
 ?>

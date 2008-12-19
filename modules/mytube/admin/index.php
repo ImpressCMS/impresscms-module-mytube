@@ -99,7 +99,8 @@ function edit( $lid = 0 ) {
                               104 => _AM_XTUBE_CLIPFISH,
                               105 => _AM_XTUBE_LIVELEAK,
                               106 => _AM_XTUBE_MAKTOOB,
-                              107 => _AM_XTUBE_VEOH );  // #200 is reserved for MyTube's internal FLV player
+                              107 => _AM_XTUBE_VEOH,
+							  108 => _AM_XTUBE_VIMEO );  // #200 is reserved for MyTube's internal FLV player
     $vidsource_select = new XoopsFormSelect( _AM_XTUBE_VIDSOURCE, 'vidsource', $vidsource );
     $vidsource_select -> addOptionArray( $vidsource_array );
     $sform -> addElement( $vidsource_select );

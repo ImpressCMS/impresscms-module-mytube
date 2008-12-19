@@ -61,9 +61,10 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>ClipFish:</b> http://www.clipfish.de/player.php?videoid=<font color=#FF0000>MTg1NTYyfDM1Ng</font>%3D%3D<br />
 <b>LiveLeak:</b> http://www.liveleak.com/view?i=<font color=#FF0000>a59_1205566630</font><br />
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
-<b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...</small>" );
+<b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...<br />
+<b>Vimeo:</b> http://www.vimeo.com/<font color=#FF0000>2246499</font><br /></small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Picture url: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak, Veoh or Maktoob</small>" );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak, Veoh, Vimeo or Maktoob</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Video source:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
@@ -203,4 +204,7 @@ define( "_MD_XTUBE_VIDEO_DLVIDIDDSC", "Take over red part as given in the exampl
 
 //Version 1.04 RC-3
 define( "_MD_XTUBE_MODIFYNOTALLOWED", "You're not allowed to modify others videos!!" );
+
+// Version 1.05 RC-1
+define( '_MD_XTUBE_VIMEO', 'Vimeo' );
 ?>
