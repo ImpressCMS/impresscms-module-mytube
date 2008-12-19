@@ -40,10 +40,11 @@ if ( $moderate == 0 ) {
 }
 
 $video['updated'] = formatTimestamp( $time, $xoopsModuleConfig['dateformat'] );
-if (defined("ICMS_VERSION_NAME")) {
-  $video['description'] = xtube_substr($video_arr['description'], 0, $xoopsModuleConfig['totalchars'],'...');
+$description = $xtubemyts -> displayTarea( $video_arr['description'], 1, 1, 1, 1, 1 );
+if ( defined( 'ICMS_VERSION_NAME' ) ) {
+  $video['description'] = icms_substr( $description, 0, $xoopsModuleConfig['totalchars'], '...' );
 } else {
-  $video['description'] = $xtubemyts -> displayTarea( $video_arr['description'], 1, 1, 1, 1, 1 );
+  $video['description'] = xoops_substr( $description, 0, $xoopsModuleConfig['totalchars'], '...' );
 }
 $video['submitter'] = xoops_getLinkedUnameFromId( $video_arr['submitter'] );
 $video['time'] = $video_arr['time'];
