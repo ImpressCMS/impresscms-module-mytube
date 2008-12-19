@@ -155,10 +155,12 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	$autoplay = $xoopsModuleConfig['autoplay'];
 	if ( $xoopsModuleConfig['autoplay'] ) {
 		$autoplay2 = 'yes';
+		$autoplay3 = 'true';
 		$photobucket = '&ap=1';
 		$google = 'FlashVars="autoPlay=true"';
 	} else {
 		$autoplay2 = 'no';
+		$autoplay3 = 'false';
 		$photobucket = '';
 		$google = '';
 	}
@@ -170,18 +172,18 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	
 // Show if source is MetaCafe
     if ($source == 1) {
-       $showvideo = '<embed flashVars="playerVars=showStats=no|autoPlay=' . $autoplay2 . '" src="http://www.metacafe.com/fplayer/' . $vidid . '.swf" width="400" height="345" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>';
+       $showvideo = '<embed flashVars="playerVars=showStats=no|autoPlay=' . $autoplay2 . '" src="http://www.metacafe.com/fplayer/' . $vidid . '.swf" width="480" height="295" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>';
     }
 	
 // Show if source is iFilm/Spike
     if ($source == 2) {
-       $showvideo = '<embed width="480" height="360" src="http://www.spike.com/efp" quality="high" bgcolor="000000" name="efp" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="flvbaseclip=' . $vidid . '" allowfullscreen="true"> </embed>';
+       $showvideo = '<embed width="480" height="295" src="http://www.spike.com/efp" quality="high" bgcolor="000000" name="efp" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="flvbaseclip=' . $vidid . '" allowfullscreen="true"> </embed>';
     }
 	
 // Show if source is Photobucket
     if ($source == 3) {
        $vidid = str_replace( 'th_', '', $vidid);
-       $showvideo = '<embed width="448" height="361" type="application/x-shockwave-flash" wmode="transparent" src="http://i51.photobucket.com/player.swf?file=http://vid51.photobucket.com/albums/' . $vidid . '.flv' . $photobucket . '"></embed>';
+       $showvideo = '<embed width="480" height="295" type="application/x-shockwave-flash" wmode="transparent" src="http://i51.photobucket.com/player.swf?file=http://vid51.photobucket.com/albums/' . $vidid . '.flv' . $photobucket . '"></embed>';
     }
 	
 // Show if source is Google Video
@@ -201,7 +203,7 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	
 // Show if source is Blip.tv
     if ($source == 103) {
-       $showvideo = '<embed src="http://blip.tv/play/' . $vidid . '" type="application/x-shockwave-flash" width="425" height="350" allowscriptaccess="always" allowfullscreen="true"></embed>';
+       $showvideo = '<embed src="http://blip.tv/play/' . $vidid . '" type="application/x-shockwave-flash" width="480" height="295" allowscriptaccess="always" allowfullscreen="true"></embed>';
     }
 	
 // Show if source is ClipFish
@@ -226,7 +228,7 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	
 // Show if source is MyTube
     if ($source == 200) {
-       $showvideo = '<embed src="' . XOOPS_URL . '/modules/' . $xoopsModule -> getvar( 'dirname' ) . '/include/mediaplayer.swf" width="425" height="350" allowScriptAccess="always" allowFullScreen="true" flashvars="width=425&height=350&file=' . XOOPS_URL . '/' . $xoopsModuleConfig['videodir'] . '/' . $vidid.'&image=' . XOOPS_URL . '/' . $xoopsModuleConfig['videoimgdir'] . '/' . $screenshot . '"></embed>';
+       $showvideo = '<embed src="' . XOOPS_URL . '/modules/' . $xoopsModule -> getvar( 'dirname' ) . '/include/mediaplayer.swf" width="425" height="350" allowScriptAccess="always" allowFullScreen="true" flashvars="width=425&height=350&file=' . XOOPS_URL . '/' . $xoopsModuleConfig['videodir'] . '/' . $vidid.'&image=' . XOOPS_URL . '/' . $xoopsModuleConfig['videoimgdir'] . '/' . $screenshot . '&autostart=' . $autoplay3 . '"></embed>';
     }
 	
 return $showvideo;
