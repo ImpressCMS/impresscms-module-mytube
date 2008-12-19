@@ -1,7 +1,7 @@
 Changelog:
 
 =========================================================
-xx.xx.200x   1.05 xxxx
+xx.xx.200x   1.05 RC-1
 =========================================================
 - Updated JW FLV Player to version 4.2
 - Amount of category columns can be set from Preferences
@@ -9,6 +9,7 @@ xx.xx.200x   1.05 xxxx
 - Added autoplay option
 - Set players dimensions to 16:9 format
 - Added HQ possibility to YouTube
+- Added support for videoclips from Vimeo
 
 - Fixed bug: Random vertical block not working properly
 - Fixed some typos in css [xoops-magazine/mcdonald]
