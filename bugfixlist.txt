@@ -3,14 +3,18 @@ Changelog:
 =========================================================
 xx.xx.200x   1.05 xxxx
 =========================================================
+- Updated JW FLV Player to version 4.2
 - Amount of category columns can be set from Preferences
 - Displaying Rating features can be turned off
+- Added autoplay option
+- Set players dimensions to 16:9 format
+- Added HQ possibility to YouTube
 
 - Fixed bug: Random vertical block not working properly
 - Fixed some typos in css [xoops-magazine/mcdonald]
 - Fixed bug in banner statistics block
 
-- changed: references to class/xoopsmodule.php to kernel/module.php (vaughan)
+- changed: references to class/xoopsmodule.php to kernel/module.php [vaughan]
 
 =========================================================
 19.09.2008   1.04 Final
