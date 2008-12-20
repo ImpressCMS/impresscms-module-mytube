@@ -10,9 +10,7 @@
  * @package		module::tag
  */
 
-if (!defined("XOOPS_ROOT_PATH")) {
-	die("XOOPS root path not defined");
-}
+if ( !defined( 'XOOPS_ROOT_PATH' ) ) { die( 'XOOPS root path not defined' ); }
 
 /**
  * Get item fields:
@@ -30,11 +28,11 @@ if (!defined("XOOPS_ROOT_PATH")) {
  * 
  */
 
-function mytube_tag_iteminfo(&$items) {
+function mytube_tag_iteminfo( &$items ) {
   
     $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
 
-    if(empty($items) || !is_array($items)) {
+    if( empty( $items ) || !is_array( $items ) ) {
         return false; 
     } 
 
@@ -43,35 +41,35 @@ function mytube_tag_iteminfo(&$items) {
 
     $items_id = array(); 
 
-    foreach(array_keys($items) as $cat_id) {
+    foreach( array_keys( $items ) as $cat_id ) {
         // Some handling here to build the link upon catid 
             // If catid is not used, just skip it 
-        foreach(array_keys($items[$cat_id]) as $item_id) {
+        foreach( array_keys(  $items[$cat_id] ) as $item_id ) {
             // In article, the item_id is "art_id" 
-            $items_id[] = intval($item_id); 
+            $items_id[] = intval( $item_id ); 
         } 
     } 
 
-    foreach(array_keys($items) as $cat_id) {
-        foreach(array_keys($items[$cat_id]) as $item_id) {
-            $sql = "SELECT l.lid, l.cid as lcid, l.title as ltitle, l.published, l.cid, l.submitter, l.description, l.item_tag, c.title as ctitle FROM " . $xoopsDB -> prefix('xoopstube_videos') . " l, " . $xoopsDB -> prefix('xoopstube_cat') . " c WHERE l.lid=" . $item_id . " AND l.cid=c.cid AND l.status>0 ORDER BY l.published DESC";
-            $result = $xoopsDB -> query($sql);
-            $row = $xoopsDB -> fetchArray($result);
+    foreach( array_keys( $items ) as $cat_id ) {
+        foreach( array_keys( $items[$cat_id] ) as $item_id ) {
+            $sql = 'SELECT l.lid, l.cid as lcid, l.title as ltitle, l.published, l.cid, l.submitter, l.description, l.item_tag, c.title as ctitle FROM ' . $xoopsDB -> prefix('xoopstube_videos') . ' l, ' . $xoopsDB -> prefix('xoopstube_cat') . ' c WHERE l.lid=' . $item_id . ' AND l.cid=c.cid AND l.status>0 ORDER BY l.published DESC';
+            $result = $xoopsDB -> query( $sql );
+            $row = $xoopsDB -> fetchArray( $result );
             $lcid = $row['lcid'];
             $items[$cat_id][$item_id] = array(
-                "title"      => '<img src="' . XOOPS_URL . '/modules/' . $mydirname . '/images/icon/film.png" alt="" />&nbsp;' . $row['ltitle'],
-                "uid"        => $row['submitter'],
-                "link"       => "singlevideo.php?cid=$lcid&amp;lid=$item_id",
-                "time"       => $row['published'],
-                "tags"       => $row['item_tag'],
-                "content"    => $row['description']
+                'title'      => $row['ltitle'],
+                'uid'        => $row['submitter'],
+                'link'       => "singlevideo.php?cid=$lcid&amp;lid=$item_id",
+                'time'       => $row['published'],
+                'tags'       => $row['item_tag'],
+                'content'    => $row['description']
             ); 
         } 
     } 
 }
 
 /** Remove orphan tag-item links **/
-function mytube_tag_synchronization($mid) {
+function mytube_tag_synchronization( $mid ) {
   // Optional
 }
 ?>
