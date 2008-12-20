@@ -9,23 +9,23 @@ $mydirname = basename( dirname( __FILE__ ) );
 $mydirpath = dirname( __FILE__ );
 
 $modversion['name'] = _MI_XTUBE_NAME;
-$modversion['version'] = "1.04";
-$modversion['releasedate'] = "September 19, 2008";
-$modversion['status'] = "Final";
+$modversion['version'] = "1.05";
+$modversion['releasedate'] = "xxxxxxx xx, 200x";
+$modversion['status'] = "RC-1";
 $modversion['description'] = _MI_XTUBE_DESC;
 $modversion['license'] = "GNU General Public License (GPL)";
 $modversion['official'] = 1;
-if (defined("ICMS_VERSION_NAME")) {
-  $modversion['image'] = "images/mytube_ilogo.png";
+if ( defined( 'ICMS_VERSION_NAME' ) ) {
+  $modversion['image'] = 'images/mytube_ilogo.png';
 } else {
-  $modversion['image'] = "images/xtube_slogo.png";     // for backwards compatibility ;-)
+  $modversion['image'] = 'images/xtube_slogo.png';     // for backwards compatibility ;-)
 }
-$modversion['iconsmall'] = "images/xtube_iconsmall.png";
-$modversion['iconbig'] = "images/xtube_iconbig.png";
+$modversion['iconsmall'] = 'images/xtube_iconsmall.png';
+$modversion['iconbig'] = 'images/xtube_iconbig.png';
 $modversion['dirname'] = $mydirname ;
 
-$modversion['author'] = "McDonald";
-$modversion['credits'] = "WF-Projects Team. Based on the module WF-Links, thanks to the dream-team for some code snippits.";
+$modversion['author'] = 'McDonald';
+$modversion['credits'] = 'WF-Projects Team. Based on the module WF-Links, thanks to the dream-team for some code snippits.';
 $modversion['author_credits'] = _MI_XTUBE_AUTHOR_CREDITSTEXT;
 $modversion['developer_website_url'] = "http://members.lycos.nl/mcdonaldsstore/";
 $modversion['developer_website_name'] = "McDonalds Store";
@@ -56,8 +56,8 @@ $modversion['onUpdate'] = 'include/update.php';
 
 // Admin things
 $modversion['hasAdmin'] = 1;
-$modversion['adminindex'] = "admin/index.php";
-$modversion['adminmenu'] = "admin/menu.php";
+$modversion['adminindex'] = 'admin/index.php';
+$modversion['adminmenu'] = 'admin/menu.php';
 
 // Blocks
 $modversion['blocks'][1]['file'] = "xoopstube_top.php";

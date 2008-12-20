@@ -491,9 +491,9 @@ function xtube_adminmenu( $header = '', $menu = '', $extra = '', $scount = 4 ) {
     if ( empty( $menu ) ) {
         // You can change this part to suit your own module. Defining this here will save you form having to do this each time.
         $menu = array(
-            _AM_XTUBE_INDEXPAGE => "indexpage.php",
+			_AM_XTUBE_MVIDEOS => "index.php?op=edit",
             _AM_XTUBE_MCATEGORY => "category.php",
-            _AM_XTUBE_MVIDEOS => "index.php?op=edit",
+			_AM_XTUBE_INDEXPAGE => "indexpage.php",            
             _AM_XTUBE_MMYTUBE => "mytube.php?op=edit",
             _AM_XTUBE_MUPLOADS => "upload.php",
             _AM_XTUBE_VUPLOADS => "vupload.php",
