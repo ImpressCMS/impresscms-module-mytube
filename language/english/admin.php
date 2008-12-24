@@ -253,9 +253,10 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...<br />
 <b>Vimeo:</b> http://www.vimeo.com/<font color=#FF0000>2246499</font><br />
+<b>Megavideo:</b> http://www.megavideo.com/?v=<font color=#FF0000>J6YSRE0T</font><br />
 <b>MyTube: </b><font color=#FF0000>Take over from above selection menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "Picture url: " );
-define( "_AM_XTUBE_VIDEO_PICURLNOTE", "Picture url when source is: Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak, Veoh, Vimeo or Maktoob" );
+define( "_AM_XTUBE_VIDEO_PICURLNOTE", "Picture url when source is: Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak, Veoh, Vimeo, Megavideo or Maktoob" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Video Description: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Video Main Category: " );
 define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Set video offline?<br /><br /><span style='font-weight: normal;font-size: smaller;'>Video will not be viewable to all users</span>" );
@@ -499,4 +500,5 @@ define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "0 Turns this option off." );
 
 // Version 1.05 RC-1
 define( '_AM_XTUBE_VIMEO', 'Vimeo' );
+define( '_AM_XTUBE_MEGAVIDEO', 'Megavideo' );
 ?>

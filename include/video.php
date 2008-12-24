@@ -48,6 +48,9 @@ function xtube_returnsource($returnsource) {
 	case 108:
 		  $returnsource = _AM_XTUBE_VIMEO;
 		  break;
+	case 109:
+		  $returnsource = _AM_XTUBE_MEGAVIDEO;
+		  break;
     }
     return $returnsource;
 }
@@ -119,7 +122,7 @@ function xtube_videopublisher($vidid, $publisher, $source) {
   }
   
 // Determine if video source is Google Video for publisher
-  if ($source == 100 || 101 || 103 || 106 || 108) {
+  if ( $source == 100 || 101 || 103 || 106 || 108 || 109 ) {
      $publisher = $publisher;
   }
   
@@ -234,6 +237,11 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
        $showvideo = '<embed src="http://vimeo.com/moogaloop.swf?clip_id=' . $vidid . '&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1&autoplay=' . $autoplay . '" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" quality="best" width="400" height="321"></embed>'; 
     }
 	
+// Show if source is Megavideo 
+    if ($source == 109) { 
+       $showvideo = '<object width="640" height="363"><param name="movie" value="http://www.megavideo.com/v/' . $vidid . '"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.megavideo.com/v/' . $vidid . '" type="application/x-shockwave-flash" allowfullscreen="true" width="640" height="363"></embed></object>';
+	   }
+	   
 // Show if source is MyTube
     if ($source == 200) {
        $showvideo = '<embed src="' . XOOPS_URL . '/modules/' . $xoopsModule -> getvar( 'dirname' ) . '/include/mediaplayer.swf" width="425" height="350" allowScriptAccess="always" allowFullScreen="true" flashvars="width=425&height=350&file=' . XOOPS_URL . '/' . $xoopsModuleConfig['videodir'] . '/' . $vidid.'&image=' . XOOPS_URL . '/' . $xoopsModuleConfig['videoimgdir'] . '/' . $screenshot . '&autostart=' . $autoplay3 . '"></embed>';

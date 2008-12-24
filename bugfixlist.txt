@@ -10,6 +10,7 @@ xx.xx.200x   1.05 RC-1
 - Set players dimensions to 16:9 format
 - Added HQ possibility to YouTube
 - Added support for videoclips from Vimeo
+- Added support for videoclips from Megavideo
 
 - Fixed bug: Random vertical block not working properly
 - Fixed some typos in css [xoops-magazine/mcdonald]
