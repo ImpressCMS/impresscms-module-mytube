@@ -15,7 +15,7 @@ function edit( $lid = 0 )
 {
     global $xoopsDB, $xtubemyts, $mytree, $imagearray, $xoopsModuleConfig, $xoopsModule, $xoopsUser;
 
-    $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $lid;
+    $sql = 'SELECT * FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE lid=' . $lid;
     if ( !$result = $xoopsDB -> query( $sql ) ) {
         XoopsErrorHandler_HandleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
         return false;
@@ -36,7 +36,7 @@ function edit( $lid = 0 )
     $offline = $video_array['offline'] ? $video_array['offline'] : 0;
     $ipaddress = $video_array['ipaddress'] ? $video_array['ipaddress'] : 0;
     $notifypub = $video_array['notifypub'] ? $video_array['notifypub'] : 0;
-    $time = $video_array['time'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['time'] ) : '00:00';
+    $time = $video_array['time'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['time'] ) : '0:00:00';
     $keywords = $video_array['keywords'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['keywords'] ) : '';
     $item_tag = $video_array['item_tag'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['item_tag'] ) : '';
 
@@ -89,7 +89,7 @@ function edit( $lid = 0 )
     $sform -> addElement( new XoopsFormText( _AM_XTUBE_VIDEO_TITLE, 'title', 70, 255, $title ), true );
 
 //MyTube menu
-    $file_array = &xtubeLists :: getListTypeAsArray( XOOPS_ROOT_PATH . "/" . $xoopsModuleConfig['videodir'], $type = 'media' );
+    $file_array = &xtubeLists :: getListTypeAsArray( XOOPS_ROOT_PATH . '/' . $xoopsModuleConfig['videodir'], $type='media' );
     $indexfile_select = new XoopsFormSelect( '', 'vidid', $vidid );
     $indexfile_select -> addOptionArray( $file_array );
     $indexfile_tray = new XoopsFormElementTray( _AM_XTUBE_MYTUBEVIDEO, '&nbsp;' );
@@ -117,7 +117,7 @@ function edit( $lid = 0 )
     $sform -> addElement( new XoopsFormHidden( 'publisher', $publisher ) );
     
 // Time form
-    $sform -> addElement( new XoopsFormText( _AM_XTUBE_TIME, 'time', 5, 5, $time ), false);
+    $sform -> addElement( new XoopsFormText( _AM_XTUBE_TIME, 'time', 7, 7, $time ), false);
 
 // Category menu
     ob_start();
@@ -138,7 +138,7 @@ function edit( $lid = 0 )
 
 // Insert tags if Tag-module is installed
     if (xtube_tag_module_included()) {
-      include_once XOOPS_ROOT_PATH . "/modules/tag/include/formtag.php";
+      include_once XOOPS_ROOT_PATH . '/modules/tag/include/formtag.php';
       $text_tags = new XoopsFormTag("item_tag", 70, 255, $video_array['item_tag'], 0);
       $sform -> addElement( $text_tags );
     } else {
@@ -221,11 +221,11 @@ function edit( $lid = 0 )
 } 
 
 switch ( strtolower( $op ) ) {
-    case "edit":
+    case 'edit':
         edit( $lid );
         break;
 
-    case "save":
+    case 'save':
 
         $groups = isset( $_POST['groups'] ) ? $_POST['groups'] : array();
         $lid = ( !empty( $_POST['lid'] ) ) ? $_POST['lid'] : 0;
@@ -234,15 +234,15 @@ switch ( strtolower( $op ) ) {
         $status = ( !empty( $_POST['status'] ) ) ? $_POST['status'] : 2;
 
 // Get data from form
-        $screenshot = ( $_POST["screenshot"] != "blank.gif" ) ? $xtubemyts -> addslashes( $_POST["screenshot"] ) : '';
-        $vidid = $xtubemyts -> addslashes( trim( $_POST["vidid"] ) );
-        $title = $xtubemyts -> addslashes( trim( $_POST["title"] ) );
-        $descriptionb = $xtubemyts -> addslashes( trim( $_POST["descriptionb"] ) );
-        $time = $xtubemyts -> addslashes( trim( $_POST["time"] ) );
-        $keywords = $xtubemyts -> addslashes( trim( $_POST["keywords"] ) );
-        $item_tag = $xtubemyts -> addslashes( trim( $_POST["item_tag"] ) );
+        $screenshot = ( $_POST['screenshot'] != 'blank.gif' ) ? $xtubemyts -> addslashes( $_POST['screenshot'] ) : '';
+        $vidid = $xtubemyts -> addslashes( trim( $_POST['vidid'] ) );
+        $title = $xtubemyts -> addslashes( trim( $_POST['title'] ) );
+        $descriptionb = $xtubemyts -> addslashes( trim( $_POST['descriptionb'] ) );
+        $time = $xtubemyts -> addslashes( trim( $_POST['time'] ) );
+        $keywords = $xtubemyts -> addslashes( trim( $_POST['keywords'] ) );
+        $item_tag = $xtubemyts -> addslashes( trim( $_POST['item_tag'] ) );
         $submitter = $xoopsUser -> uid();
-        $publisher = $xtubemyts -> addslashes( trim( $_POST["publisher"] ) );
+        $publisher = $xtubemyts -> addslashes( trim( $_POST['publisher'] ) );
 
         $updated = ( isset( $_POST['was_published'] ) && $_POST['was_published'] == 0 ) ? 0 : time();
         $published =  strtotime($_POST['published']['date'] ) + $_POST['published']['time'];
@@ -341,7 +341,7 @@ switch ( strtolower( $op ) ) {
 
         break;
 
-    case "delete":
+    case 'delete':
         if ( xtube_cleanRequestVars( $_REQUEST, 'confirm', 0 ) ) {
             $title = xtube_cleanRequestVars( $_REQUEST, 'title', 0 );
             $sql = "DELETE FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $lid;
@@ -359,7 +359,7 @@ switch ( strtolower( $op ) ) {
             redirect_header( "index.php", 1, sprintf( _AM_XTUBE_VIDEO_FILEWASDELETED, $title ) );
             exit();
         } else {
-            $sql = "SELECT lid, title, item_tag, vidid FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . $lid;
+            $sql = 'SELECT lid, title, item_tag, vidid FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE lid=' . $lid;
             if ( !$result = $xoopsDB -> query( $sql ) ) {
                 XoopsErrorHandler_HandleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
                 return false;
@@ -429,7 +429,7 @@ switch ( strtolower( $op ) ) {
         } 
 
         if ( $totalvideos > 0 ) {
-            $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0  ORDER BY lid DESC" ;
+            $sql = 'SELECT * FROM ' . $xoopsDB -> prefix( 'xoopstube_videos' ) . ' WHERE published > 0  ORDER BY lid DESC' ;
             $published_array = $xoopsDB -> query( $sql, $xoopsModuleConfig['admin_perpage'], $start );
             $published_array_count = $xoopsDB -> getRowsNum( $xoopsDB -> query( $sql ) );
             xtube_videolistheader( _AM_XTUBE_MINDEX_PUBLISHEDVIDEO );
@@ -446,5 +446,4 @@ switch ( strtolower( $op ) ) {
         xoops_cp_footer();
         break;
 } 
-
 ?>
