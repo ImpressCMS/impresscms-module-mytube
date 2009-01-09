@@ -11,6 +11,7 @@ xx.xx.200x   1.05 RC-1
 - Added HQ possibility to YouTube
 - Added support for videoclips from Vimeo
 - Added support for videoclips from Megavideo
+- Added support for videoclips from Viddler
 
 - Fixed bug: Random vertical block not working properly
 - Fixed some typos in css [xoops-magazine/mcdonald]

@@ -264,9 +264,11 @@ define( "_AM_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...<br />
 <b>Vimeo:</b> http://www.vimeo.com/<font color=#FF0000>2246499</font><br />
-<b>MyTube: </b><font color=#FF0000>Neem over van bovenstaand selektie menu</font></small>" );
+<b>Megavideo:</b> http://www.megavideo.com/?v=<font color=#FF0000>J6YSRE0T</font><br />
+<b>Viddler:</b> http://www.viddler.com/player/<font color=#FF0000>d32d2b94</font>/ (see embed code)<br />
+<b>MyTube:</b> <font color=#FF0000>Take over from above selection menu</font></small>" );
 define( "_AM_XTUBE_VIDEO_PICURL", "Afbeeldings url" );
-define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, Maktoob, Veoh, Vimeo of LiveLeak is.</small>" );
+define( "_AM_XTUBE_VIDEO_PICURLNOTE", "<small>Afbeeldings url als de bron Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak, Veoh, Vimeo, Megavideo, Viddler of Maktoob is.</small>" );
 define( "_AM_XTUBE_VIDEO_DESCRIPTION", "Video omschrijving: " );
 define( "_AM_XTUBE_VIDEO_CATEGORY", "Video categorie: " );
 define( "_AM_XTUBE_VIDEO_FILESSTATUS", " Video offline plaatsen?<br /><br /><small><span style='font-weight: normal;'>Video zal niet zichbaar zijn.</span></small>" );
@@ -501,4 +503,6 @@ define( "_AM_XTUBE_IPAGE_LATESTTOTAL_DSC", "0 schakelt deze optie uit." );
 
 // Version 1.05 RC-1
 define( '_AM_XTUBE_VIMEO', 'Vimeo' );
+define( '_AM_XTUBE_MEGAVIDEO', 'Megavideo' );
+define( '_AM_XTUBE_VIDDLER', 'Viddler' );
 ?>

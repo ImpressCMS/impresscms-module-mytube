@@ -47,7 +47,7 @@ define( "_MD_XTUBE_EDIT", "Edit" );
 define( "_MD_XTUBE_THEREARE", "There are <b>%s</b> <i>Categories</i> and <b>%s</b> <i>Videos</i> listed" );
 define( "_MD_XTUBE_THEREIS", "There is <b>%s</b> <i>Category</i> and <b>%s</b> <i>Videos</i> listed" );
 define( "_MD_XTUBE_LATESTLIST", "Latest Listings" );
-define( "_MD_XTUBE_FILETITLE", "video Title: " );
+define( "_MD_XTUBE_FILETITLE", "Video title: " );
 define( "_MD_XTUBE_DLVIDID", "Video id-code: " );
 define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <small><b>YouTube:</b> http://www.youtube.com/watch?v=<font color=#FF0000>IsOtq-qCqZ4</font><br />
@@ -63,9 +63,10 @@ define( "_MD_XTUBE_VIDEO_DLVIDID_NOTE", "
 <b>Maktoob:</b> file=http://<font color=#FF0000>m003.maktoob.com/files/23/42/95531c25b690e48a3d69966b6a33b8d2/video/131102</font>.flv (from embed-code)<br />
 <b>Veoh:</b> http://www.veoh.com/videos/<font color=#FF0000>v15069875yApCz7r3</font>?jsonParams=...<br />
 <b>Vimeo:</b> http://www.vimeo.com/<font color=#FF0000>2246499</font><br />
-<b>Megavideo:</b> http://www.megavideo.com/?v=<font color=#FF0000>J6YSRE0T</font><br /></small>" );
+<b>Megavideo:</b> http://www.megavideo.com/?v=<font color=#FF0000>J6YSRE0T</font><br />
+<b>Viddler:</b> http://www.viddler.com/player/<font color=#FF0000>d32d2b94</font>/ (see embed code)</small>" );
 define( "_MD_XTUBE_VIDEO_PICURL", "Picture url: " );
-define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak, Veoh, Vimeo or Maktoob</small>" );
+define( "_MD_XTUBE_VIDEO_PICURLNOTE", "<small>Picture url when source is Google Video, MySpace TV, DailyMotion, Blip.tv, ClipFish, LiveLeak, Veoh, Vimeo, Viddler or Maktoob</small>" );
 define( "_MD_XTUBE_VIDSOURCE", "Video source:" );
 define( "_MD_XTUBE_YOUTUBE", "YouTube" );
 define( "_MD_XTUBE_METACAFE", "MetaCafe" );
@@ -209,4 +210,5 @@ define( "_MD_XTUBE_MODIFYNOTALLOWED", "You're not allowed to modify others video
 // Version 1.05 RC-1
 define( '_MD_XTUBE_VIMEO', 'Vimeo' );
 define( '_MD_XTUBE_MEGAVIDEO', 'Megavideo' );
+define( '_MD_XTUBE_VIDDLER', 'Viddler' );
 ?>

@@ -36,9 +36,6 @@ function xtube_returnsource($returnsource) {
     case 105:
           $returnsource = _AM_XTUBE_LIVELEAK;
           break;
-    case 200:
-          $returnsource = _AM_XTUBE_MYTUBE;
-          break;
     case 106:
           $returnsource = _AM_XTUBE_MAKTOOB;
           break;
@@ -51,6 +48,12 @@ function xtube_returnsource($returnsource) {
 	case 109:
 		  $returnsource = _AM_XTUBE_MEGAVIDEO;
 		  break;
+	case 110:
+		  $returnsource = _AM_XTUBE_VIDDLER;
+		  break;
+    case 200:
+          $returnsource = _AM_XTUBE_MYTUBE;
+          break;
     }
     return $returnsource;
 }
@@ -146,6 +149,11 @@ function xtube_videopublisher($vidid, $publisher, $source) {
      $publisher = '<a href="http://www.veoh.com/users/' . $publisher .'" target="_blank">' . $publisher . '</a>';
   }
   
+// Determine if video source is Viddler for publisher
+  if ($source == 110) {
+     $publisher = '<a href="http://www.viddler.com/explore/' . $publisher .'/" target="_blank">' . $publisher . '</a>';
+  }
+  
 // Determine if video source is MyTube for publisher
   if ($source == 200) {
      $publisher = $publisher;
@@ -164,11 +172,13 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 		$autoplay3 = 'true';
 		$photobucket = '&ap=1';
 		$google = 'FlashVars="autoPlay=true"';
+		$viddler = 't';
 	} else {
 		$autoplay2 = 'no';
 		$autoplay3 = 'false';
 		$photobucket = '';
 		$google = '';
+		$viddler = 'f';
 	}
 	
 // Show if source is YouTube
@@ -239,8 +249,13 @@ function xtube_showvideo($vidid, $source, $screenshot, $picurl) {
 	
 // Show if source is Megavideo 
     if ($source == 109) { 
-       $showvideo = '<object width="640" height="363"><param name="movie" value="http://www.megavideo.com/v/' . $vidid . '"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.megavideo.com/v/' . $vidid . '" type="application/x-shockwave-flash" allowfullscreen="true" width="640" height="363"></embed></object>';
+       $showvideo = '<embed src="http://www.megavideo.com/v/' . $vidid . '" type="application/x-shockwave-flash" allowfullscreen="true" width="640" height="363"></embed>';
 	   }
+	   
+// Show if source is Viddler 
+    if ($source == 110) { 
+       $showvideo = '<embed src="http://www.viddler.com/player/' . $vidid . '/" width="437" height="392" type="application/x-shockwave-flash" allowScriptAccess="always" flashvars="autoplay=' . $viddler . '" allowFullScreen="true" name="viddler_' . $vidid . '" ></embed>';
+	   }	   
 	   
 // Show if source is MyTube
     if ($source == 200) {
