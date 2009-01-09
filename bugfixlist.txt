@@ -16,6 +16,7 @@ xx.xx.200x   1.05 RC-1
 - Fixed bug: Random vertical block not working properly
 - Fixed some typos in css [xoops-magazine/mcdonald]
 - Fixed bug in banner statistics block
+- Fixed: category permissions will be deleted when category is deleted
 
 - changed: references to class/xoopsmodule.php to kernel/module.php [vaughan]
 
