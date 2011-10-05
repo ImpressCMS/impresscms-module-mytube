@@ -6,7 +6,7 @@ Uns wurde mitgeteilt dass das Video  {X_TITLE} welches von Ihnen am {X_SUB_DATE}
 
 Könnten Sie bitte der URL unten folgen und die Videoinformationen ändern bzw. korrigieren.
 
-Videolink: {X_LINKLOAD}
+Videolink: {X_VIDEOLOAD}
 
 Sollten die Informationen nicht geändert werden sehen wir uns gezwungen das Video in naher zukunft aus der Datenbank zu entfernen
 Wenn sie Problem haben, oder Hilfe brauchen um die Informationen zu ändern nehemn Sie bite Kontakt mit uns auf.

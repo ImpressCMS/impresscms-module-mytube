@@ -1,48 +1,71 @@
 <?php
 /**
- * $Id: submit.php
- * Module: MyTube
- */
+* MyTube - a multicategory video management module for ImpressCMS
+*
+* Based upon WF-Links
+*
+* File: submit.php
+*
+* @copyright		http://www.xoops.org/ The XOOPS Project
+* @copyright		XOOPS_copyrights.txt
+* @copyright		http://www.impresscms.org/ The ImpressCMS Project
+* @license		GNU General Public License (GPL)
+*				a copy of the GNU license is enclosed.
+* ----------------------------------------------------------------------------------------------------------
+* @package		WF-Links 
+* @since			1.03
+* @author		John N
+* ----------------------------------------------------------------------------------------------------------
+* 				MyTube
+* @since			1.00
+* @author		McDonald
+* @version		$Id$
+*/
 
 include 'header.php';
-include XOOPS_ROOT_PATH . '/header.php';
-include XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
-$mytree = new XoopsTree( $xoopsDB -> prefix( 'xoopstube_cat' ), 'cid', 'pid' );
+$mytree = new icms_view_Tree( icms::$xoopsDB -> prefix( 'mytube_cat' ), 'cid', 'pid' );
 
-global $xoopsModule, $xtubemyts, $xoopsModuleConfig;
+//$xoopsTpl -> assign( 'icms_module_header', '<link rel="stylesheet" type="text/css" href="' .  ICMS_URL . '/mytubestyle.css" />' );
 
-$xoopsTpl->assign("xoops_module_header", '<link rel="stylesheet" type="text/css" href="' .  xoopstube_url . '/xtubestyle.css" />');
+$cid = intval( mytube_cleanRequestVars( $_REQUEST, 'cid', 0 ) );
+$lid = intval( mytube_cleanRequestVars( $_REQUEST, 'lid', 0 ) );
 
-$cid = intval( xtube_cleanRequestVars( $_REQUEST, 'cid', 0 ) );
-$lid = intval( xtube_cleanRequestVars( $_REQUEST, 'lid', 0 ) );
-
-if ( false == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
-    redirect_header( "index.php", 1, _MD_XTUBE_NOPERMISSIONTOPOST );
+if ( false == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
+    redirect_header( 'index.php', 1, _MD_MYTUBE_NOPERMISSIONTOPOST );
     exit();
 } 
 
-if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
-    if ( xtube_cleanRequestVars( $_REQUEST, 'submit', 0 ) ) {
-        if ( false == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
-            redirect_header( "index.php", 1, _MD_XTUBE_NOPERMISSIONTOPOST );
+if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
+    if ( mytube_cleanRequestVars( $_REQUEST, 'submit', 0 ) ) {
+	
+		// Verify captcha code
+		if ( $icmsConfigUser['use_captcha'] == true ) {
+			$icmsCaptcha = IcmsCaptcha::instance(); 
+			if ( ! $icmsCaptcha -> verify( true ) ) { 
+				redirect_header( 'submit.php', 2, $icmsCaptcha -> getMessage() ); 
+			} 
+		} 
+		
+        if ( false == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
+            redirect_header( 'index.php', 1, _MD_MYTUBE_NOPERMISSIONTOPOST );
             exit();
         } 
 
-        $submitter = ( is_object( $xoopsUser ) && !empty( $xoopsUser ) ) ? $xoopsUser -> getVar( 'uid' ) : 0;
-        $vidsource = xtube_cleanRequestVars( $_REQUEST, 'vidsource', 0 );
-        $offline = xtube_cleanRequestVars( $_REQUEST, 'offline', 0 );
-        $notifypub = xtube_cleanRequestVars( $_REQUEST, 'notifypub', 0 );
-        $approve = xtube_cleanRequestVars( $_REQUEST, 'approve', 0 );
-        $vidrating = xtube_cleanRequestVars( $_REQUEST, 'vidrating', 0 );
-        $vidid = $xtubemyts -> addslashes( ltrim($_POST["vidid"] ) );
-        $title = $xtubemyts -> addslashes( ltrim( $_REQUEST["title"] ) );
-        $descriptionb = $xtubemyts -> addslashes( ltrim( $_REQUEST["descriptionb"] ) );
-        $publisher = $xtubemyts -> addslashes( trim( $_REQUEST["publisher"] ) );
-        $time = $xtubemyts -> addslashes( ltrim( $_REQUEST["time"] ) );
-        $keywords = $xtubemyts -> addslashes( trim(  $_REQUEST["keywords"] ) );
-        $item_tag = $xtubemyts -> addslashes( ltrim( $_REQUEST["item_tag"] ) );
-        $picurl = $xtubemyts -> addslashes( ltrim( $_REQUEST["picurl"] ) );
+        $submitter = ( is_object( icms::$user ) && !empty( icms::$user ) ) ? icms::$user -> getVar( 'uid' ) : 0;
+        $vidsource = mytube_cleanRequestVars( $_REQUEST, 'vidsource', 0 );
+        $offline = mytube_cleanRequestVars( $_REQUEST, 'offline', 0 );
+        $notifypub = mytube_cleanRequestVars( $_REQUEST, 'notifypub', 0 );
+        $approve = mytube_cleanRequestVars( $_REQUEST, 'approve', 0 );
+        $vidrating = mytube_cleanRequestVars( $_REQUEST, 'vidrating', 0 );
+        $vidid = icms_core_DataFilter::addSlashes( ltrim($_POST['vidid'] ) );
+        $title = icms_core_DataFilter::addSlashes( ltrim( $_REQUEST['title'] ) );
+        $descriptionb = icms_core_DataFilter::addSlashes( ltrim( $_REQUEST['descriptionb'] ) );
+        $publisher = icms_core_DataFilter::addSlashes( trim( $_REQUEST['publisher'] ) );
+        $time = icms_core_DataFilter::addSlashes( ltrim( $_REQUEST['time'] ) );
+        $keywords = icms_core_DataFilter::addSlashes( trim(  $_REQUEST['keywords'] ) );
+        $item_tag = icms_core_DataFilter::addSlashes( ltrim( $_REQUEST['item_tag'] ) );
+        $picurl = icms_core_DataFilter::addSlashes( ltrim( $_REQUEST['picurl'] ) );
         $date = time();
         $publishdate = 0;
         $ipaddress = $_SERVER['REMOTE_ADDR'];
@@ -50,142 +73,153 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
         if ( $lid == 0 ) {
             $status = 0;
             $publishdate = 0;
-            $message = _MD_XTUBE_THANKSFORINFO;
-            if ( true == xtube_checkgroups( $cid, 'XTubeAutoApp' ) ) {
+            $message = _MD_MYTUBE_THANKSFORINFO;
+            if ( true == mytube_checkgroups( $cid, 'MyTubeAutoApp' ) ) {
                 $publishdate = time();
                 $status = 1;
-                $message = _MD_XTUBE_ISAPPROVED;
+                $message = _MD_MYTUBE_ISAPPROVED;
             } 
-            $sql = "INSERT INTO " . $xoopsDB -> prefix( 'xoopstube_videos' ) . "	(lid, cid, title, vidid, submitter, publisher, status, date, hits, rating, votes, comments, vidsource, published, expired, offline, description, ipaddress, notifypub, vidrating, time, keywords, item_tag, picurl) ";
+            $sql = 'INSERT INTO ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . '	(lid, cid, title, vidid, submitter, publisher, status, date, hits, rating, votes, comments, vidsource, published, expired, offline, description, ipaddress, notifypub, vidrating, time, keywords, item_tag, picurl) ';
             $sql .= " VALUES 	('', $cid, '$title', '$vidid', '$submitter', '$publisher', '$status', '$date', 0, 0, 0, 0, '$vidsource', '$publishdate', 0, '$offline', '$descriptionb', '$ipaddress', '$notifypub', '$vidrating', '$time', '$keywords', '$item_tag', '$picurl')";
-            if ( !$result = $xoopsDB -> query( $sql ) ) {
-                $_error = $xoopsDB -> error() . " : " . $xoopsDB -> errno();
-                XoopsErrorHandler_HandleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
+            if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
+                $_error = icms::$xoopsDB -> error() . ' : ' . icms::$xoopsDB -> errno();
+                icms::$logger -> handleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
             }
             $newid = mysql_insert_id();
+			
+			// increase user post counter
+			user_posts( $submitter, 1 );
         
 // Add item_tag to Tag-module
             if ( $lid == 0) {
-                 $tagupdate = xtube_tagupdate($newid, $item_tag);
+                 $tagupdate = mytube_tagupdate( $newid, $item_tag );
             } else {
-                 $tagupdate = xtube_tagupdate($lid, $item_tag);
+                 $tagupdate = mytube_tagupdate( $lid, $item_tag );
             }
 
 // Notify of new link (anywhere) and new link in category
-            $notification_handler = &xoops_gethandler( 'notification' );
+            $notification_handler = icms::handler('icms_data_notification');
 
             $tags = array();
             $tags['VIDEO_NAME'] = $title;
-            $tags['VIDEO_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/singlevideo.php?cid=' . $cid . '&amp;lid=' . $newid;
+            $tags['VIDEO_URL'] = ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/singlevideo.php?cid=' . $cid . '&amp;lid=' . $newid;
             
-            $sql = "SELECT title FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " WHERE cid=" . $cid;
-            $result = $xoopsDB -> query( $sql );
-            $row = $xoopsDB -> fetchArray( $result );
+            $sql = 'SELECT title FROM ' . icms::$xoopsDB -> prefix( 'mytube_cat' ) . ' WHERE cid=' . $cid;
+            $result = icms::$xoopsDB -> query( $sql );
+            $row = icms::$xoopsDB -> fetchArray( $result );
 
             $tags['CATEGORY_NAME'] = $row['title'];
-            $tags['CATEGORY_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/viewcat.php?cid=' . $cid;
-            if ( true == xtube_checkgroups( $cid, 'XTubeAutoApp' ) ) {
+            $tags['CATEGORY_URL'] = ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/viewcat.php?cid=' . $cid;
+            if ( true == mytube_checkgroups( $cid, 'MyTubeAutoApp' ) ) {
                 $notification_handler -> triggerEvent( 'global', 0, 'new_video', $tags );
                 $notification_handler -> triggerEvent( 'category', $cid, 'new_video', $tags );
-                redirect_header( 'index.php', 2, _MD_XTUBE_ISAPPROVED );
+                redirect_header( 'index.php', 2, _MD_MYTUBE_ISAPPROVED );
             } else {
-                $tags['WAITINGFILES_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/admin/newvideos.php';
+                $tags['WAITINGFILES_URL'] = ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/admin/newvideos.php';
                 $notification_handler -> triggerEvent( 'global', 0, 'video_submit', $tags );
                 $notification_handler -> triggerEvent( 'category', $cid, 'video_submit', $tags );
                 if ( $notifypub ) {
-                    include_once XOOPS_ROOT_PATH . '/include/notification_constants.php';
+                    include_once ICMS_ROOT_PATH . '/include/notification_constants.php';
                     $notification_handler -> subscribe( 'video', $newid, 'approve', XOOPS_NOTIFICATION_MODE_SENDONCETHENDELETE );
                 } 
-                redirect_header( 'index.php', 2, _MD_XTUBE_THANKSFORINFO );
+                redirect_header( 'index.php', 2, _MD_MYTUBE_THANKSFORINFO );
             } 
         } else {
-            if ( true == xtube_checkgroups( $cid, 'XTubeAutoApp' ) || $approve == 1 ) {
+            if ( true == mytube_checkgroups( $cid, 'MyTubeAutoApp' ) || $approve == 1 ) {
                 $updated = time();
-                $sql = "UPDATE " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " SET cid=$cid, title='$title', vidid='$vidid', publisher='$publisher', updated='$updated', offline='$offline', description='$descriptionb', ipaddress='$ipaddress', notifypub='$notifypub', vidrating='$vidrating', time='$time', keywords='$keywords', item_tag='$item_tag', picurl='$picurl' WHERE lid =" . $lid;
-                if ( !$result = $xoopsDB -> query( $sql ) ) {
-                    $_error = $xoopsDB -> error() . " : " . $xoopsDB -> errno();
-                    XoopsErrorHandler_HandleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
+                $sql = "UPDATE " . icms::$xoopsDB -> prefix( 'mytube_videos' ) . " SET cid=$cid, title='$title', vidid='$vidid', publisher='$publisher', updated='$updated', offline='$offline', description='$descriptionb', ipaddress='$ipaddress', notifypub='$notifypub', vidrating='$vidrating', time='$time', keywords='$keywords', item_tag='$item_tag', picurl='$picurl' WHERE lid =" . $lid;
+                if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
+                    $_error = icms::$xoopsDB -> error() . " : " . icms::$xoopsDB -> errno();
+					icms::$logger -> handleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
                 } 
 
-                $notification_handler = &xoops_gethandler( 'notification' );
+                $notification_handler = icms::handler('icms_data_notification');
                 $tags = array();
                 $tags['VIDEO_NAME'] = $title;
-                $tags['VIDEO_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/singlevideo.php?cid=' . $cid . '&amp;lid=' . $lid;
-                $sql = "SELECT title FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " WHERE cid=" . $cid;
-                $result = $xoopsDB -> query( $sql );
-                $row = $xoopsDB -> fetchArray( $result );
+                $tags['VIDEO_URL'] = ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/singlevideo.php?cid=' . $cid . '&amp;lid=' . $lid;
+                $sql = "SELECT title FROM " . icms::$xoopsDB -> prefix( 'mytube_cat' ) . " WHERE cid=" . $cid;
+                $result = icms::$xoopsDB -> query( $sql );
+                $row = icms::$xoopsDB -> fetchArray( $result );
                 $tags['CATEGORY_NAME'] = $row['title'];
-                $tags['CATEGORY_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/viewcat.php?cid=' . $cid;
+                $tags['CATEGORY_URL'] = ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/viewcat.php?cid=' . $cid;
 
                 $notification_handler -> triggerEvent( 'global', 0, 'new_video', $tags );
                 $notification_handler -> triggerEvent( 'category', $cid, 'new_video', $tags );
-                $_message = _MD_XTUBE_ISAPPROVED;
+                $_message = _MD_MYTUBE_ISAPPROVED;
             } else {
-                $submitter_array = $xoopsDB -> fetchArray( $xoopsDB -> query( "SELECT submitter FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . intval( $lid ) ) );
-                $modifysubmitter = $xoopsUser -> uid();
+                $submitter_array = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( 'SELECT submitter FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . intval( $lid ) ) );
+                $modifysubmitter = icms::$user -> getVar( 'uid' );
                 $requestid = $modifysubmitter;
                 $requestdate = time();
-                $updated = xtube_cleanRequestVars( $_REQUEST, 'up_dated', time() );
+                $updated = mytube_cleanRequestVars( $_REQUEST, 'up_dated', time() );
                 if ( $modifysubmitter == $submitter_array['submitter'] ) {
-                  $sql = "INSERT INTO " . $xoopsDB -> prefix( 'xoopstube_mod' ) . " (requestid, lid, cid, title, vidid, publisher, vidsource, description, modifysubmitter, requestdate, time, keywords, item_tag, picurl)";
+                  $sql = 'INSERT INTO ' . icms::$xoopsDB -> prefix( 'mytube_mod' ) . ' (requestid, lid, cid, title, vidid, publisher, vidsource, description, modifysubmitter, requestdate, time, keywords, item_tag, picurl)';
                   $sql .= " VALUES ('', $lid, $cid, '$title', '$vidid', '$publisher', '$vidsource', '$descriptionb', '$modifysubmitter', '$requestdate', '$time', '$keywords', '$item_tag', '$picurl')";
-                  if ( !$result = $xoopsDB -> query( $sql ) ) {
-                    $_error = $xoopsDB -> error() . " : " . $xoopsDB -> errno();
-                    XoopsErrorHandler_HandleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
+                  if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
+                    $_error = icms::$xoopsDB -> error() . " : " . icms::$xoopsDB -> errno();
+                    icms::$logger -> handleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
                   }
                 } else {
-                  redirect_header( "index.php", 2, _MD_XTUBE_MODIFYNOTALLOWED );
+                  redirect_header( 'index.php', 2, _MD_MYTUBE_MODIFYNOTALLOWED );
                 }
 
                 $tags = array();
-                $tags['MODIFYREPORTS_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/admin/index.php?op=listModReq';
-                $notification_handler = &xoops_gethandler( 'notification' );
+                $tags['MODIFYREPORTS_URL'] = ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/admin/index.php?op=listModReq';
+                $notification_handler = icms::handler('icms_data_notification');
                 $notification_handler -> triggerEvent( 'global', 0, 'video_modify', $tags );
 
-                $tags['WAITINGFILES_URL'] = XOOPS_URL . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/admin/index.php?op=listNewvideos';
+                $tags['WAITINGFILES_URL'] = ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/admin/index.php?op=listNewvideos';
                 $notification_handler -> triggerEvent( 'global', 0, 'video_submit', $tags );
                 $notification_handler -> triggerEvent( 'category', $cid, 'video_submit', $tags );
                 if ( $notifypub ) {
-                    include_once XOOPS_ROOT_PATH . '/include/notification_constants.php';
+                    include_once ICMS_ROOT_PATH . '/include/notification_constants.php';
                     $notification_handler -> subscribe( 'video', $newid, 'approve', XOOPS_NOTIFICATION_MODE_SENDONCETHENDELETE );
                 }
-                $_message = _MD_XTUBE_THANKSFORINFO;
+                $_message = _MD_MYTUBE_THANKSFORINFO;
             }
-            redirect_header( "index.php", 2, $_message );
+            redirect_header( 'index.php', 2, $_message );
         }
     } else {
-        global $xoopsModuleConfig;
 
-        $approve = xtube_cleanRequestVars( $_REQUEST, 'approve', 0 );
+        $approve = mytube_cleanRequestVars( $_REQUEST, 'approve', 0 );
 
 // Show disclaimer
-        if ( $xoopsModuleConfig['showdisclaimer'] && !isset( $_GET['agree'] ) && $approve == 0 ) {
-            echo "<br /><div style='text-align: center;'>" . xtube_imageheader() . "</div><br />\n";
-            echo "<h4>" . _MD_XTUBE_DISCLAIMERAGREEMENT . "</h4>\n";
-            echo "<div>" . $xtubemyts -> displayTarea( $xoopsModuleConfig['disclaimer'], 1, 1, 1, 1, 1 ) . "</div>\n";
-            echo "<form action='submit.php' method='post'>\n";
-            echo "<div style='text-align: center;'>" . _MD_XTUBE_DOYOUAGREE . "</b><br /><br />\n";
-            echo "<input type='button' onclick='location=\"submit.php?agree=1\"' class='formButton' value='" . _MD_XTUBE_AGREE . "' alt='" . _MD_XTUBE_AGREE . "' />\n";
-            echo "&nbsp;\n";
-            echo "<input type='button' onclick='location=\"index.php\"' class='formButton' value='" . _CANCEL . "' alt='" . _CANCEL . "' />\n";
-            echo "</div></form>\n";
-            include XOOPS_ROOT_PATH . '/footer.php';
-            exit();
-        }
-        echo "<br /><div style='text-align: center;'>" . xtube_imageheader() . "</div><br />\n";
-        echo "<div>" . _MD_XTUBE_SUB_SNEWMNAMEDESC . "</div>\n<br />\n";
-        echo "<div class='xoopstube_singletitle'>" . _MD_XTUBE_SUBMITCATHEAD . "</div>\n";
+        if ( icms::$module -> config['showdisclaimer'] && !isset( $_GET['agree'] ) && $approve == 0 ) {
+		
+			$xoopsOption['template_main'] = 'mytube_disclaimer.html';
+			include_once ICMS_ROOT_PATH . '/header.php';	
+		
+			$xoopsTpl -> assign( 'image_header', mytube_imageheader() );
+			$xoopsTpl -> assign( 'disclaimer', icms_core_DataFilter::checkVar( icms::$module -> config['disclaimer'], 'html' ) );
+			$xoopsTpl -> assign( 'cancel_location', ICMS_URL . '/modules/' . $mydirname . '/index.php' );
+			$xoopsTpl -> assign( 'link_disclaimer', false );
+			$xoopsTpl -> assign( 'module_dir', icms::$module -> getVar( 'dirname') );
+			if ( !isset( $_REQUEST['lid'] ) ) {
+				$xoopsTpl -> assign( 'agree_location', ICMS_URL . '/modules/' . $mydirname . '/submit.php?agree=1' );
+			} elseif ( isset( $_REQUEST['lid'] ) ) {
+				$lid = intval( $_REQUEST['lid'] );
+				$xoopsTpl -> assign( 'agree_location', ICMS_URL . '/modules/' . $mydirname . '/submit.php?agree=1&amp;lid=' . intval( $lid ) );
+			}
+	        include ICMS_ROOT_PATH . '/footer.php';
+	        exit();
+		}
+		
+		include_once ICMS_ROOT_PATH . '/header.php';
+		if ( mytube_imageheader() != '' ) {
+			echo '<div style="clear: both; text-align: center;">' . mytube_imageheader() . '</div><br />';
+		}
+        echo '<div>' . _MD_MYTUBE_SUB_SNEWMNAMEDESC . '</div>';
 
-        $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE lid=" . intval( $lid );
-        $video_array = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
+        $sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . intval( $lid );
+        $video_array = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
         $lid = $video_array['lid'] ? $video_array['lid'] : 0;
         $cid = $video_array['cid'] ? $video_array['cid'] : 0;
-        $title = $video_array['title'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['title'] ) : '';
-        $vidid = $video_array['vidid'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['vidid'] ) : '';
-        $publisher = $video_array['publisher'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['publisher'] ) : '';
-        $screenshot = $video_array['screenshot'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['screenshot'] ) : '';
-        $descriptionb = $video_array['description'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['description'] ) : '';
+        $title = $video_array['title'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['title'] ) : '';
+        $vidid = $video_array['vidid'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['vidid'] ) : '';
+        $publisher = $video_array['publisher'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['publisher'] ) : '';
+        $screenshot = $video_array['screenshot'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['screenshot'] ) : '';
+        $descriptionb = $video_array['description'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['description'] ) : '';
         $published = $video_array['published'] ? $video_array['published'] : 0;
         $expired = $video_array['expired'] ? $video_array['expired'] : 0;
         $updated = $video_array['updated'] ? $video_array['updated'] : 0;
@@ -194,127 +228,136 @@ if ( true == xtube_checkgroups( $cid, 'XTubeSubPerm' ) ) {
         $ipaddress = $video_array['ipaddress'] ? $video_array['ipaddress'] : 0;
         $notifypub = $video_array['notifypub'] ? $video_array['notifypub'] : 0;
         $vidrating = $video_array['vidrating'] ? $video_array['vidrating'] : 1;
-        $time = $video_array['time'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['time'] ) : '0:00:00';
-        $keywords = $video_array['keywords'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['keywords'] ) : '';
-        $item_tag = $video_array['item_tag'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['item_tag'] ) : '';
-        $picurl = $video_array['picurl'] ? $xtubemyts -> htmlSpecialCharsStrip( $video_array['picurl'] ) : 'http://';
+        $time = $video_array['time'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['time'] ) : '0:00:00';
+        $keywords = $video_array['keywords'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['keywords'] ) : '';
+        $item_tag = $video_array['item_tag'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['item_tag'] ) : '';
+        $picurl = $video_array['picurl'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['picurl'] ) : 'http://';
 
-     	$sform = new XoopsThemeForm( '', "storyform", xoops_getenv( 'PHP_SELF' ) );
+     	$sform = new icms_form_Theme( _MD_MYTUBE_SUBMITCATHEAD, 'storyform', '' );
         $sform -> setExtra( 'enctype="multipart/form-data"' );
+		
+		mytube_noindexnofollow();
         
 // Video title form
-        $sform -> addElement( new XoopsFormText( _MD_XTUBE_FILETITLE, 'title', 70, 255, $title ), true );
+        $sform -> addElement( new icms_form_elements_Text( _MD_MYTUBE_FILETITLE, 'title', 70, 255, $title ), true );
     
 // Video source form
-    $vidsource_array = array( 0   => _MD_XTUBE_YOUTUBE,
-                              1   => _MD_XTUBE_METACAFE,
-                              2   => _MD_XTUBE_IFILM,
-                              3   => _MD_XTUBE_PHOTOBUCKET,
-                              100 => _MD_XTUBE_GOOGLEVIDEO,
-                              101 => _MD_XTUBE_MYSPAVETV,
-                              102 => _MD_XTUBE_DAILYMOTION,
-                              103 => _MD_XTUBE_BLIPTV,
-                              104 => _MD_XTUBE_CLIPFISH,
-                              105 => _MD_XTUBE_LIVELEAK,
-                              106 => _MD_XTUBE_MAKTOOB,
-                              107 => _MD_XTUBE_VEOH,
-							  108 => _MD_XTUBE_VIMEO,
-							  109 => _MD_XTUBE_MEGAVIDEO,
-							  110 => _MD_XTUBE_VIDDLER
-                              );
-    $vidsource_select = new XoopsFormSelect( _MD_XTUBE_VIDSOURCE, 'vidsource', $vidsource );
+    $vidsource_array = array(   0 => _MD_MYTUBE_YOUTUBE,
+                                1 => _MD_MYTUBE_METACAFE,
+                                2 => _MD_MYTUBE_IFILM,
+                                3 => _MD_MYTUBE_PHOTOBUCKET,
+							    4 => _MD_MYTUBE_VIDDLER,
+                         //     100 => _MD_MYTUBE_GOOGLEVIDEO,
+                              101 => _MD_MYTUBE_MYSPAVETV,
+                              102 => _MD_MYTUBE_DAILYMOTION,
+                              103 => _MD_MYTUBE_BLIPTV,
+                              104 => _MD_MYTUBE_CLIPFISH,
+                              105 => _MD_MYTUBE_LIVELEAK,
+                              106 => _MD_MYTUBE_MAKTOOB,
+                              107 => _MD_MYTUBE_VEOH,
+							  108 => _MD_MYTUBE_VIMEO,
+							  109 => _MD_MYTUBE_MEGAVIDEO,
+							  110 => _MD_MYTUBE_NATIOGEO );
+    $vidsource_select = new icms_form_elements_Select( _MD_MYTUBE_VIDSOURCE, 'vidsource', $vidsource );
     $vidsource_select -> addOptionArray( $vidsource_array );
     $sform -> addElement( $vidsource_select, false );
 	
 // Video code form
-    $videocode = new XoopsFormText( _MD_XTUBE_DLVIDID, 'vidid', 70, 512, $vidid );
-    $videocode -> setDescription( "<br /><small>" . _MD_XTUBE_VIDEO_DLVIDIDDSC . "</small>");
-    $sform -> addElement($videocode, true);
-    $note = _MD_XTUBE_VIDEO_DLVIDID_NOTE;
-    $sform -> addElement(new XoopsFormLabel('',$note));
+    $videocode = new icms_form_elements_Text( _MD_MYTUBE_DLVIDID, 'vidid', 70, 512, $vidid );
+    $videocode -> setDescription( '<small>' . _MD_MYTUBE_VIDEO_DLVIDIDDSC . '</small>');
+    $sform -> addElement( $videocode, true );
+    $sform -> addElement( new icms_form_elements_Label( '', _MD_MYTUBE_VIDEO_DLVIDID_NOTE ) );
 
 // Picture url form
-   $picurl = new XoopsFormText( _MD_XTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
-   $picurl -> setDescription( "<br /><span style='font-weight: normal;font-size: smaller;'>" . _MD_XTUBE_VIDEO_PICURLNOTE . "</span>" );
-   $sform -> addElement($picurl, false);
+   $picurl = new icms_form_elements_Text( _MD_MYTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
+   $picurl -> setDescription( '<span style="font-weight: normal;">' . _MD_MYTUBE_VIDEO_PICURLNOTE . '</span>' );
+   $sform -> addElement( $picurl, false );
 
 // Video publisher form
-    $sform -> addElement( new XoopsFormText( _MD_XTUBE_VIDEO_PUBLISHER, 'publisher', 70, 255, $publisher ), true );
+    $sform -> addElement( new icms_form_elements_Text( _MD_MYTUBE_VIDEO_PUBLISHER, 'publisher', 70, 255, $publisher ), true );
 
 // Category tree
-        $mytree = new XoopsTree( $xoopsDB -> prefix( 'xoopstube_cat' ), 'cid', 'pid' );
+        $mytree = new icms_view_Tree( icms::$xoopsDB -> prefix( 'mytube_cat' ), 'cid', 'pid' );
 
         $submitcats = array();
-        $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " ORDER BY title";
-        $result = $xoopsDB -> query( $sql );
-        while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
-            if ( true == xtube_checkgroups( $myrow['cid'], 'XTubeSubPerm' ) ) {
+        $sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_cat' ) . ' ORDER BY title';
+        $result = icms::$xoopsDB -> query( $sql );
+        while ( $myrow = icms::$xoopsDB -> fetchArray( $result ) ) {
+            if ( true == mytube_checkgroups( $myrow['cid'], 'MyTubeSubPerm' ) ) {
                 $submitcats[$myrow['cid']] = $myrow['title'];
             } 
         }
 
 // Video time form
-        $timeform = new XoopsFormText( _MD_XTUBE_TIME, 'time', 7, 7, $time );
-        $timeform -> setDescription( "<small>(h:mm:ss)</small>" );
+        $timeform = new icms_form_elements_Text( _MD_MYTUBE_TIME, 'time', 7, 7, $time );
+        $timeform -> setDescription( '<small>(h:mm:ss)</small>' );
         $sform -> addElement( $timeform, false );
         
 // Video category form
         ob_start();
     	  $mytree -> makeMySelBox( 'title', 'title', $cid, 0 );
-          $sform -> addElement( new XoopsFormLabel( _MD_XTUBE_CATEGORYC, ob_get_contents() ) );
+          $sform -> addElement( new icms_form_elements_Label( _MD_MYTUBE_CATEGORYC, ob_get_contents() ) );
     	ob_end_clean();
 
 // Video description form
-        $editor = xtube_getWysiwygForm( _MD_XTUBE_DESCRIPTIONC, 'descriptionb', $descriptionb, 10, 50, '');
+        $editor = mytube_getWysiwygForm( _MD_MYTUBE_DESCRIPTIONC, 'descriptionb', $descriptionb );
         $sform -> addElement( $editor, true );
 
 // Meta keywords form
-        $keywords = new XoopsFormTextArea( _MD_XTUBE_KEYWORDS, 'keywords', $keywords, 5, 50, false );
-        $keywords -> setDescription( "<br /><span style='font-size: smaller;'>" . _MD_XTUBE_KEYWORDS_NOTE . "</span>" );
+        $keywords = new icms_form_elements_TextArea( _MD_MYTUBE_KEYWORDS, 'keywords', $keywords, 5, 50, false );
+        $keywords -> setDescription( '<span style="font-size: smaller;">' . _MD_MYTUBE_KEYWORDS_NOTE . '</span>' );
         $sform -> addElement( $keywords );
 
-if ($xoopsModuleConfig['usercantag'] == 1) {
+if ( icms::$module -> config['usercantag'] == 1 ) {
      // Insert tags if Tag-module is installed
-    if (xtube_tag_module_included()) {
-       include_once XOOPS_ROOT_PATH . "/modules/tag/include/formtag.php";
-       $text_tags = new XoopsFormTag("item_tag", 70, 255, $video_array['item_tag'], 0);
+    if ( mytube_tag_module_included() ) {
+       include_once ICMS_ROOT_PATH . '/modules/tag/include/formtag.php';
+       $text_tags = new XoopsFormTag( 'item_tag', 70, 255, $video_array['item_tag'], 0 );
        $sform -> addElement( $text_tags );
     }
- } else {
-  $sform -> addElement( new XoopsFormHidden( 'item_tag', $video_array['item_tag'] ) ) ;
+} else {
+    $sform -> addElement( new icms_form_elements_Hidden( 'item_tag', $video_array['item_tag'] ) ) ;
 }
-        $option_tray = new XoopsFormElementTray( _MD_XTUBE_OPTIONS, '<br />' );
 
+	$submitter2 = ( is_object( icms::$user ) && !empty( icms::$user ) ) ? icms::$user -> getVar( 'uid' ) : 0;
+	if ( $submitter2 > 0 ) {
+        $option_tray = new icms_form_elements_Tray( _MD_MYTUBE_OPTIONS, '<br />' );
         if ( !$approve ) {
-            $notify_checkbox = new XoopsFormCheckBox( '', 'notifypub' );
-            $notify_checkbox -> addOption( 1, _MD_XTUBE_NOTIFYAPPROVE );
+            $notify_checkbox = new icms_form_elements_Checkbox( '', 'notifypub' );
+            $notify_checkbox -> addOption( 1, _MD_MYTUBE_NOTIFYAPPROVE );
             $option_tray -> addElement( $notify_checkbox );
         } else {
-            $sform -> addElement( new XoopsFormHidden( 'notifypub', 0 ) );
+            $sform -> addElement( new icms_form_elements_Hidden( 'notifypub', 0 ) );
         } 
-
-        if ( true == xtube_checkgroups( $cid, 'XTubeAppPerm' ) && $lid > 0 ) {
-            $approve_checkbox = new XoopsFormCheckBox( '', 'approve', $approve );
-            $approve_checkbox -> addOption( 1, _MD_XTUBE_APPROVE );
+	}
+	
+        if ( true == mytube_checkgroups( $cid, 'MyTubeAppPerm' ) && $lid > 0 ) {
+            $approve_checkbox = new icms_form_elements_Checkbox( '', 'approve', $approve );
+            $approve_checkbox -> addOption( 1, _MD_MYTUBE_APPROVE );
             $option_tray -> addElement( $approve_checkbox );
-        } else if ( true == xtube_checkgroups( $cid, 'XTubeAutoApp' ) ) {
-            $sform -> addElement( new XoopsFormHidden( 'approve', 1 ) );
+        } else if ( true == mytube_checkgroups( $cid, 'MyTubeAutoApp' ) ) {
+            $sform -> addElement( new icms_form_elements_Hidden( 'approve', 1 ) );
         } else {
-            $sform -> addElement( new XoopsFormHidden( 'approve', 0 ) );
+            $sform -> addElement( new icms_form_elements_Hidden( 'approve', 0 ) );
         } 
         $sform -> addElement( $option_tray );
+		
+		// Captcha
+		if ( $icmsConfigUser['use_captcha'] == true ) {
+			$sform -> addElement( new icms_form_elements_Captcha( _SECURITYIMAGE_GETCODE, 'scode' ), true ); 
+		}
 
-        $button_tray = new XoopsFormElementTray( '', '' );
-        $button_tray -> addElement( new XoopsFormButton( '', 'submit', _SUBMIT, 'submit' ) );
-        $button_tray -> addElement( new XoopsFormHidden( 'lid', $lid ) );
+        $button_tray = new icms_form_elements_Tray( '', '' );
+        $button_tray -> addElement( new icms_form_elements_Button( '', 'submit', _SUBMIT, 'submit' ) );
+        $button_tray -> addElement( new icms_form_elements_Hidden( 'lid', $lid ) );
 
         $sform -> addElement( $button_tray );
         $sform -> display();
 
-        include XOOPS_ROOT_PATH . '/footer.php';
+        include ICMS_ROOT_PATH . '/footer.php';
     }
 } else {
-    redirect_header( 'index.php', 2, _MD_XTUBE_NOPERMISSIONTOPOST );
+    redirect_header( 'index.php', 2, _MD_MYTUBE_NOPERMISSIONTOPOST );
     exit();
 } 
 ?>

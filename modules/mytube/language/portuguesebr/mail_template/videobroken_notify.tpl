@@ -7,7 +7,7 @@ foi recentemente relatado como um vídeo quebrado em nosso site ({X_SITENAME}).
 
 Você pode ver o vídeo indicado a seguir para atualizar a informação atual que temos em nossa base de dados relativa ao recurso que você enviou para nós.
 
-Visite: {X_LINKLOAD}
+Visite: {X_VIDEOLOAD}
 
 Se você deixar de atualizar essas informações, poderemos retirar este arquivo de nosso banco de dados no futuro.
 

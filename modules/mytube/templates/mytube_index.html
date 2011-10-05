@@ -1,0 +1,74 @@
+<link rel="stylesheet" type="text/css" href="<{$icms_url}>/modules/<{$module_dir}>/mytubestyle.css" />
+
+<{$catarray.imageheader}>
+<{$catarray.indexheading}>
+<{$catarray.indexheader}>
+<div style="padding-bottom: 12px; text-align: center;" class="itemPermaLink"><{$catarray.letters}></div>
+<{if count($categories) gt 0}> 
+<div class="mytube_path" style="font-weight: bold;"><{$smarty.const._MD_MYTUBE_MAINLISTING}></div>
+	
+<table width="100%" cellspacing="1" cellpadding="3" summary="" style="text-align: center;"> 
+ <tr>
+  <td colspan="2">&nbsp;</td>
+ <tr>
+ <tr> 
+  <!-- Start category loop --> 
+  <{foreach item=category from=$categories}> 
+   <td style="width: 34px; text-align: center; vertical-align: top;">
+    <a href="<{$icms_url}>/modules/<{$module_dir}>/viewcat.php?cid=<{$category.id}>"><img src="<{$category.image}>" title="<{$category.alttext}>" alt="<{$category.alttext}>" align="middle" /></a>
+   </td> 
+   <td style="text-align: left; vertical-align: top;">
+	<a href="<{$icms_url}>/modules/<{$module_dir}>/viewcat.php?cid=<{$category.id}>"><b><{$category.title}></b></a>&nbsp;(<{$category.totalvideos}>)
+    <{if $category.subcategories}> 
+     <div style="margin-bottom: 3px; margin-left: 16px; font-size: smaller; vertical-align: top;"><{$category.subcategories}></div> 
+    <{/if}> 
+   </td> 
+  <{if $category.count is div by $cat_columns}> 
+ </tr>
+ <tr><{/if}>   <{/foreach}> 
+  <!-- End category loop --> 
+ </tr> 
+ <tr>
+  <td colspan="2">&nbsp;</td>
+ <tr>
+</table>
+<div class="mytube_even" style="text-align: left; font-size: smaller;"><{$lang_thereare}></div>
+<div style="clear: both; padding: 8px 4px 8px 0;">
+<span style="float: left;">&nbsp;<{$mytube_feed}></span>
+<span class="mytube_legend">
+  <img src="<{$icms_url}>/modules/<{$module_dir}>/images/icon/linkload1_small.png" title="<{$smarty.const._MD_MYTUBE_LEGENDTEXTNEW}>" alt="" align="middle"/>&nbsp;<{$smarty.const._MD_MYTUBE_LEGENDTEXTNEW}>
+  <img src="<{$icms_url}>/modules/<{$module_dir}>/images/icon/linkload2_small.png" title="<{$smarty.const._MD_MYTUBE_LEGENDTEXTNEWTHREE}>"  alt="" align="middle"/>&nbsp;<{$smarty.const._MD_MYTUBE_LEGENDTEXTNEWTHREE}>
+  <img src="<{$icms_url}>/modules/<{$module_dir}>/images/icon/linkload3_small.png" title="<{$smarty.const._MD_MYTUBE_LEGENDTEXTTHISWEEK}>" alt="" align="middle"/>&nbsp;<{$smarty.const._MD_MYTUBE_LEGENDTEXTTHISWEEK}>
+  <img src="<{$icms_url}>/modules/<{$module_dir}>/images/icon/linkload4_small.png" title="<{$smarty.const._MD_MYTUBE_LEGENDTEXTNEWLAST}>"  alt="" align="middle"/>&nbsp;<{$smarty.const._MD_MYTUBE_LEGENDTEXTNEWLAST}>
+</span>
+</div>
+<{/if}> 
+<div style="clear: both; padding: 16px 0 12px 0; text-align: <{$catarray.indexfooteralign}>;"><{$catarray.indexfooter}></div>
+
+<{if $showlatest}>
+    <br /><br />
+	
+	<div class="mytube_path" style="font-size: bigger; font-weight: bold;"><{$smarty.const._MD_MYTUBE_LATESTLIST}></div>
+
+	<{if $pagenav}>
+		<div style="float: right;"><{$pagenav}></div>
+	<{/if}>
+	
+	<div style="clear: both;">
+		<!-- Start video loop -->
+		<{section name=i loop=$video}>
+		  <{include file="db:mytube_videoload.html" video=$video[i]}>
+		<{/section}>
+		<!-- End video loop -->
+	</div>
+	
+	<{if $pagenav}>
+		<div class="mytube_horline">&nbsp;</div>
+		<div style="float: right;"><{$pagenav}></div>
+    <{/if}>
+	
+<{/if}>
+
+<br /><br />
+
+<{include file="db:system_notification_select.html"}>

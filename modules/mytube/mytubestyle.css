@@ -1,0 +1,137 @@
+/**
+* $Id: mytubestyle.css
+* Module: MyTube
+*/
+
+.mytube_even {
+  background-color: #E8E6E2; 
+  padding: 4px; }
+  
+.mytube_path {
+  background-color: #E8E6E2; 
+  padding: 4px;
+  border: 1px solid #CCC; }
+
+.mytube_button {
+	padding-right: 0.5em; 
+	padding-left: 0.5em; 
+	padding-bottom: 4px; 
+	padding-top: 2px; 
+	background-image: url(images/icon/backgnd.png); 
+	background-position: center center; 
+	background-repeat: repeat-x; 
+	color: #444; 
+	font-size: smaller; 
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	cursor: pointer; 
+	border: outset 1px #CCC;
+	white-space: nowrap;
+	box-shadow:1px 1px 2px #AAAAAA; }
+
+.mytube_letters {
+	margin-bottom: 8px; 
+	margin-top: 8px; 
+	padding-right: 0.5em; 
+	padding-left: 0.5em; 
+	padding-bottom: 1px; 
+	padding-top: 1px; 
+	background-image: url(images/icon/backgnd.png); 
+	background-position: center center; 
+	background-repeat: repeat-x; 
+	color: #444; 
+	font-size: smaller; 
+	font-weight: bold; 
+	line-height: 16pt;
+	cursor: pointer;
+	border: outset 1px #CCC;
+	box-shadow:1px 1px 2px #AAAAAA; }
+  
+.mytube_legend {
+  float: right;
+  font-size: smaller; }
+  
+.mytube_title {
+  display: table;
+  width: 99%;
+  background-color: #E8E6E2; 
+  color:FFFFFF; 
+  padding: 4px; }
+
+.mytube_header {
+  text-align: center;
+  line-height: 120%;
+  padding-bottom: 12px;}
+  
+.mytube_horline {
+  clear: both; 
+  height: 1px; 
+  border-top: 1px solid #CCC; }
+
+.mytube_description {
+	padding: 4px;
+	margin: 4px;  
+	background-color:#E9E9E9;
+	border: 1px solid #999999; }
+	
+.mytube_infoblock {
+  padding: 4px;
+  margin-left: 10px; 
+  margin-right: 5px;
+  background-color:#E6E6E6;
+  border: 1px solid #CCC;
+  font-size: 75%; 
+  -webkit-border-radius: 6px;
+  -khtml-border-radius: 6px;	
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow:2px 2px 3px #AAAAAA; }
+  
+.mytube_infoblock2 {
+  padding: 4px;
+  margin-left: 10px; 
+  margin-right: 5px;
+  background-color:#FFF;
+  border: 1px solid #CCC;
+  font-size: 75%; 
+  -webkit-border-radius: 6px;
+  -khtml-border-radius: 6px;	
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow:2px 2px 3px #AAAAAA; }
+  
+div.mytube_socbookmark a img {
+	opacity: .4;
+	filter: alpha(opacity=40); }
+	
+div.mytube_socbookmark a:hover img {
+	opacity: 1;
+	filter: alpha(opacity=100); }
+	
+.mytube_minibutton {
+  padding: 2px 0.5em 3px 0.5em;
+  background-image: url(images/icon/backgnd.png);
+  background-position: center center;
+  background-repeat: repeat-x;
+  color: #444;
+  height: 18px;
+  font-size: 10px;
+  font-weight: normal;
+  cursor: default;
+  white-space: nowrap;
+  border: outset 1px #CCC;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;	
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+  
+fieldset {
+	border: #E8E8E8 1px solid;
+	-webkit-border-radius: 6px;
+	-khtml-border-radius: 6px;	
+	-moz-border-radius: 6px;
+	border-radius: 6px; }
+	
+legend {
+	display: inline;
+	font-weight: bold; }

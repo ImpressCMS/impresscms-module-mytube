@@ -1,12 +1,30 @@
 <?php
 /**
- * $Id: uploader.php
- * Module: MyTube
- */
+* MyTube - a multicategory video management module
+*
+* Based upon WF-Links
+*
+* File: class/uploader.php
+*
+* @copyright		http://www.xoops.org/ The XOOPS Project
+* @copyright		XOOPS_copyrights.txt
+* @copyright		http://www.impresscms.org/ The ImpressCMS Project
+* @license		GNU General Public License (GPL)
+*				a copy of the GNU license is enclosed.
+* ----------------------------------------------------------------------------------------------------------
+* @package		WF-Links 
+* @since			1.03
+* @author		John N
+* ----------------------------------------------------------------------------------------------------------
+* 				MyTube
+* @since			1.00
+* @author		McDonald
+* @version		$Id$
+*/
 
 mt_srand((double) microtime() * 1000000);
 
-class XoopsMediaUploader {
+class MyTubeMediaUploader {
     var $mediaName;
     var $mediaType;
     var $mediaSize;
@@ -38,22 +56,22 @@ class XoopsMediaUploader {
      * @param int $maxHeight 
      * @param int $cmodvalue 
      */
-    function XoopsMediaUploader($uploadDir, $allowedMimeTypes = 0, $maxFileSize, $maxWidth = 0, $maxHeight = 0) {
-        if (is_array($allowedMimeTypes)) {
-            $this->allowedMimeTypes = &$allowedMimeTypes;
+    function MyTubeMediaUploader( $uploadDir, $allowedMimeTypes = 0, $maxFileSize, $maxWidth = 0, $maxHeight = 0 ) {
+        if ( is_array( $allowedMimeTypes ) ) {
+            $this -> allowedMimeTypes = &$allowedMimeTypes;
         } 
-        $this->uploadDir = $uploadDir;
-        $this->maxFileSize = intval($maxFileSize);
-        if (isset($maxWidth)) {
-            $this->maxWidth = intval($maxWidth);
+        $this -> uploadDir = $uploadDir;
+        $this -> maxFileSize = intval( $maxFileSize );
+        if ( isset( $maxWidth ) ) {
+            $this -> maxWidth = intval( $maxWidth );
         } 
-        if (isset($maxHeight)) {
-            $this->maxHeight = intval($maxHeight);
+        if ( isset( $maxHeight ) ) {
+            $this -> maxHeight = intval( $maxHeight );
         } 
     } 
 
-    function noAdminSizeCheck($value) {
-        $this->noadmin_sizecheck = $value;
+    function noAdminSizeCheck( $value ) {
+        $this -> noadmin_sizecheck = $value;
     } 
 
     /**
@@ -64,66 +82,66 @@ class XoopsMediaUploader {
      * @global $HTTP_POST_FILES
      * @return bool 
      */
-    function fetchMedia($media_name, $index = null) {
+    function fetchMedia( $media_name, $index = null ) {
         global $_FILES;
         
-	if (!isset($_FILES[$media_name])) {
-            $this->setErrors(_AM_XTUBE_READWRITEERROR);
+	if ( !isset( $_FILES[$media_name] ) ) {
+            $this -> setErrors( _AM_MYTUBE_READWRITEERROR );
             return false;
-        } elseif (is_array($_FILES[$media_name]['name']) && isset($index)) {
-            $index = intval($index);
-            $this->mediaName = (get_magic_quotes_gpc()) ? stripslashes($_FILES[$media_name]['name'][$index]) : $_FILES[$media_name]['name'][$index];
-            $this->mediaType = $_FILES[$media_name]['type'][$index];
-            $this->mediaSize = $_FILES[$media_name]['size'][$index];
-            $this->mediaTmpName = $_FILES[$media_name]['tmp_name'][$index];
-            $this->mediaError = !empty($_FILES[$media_name]['error'][$index]) ? $_FILES[$media_name]['error'][$index] : 0;
+        } elseif ( is_array( $_FILES[$media_name]['name'] ) && isset( $index ) ) {
+            $index = intval( $index );
+            $this -> mediaName = ( get_magic_quotes_gpc() ) ? stripslashes( $_FILES[$media_name]['name'][$index] ) : $_FILES[$media_name]['name'][$index];
+            $this -> mediaType = $_FILES[$media_name]['type'][$index];
+            $this -> mediaSize = $_FILES[$media_name]['size'][$index];
+            $this -> mediaTmpName = $_FILES[$media_name]['tmp_name'][$index];
+            $this -> mediaError = !empty( $_FILES[$media_name]['error'][$index] ) ? $_FILES[$media_name]['error'][$index] : 0;
         } else {
             $media_name = @$_FILES[$media_name];
-            $this->mediaName = (get_magic_quotes_gpc()) ? stripslashes($media_name['name']) : $media_name['name'];
-            $this->mediaName = $media_name['name'];
-            $this->mediaType = $media_name['type'];
-            $this->mediaSize = $media_name['size'];
-            $this->mediaTmpName = $media_name['tmp_name'];
-            $this->mediaError = !empty($media_name['error']) ? $media_name['error'] : 0;
+            $this -> mediaName = ( get_magic_quotes_gpc() ) ? stripslashes( $media_name['name'] ) : $media_name['name'];
+            $this -> mediaName = $media_name['name'];
+            $this -> mediaType = $media_name['type'];
+            $this -> mediaSize = $media_name['size'];
+            $this -> mediaTmpName = $media_name['tmp_name'];
+            $this -> mediaError = !empty( $media_name['error'] ) ? $media_name['error'] : 0;
         } 
-        $this->dimension = getimagesize($this->mediaTmpName);
+        $this -> dimension = getimagesize( $this -> mediaTmpName );
 
-	$this->errors = array();
+	$this -> errors = array();
 
-        if (intval($this->mediaSize) < 0) {
-            $this->setErrors(_AM_XTUBE_INVALIDFILESIZE);
+        if ( intval($this -> mediaSize ) < 0) {
+            $this -> setErrors( _AM_MYTUBE_INVALIDFILESIZE );
             return false;
         } 
-        if ($this->mediaName == '') {
-            $this->setErrors(_AM_XTUBE_FILENAMEEMPTY);
-            return false;
-        } 
-
-        if ($this->mediaTmpName == 'none') {
-            $this->setErrors(_AM_XTUBE_NOFILEUPLOAD);
+        if ( $this -> mediaName == '' ) {
+            $this -> setErrors( _AM_MYTUBE_FILENAMEEMPTY );
             return false;
         } 
 
-        if (!is_uploaded_file($this->mediaTmpName)) {
-            switch ($this->mediaError)
+        if ( $this -> mediaTmpName == 'none' ) {
+            $this -> setErrors( _AM_MYTUBE_NOFILEUPLOAD );
+            return false;
+        } 
+
+        if ( !is_uploaded_file( $this -> mediaTmpName ) ) {
+            switch ($this -> mediaError)
             {
                 case 0: // no error; possible file attack!
-                    $this->setErrors(_AM_XTUBE_UPLOADERRORZERO);
+                    $this -> setErrors( _AM_MYTUBE_UPLOADERRORZERO );
                     break;
                 case 1: // uploaded file exceeds the upload_max_filesize directive in php.ini
-                    $this->setErrors(_AM_XTUBE_UPLOADERRORONE);
+                    $this -> setErrors( _AM_MYTUBE_UPLOADERRORONE );
                     break;
                 case 2: // uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the html form
-                    $this->setErrors(_AM_XTUBE_UPLOADERRORTWO);
+                    $this -> setErrors( _AM_MYTUBE_UPLOADERRORTWO );
                     break;
                 case 3: // uploaded file was only partially uploaded
-                    $this->setErrors(_AM_XTUBE_UPLOADERRORTHREE);
+                    $this -> setErrors( _AM_MYTUBE_UPLOADERRORTHREE );
                     break;
                 case 4: // no file was uploaded
-                    $this->setErrors(_AM_XTUBE_UPLOADERRORFOUR);
+                    $this -> setErrors( _AM_MYTUBE_UPLOADERRORFOUR );
                     break;
                 default: // a default error, just in case!  :)
-                    $this->setErrors(_AM_XTUBE_UPLOADERRORFIVE);
+                    $this -> setErrors( _AM_MYTUBE_UPLOADERRORFIVE );
                     break;
             } 
             return false;
@@ -136,8 +154,8 @@ class XoopsMediaUploader {
      * 
      * @param string $value 
      */
-    function setTargetFileName($value) {
-        $this->targetFileName = strval(trim($value));
+    function setTargetFileName( $value ) {
+        $this -> targetFileName = strval( trim( $value ) );
     } 
 
     /**
@@ -145,8 +163,8 @@ class XoopsMediaUploader {
      * 
      * @param string $value 
      */
-    function setPrefix($value) {
-        $this->prefix = strval(trim($value));
+    function setPrefix( $value ) {
+        $this -> prefix = strval( trim( $value ) );
     } 
 
     /**
@@ -155,7 +173,7 @@ class XoopsMediaUploader {
      * @return string 
      */
     function getMediaName() {
-        return $this->mediaName;
+        return $this -> mediaName;
     } 
 
     /**
@@ -164,7 +182,7 @@ class XoopsMediaUploader {
      * @return string 
      */
     function getMediaType() {
-        return $this->mediaType;
+        return $this -> mediaType;
     } 
 
     /**
@@ -173,7 +191,7 @@ class XoopsMediaUploader {
      * @return int 
      */
     function getMediaSize() {
-        return $this->mediaSize;
+        return $this -> mediaSize;
     } 
 
     /**
@@ -182,7 +200,7 @@ class XoopsMediaUploader {
      * @return string 
      */
     function getMediaTmpName() {
-        return $this->mediaTmpName;
+        return $this -> mediaTmpName;
     } 
 
     /**
@@ -191,7 +209,7 @@ class XoopsMediaUploader {
      * @return string 
      */
     function getSavedFileName() {
-        return $this->savedFileName;
+        return $this -> savedFileName;
     } 
 
     /**
@@ -200,7 +218,7 @@ class XoopsMediaUploader {
      * @return string 
      */
     function getSavedDestination() {
-        return $this->savedDestination;
+        return $this -> savedDestination;
     } 
 
     /**
@@ -208,42 +226,42 @@ class XoopsMediaUploader {
      * 
      * @return bool 
      */
-    function upload($chmod = 0644) {
-        if ($this->uploadDir == '') {
-            $this->setErrors(_AM_XTUBE_NOUPLOADDIR);
+    function upload( $chmod = 0644 ) {
+        if ( $this -> uploadDir == '' ) {
+            $this -> setErrors( _AM_MYTUBE_NOUPLOADDIR );
             return false;
         } 
 
-        if (!is_dir($this->uploadDir)) {
-            $this->setErrors(_AM_XTUBE_FAILOPENDIR . $this->uploadDir);
+        if ( !is_dir( $this -> uploadDir ) ) {
+            $this -> setErrors( _AM_MYTUBE_FAILOPENDIR . $this -> uploadDir );
         } 
 
-        if (!is_writeable($this->uploadDir)) {
-            $this->setErrors(_AM_XTUBE_FAILOPENDIRWRITEPERM . $this->uploadDir);
+        if ( !is_writeable( $this -> uploadDir ) ) {
+            $this -> setErrors( _AM_MYTUBE_FAILOPENDIRWRITEPERM . $this -> uploadDir );
         } 
 
-        if (!$this->checkMaxFileSize()) {
-            $this->setErrors(sprintf(_AM_XTUBE_FILESIZEMAXSIZE , $this->mediaSize, $this->maxFileSize));
+        if ( !$this -> checkMaxFileSize() ) {
+            $this -> setErrors( sprintf( _AM_MYTUBE_FILESIZEMAXSIZE , $this -> mediaSize, $this -> maxFileSize ) );
         } 
 
-        if (is_array($this->dimension)) {
-          if (!$this->checkMaxWidth($this->dimension[0])) {
-                $this->setErrors(sprintf(_AM_XTUBE_FILESIZEMAXWIDTH, $this->dimension[0], $this->maxWidth));
+        if ( is_array( $this -> dimension ) ) {
+          if ( !$this -> checkMaxWidth( $this -> dimension[0] ) ) {
+                $this -> setErrors( sprintf( _AM_MYTUBE_FILESIZEMAXWIDTH, $this -> dimension[0], $this -> maxWidth ) );
             } 
-            if (!$this->checkMaxHeight($this->dimension[1])) {
-                $this->setErrors(sprintf(_AM_XTUBE_FILESIZEMAXHEIGHT, $this->dimension[1], $this->maxHeight));
+            if ( !$this -> checkMaxHeight( $this -> dimension[1] ) ) {
+                $this -> setErrors( sprintf( _AM_MYTUBE_FILESIZEMAXHEIGHT, $this -> dimension[1], $this -> maxHeight ) );
             } 
         } 
 
-        if (!$this->checkMimeType()) {
-            $this->setErrors(_AM_XTUBE_MIMENOTALLOW . $this->mediaType);
+        if ( !$this -> checkMimeType() ) {
+            $this -> setErrors( _AM_MYTUBE_MIMENOTALLOW . $this -> mediaType );
         } 
 
-        if (!$this->_copyFile($chmod)) {
-            $this->setErrors(_AM_XTUBE_FAILEDUPLOADING . $this->mediaName);
+        if ( !$this -> _copyFile( $chmod ) ) {
+            $this -> setErrors( _AM_MYTUBE_FAILEDUPLOADING . $this -> mediaName );
         } 
 
-        if (count($this->errors) > 0) {
+        if ( count( $this -> errors ) > 0 ) {
             return false;
         } 
         return true;
@@ -254,28 +272,28 @@ class XoopsMediaUploader {
      * 
      * @return bool 
      */
-    function _copyFile($chmod) {
+    function _copyFile( $chmod ) {
         $matched = array();
-        if (!preg_match("/\.([a-zA-Z0-9]+)$/", $this->mediaName, $matched)) {
+        if ( !preg_match("/\.([a-zA-Z0-9]+)$/", $this -> mediaName, $matched ) ) {
             return false;
         } 
-        if (isset($this->targetFileName)) {
-            $this->savedFileName = $this->targetFileName;
-        } elseif (isset($this->prefix)) {
-            $this->savedFileName = uniqid($this->prefix) . '.' . strtolower($matched[1]);
+        if ( isset( $this -> targetFileName ) ) {
+            $this -> savedFileName = $this -> targetFileName;
+        } elseif ( isset( $this -> prefix ) ) {
+            $this -> savedFileName = uniqid( $this -> prefix ) . '.' . strtolower( $matched[1] );
         } else {
-            $this->savedFileName = strtolower($this->mediaName);
+            $this -> savedFileName = strtolower( $this -> mediaName );
         } 
-        $this->savedFileName = preg_replace('!\s+!', '_', $this->savedFileName);
-		$this->savedDestination = $this->uploadDir . $this->savedFileName;
-		if (is_file($this->savedDestination) && !!is_dir($this->savedDestination)) {
-		    $this->setErrors( _AM_XTUBE_FILE . $this->mediaName . _AM_XTUBE_ALREADYEXISTTRYAGAIN);
+        $this -> savedFileName = preg_replace( '!\s+!', '_', $this -> savedFileName );
+		$this -> savedDestination = $this -> uploadDir . $this -> savedFileName;
+		if ( is_file( $this -> savedDestination ) && !!is_dir( $this -> savedDestination ) ) {
+		    $this -> setErrors( _AM_MYTUBE_FILE . $this -> mediaName . _AM_MYTUBE_ALREADYEXISTTRYAGAIN );
 			return false;
 		}
-        if (!move_uploaded_file($this->mediaTmpName, $this->savedDestination)) {
+        if ( !move_uploaded_file( $this -> mediaTmpName, $this -> savedDestination ) ) {
             return false;
         } 
-        @chmod($this->savedDestination, $chmod);
+        @chmod( $this -> savedDestination, $chmod );
         return true;
     } 
 
@@ -285,10 +303,10 @@ class XoopsMediaUploader {
      * @return bool 
      */
     function checkMaxFileSize() {
-        if ($this->noadmin_sizecheck) {
+        if ( $this -> noadmin_sizecheck ) {
             return true;
         } 
-        if ($this->mediaSize > $this->maxFileSize) {
+        if ( $this -> mediaSize > $this -> maxFileSize ) {
             return false;
         } 
         return true;
@@ -299,11 +317,11 @@ class XoopsMediaUploader {
      * 
      * @return bool 
      */
-    function checkMaxWidth($dimension) {
-        if (!isset($this->maxWidth)) {
+    function checkMaxWidth( $dimension ) {
+        if ( !isset( $this -> maxWidth ) ) {
             return true;
         } 
-        if ($dimension > $this->maxWidth) {
+        if ( $dimension > $this -> maxWidth ) {
             return false;
         } 
         return true;
@@ -314,11 +332,11 @@ class XoopsMediaUploader {
      * 
      * @return bool 
      */
-    function checkMaxHeight($dimension) {
-        if (!isset($this->maxHeight)) {
+    function checkMaxHeight( $dimension ) {
+        if ( !isset( $this -> maxHeight ) ) {
             return true;
         } 
-        if ($dimension > $this->maxWidth) {
+        if ( $dimension > $this -> maxWidth ) {
             return false;
         } 
         return true;
@@ -332,7 +350,7 @@ class XoopsMediaUploader {
      * @return bool 
      */
     function checkMimeType() {
-        if (count($this->allowedMimeTypes) > 0 && !in_array($this->mediaType, $this->allowedMimeTypes)) {
+        if ( count($this -> allowedMimeTypes ) > 0 && !in_array( $this -> mediaType, $this -> allowedMimeTypes ) ) {
             return false;
         } else {
             return true;
@@ -344,8 +362,8 @@ class XoopsMediaUploader {
      * 
      * @param string $error 
      */
-    function setErrors($error) {
-        $this->errors[] = trim($error);
+    function setErrors( $error ) {
+        $this -> errors[] = trim( $error );
     } 
 
     /**
@@ -354,14 +372,14 @@ class XoopsMediaUploader {
      * @param bool $ashtml Format using HTML?
      * @return array |string    Array of array messages OR HTML string
      */
-    function &getErrors($ashtml = true) {
-        if (!$ashtml) {
-            return $this->errors;
+    function &getErrors( $ashtml = true ) {
+        if ( !$ashtml ) {
+            return $this -> errors;
         } else {
             $ret='';
-            if (count($this->errors) > 0) {
-                $ret=_AM_XTUBE_ERRORSRETURNUPLOAD;
-                foreach ($this->errors as $error) {
+            if ( count( $this -> errors ) > 0 ) {
+                $ret=_AM_MYTUBE_ERRORSRETURNUPLOAD;
+                foreach ( $this -> errors as $error ) {
                     $ret .= $error . '<br />';
                 } 
             } 

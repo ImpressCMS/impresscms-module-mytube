@@ -7,9 +7,7 @@ niet meer werkt zoals aangeboden op onze website ({X_SITENAME}).
 
 Wij verzoeken u via de onderstaande link de huidige informatie aanwezig in onze database bij te werken.
 
-
 Visit: {X_VIDEOLOAD}
-
 
 Wij hopen dat er binnen afzienbare tijd wijzigingen worden aangebracht waardoor de link weer correct werkt.
 Mocht dit niet het geval zijn dan zal uw inzending worden verwijderd uit onze database.

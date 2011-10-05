@@ -1,52 +1,66 @@
 <?php
 /**
- * $Id: notification.inc.php
- * Module: MyTube
- */
-function xoopstube_notify_iteminfo($category, $item_id) {
-	global $xoopsModule, $xoopsModuleConfig, $xoopsConfig;
+* MyTube - a multicategory video management module for ImpressCMS
+*
+* Based upon WF-Links
+*
+* File: include/notification.inc.php
+*
+* @copyright		http://www.xoops.org/ The XOOPS Project
+* @copyright		XOOPS_copyrights.txt
+* @copyright		http://www.impresscms.org/ The ImpressCMS Project
+* @license		GNU General Public License (GPL)
+*				a copy of the GNU license is enclosed.
+* ----------------------------------------------------------------------------------------------------------
+* @package		WF-Links 
+* @since			1.03
+* @author		John N
+* ----------------------------------------------------------------------------------------------------------
+* 				MyTube
+* @since			1.00
+* @author		McDonald
+* @version		$Id$
+*/
+ 
+function mytube_notify_iteminfo( $category, $item_id ) {
 
-$mydirname = basename( dirname(  dirname( __FILE__ ) ) ) ;
-$mydirpath = dirname( dirname( __FILE__ ) ) ;
-
-	if (empty($xoopsModule) || $xoopsModule->getVar('dirname') != 'mytube') {
-		$module_handler =& xoops_gethandler('module');
-		$module =& $module_handler->getByDirname($mydirname);
-		$config_handler =& xoops_gethandler('config');
-		$config =& $config_handler->getConfigsByCat(0,$module->getVar('mid'));
+	if ( empty( icms::$module ) || icms::$module -> getVar('dirname') != 'mytube' ) {
+		$module_handler = icms::handler( 'icms_module' );
+		$module =& $module_handler -> getByDirname( basename( dirname(  dirname( __FILE__ ) ) ) );
+		$config_handler = icms::$config;
+		$config =& $config_handler -> getConfigsByCat( 0, $module -> getVar( 'mid' ) );
 	} else {
-		$module =& $xoopsModule;
-		$config =& $xoopsModuleConfig;
+		$module =& icms::$module;
+		$config =& icms::$config;
 	}
 
-	if ($category=='global') {
-		$item['name']='';
-		$item['url']='';
+	if ( $category == 'global' ) {
+		$item['name'] = '';
+		$item['url']  = '';
 		return $item;
 	}
 
-	global $xoopsDB;
-	if ($category=='category') {
+	if ( $category == 'category' ) {
 		// Assume we have a valid category id
-		$sql = "SELECT title FROM " . $xoopsDB -> prefix('xoopstube_cat') . " WHERE cid=" . $item_id;
-		if (!$result = $xoopsDB -> query($sql)) {
+		$sql = 'SELECT title FROM ' . icms::$xoopsDB -> prefix( 'mytube_cat' ) . ' WHERE cid=' . $item_id;
+		if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
 		    return false;
 		}
-		$result_array = $xoopsDB -> fetchArray($result);
+		$result_array = icms::$xoopsDB -> fetchArray( $result );
 		$item['name'] = $result_array['title'];
-		$item['url'] = XOOPS_URL . '/modules/xoopstube/viewcat.php?cid=' . $item_id;
+		$item['url']  = ICMS_URL . '/modules/' . basename( dirname(  dirname( __FILE__ ) ) ) . '/viewcat.php?cid=' . $item_id;
 		return $item;
 	}
 
-	if ($category=='video') {
+	if ( $category == 'video' ) {
 		// Assume we have a valid file id
-		$sql = "SELECT cid,title FROM " . $xoopsDB->prefix('xoopstube_videos') . " WHERE lid=" . $item_id;
-		if (!$result = $xoopsDB -> query($sql)) {
+		$sql = 'SELECT cid,title FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $item_id;
+		if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
 		    return false;
 		}
-		$result_array = $xoopsDB -> fetchArray($result);
+		$result_array = icms::$xoopsDB -> fetchArray( $result );
 		$item['name'] = $result_array['title'];
-		$item['url'] = XOOPS_URL . '/modules/xoopstube/singlevideo.php?cid=' . $result_array['cid'] . '&amp;lid=' . $item_id;
+		$item['url'] = ICMS_URL . '/modules/' . basename( dirname(  dirname( __FILE__ ) ) ) . '/singlevideo.php?lid=' . $item_id;
 		return $item;
 	}
 }

@@ -1,38 +1,56 @@
 <?php
 /**
- * $Id: index.php
- * Module: MyTube
- */
+* MyTube - a multicategory video management module for ImpressCMS
+*
+* Based upon WF-Links
+*
+* File: index.php
+*
+* @copyright		http://www.xoops.org/ The XOOPS Project
+* @copyright		XOOPS_copyrights.txt
+* @copyright		http://www.impresscms.org/ The ImpressCMS Project
+* @license		GNU General Public License (GPL)
+*				a copy of the GNU license is enclosed.
+* ----------------------------------------------------------------------------------------------------------
+* @package		WF-Links 
+* @since			1.03
+* @author		John N
+* ----------------------------------------------------------------------------------------------------------
+* 				MyTube
+* @since			1.00
+* @author		McDonald
+* @version		$Id$
+*/
 
 include 'header.php';
 
-$start = xtube_cleanRequestVars( $_REQUEST, 'start', 0 );
+$start = mytube_cleanRequestVars( $_REQUEST, 'start', 0 );
 $start = intval( $start );
 
-$xoopsOption['template_main'] = 'xoopstube_index.html';
-include XOOPS_ROOT_PATH . '/header.php';
+$xoopsOption['template_main'] = 'mytube_index.html';
+include ICMS_ROOT_PATH . '/header.php';
 
-global $xoopsModuleConfig;
-
-$mytree = new XoopsTree( $xoopsDB -> prefix( 'xoopstube_cat' ), 'cid', 'pid' );
+$mytree = new icms_view_Tree( icms::$xoopsDB -> prefix( 'mytube_cat' ), 'cid', 'pid' );
 
 // Begin Main page Heading etc
-$sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_indexpage' );
-$head_arr = $xoopsDB -> fetchArray( $xoopsDB -> query( $sql ) );
+$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_indexpage' );
+$head_arr = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query( $sql ) );
 
-$catarray['imageheader'] = xtube_imageheader( $head_arr['indeximage'], $head_arr['indexheading'] );
-$catarray['indexheading'] = $xtubemyts -> displayTarea( $head_arr['indexheading'] );
-$catarray['indexheaderalign'] = $xtubemyts -> htmlSpecialCharsStrip( $head_arr['indexheaderalign'] );
-$catarray['indexfooteralign'] = $xtubemyts -> htmlSpecialCharsStrip( $head_arr['indexfooteralign'] );
+if ( $head_arr['indeximage'] != '' ) {
+	$catarray['imageheader'] = '<div style="padding-bottom: 12px; text-align: center;">' . mytube_imageheader( $head_arr['indeximage'], '' ) . '</div>'; }
+	
+if ( $head_arr['indexheading'] != '' ) {
+$catarray['indexheading'] = '<h4 style="text-align: center;">' . $head_arr['indexheading'] . '</h4>'; }
 
-$html = ( $head_arr['nohtml'] ) ? 0 : 1;
-$smiley = ( $head_arr['nosmiley'] ) ? 0 : 1;
-$xcodes = ( $head_arr['noxcodes'] ) ? 0 : 1;
-$images = ( $head_arr['noimages'] ) ? 0 : 1;
-$breaks = ( $head_arr['nobreak'] ) ? 1 : 0;
+$catarray['indexheaderalign'] = $mytubemyts -> htmlSpecialCharsStrip( $head_arr['indexheaderalign'] );
+$catarray['indexfooteralign'] = $mytubemyts -> htmlSpecialCharsStrip( $head_arr['indexfooteralign'] );
+$catarray['indexheading'] = icms_core_DataFilter::checkVar( $head_arr['indexheading'], 'html' );
 
-$catarray['indexheader'] = $xtubemyts -> displayTarea( $head_arr['indexheader'], $html, $smiley, $xcodes, $images, $breaks );
-$catarray['indexfooter'] = $xtubemyts -> displayTarea( $head_arr['indexfooter'], $html, $smiley, $xcodes, $images, $breaks );
+if ( $head_arr['indexheader'] != '' ) {
+$catarray['indexheader'] = '<div style="padding-bottom: 12px; text-align: ' . $head_arr['indexheaderalign'] . ';">' . icms_core_DataFilter::checkVar( $head_arr['indexheader'], 'html' ) . '</div>'; }
+
+$catarray['indexfooter']  = icms_core_DataFilter::checkVar( $head_arr['indexfooter'], 'html' );
+$catarray['letters'] = mytube_letters();
 $xoopsTpl -> assign( 'catarray', $catarray );
 // End main page Headers
 
@@ -41,39 +59,39 @@ $chcount = 0;
 $countin = 0;
 
 // Begin Main page linkload info
-$listings = xtube_getTotalItems();
+$listings = mytube_getTotalItems();
 // get total amount of categories
-$total_cat = xtube_totalcategory();
+$total_cat = mytube_totalcategory();
 
-$catsort = $xoopsModuleConfig['sortcats'];
-$sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_cat' ) . " WHERE pid = 0 ORDER BY " . $catsort;
-$result = $xoopsDB -> query( $sql );
-while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
+$catsort = icms::$module -> config['sortcats'];
+$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_cat' ) . ' WHERE pid=0 ORDER BY ' . $catsort;
+$result = icms::$xoopsDB -> query( $sql );
+while ( $myrow = icms::$xoopsDB -> fetchArray( $result ) ) {
     $countin++;
     $subtotalvideoload = 0;
-    $totalvideoload = xtube_getTotalItems( $myrow['cid'], 1 );
-    $indicator = xtube_isnewimage( $totalvideoload['published'] );
-    if ( xtube_checkgroups( $myrow['cid'] ) ) {
-        $title = $xtubemyts -> htmlSpecialCharsStrip( $myrow['title'] );
+    $totalvideoload = mytube_getTotalItems( $myrow['cid'], 1 );
+    $indicator = mytube_isnewimage( $totalvideoload['published'] );
+    if ( mytube_checkgroups( $myrow['cid'] ) ) {
+        $title = $mytubemyts -> htmlSpecialCharsStrip( $myrow['title'] );
 
         $arr = array();
-        $arr = $mytree -> getFirstChild( $myrow['cid'], "title" );
+        $arr = $mytree -> getFirstChild( $myrow['cid'], 'title' );
 
         $space = 1;
         $chcount = 1;
-        $subcategories = "";
+        $subcategories = '';
         foreach( $arr as $ele ) {
-            if ( true == xtube_checkgroups( $ele['cid'] ) ) {
-                if ( $xoopsModuleConfig['subcats'] == 1 ) {
-                    $chtitle = $xtubemyts -> htmlSpecialCharsStrip( $ele['title'] );
+			$hassubitems = mytube_getTotalItems( $ele['cid'], 1 );
+            if ( true == mytube_checkgroups( $ele['cid'] ) ) {
+                if ( icms::$module -> config['subcats'] == 1 ) {
+                    $chtitle = $mytubemyts -> htmlSpecialCharsStrip( $ele['title'] );
                     if ( $chcount > 5 ) {
-                        $subcategories .= "...";
+                        $subcategories .= '&nbsp;&nbsp;...';
                         break;
                     } 
                     if ( $space > 0 ) {
-                        $subcategories .= "<br />";
-                    }
-                    $subcategories .= "<a href='" . XOOPS_URL . "/modules/" . $xoopsModule -> getVar( 'dirname' ) . "/viewcat.php?cid=" . $ele['cid'] . "'>" . $chtitle . "</a>";
+                    $subcategories .= '- <a href="' . ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/viewcat.php?cid=' . $ele['cid'] . '">' . $chtitle . '</a> (' . $hassubitems['count'] . ')';
+					}
                     $space++;
                     $chcount++;
                 } 
@@ -82,17 +100,17 @@ while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
 
          // This code is copyright WF-Projects
          // Using this code without our permission or removing this code voids the license agreement
-        $_image = ( $myrow['imgurl'] ) ? urldecode( $myrow['imgurl'] ) : "";
-		if ( $_image != "" && $xoopsModuleConfig['usethumbs'] ) {
-                  $_thumb_image = new xtubeThumbsNails( $_image, $xoopsModuleConfig['catimage'], 'thumbs' );
+        $_image = ( $myrow['imgurl'] ) ? urldecode( $myrow['imgurl'] ) : '';
+		if ( $_image != "" && icms::$module -> config['usethumbs'] ) {
+                  $_thumb_image = new mytubeThumbsNails( $_image, icms::$module -> config['catimage'], 'thumbs' );
 			if ( $_thumb_image ) {
                           $_thumb_image -> setUseThumbs( 1 );
                           $_thumb_image -> setImageType( 'gd2' );
-                          $_image = $_thumb_image -> do_thumb( $xoopsModuleConfig['shotwidth'],
-                          $xoopsModuleConfig['shotheight'],
-                          $xoopsModuleConfig['imagequality'],
-                          $xoopsModuleConfig['updatethumbs'],
-                          $xoopsModuleConfig['keepaspect']
+                          $_image = $_thumb_image -> do_thumb( icms::$module -> config['shotwidth'],
+                          icms::$module -> config['shotheight'],
+                          icms::$module -> config['imagequality'],
+                          icms::$module -> config['updatethumbs'],
+                          icms::$module -> config['keepaspect']
                           );
                 }
         }
@@ -101,13 +119,13 @@ while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
             $_width = 33;
             $_height = 24;
         } else {
-            $imgurl = "{$xoopsModuleConfig['catimage']}/$_image";
-            $_width = $xoopsModuleConfig['shotwidth'];
-            $_height = $xoopsModuleConfig['shotheight'];
+            $imgurl = icms::$module -> config['catimage'] . "/$_image";
+            $_width = icms::$module -> config['shotwidth'];
+            $_height = icms::$module -> config['shotheight'];
         } 
         // End
 
-        $xoopsTpl -> append( 'categories', array( 'image' => XOOPS_URL . "/$imgurl",
+        $xoopsTpl -> append( 'categories', array( 'image' => ICMS_URL . "/$imgurl",
                 'id' => $myrow['cid'],
                 'title' => $title,
                 'subcategories' => $subcategories,
@@ -121,53 +139,61 @@ while ( $myrow = $xoopsDB -> fetchArray( $result ) ) {
     } 
 } 
 switch ( $total_cat ) {
-    case "1":
-        $lang_thereare = _MD_XTUBE_THEREIS;
+    case '1':
+        $lang_thereare = _MD_MYTUBE_THEREIS;
         break;
     default:
-        $lang_thereare = _MD_XTUBE_THEREARE;
+        $lang_thereare = _MD_MYTUBE_THEREARE;
         break;
 }
 
 $time = time();
 
-$sql = $xoopsDB -> query( "SELECT lastvideosyn, lastvideostotal FROM " . $xoopsDB -> prefix( 'xoopstube_indexpage' ));
-$lastvideos = $xoopsDB -> fetchArray( $sql );
+$sql = icms::$xoopsDB -> query( 'SELECT lastvideosyn, lastvideostotal FROM ' . icms::$xoopsDB -> prefix( 'mytube_indexpage' ) );
+$lastvideos = icms::$xoopsDB -> fetchArray( $sql );
 
-if ($lastvideos['lastvideosyn'] == 1 && $lastvideos['lastvideostotal'] > 0) {
+if ( $lastvideos['lastvideosyn'] == 1 && $lastvideos['lastvideostotal'] > 0 ) {
 
-  $result = $xoopsDB -> query( "SELECT COUNT(*) FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 
-								AND published <= " . $time . " 
-								AND (expired = 0 OR expired > " . $time . ") 
+  $result = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published > 0 
+								AND published <= ' . $time . ' 
+								AND (expired = 0 OR expired > ' . $time . ') 
 								AND offline = 0 
-								ORDER BY published DESC", 0, 0 );
-  list( $count ) = $xoopsDB -> fetchRow( $result );
+								ORDER BY published DESC', 0, 0 );
+  list( $count ) = icms::$xoopsDB -> fetchRow( $result );
 
-  $count = (($count > $lastvideos['lastvideostotal']) && ($lastvideos['lastvideostotal'] != 0)) ? $lastvideos['lastvideostotal'] : $count;
-  $limit = (($start + $xoopsModuleConfig['perpage']) > $count) ? ($count - $start ) : $xoopsModuleConfig['perpage'];
+  $count = ( ( $count > $lastvideos['lastvideostotal'] ) && ( $lastvideos['lastvideostotal'] != 0 ) ) ? $lastvideos['lastvideostotal'] : $count;
+  $limit = ( ( $start + icms::$module -> config['perpage'] ) > $count ) ? ( $count - $start ) : icms::$module -> config['perpage'];
 
-  $result = $xoopsDB -> query( "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_videos' ) . " WHERE published > 0 
-								AND published <= " . time() . " 
-								AND (expired = 0 OR expired > " . time() . ") 
+  $result = icms::$xoopsDB -> query( 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published > 0 
+								AND published <= ' . time() . ' 
+								AND (expired = 0 OR expired > ' . time() . ') 
 								AND offline = 0 
-								ORDER BY published DESC", $limit , $start );
-  while ( $video_arr = $xoopsDB -> fetchArray( $result ) ) {
+								ORDER BY published DESC', $limit, $start );
+								
+  while ( $video_arr = icms::$xoopsDB -> fetchArray( $result ) ) {
         $res_type = 0;
         $moderate = 0;
         $cid = $video_arr['cid'];
-        require XOOPS_ROOT_PATH . '/modules/' . $xoopsModule -> getVar( 'dirname' ) . '/include/videoloadinfo.php';
+        require ICMS_ROOT_PATH . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/include/videoloadinfo.php';
         $xoopsTpl -> append( 'video', $video );
   }
   
-  $pagenav = new XoopsPageNav( $count, $xoopsModuleConfig['perpage'] , $start, 'start' );
+  $pagenav = new icms_view_PageNav( $count, icms::$module -> config['perpage'] , $start, 'start' );
   $xoopsTpl -> assign( 'pagenav', $pagenav -> renderNav() );
-  
   $xoopsTpl -> assign( 'showlatest', $lastvideos['lastvideosyn'] );
 }
 
-$xoopsTpl -> assign( 'cat_columns', $xoopsModuleConfig['catcolumns'] );
+$xoopsTpl -> assign( 'cat_columns', icms::$module -> config['catcolumns'] );
 $xoopsTpl -> assign( 'lang_thereare', sprintf( $lang_thereare, $total_cat, $listings['count'] ) );
-$xoopsTpl -> assign( 'module_dir', $xoopsModule -> getVar( 'dirname' ) );
+$xoopsTpl -> assign( 'module_dir', icms::$module -> getVar( 'dirname' ) );
+
+// RSS feed
+$rsssql = 'SELECT rssactive FROM ' . icms::$xoopsDB -> prefix( 'mytube_configs' );
+list( $rssactive ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $rsssql ) );
+if ( $rssactive == 1 ) {
+	$xoopsTpl -> assign( 'mytube_feed', '<a href="' . ICMS_URL . '/modules/' . $mydirname . '/feed.php" target="_blank"><img src="' . ICMS_URL . '/modules/' . $mydirname . '/images/icon/feed.png" border="0" alt="' . _MD_MYTUBE_FEED . '" title="' . _MD_MYTUBE_FEED . '" /></a>' );
+	$xoopsTpl -> assign( 'xoops_module_header', '<link rel="alternate" type="application/rss+xml" title="' . _MD_MYTUBE_FEED . '" href="feed.php">' ); 
+}
  
-include XOOPS_ROOT_PATH . '/footer.php';
+include ICMS_ROOT_PATH . '/footer.php';
 ?>

@@ -6,7 +6,7 @@ Il a été porté à notre attention que la vidéo {X_TITLE} que vous avez publié le 
 
 Pouvez-vous, s'il vous plaît, suivre le lien ci-dessous et mettre à jour les informations que nous avons dans notre base de données concernant la vidéo que vous avez proposé.
 
-Visitez: {X_LINKLOAD}
+Visitez: {X_VIDEOLOAD}
 
 Si vous avez échoué dans la mise à jour de cette information, nous supprimerons ces informations de notre base de données prochainement.
 

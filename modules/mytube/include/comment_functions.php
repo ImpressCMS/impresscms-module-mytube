@@ -27,13 +27,12 @@
 
 // comment callback functions
 
-function xoopstube_com_update($videoload_id, $total_num){
-	$db =& XoopsDatabaseFactory::getdatabaseconnection();
-	$sql='UPDATE '.$db->prefix('xoopstube_videos').' SET comments='.$total_num.' WHERE lid='.$videoload_id;
-	$db->query($sql);
+function mytube_com_update( $videoload_id, $total_num ){
+	$sql = 'UPDATE ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' SET comments=' . $total_num . ' WHERE lid=' . $videoload_id;
+	icms::$xoopsDB -> query( $sql );
 }
 
-function xoopstube_com_approve(&$comment){
+function mytube_com_approve( &$comment ){
 	// notification mail here
 }
 ?>

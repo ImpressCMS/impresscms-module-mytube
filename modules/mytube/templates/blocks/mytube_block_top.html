@@ -1,0 +1,13 @@
+<table cellspacing="1" align="center" border="0">
+<{foreach item=videoload from=$block.videos}>
+<tr>
+  <td align="center" style="padding: 2px; vertical-align: top; background-color: #d9d9d9; font-size: smaller;">
+	<a href="<{$videoload.url}>"><{$videoload.videothumb}></a>
+	<br />
+	<a href="<{$videoload.url}>"><{$videoload.title}></a>
+	<br />
+	(<{$videoload.hits}>)
+  </td>
+</tr>
+<{/foreach}>
+</table>
