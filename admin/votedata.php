@@ -1,100 +1,122 @@
 <?php
 /**
- * $Id: votedata.php
- * Module: MyTube
- */
+* MyTube - a multicategory video management module for ImpressCMS
+*
+* Based upon WF-Links
+*
+* File: admin/votedata.php
+*
+* @copyright	http://www.xoops.org/ The XOOPS Project
+* @copyright	XOOPS_copyrights.txt
+* @copyright	http://www.impresscms.org/ The ImpressCMS Project
+* @license		GNU General Public License (GPL)
+*				a copy of the GNU license is enclosed.
+* ----------------------------------------------------------------------------------------------------------
+* @package		WF-Links 
+* @since		1.03
+* @author		John N
+* ----------------------------------------------------------------------------------------------------------
+* 				MyTube
+* @since		1.00
+* @author		McDonald
+* @version		$Id$
+*/
 
 include 'admin_header.php';
 
-$op = xtube_cleanRequestVars( $_REQUEST, 'op', '' );
-$rid = xtube_cleanRequestVars( $_REQUEST, 'rid', 0 );
-$lid = xtube_cleanRequestVars( $_REQUEST, 'lid', 0 );
+$op  = mytube_cleanRequestVars( $_REQUEST, 'op', '' );
+$rid = intval( mytube_cleanRequestVars( $_REQUEST, 'rid', 0 ) );
+$lid = intval( mytube_cleanRequestVars( $_REQUEST, 'lid', 0 ) );
 
-switch ( strtolower($op) ) {
-    case "delvote":
-        $sql = "DELETE FROM " . $xoopsDB -> prefix( 'xoopstube_votedata' ) . " WHERE ratingid=" . $rid;
-        $result = $xoopsDB -> queryF( $sql );
-        xtube_updaterating( $lid );
-        redirect_header( "votedata.php", 1, _AM_XTUBE_VOTEDELETED );
+switch ( strtolower( $op ) ) {
+    case 'delvote':
+        $sql = 'DELETE FROM ' . icms::$xoopsDB -> prefix( 'mytube_votedata' ) . ' WHERE ratingid=' . $rid;
+        $result = icms::$xoopsDB -> queryF( $sql );
+        mytube_updaterating( $lid );
+        redirect_header( 'votedata.php', 1, _AM_MYTUBE_VOTEDELETED );
         break;
 
     case 'main':
     default:
-	$start = xtube_cleanRequestVars( $_REQUEST, 'start', 0 );
-        xoops_cp_header();
-        xtube_adminmenu( "<h4>" . _AM_XTUBE_VOTE_RATINGINFOMATION . "</h4>" );
-        $_vote_data = xtube_getVoteDetails( $lid );
+	$start = mytube_cleanRequestVars( $_REQUEST, 'start', 0 );
+        icms_cp_header();
+        mytube_adminmenu( 8, _AM_MYTUBE_VOTE_RATINGINFOMATION );
+        $_vote_data = mytube_getVoteDetails( $lid );
 
-        $text_info = "
-		<table width='100%'>
+        $text_info = '
+		<table width="100%">
 		 <tr>
-		  <td width='50%' valign='top'>
-		   <div><b>" . _AM_XTUBE_VOTE_TOTALRATE . ": </b>" . intval( $_vote_data['rate'] ) . "</div>
-		   <div><b>" . _AM_XTUBE_VOTE_USERAVG . ": </b>" . intval( round( $_vote_data['avg_rate'], 2 ) ) . "</div>
-		   <div><b>" . _AM_XTUBE_VOTE_MAXRATE . ": </b>" . intval( $_vote_data['min_rate'] ) . "</div>
-		   <div><b>" . _AM_XTUBE_VOTE_MINRATE . ": </b>" . intval( $_vote_data['max_rate'] ) . "</div>
+		  <td width="50%" valign="top">
+		   <b>' . _AM_MYTUBE_VOTE_TOTALRATE . ': </b>' . intval( $_vote_data['rate'] ) . '<br />
+		   <b>' . _AM_MYTUBE_VOTE_USERAVG . ': </b>' . intval( round( $_vote_data['avg_rate'], 2 ) ) . '<br />
+		   <b>' . _AM_MYTUBE_VOTE_MAXRATE . ': </b>' . intval( $_vote_data['min_rate'] ) . '<br />
+		   <b>' . _AM_MYTUBE_VOTE_MINRATE . ': </b>' . intval( $_vote_data['max_rate'] ) . '<br />
 		  </td>
 		  <td>		 
-		   <div><b>" . _AM_XTUBE_VOTE_MOSTVOTEDTITLE . ": </b>" . intval( $_vote_data['max_title'] ) . "</div>
-           <div><b>" . _AM_XTUBE_VOTE_LEASTVOTEDTITLE . ": </b>" . intval( $_vote_data['min_title'] ) . "</div>
-		   <div><b>" . _AM_XTUBE_VOTE_REGISTERED . ": </b>" . ( intval( $_vote_data['rate'] - $_vote_data['null_ratinguser'] ) ) . "</div>
-		   <div><b>" . _AM_XTUBE_VOTE_NONREGISTERED . ": </b>" . intval( $_vote_data['null_ratinguser'] ) . "</div>
+		   <b>' . _AM_MYTUBE_VOTE_MOSTVOTEDTITLE . ': </b>' . intval( $_vote_data['max_title'] ) . '<br />
+           <b>' . _AM_MYTUBE_VOTE_LEASTVOTEDTITLE . ': </b>' . intval( $_vote_data['min_title'] ) . '<br />
+		   <b>' . _AM_MYTUBE_VOTE_REGISTERED . ': </b>' . ( intval( $_vote_data['rate'] - $_vote_data['null_ratinguser'] ) ) . '<br />
+		   <b>' . _AM_MYTUBE_VOTE_NONREGISTERED . ': </b>' . intval( $_vote_data['null_ratinguser'] ) . '<br />
 		  </td>
 		 </tr>
-		</table>";
+		</table>';
 
-        echo "  <div style='padding:5px; background-color: #EEEEEE; border: 1px solid #D9D9D9;'>
-		<span style='font-weight: bold; color: #0A3760;'>" . _AM_XTUBE_VOTE_DISPLAYVOTES . "<br /><br /></span>\n
-		<span style='padding: 8px;'>$text_info</dspaniv><br />\n
-		<span style='padding: 8px;'><li>" . $imagearray['deleteimg'] . " " . _AM_XTUBE_VOTE_DELETEDSC . "</li></span>\n
-		</div>\n
-		<br />\n
+        echo '
+		 <fieldset style="border: #e8e8e8 1px solid;">
+		 <legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_VOTE_DISPLAYVOTES . '</legend>
+		 <div style="padding: 12px;">' . $text_info . '<br />
+		 &nbsp;' . $imagearray['deleteimg'] . ' ' . _AM_MYTUBE_VOTE_DELETEDSC . '</li>
+		 </div>
+		 </fieldset>
 
-		<table width='100%' cellspacing='1' cellpadding='2' class='outer'>\n
-		<tr>\n
-		<th style='text-align: center;'>" . _AM_XTUBE_VOTE_ID . "</th>\n
-		<th style='text-align: center;'>" . _AM_XTUBE_VOTE_USER . "</th>\n
-		<th style='text-align: center;'>" . _AM_XTUBE_VOTE_IP . "</th>\n
-		<th style='text-align: center;'>" . _AM_XTUBE_VOTE_FILETITLE . "</th>\n
-		<th style='text-align: center;'>" . _AM_XTUBE_VOTE_RATING . "</th>\n
-		<th style='text-align: center;'>" . _AM_XTUBE_VOTE_DATE . "</th>\n
-		<th style='text-align: center;'>" . _AM_XTUBE_MINDEX_ACTION . "</th></tr>\n";
+		<table width="100%" cellspacing="1" cellpadding="2" class="outer" style="font-size: smaller;">
+		<tr>
+		<th style="text-align: center;">' . _AM_MYTUBE_VOTE_ID . '</th>
+		<th style="text-align: center;">' . _AM_MYTUBE_VOTE_USER . '</th>
+		<th style="text-align: center;">' . _AM_MYTUBE_VOTE_IP . '</th>
+		<th style="text-align: left;">&nbsp;' . _AM_MYTUBE_VOTE_FILETITLE . '</th>
+		<th style="text-align: center;">' . _AM_MYTUBE_VOTE_RATING . '</th>
+		<th style="text-align: center;">' . _AM_MYTUBE_VOTE_DATE . '</th>
+		<th style="text-align: center;">' . _AM_MYTUBE_MINDEX_ACTION . '</th></tr>';
 
-        $sql = "SELECT * FROM " . $xoopsDB -> prefix( 'xoopstube_votedata' );
+        $sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_votedata' );
         if ( $lid > 0 ) {
-            $sql .= " WHERE lid=" . $lid;
+            $sql .= ' WHERE lid=' . $lid;
         } 
-        $sql .= " ORDER BY ratingtimestamp DESC";
+        $sql .= ' ORDER BY ratingtimestamp DESC';
 
-        $results = $xoopsDB -> query( $sql, $xoopsModuleConfig['admin_perpage'], $start );
-        $votes = $xoopsDB -> getRowsNum( $xoopsDB -> query( $sql ) );
+        $results = icms::$xoopsDB -> query( $sql, icms::$module -> config['admin_perpage'], $start );
+        $votes = icms::$xoopsDB -> getRowsNum( icms::$xoopsDB -> query( $sql ) );
 
         if ( $votes == 0 ) {
-            echo "<tr><td style='text-align: center;' colspan='7' class='head'>" . _AM_XTUBE_VOTE_NOVOTES . "</td></tr>";
+            echo '<tr><td style="text-align: center;" colspan="7" class="head">' . _AM_MYTUBE_VOTE_NOVOTES . '</td></tr>';
         } else {
-            while ( list( $ratingid, $lid, $ratinguser, $rating, $ratinghostname, $ratingtimestamp, $title ) = $xoopsDB -> fetchRow( $results ) ) {
-                $formatted_date = formatTimestamp( $ratingtimestamp, $xoopsModuleConfig['dateformat'] );
-                $ratinguname = XoopsUser :: getUnameFromId( $ratinguser );
-                echo "
-					<tr style='text-align: center;'>\n
-					<td class='head'>$ratingid</td>\n
-					<td class='even'>$ratinguname</td>\n
-					<td class='even'>$ratinghostname</td>\n
-					<td class='even'>$title</td>\n
-					<td class='even'>$rating</td>\n
-					<td class='even'>$formatted_date</td>\n
-					<td class='even'><a href='votedata.php?op=delvote&amp;lid=".$lid."&amp;rid=".$ratingid."'>" . $imagearray['deleteimg'] . "</a></td>\n
-					</tr>\n";
+            while ( list( $ratingid, $lid, $ratinguser, $rating, $ratinghostname, $ratingtimestamp, $title ) = icms::$xoopsDB -> fetchRow( $results ) ) {
+                $formatted_date = mytube_time( formatTimestamp( $ratingtimestamp, icms::$module -> config['dateformat'] ) );
+                $ratinguname = icms::$user -> getUnameFromId( $ratinguser );
+				
+				$result2 = 'SELECT cid FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid;
+				list( $cid ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $result2 ) );
+				$vlink = '<a href="' . ICMS_URL . '/modules/' . icms::$module -> getVar('dirname') . '/singlevideo.php?cid=' . $cid . '&lid=' . $lid . '">' . $title . '</a>';
+				
+                echo '
+					<tr>
+					<td class="head" style="text-align: center;">' . $ratingid . '</td>
+					<td class="even" style="text-align: center;">' . $ratinguname . '</td>
+					<td class="even" style="text-align: center;">' . $ratinghostname . '</td>
+					<td class="even" style="text-align: left;">&nbsp;' . $vlink . '</td>
+					<td class="even" style="text-align: center;">' . $rating . '</td>
+					<td class="even" style="text-align: center;">' . $formatted_date . '</td>
+					<td class="even" style="text-align: center;"><a href="votedata.php?op=delvote&amp;lid=' . $lid . '&amp;rid=' . $ratingid . '">' . $imagearray['deleteimg'] . '</a></td>
+					</tr>';
             } 
         } 
-        echo "</table>"; 
+        echo '</table>'; 
         // Include page navigation
-        include_once XOOPS_ROOT_PATH . '/class/pagenav.php';
-        $page = ( $votes > $xoopsModuleConfig['admin_perpage'] ) ? _AM_XTUBE_MINDEX_PAGE : '';
-        $pagenav = new XoopsPageNav( $page, $xoopsModuleConfig['admin_perpage'], $start, 'start' );
+        $page = ( $votes > icms::$module -> config['admin_perpage'] ) ? _AM_MYTUBE_MINDEX_PAGE : '';
+        $pagenav = new icms_view_PageNav( $page, icms::$module -> config['admin_perpage'], $start, 'start' );
         echo '<div align="right" style="padding: 8px;">' . $pagenav -> renderNav() . '</div>';
         break;
 } 
-xoops_cp_footer();
-
+icms_cp_footer();
 ?>

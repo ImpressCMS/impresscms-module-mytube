@@ -1,0 +1,103 @@
+<link rel="stylesheet" type="text/css" href="<{$icms_url}>/modules/<{$module_dir}>/mytubestyle.css" />
+
+<{$catarray.imageheader}>
+<{$description}>
+
+<br />
+
+<div class="itemPermaLink" style="padding-bottom: 12px; text-align: center;"><{$catarray.letters}></div>
+
+<div class="mytube_path" style="font-size: smaller; font-weight: bold;"><{$category_path}></div>
+
+<br />
+
+<{if $subcategories}>
+<fieldset><legend style="font-weight: bold;"><{$smarty.const._MD_MYTUBE_SUBCATLISTING}></legend>
+<div align= "left" style="margin-left: 5px; padding: 8px;">
+ <table width="80%">
+  <tr>
+   <{foreach item=subcat from=$subcategories}>
+    <td style="text-align: left; vertical-align: top;">
+		<a href="viewcat.php?cid=<{$subcat.id}>"><img src="<{$subcat.image}>" title="<{$subcat.alttext}>" alt="<{$subcat.alttext}>" align="top" /></a>
+		<a href="viewcat.php?cid=<{$subcat.id}>"><{$subcat.title}></a>&nbsp;(<{$subcat.totalvideos}>)<br />		
+		<{if $subcat.infercategories}>
+			<{$subcat.infercategories}>
+		<{/if}>
+	 </td>
+	 <{if $subcat.count is div by $cat_columns}>
+    </tr><tr>
+     <{/if}>
+   <{/foreach}>
+   </tr>
+ </table>    
+</div></fieldset>
+<br />
+<{/if}>
+
+<{if $show_videos == true}>
+	<div style="text-align:center; font-size: 70%;">
+		<b><{$smarty.const._MD_MYTUBE_SORTBY}></b>&nbsp;<{$smarty.const._MD_MYTUBE_TITLE}> (
+		<a href="viewcat.php?cid=<{$category_id}>&orderby=titleA">
+		<img src="images/icon/up.png" alt="" style="vertical-align: bottom;" /></a>
+		<a href="viewcat.php?cid=<{$category_id}>&orderby=titleD">
+		<img src="images/icon/down.png" alt="" style="vertical-align: bottom;" /></a>
+		)
+		&nbsp;
+		<{$smarty.const._MD_MYTUBE_DATE}> (
+		<a href="viewcat.php?cid=<{$category_id}>&orderby=dateA">
+		<img src="images/icon/up.png" alt="" style="vertical-align: bottom;" /></a>
+		<a href="viewcat.php?cid=<{$category_id}>&orderby=dateD">
+		<img src="images/icon/down.png" alt="" style="vertical-align: bottom;" /></a>
+		)
+		&nbsp;
+		<{$smarty.const._MD_MYTUBE_RATING}> (
+		<a href="viewcat.php?cid=<{$category_id}>&orderby=ratingA">
+		<img src="images/icon/up.png" alt="" style="vertical-align: bottom;" /></a>
+		<a href="viewcat.php?cid=<{$category_id}>&orderby=ratingD">
+		<img src="images/icon/down.png" alt="" style="vertical-align: bottom;" /></a>
+		)
+		&nbsp;
+		<{$smarty.const._MD_MYTUBE_POPULARITY}> (
+		<a href="viewcat.php?cid=<{$category_id}>&orderby=hitsA">
+		<img src="images/icon/up.png" alt="" style="vertical-align: bottom;" /></a>
+		<a href="viewcat.php?cid=<{$category_id}>&orderby=hitsD">
+		<img src="images/icon/down.png" alt="" style="vertical-align: bottom;" /></a>
+		)
+		<br />
+		<b><{$lang_cursortedby}></b><br />
+	</div>
+	<br />
+<{/if}>
+
+<{if $page_nav == true}>
+	<div style="float: right;"><{$pagenav}></div>
+<{/if}>
+
+<div style="clear: both;">
+   <!-- Start link loop -->
+   <{section name=i loop=$video}>
+	 <{include file="db:mytube_videoload.html" video=$video[i]}>
+   <{/section}>
+   <!-- End link loop -->
+</div>
+
+<{if $page_nav == true}>
+	<div class="mytube_horline">&nbsp;</div>
+	<div style="float: right;"><{$pagenav}></div>
+<{/if}>
+
+<{if $moderate == true}>
+<div><b><{$smarty.const._MD_MYTUBE_MODERATOR_OPTIONS}></b></div><br />
+<div>
+   <!-- Start link loop -->
+   <{section name=a loop=$mod_arr}>
+	 <{include file="db:mytube_videoload.html" video=$mod_arr[a]}>
+   <{/section}>
+   <!-- End link loop -->
+</div>
+
+<{/if}>
+
+<br /><br />
+
+<{include file="db:system_notification_select.html"}>

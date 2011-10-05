@@ -26,13 +26,13 @@
 //  ------------------------------------------------------------------------ //
 
 include '../../mainfile.php';
-$com_itemid = isset($_GET['com_itemid']) ? intval($_GET['com_itemid']) : 0;
-if ($com_itemid > 0) {
+$com_itemid = isset( $_GET['com_itemid'] ) ? intval( $_GET['com_itemid'] ) : 0;
+if ( $com_itemid > 0 ) {
     // Get file title
-    $sql="SELECT title FROM " . $xoopsDB->prefix('xoopstube_videos') . " WHERE lid=" . $com_itemid;
-    $result = $xoopsDB->query($sql);
-    $row = $xoopsDB->fetchArray($result);
+    $sql = 'SELECT title FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $com_itemid;
+    $result = icms::$xoopsDB -> query( $sql );
+    $row = icms::$xoopsDB -> fetchArray( $result );
     $com_replytitle = $row['title'];
-    include XOOPS_ROOT_PATH.'/include/comment_new.php';
+    include ICMS_ROOT_PATH . '/include/comment_new.php';
 }
 ?>

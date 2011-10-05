@@ -8,7 +8,7 @@ has now been reported as broken video at our website ({X_SITENAME}).
 Can you please follow the video given below and update the current information we have in our database 
 concerning the resource you submitted to us.
 
-Visit: {X_LINKLOAD}
+Visit: {X_VIDEOLOAD}
 
 If you fail to update this information, we may remove your submission from our database in the future.
 

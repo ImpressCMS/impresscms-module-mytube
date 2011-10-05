@@ -10,7 +10,7 @@
  * @package		module::tag
  */
 
-if ( !defined( 'XOOPS_ROOT_PATH' ) ) { die( 'XOOPS root path not defined' ); }
+if ( !defined( 'ICMS_ROOT_PATH' ) ) { die( 'XOOPS root path not defined' ); }
 
 /**
  * Get item fields:
@@ -27,17 +27,20 @@ if ( !defined( 'XOOPS_ROOT_PATH' ) ) { die( 'XOOPS root path not defined' ); }
  * @return	boolean
  * 
  */
-
+ 
 function mytube_tag_iteminfo( &$items ) {
-  
-    $mydirname = basename( dirname(  dirname( __FILE__ ) ) );
 
+	include_once ICMS_ROOT_PATH . '/modules/' . basename( dirname( dirname( __FILE__ ) ) ) . '/include/functions.php';
+	
     if( empty( $items ) || !is_array( $items ) ) {
         return false; 
     } 
 
-    global $xoopsDB;
     $myts =& MyTextSanitizer::getInstance(); 
+	$modhandler = icms::handler( 'icms_module' );
+    $mytubeModule = $modhandler -> getByDirname( basename( dirname( dirname( __FILE__ ) ) ) );
+    $config_handler = icms::$config;
+    $mytubeModuleConfig = $config_handler -> getConfigsByCat( 0, $mytubeModule -> getVar( 'mid' ) );
 
     $items_id = array(); 
 
@@ -52,14 +55,19 @@ function mytube_tag_iteminfo( &$items ) {
 
     foreach( array_keys( $items ) as $cat_id ) {
         foreach( array_keys( $items[$cat_id] ) as $item_id ) {
-            $sql = 'SELECT l.lid, l.cid as lcid, l.title as ltitle, l.published, l.cid, l.submitter, l.description, l.item_tag, c.title as ctitle FROM ' . $xoopsDB -> prefix('xoopstube_videos') . ' l, ' . $xoopsDB -> prefix('xoopstube_cat') . ' c WHERE l.lid=' . $item_id . ' AND l.cid=c.cid AND l.status>0 ORDER BY l.published DESC';
-            $result = $xoopsDB -> query( $sql );
-            $row = $xoopsDB -> fetchArray( $result );
-            $lcid = $row['lcid'];
+            $sql = 'SELECT lid, title, published, submitter, description, item_tag, nice_url FROM ' . icms::$xoopsDB -> prefix('mytube_videos') . '  WHERE lid=' . $item_id . ' AND status>0 ORDER BY published DESC';
+            $result = icms::$xoopsDB -> query( $sql );
+            $row = icms::$xoopsDB -> fetchArray( $result );
+			if ( $mytubeModuleConfig['niceurl'] ) {
+				$url = 'singlevideo.php?lid=' . $row['lid'] . '&amp;page=' . mytube_nicelink( $row['title'], $row['nice_url'] );
+			} else {
+				$url = 'singlevideo.php?lid=' . $row['lid'];
+			}
+			$icon = '<img src="' . ICMS_URL . '/modules/' . basename( dirname( dirname( __FILE__ ) ) ) . '/images/icon_small.png" alt="" />';
             $items[$cat_id][$item_id] = array(
-                'title'      => $row['ltitle'],
+                'title'      => $icon . '&nbsp;' . $row['title'],
                 'uid'        => $row['submitter'],
-                'link'       => "singlevideo.php?cid=$lcid&amp;lid=$item_id",
+                'link'       => $url,
                 'time'       => $row['published'],
                 'tags'       => $row['item_tag'],
                 'content'    => $row['description']
