@@ -49,29 +49,26 @@ function createcat( $cid = 0 ) {
     $description = '';
     $pid = '';
     $weight = 0;
-    $client_id = 0;
-    $banner_id = 0;
     $heading = _AM_MYTUBE_CCATEGORY_CREATENEW;
     $totalcats = mytube_totalcategory();
 
     if ( $cid ) {
         $sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_cat' ) . ' WHERE cid=' . intval( $cid );
         $cat_arr = icms::$xoopsDB -> fetchArray( icms::$xoopsDB -> query($sql) );
-        $title = $mytubemyts -> htmlSpecialChars( $cat_arr['title'] );
-        $imgurl = $mytubemyts -> htmlSpecialChars( $cat_arr['imgurl'] );
-        $description = $mytubemyts -> htmlSpecialChars( $cat_arr['description'] );
+        $title = $mytubemyts -> htmlSpecialCharsStrip( $cat_arr['title'] );
+        $imgurl = $mytubemyts -> htmlSpecialCharsStrip( $cat_arr['imgurl'] );
+        $description = $mytubemyts -> htmlSpecialCharsStrip( $cat_arr['description'] );
         $weight = $cat_arr['weight'];
-        $client_id = $cat_arr['client_id'];
-        $banner_id = $cat_arr['banner_id'];
         $heading = _AM_MYTUBE_CCATEGORY_MODIFY;
         $member_handler = icms::handler( 'icms_member' );
         $gperm_handler = icms::handler( 'icms_member_groupperm' );
         $groups = $gperm_handler -> getGroupIds( 'MyTubeCatPerm', $cid, icms::$module -> getVar( 'mid' ) );
         $groups = $groups;
+		
     } else {
 	$groups = true;
     }
-	echo '<br /><br />';
+	
     $sform = new icms_form_Theme( $heading, 'op', '' );
     $sform -> setExtra( 'enctype="multipart/form-data"' );
 
@@ -107,32 +104,6 @@ function createcat( $cid = 0 ) {
 
     $editor = mytube_getWysiwygForm( _AM_MYTUBE_FCATEGORY_DESCRIPTION, 'description', $description );
     $sform -> addElement( $editor, false );
-    
-// Select Client/Sponsor
-    $client_select = new icms_form_elements_Select( _AM_MYTUBE_CATSPONSOR, 'client_id', $client_id, false );
-    $sql = 'SELECT cid, name FROM ' . icms::$xoopsDB -> prefix( 'bannerclient' ) . ' ORDER BY name ASC';
-    $result = icms::$xoopsDB -> query( $sql );
-    $client_array = array();
-    $client_array[0] = '&nbsp;';
-    while ( $myrow = icms::$xoopsDB -> fetchArray( $result ) ) {
-		$client_array[$myrow['cid']] = $myrow['name'];
-	}
-    $client_select -> addOptionArray( $client_array );
-    $client_select -> setDescription( _AM_MYTUBE_CATSPONSORDSC );
-    $sform -> addElement( $client_select );
-    
-// Select Banner
-    $banner_select = new icms_form_elements_Select( _AM_MYTUBE_BANNERID, 'banner_id', $banner_id, false );
-    $sql = 'SELECT bid, cid FROM ' . icms::$xoopsDB -> prefix( 'banner' ) . ' ORDER BY bid ASC';
-    $result = icms::$xoopsDB -> query( $sql );
-    $banner_array = array();
-    $banner_array[0] = '&nbsp;';
-    while ( $myrow = icms::$xoopsDB -> fetchArray( $result ) ) {
-		$banner_array[$myrow['bid']] = $myrow['bid'];
-	}
-    $banner_select -> addOptionArray( $banner_array );
-    $banner_select -> setDescription( _AM_MYTUBE_BANNERIDDSC );
-    $sform -> addElement( $banner_select );
 
     $sform -> addElement( new icms_form_elements_Hidden( 'cid', intval( $cid ) ) );
 
@@ -237,16 +208,10 @@ switch ( $op ) {
         $title = icms_core_DataFilter::addSlashes( $_REQUEST['title'] );
         $descriptionb = icms_core_DataFilter::addSlashes( $_REQUEST['description'] );
         $imgurl = ( $_REQUEST['imgurl'] && $_REQUEST['imgurl'] != 'blank.gif' ) ? icms_core_DataFilter::addSlashes( $_REQUEST['imgurl'] ) : '';
-        $client_id = ( isset( $_REQUEST['client_id'] ) ) ? $_REQUEST['client_id'] : 0;
-        if ($client_id > 0) {
-          $banner_id = 0;
-        } else {
-          $banner_id = ( isset( $_REQUEST['banner_id'] ) ) ? $_REQUEST['banner_id'] : 0;
-        }
 
         if ( !$cid ) {
             $cid = 0;
-            $sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'mytube_cat' ) . " (cid, pid, title, imgurl, description, weight, client_id, banner_id ) VALUES ('', $pid, '$title', '$imgurl', '$descriptionb', '$weight', $client_id, $banner_id )";
+            $sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'mytube_cat' ) . " (cid, pid, title, imgurl, description, weight ) VALUES ('', $pid, '$title', '$imgurl', '$descriptionb', '$weight' )";
             if ( $cid == 0 ) {
                 $newid = icms::$xoopsDB -> getInsertId();
             }
@@ -263,7 +228,7 @@ switch ( $op ) {
             redirect_header( 'category.php', 1, _AM_MYTUBE_ERROR_CATISCAT );
             exit();
           }
-            $sql = "UPDATE " . icms::$xoopsDB -> prefix( 'mytube_cat' ) . " SET title ='$title', imgurl='$imgurl', pid =$pid, description='$descriptionb', weight='$weight', client_id='$client_id', banner_id='$banner_id' WHERE cid=" . intval($cid) ;
+            $sql = "UPDATE " . icms::$xoopsDB -> prefix( 'mytube_cat' ) . " SET title ='$title', imgurl='$imgurl', pid =$pid, description='$descriptionb', weight='$weight' WHERE cid=" . intval($cid) ;
             $database_mess = _AM_MYTUBE_CCATEGORY_MODIFIED;
         } 
         if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
@@ -392,6 +357,7 @@ switch ( $op ) {
             $dup_tray -> addElement( $butt_dupct );
             $sform -> addElement( $dup_tray );
             $sform -> display();
+			echo '<br />';
         } 
         createcat(0);
         icms_cp_footer();
