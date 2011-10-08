@@ -44,8 +44,6 @@ if ( is_array( $arr ) > 0 && !$list && !$selectdate ) {
 $xoopsOption['template_main'] = 'mytube_viewcat.html';
 include ICMS_ROOT_PATH . '/header.php';
 
-
-
 // Breadcrumb
 $pathstring = '<a href="index.php">' . _MD_MYTUBE_MAIN . '</a>&nbsp;:&nbsp;';
 $pathstring .= $mytree -> getNicePathFromId( $cid, 'title', 'viewcat.php?op=' );
@@ -139,11 +137,7 @@ if ($head_arr['title'] > '') {
 	$xoopsTpl -> assign( 'icms_pagetitle', $head_arr['title'] );
 }
 
-if ($head_arr['client_id'] > 0) {
-  $catarray['imageheader'] = mytube_getbanner_from_id_client( $head_arr['client_id'] );
-} elseif ($head_arr['banner_id'] > 0) {
-  $catarray['imageheader'] = mytube_getbanner_from_id_banner( $head_arr['banner_id'] );
-} elseif ( mytube_imageheader() != '' ) {
+if ( mytube_imageheader() != '' ) {
 	$catarray['imageheader'] = '<div style="padding-bottom: 12px; text-align: center;">' . mytube_imageheader() . '</div>';
 }
 $catarray['letters'] = mytube_letters();

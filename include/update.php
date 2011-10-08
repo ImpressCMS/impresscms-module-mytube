@@ -86,6 +86,10 @@ if( !defined( 'ICMS_ROOT_PATH' ) ) exit ;
 	$db -> query( $sql );
 	$sql = sprintf( "ALTER TABLE " . icms::$xoopsDB -> prefix( 'mytube_cat') . " DROP nobreak" );
 	$db -> query( $sql );
+	$sql = sprintf( "ALTER TABLE " . icms::$xoopsDB -> prefix( 'mytube_cat') . " DROP client_id" );
+	$db -> query( $sql );
+	$sql = sprintf( "ALTER TABLE " . icms::$xoopsDB -> prefix( 'mytube_cat') . " DROP banner_id" );
+	$db -> query( $sql );
 	
 	$sql = sprintf( "ALTER TABLE " . icms::$xoopsDB -> prefix( 'mytube_indexpage') . " DROP nohtml" );
 	$db -> query( $sql );

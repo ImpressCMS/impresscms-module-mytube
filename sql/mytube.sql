@@ -43,8 +43,6 @@ CREATE TABLE `mytube_cat` (
   `description` varchar(255) NOT NULL default '',
   `total` int(11) NOT NULL default '0',
   `weight` int(11) NOT NULL default '0',
-  `client_id` int(5) NOT NULL default '0',
-  `banner_id` int(5) NOT NULL default '0',
   PRIMARY KEY  (cid),
   KEY pid (pid)
 ) ENGINE=MyISAM COMMENT='MyTube by McDonald' AUTO_INCREMENT=1;
