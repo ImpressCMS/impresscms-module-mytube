@@ -1,5 +1,5 @@
 =========================================================
-28.09.2011   1.06 RC-1
+xx.xx.2011   1.06
 =========================================================
 Updated:
 - Converted MyTube to an ImpressCMS 1.3 module
@@ -30,6 +30,7 @@ Removed:
 - support for Google Video
 - Simpy and Spurl from social bookmarks
 - link to Submit a Bug in About page
+- sponsoring of categories (banners)
 
 Removed files:
 - bugfixlist.txt
