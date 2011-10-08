@@ -159,16 +159,6 @@ $modversion['blocks'][] = array(
 	'can_clone'		=> true );
 
 $modversion['blocks'][] = array(
-	'file'			=> 'mytube_top.php',
-	'name'			=> _MI_MYTUBE_BNAME8,
-	'description'	=> 'Shows top clicked banners',
-	'show_func'		=> 'b_mytube_banner_show',
-	'edit_func'		=> 'b_mytube_banner_edit',
-	'options'		=> 'hits|10|19',
-	'template'		=> 'mytube_block_banner.html',
-	'can_clone'		=> true );
-
-$modversion['blocks'][] = array(
 	'file'			=> 'mytube_block_tag.php',
 	'name'			=> _MI_MYTUBE_BNAME9,
 	'description'	=> 'Show tag cloud',
