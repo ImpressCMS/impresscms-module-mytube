@@ -40,12 +40,14 @@ Removed files:
 - admin/myblocksadmin.txt
 - admin/mygroupperm.php
 - admin/mygrouppermform.php
+- blocks/mytube_banner.php
 - images/sbookmarks/simpy.png
 - images/sbookmarks/spurl.png
 - include/blocksadmin.inc.php
 - include/config.php
 - include/gtickets.php
 - include/updateblock.inc.php
+- templates/blocks/mytube_block_banner.html
 
 =========================================================
 27.06.2009   1.05 Final  
