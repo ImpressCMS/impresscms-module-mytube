@@ -38,7 +38,7 @@ switch ( strtolower( $op ) ) {
 
     case 'main':
     default:
-	$start = mytube_cleanRequestVars( $_REQUEST, 'start', 0 );
+		$start = mytube_cleanRequestVars( $_REQUEST, 'start', 0 );
         icms_cp_header();
         mytube_adminmenu( 8, _AM_MYTUBE_VOTE_RATINGINFOMATION );
         $_vote_data = mytube_getVoteDetails( $lid );
@@ -94,10 +94,10 @@ switch ( strtolower( $op ) ) {
             while ( list( $ratingid, $lid, $ratinguser, $rating, $ratinghostname, $ratingtimestamp, $title ) = icms::$xoopsDB -> fetchRow( $results ) ) {
                 $formatted_date = mytube_time( formatTimestamp( $ratingtimestamp, icms::$module -> config['dateformat'] ) );
                 $ratinguname = icms::$user -> getUnameFromId( $ratinguser );
-				
+				$title2 = $mytubemyts -> htmlSpecialCharsStrip( $title );
 				$result2 = 'SELECT cid FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid;
 				list( $cid ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $result2 ) );
-				$vlink = '<a href="' . ICMS_URL . '/modules/' . icms::$module -> getVar('dirname') . '/singlevideo.php?cid=' . $cid . '&lid=' . $lid . '">' . $title . '</a>';
+				$vlink = '<a href="' . ICMS_URL . '/modules/' . icms::$module -> getVar('dirname') . '/singlevideo.php?cid=' . $cid . '&lid=' . $lid . '">' . $title2 . '</a>';
 				
                 echo '
 					<tr>
@@ -114,7 +114,7 @@ switch ( strtolower( $op ) ) {
         echo '</table>'; 
         // Include page navigation
         $page = ( $votes > icms::$module -> config['admin_perpage'] ) ? _AM_MYTUBE_MINDEX_PAGE : '';
-        $pagenav = new icms_view_PageNav( $page, icms::$module -> config['admin_perpage'], $start, 'start' );
+        $pagenav = new icms_view_PageNav( $_vote_data['rate'], icms::$module -> config['admin_perpage'], $start, 'start' );
         echo '<div align="right" style="padding: 8px;">' . $pagenav -> renderNav() . '</div>';
         break;
 } 
