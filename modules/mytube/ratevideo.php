@@ -88,7 +88,7 @@ if ( !empty( $_POST['submit'] ) ) {
     // All is well.  Add to Line Item Rate to DB.
     $newid = icms::$xoopsDB -> genId( icms::$xoopsDB -> prefix( 'mytube_votedata' ) . '_ratingid_seq' );
     $datetime = time();
-    $sql = sprintf( "INSERT INTO %s (ratingid, lid, ratinguser, rating, ratinghostname, ratingtimestamp, title) VALUES (%u, %u, %u, %u, %s, %u, %s)", icms::$xoopsDB -> prefix( 'mytube_votedata' ), $newid, $lid, $ratinguser, $rating, icms::$xoopsDB -> quoteString( $ip ), $datetime, icms::$xoopsDB -> quoteString( $title ) );
+    $sql = "INSERT INTO " . icms::$xoopsDB -> prefix( 'mytube_votedata' ) . " (ratingid, lid, ratinguser, rating, ratinghostname, ratingtimestamp, title) VALUES ('$newid', '$lid', '$ratinguser', '$rating', '$ip', '$datetime', '$title' )";
     if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
         $ratemessage = _MD_MYTUBE_ERROR;
     } else {
