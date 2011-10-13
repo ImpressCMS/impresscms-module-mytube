@@ -41,10 +41,10 @@ if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
 	
 		// Verify captcha code
 		if ( $icmsConfigUser['use_captcha'] == true ) {
-			$icmsCaptcha = IcmsCaptcha::instance(); 
-			if ( ! $icmsCaptcha -> verify( true ) ) { 
+			$icmsCaptcha = icms_form_elements_captcha_Object::instance(); 
+			if ( !$icmsCaptcha -> verify( true ) ) { 
 				redirect_header( 'submit.php', 2, $icmsCaptcha -> getMessage() ); 
-			} 
+			}
 		} 
 		
         if ( false == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
