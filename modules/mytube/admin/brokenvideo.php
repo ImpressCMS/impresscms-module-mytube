@@ -45,19 +45,7 @@ switch ( strtolower( $op ) ) {
                 return false;
             } 
             $update_mess = _AM_MYTUBE_BROKEN_NOWACK;
-        } elseif ( !$ack && !$con ) {
-            $acknowledged = ( $ack == 0 ) ? 1 : 0;
-            $sql = 'UPDATE ' . icms::$xoopsDB -> prefix( 'mytube_broken' ) . ' SET acknowledged=' . $acknowledged;
-            if ( $acknowledged == 0 ) {
-                $sql .= ', confirmed=0 ';
-            } 
-            $sql .= ' WHERE lid=' . $lid;
-            if ( !$result = icms::$xoopsDB -> queryF( $sql ) ) {
-                icms::$logger -> handleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
-                return false;
-            } 
-            $update_mess = _AM_MYTUBE_BROKEN_NOWACK;
-		}
+        }
 
         if ( $con ) {
             $confirmed = ( $con == 0 ) ? 1 : 0;
@@ -88,19 +76,20 @@ switch ( strtolower( $op ) ) {
         break;
 
     case 'delbrokenvideos':
+
+		// Remove item_tag from Tag-module
+		$sql = 'SELECT item_tag FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid;
+		list( $item_tag ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $sql ) );
+        $tagupdate = mytube_tagupdate( $lid, $item_tag );
+
+		// delete comments
+		xoops_comment_delete( icms::$module -> getVar( 'mid' ), $lid );
+
 		icms::$xoopsDB -> queryF( 'DELETE FROM ' . icms::$xoopsDB -> prefix( 'mytube_altcat' ) . ' WHERE lid=' . $lid );
         icms::$xoopsDB -> queryF( 'DELETE FROM ' . icms::$xoopsDB -> prefix( 'mytube_broken' ) . ' WHERE lid=' . $lid );
-        icms::$xoopsDB -> queryF( 'DELETE FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid );
 		icms::$xoopsDB -> queryF( 'DELETE FROM ' . icms::$xoopsDB -> prefix( 'mytube_votedata' ) . ' WHERE lid=' . $lid );
-		
-		// Remove item_tag from Tag-module
-		$sql2 = 'SELECT item_tag FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid;
-		list( $item_tag ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $sql2 ) );
-        $tagupdate = mytube_tagupdate( $lid, $item_tag );
-		
-		// delete comments
-            xoops_comment_delete( icms::$module -> getVar( 'mid' ), $lid );
-			
+        icms::$xoopsDB -> queryF( 'DELETE FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid );
+
         redirect_header( 'brokenvideo.php?op=default', 1, _AM_MYTUBE_BROKENFILEDELETED );
         exit();
         break;
@@ -164,7 +153,7 @@ switch ( strtolower( $op ) ) {
                 $con_image = ( $confirmed ) ? $imagearray['con_yes'] : $imagearray['con_no'];
 
                 echo '<tr style="text-align: center;">';
-                echo '<td class="head">' . $reportid . '</td>';
+                echo '<td class="head">' . $lid . '</td>';
                 echo '<td class="even" style="text-align: left;"><a href="' . ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/singlevideo.php?cid=' . $cid . '&amp;lid=' . $lid . '" target="_blank">' . $videoshowname . '</a></td>';
 
                 if ( $email == '' ) {
@@ -181,7 +170,7 @@ switch ( strtolower( $op ) ) {
                 echo '<td class="even"><a href="brokenvideo.php?op=updateNotice&amp;lid=' . $lid . '&ack=' . intval( $acknowledged ) . '">' . $ack_image . ' </a></td>';
                 echo '<td class="even"><a href="brokenvideo.php?op=updateNotice&amp;lid=' . $lid . '&con=' . intval( $confirmed ) . '">' . $con_image . '</a></td>';
                 echo '<td class="even" style="text-align: center;" nowrap>';
-                echo '<a href="brokenvideo.php?op=ignorebrokenvideos&amp;lid=' . $lid . '">' . $imagearray['ignore'] . '</a>&nbsp;';
+                echo '<a href="brokenvideo.php?op=ignoreBrokenvideos&amp;lid=' . $lid . '">' . $imagearray['ignore'] . '</a>&nbsp;';
                 echo '<a href="index.php?op=edit&amp;lid=' . $lid . '">' . $imagearray['editimg'] . '</a>&nbsp;';
                 echo '<a href="brokenvideo.php?op=delbrokenvideos&amp;lid=' . $lid . '">' . $imagearray['deleteimg'] . '</a>';
                 echo '</td></tr>';
