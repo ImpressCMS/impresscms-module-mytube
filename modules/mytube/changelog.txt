@@ -25,6 +25,8 @@ Fixed:
 - broken report will be deleted when video is deleted
 - category selection menu in block settings
 - listing of sub categories
+- captcha issue
+- acknowledging of broken videos
 
 Removed:
 - support for Google Video
@@ -47,6 +49,9 @@ Removed files:
 - include/config.php
 - include/gtickets.php
 - include/updateblock.inc.php
+- sql (folder)
+- sql/index.html
+- sql/mytube.sql
 - templates/blocks/mytube_block_banner.html
 
 =========================================================
