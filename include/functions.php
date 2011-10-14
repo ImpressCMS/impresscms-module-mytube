@@ -618,8 +618,14 @@ function mytube_videolistbody( $published ) {
 
     $lid = $published['lid'];
     $cid = $published['cid'];
+	
+	$nice_link = mytube_nicelink( $published['title'], $published['nice_url'] );
+    if ( icms::$module -> config['niceurl'] ) {
+    $title = '<a href="../singlevideo.php?lid=' . $published['lid'] . '&amp;page=' . $nice_link . '">' . $mytubemyts -> htmlSpecialCharsStrip( trim( $published['title'] ) ) . '</a>';
+	} else {
+	$title = '<a href="../singlevideo.php?lid=' . $published['lid'] . '">' . $mytubemyts -> htmlSpecialCharsStrip( trim( $published['title'] ) ) . '</a>';
+	}
     
-    $title = '<a href="../singlevideo.php?cid=' . $published['cid'] . '&amp;lid=' . $published['lid'] . '">' . icms_core_DataFilter::htmlSpecialChars( trim( $published['title'] ) ) . '</a>';
     $maintitle = urlencode( icms_core_DataFilter::htmlSpecialchars( trim( $published['title'] ) ) );
 	$cattitle = '<a href="../viewcat.php?cid=' . $published['cid'] . '">' . mytube_cattitle( $published['cid'] ) . '</a>';
     $submitter = icms_member_user_Handler::getUserLink( $published['submitter'] );
