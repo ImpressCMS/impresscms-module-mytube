@@ -557,4 +557,6 @@ define( '_AM_MYTUBE_COPYRIGHT', 'Copyright' );
 define( '_AM_MYTUBE_NICEURL', 'Alternatieve titel voor videoclip:' );
 define( '_AM_MYTUBE_NICEURLDSC', 'Geef een alternatieve titel voor de videoclip om in de url te gebruiken. Als de optie <em>Gebruik nette urls</em> onder Instellingen is geselecteerd en dit veld wordt niet ingevuld, dan zal de titel van de videoclip gebruikt worden.' );
 define( '_AM_MYTUBE_NATIOGEO', 'National Geographic' );
+define( '_AM_MYTUBE_MSG_OFFLINE', 'Video is succesvol Offline gezet.' );
+define( '_AM_MYTUBE_MSG_ONLINE', 'Video is succesvol Online gezet.' );
 ?>

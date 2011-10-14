@@ -558,4 +558,6 @@ define( '_AM_MYTUBE_COPYRIGHT', 'Copyright' );
 define( '_AM_MYTUBE_NICEURL', 'Alternative title for videoclip:' );
 define( '_AM_MYTUBE_NICEURLDSC', 'Enter an alternative title for the videoclip to be used in the url. When the option <em>Use nice urls</em> from Preferences is selected and this field is left empty, than the title of the videoclip will be used.' );
 define( '_AM_MYTUBE_NATIOGEO', 'National Geographic' );
+define( '_AM_MYTUBE_MSG_OFFLINE', 'Video was set Offline successfully.' );
+define( '_AM_MYTUBE_MSG_ONLINE', 'Video was set Online successfully.' );
 ?>
