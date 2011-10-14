@@ -674,7 +674,7 @@ function mytube_cattitle( $catt ) {
 
 function mytube_videolistfooter() {
     echo '<tr style="text-align: center;">
-			<td class="head" colspan="7">' . _AM_MYTUBE_MINDEX_NOVIDEOSFOUND . '</td>
+			<td class="head" colspan="9">' . _AM_MYTUBE_MINDEX_NOVIDEOSFOUND . '</td>
 		  </tr>';
 } 
 
