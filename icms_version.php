@@ -69,7 +69,7 @@ $modversion['warning'] = _MI_MYTUBE_WARNING_RC;
 /** Database information */
 $modversion['object_items'][1] = 'altcat';
 $modversion['object_items'][2] = 'broken';
-$modversion['object_items'][3] = 'cats';
+$modversion['object_items'][3] = 'cat';
 $modversion['object_items'][4] = 'configs';
 $modversion['object_items'][5] = 'indexpage';
 $modversion['object_items'][6] = 'mod';

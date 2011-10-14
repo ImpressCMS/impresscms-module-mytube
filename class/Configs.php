@@ -25,23 +25,23 @@ class mod_mytube_Configs extends icms_ipf_seo_Object {
 	public function __construct( &$handler ) {
 		icms_ipf_object::__construct( $handler );
 
-		$this -> quickInitVar( 'rssactive', XOBJ_DTYPE_INT, true, false, false, 1 );
-		$this -> quickInitVar( 'rsstitle', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rsslink', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rssdsc', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rssimgurl', XOBJ_DTYPE_TXTBOX );
+		$this -> quickInitVar( 'rssactive', XOBJ_DTYPE_INT, false, '', '', 1 );
+		$this -> quickInitVar( 'rsstitle', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rsslink', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rssdsc', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rssimgurl', XOBJ_DTYPE_TXTBOX, false );
 		$this -> quickInitVar( 'rsswidth', XOBJ_DTYPE_INT, false );
 		$this -> quickInitVar( 'rssheight', XOBJ_DTYPE_INT, false );
-		$this -> quickInitVar( 'rssimgtitle', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rssimglink', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rssttl', XOBJ_DTYPE_INT, false, false, false, 0 );
-		$this -> quickInitVar( 'rsswebmaster', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rsseditor', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rsscategory', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rssgenerator', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rsscopyright', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rsstotal', XOBJ_DTYPE_INT, false, false, false, 0 );
-		$this -> quickInitVar( 'rssofftitle', XOBJ_DTYPE_TXTBOX );
-		$this -> quickInitVar( 'rssoffdsc', XOBJ_DTYPE_TXTBOX );
+		$this -> quickInitVar( 'rssimgtitle', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rssimglink', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rssttl', XOBJ_DTYPE_INT, false, '', '', 0 );
+		$this -> quickInitVar( 'rsswebmaster', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rsseditor', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rsscategory', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rssgenerator', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rsscopyright', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rsstotal', XOBJ_DTYPE_INT, false, '', '', 0 );
+		$this -> quickInitVar( 'rssofftitle', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'rssoffdsc', XOBJ_DTYPE_TXTBOX, false );
 	}
 }
