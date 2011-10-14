@@ -93,18 +93,20 @@ switch ( strtolower( $op ) ) {
         } else {
             while ( list( $ratingid, $lid, $ratinguser, $rating, $ratinghostname, $ratingtimestamp, $title ) = icms::$xoopsDB -> fetchRow( $results ) ) {
                 $formatted_date = mytube_time( formatTimestamp( $ratingtimestamp, icms::$module -> config['dateformat'] ) );
-                $ratinguname = icms::$user -> getUnameFromId( $ratinguser );
-				$title2 = $mytubemyts -> htmlSpecialCharsStrip( $title );
-				$result2 = 'SELECT cid FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid;
-				list( $cid ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $result2 ) );
-				$vlink = '<a href="' . ICMS_URL . '/modules/' . icms::$module -> getVar('dirname') . '/singlevideo.php?cid=' . $cid . '&lid=' . $lid . '">' . $title2 . '</a>';
-				
+                $ratinguname = icms::$user -> getUnameFromId( $ratinguser );	
+				$nice_link = mytube_nicelink( $title, '' );
+				if ( icms::$module -> config['niceurl'] ) {
+					$title = '<a href="../singlevideo.php?lid=' . $lid . '&amp;page=' . $nice_link . '">' . $mytubemyts -> htmlSpecialCharsStrip( trim( $title ) ) . '</a>';
+				} else {
+					$title = '<a href="../singlevideo.php?lid=' . $lid . '">' . $mytubemyts -> htmlSpecialCharsStrip( trim( $title ) ) . '</a>';
+				}	
+				if ( stristr( $ratinghostname, '.') === false ) { $ipaddress = long2ip( $ratinghostname ); } else { $ipaddress = $ratinghostname; }
                 echo '
 					<tr>
 					<td class="head" style="text-align: center;">' . $ratingid . '</td>
 					<td class="even" style="text-align: center;">' . $ratinguname . '</td>
-					<td class="even" style="text-align: center;">' . $ratinghostname . '</td>
-					<td class="even" style="text-align: left;">&nbsp;' . $vlink . '</td>
+					<td class="even" style="text-align: center;">' . $ipaddress . '</td>
+					<td class="even" style="text-align: left;">&nbsp;' . $title . '</td>
 					<td class="even" style="text-align: center;">' . $rating . '</td>
 					<td class="even" style="text-align: center;">' . $formatted_date . '</td>
 					<td class="even" style="text-align: center;"><a href="votedata.php?op=delvote&amp;lid=' . $lid . '&amp;rid=' . $ratingid . '">' . $imagearray['deleteimg'] . '</a></td>
