@@ -15,6 +15,7 @@ Added:
 - automatic creation of folder MyTube folder in 'uploads' upon installation
 - submitted videos will add to user posts
 - support for videoclips from National Geographic
+- videos can be set online/offline by clicking icon in index
 
 Fixed:
 - submission disclaimer form buttons not working

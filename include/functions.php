@@ -634,12 +634,12 @@ function mytube_videolistbody( $published ) {
     $publish = ( $published['published'] > 0 ) ? mytube_time( formatTimestamp( $published['published'], icms::$module -> config['dateformatadmin'] ) ): 'Not Published';
     $expires = $published['expired'] ? mytube_time( formatTimestamp( $published['expired'], icms::$module -> config['dateformatadmin'] ) ): _AM_MYTUBE_MINDEX_NOTSET;
 
-    if ( (( $published['expired'] && $published['expired'] > time() ) OR  $published['expired']==0)&& ( $published['published'] && $published['published'] < time() ) && $published['offline'] == 0 ) {
-        $published_status = $imagearray['online'];
-    } elseif (( $published['expired'] && $published['expired'] < time() )  && $published['offline'] == 0){
+    if ( ( ( $published['expired'] && $published['expired'] > time() ) OR  $published['expired'] == 0 ) && ( $published['published'] && $published['published'] < time() ) && $published['offline'] == 0 ) {
+        $published_status = '<a href="index.php?op=status_off&amp;lid=' . $lid . '">' . $imagearray['online'] . '</a>';
+    } elseif ( ( $published['expired'] && $published['expired'] < time() )  && $published['offline'] == 0 ) {
         $published_status = $imagearray['expired'];
     } else {
-        $published_status = ( $published['published'] == 0 ) ? '<a href="newvideos.php">' . $imagearray['offline'] . '</a>' : $imagearray['offline'];
+        $published_status = ( $published['published'] == 0 ) ? $imagearray['offline'] : '<a href="index.php?op=status_on&amp;lid=' . $lid . '">' . $imagearray['offline'] . '</a>';
     }
 
     if ( $published['vidsource'] == 200 ) {

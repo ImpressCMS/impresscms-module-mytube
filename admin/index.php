@@ -262,6 +262,24 @@ switch ( strtolower( $op ) ) {
     case 'edit':
         edit( $lid );
         break;
+		
+	case 'status_off':
+		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'mytube_videos' ) . " SET offline='1' WHERE lid=" . $lid;
+		if ( !$result = icms::$xoopsDB -> queryF( $sql ) ) {
+            icms::$logger -> handleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
+            return false;
+        }
+		redirect_header( 'index.php', 1, _AM_MYTUBE_MSG_OFFLINE );
+		break;
+		
+	case 'status_on':
+		$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'mytube_videos' ) . " SET offline='0' WHERE lid=" . $lid;
+		if ( !$result = icms::$xoopsDB -> queryF( $sql ) ) {
+            icms::$logger -> handleError( E_USER_WARNING, $sql, __FILE__, __LINE__ );
+            return false;
+        }
+		redirect_header( 'index.php', 1, _AM_MYTUBE_MSG_ONLINE );
+		break;
 
     case 'save':
 
