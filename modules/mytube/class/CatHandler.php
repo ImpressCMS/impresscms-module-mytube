@@ -20,8 +20,8 @@
 
 defined( 'ICMS_ROOT_PATH' ) or die ( 'ICMS root path not defined' );
 
-class mod_mytube_CatsHandler extends icms_ipf_Handler {
+class mod_mytube_CatHandler extends icms_ipf_Handler {
 	public function __construct( &$db ) {
-		parent::__construct( $db, 'cats', 'cid', 'pid', '', basename( dirname( dirname( __FILE__ ) ) ) );
+		parent::__construct( $db, 'cat', 'cid', '', '', basename( dirname( dirname( __FILE__ ) ) ) );
 	}
 }

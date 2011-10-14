@@ -24,7 +24,7 @@ class mod_mytube_Altcat extends icms_ipf_seo_Object {
 	public function __construct( &$handler ) {
 		icms_ipf_object::__construct( $handler );
 
-		$this -> quickInitVar( 'lid', XOBJ_DTYPE_INT );
-		$this -> quickInitVar( 'cid', XOBJ_DTYPE_INT );
+		$this -> quickInitVar( 'lid', XOBJ_DTYPE_INT, false );
+		$this -> quickInitVar( 'cid', XOBJ_DTYPE_INT, false );
 	}
 }

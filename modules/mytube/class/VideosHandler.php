@@ -22,6 +22,6 @@ defined( 'ICMS_ROOT_PATH' ) or die ( 'ICMS root path not defined' );
 
 class mod_mytube_VideosHandler extends icms_ipf_Handler {
 	public function __construct( &$db ) {
-		parent::__construct( $db, 'videos', 'lid', 'cid', '', basename( dirname( dirname( __FILE__ ) ) ) );
+		parent::__construct( $db, 'videos', 'lid', '', '', basename( dirname( dirname( __FILE__ ) ) ) );
 	}
 }

@@ -27,9 +27,9 @@ class mod_mytube_Votedata extends icms_ipf_seo_Object {
 
 		$this -> quickInitVar( 'ratingid', XOBJ_DTYPE_INT, true );
 		$this -> quickInitVar( 'lid', XOBJ_DTYPE_INT, true );
-		$this -> quickInitVar( 'ratinguser', XOBJ_DTYPE_INT, false );
+		$this -> quickInitVar( 'ratinguser', XOBJ_DTYPE_INT, true );
 		$this -> quickInitVar( 'rating', XOBJ_DTYPE_INT, false );
-		$this -> quickInitVar( 'ratinghostname', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'ratinghostname', XOBJ_DTYPE_TXTBOX, true );
 		$this -> quickInitVar( 'ratingtimestamp', XOBJ_DTYPE_INT, false );
 		$this -> quickInitVar( 'title', XOBJ_DTYPE_TXTBOX, false );
 	}

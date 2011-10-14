@@ -26,8 +26,8 @@ class mod_mytube_Broken extends icms_ipf_seo_Object {
 
 		$this -> quickInitVar( 'reportid', XOBJ_DTYPE_INT, true );
 		$this -> quickInitVar( 'lid', XOBJ_DTYPE_INT, true );
-		$this -> quickInitVar( 'sender', XOBJ_DTYPE_INT, false );
-		$this -> quickInitVar( 'ip', XOBJ_DTYPE_TXTBOX, false );
+		$this -> quickInitVar( 'sender', XOBJ_DTYPE_INT, true );
+		$this -> quickInitVar( 'ip', XOBJ_DTYPE_TXTBOX, true );
 		$this -> quickInitVar( 'date', XOBJ_DTYPE_TXTBOX, false );
 		$this -> quickInitVar( 'confirmed', XOBJ_DTYPE_INT, false );
 		$this -> quickInitVar( 'acknowledged', XOBJ_DTYPE_INT, false );
