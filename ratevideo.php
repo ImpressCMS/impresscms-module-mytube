@@ -29,7 +29,7 @@ global $xoTheme;
 // Check if videoload POSTER is voting (UNLESS Anonymous users allowed to post)
 $lid = intval( mytube_cleanRequestVars( $_REQUEST, 'lid', '' ) );
 
-$ip = getenv( 'REMOTE_ADDR' );
+$ip = ip2long( getenv( 'REMOTE_ADDR' ) ); // Converts an (IPv4) Internet Protocol dotted address into a proper address (ip number)
 $ratinguser = ( !is_object( icms::$user ) ) ? 0 : icms::$user -> getVar( 'uid' );
 
 if ( icms::$module -> config['showrating'] == 0 || $lid == '' ) {
@@ -62,7 +62,7 @@ if ( $ratinguser != 0 ) {
     // Check if ANONYMOUS user is trying to vote more than once per day.
 	$anonwaitdays = 1;
     $yesterday = ( time() - ( 86400 * $anonwaitdays ) );
-    $result = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_votedata' ) . ' WHERE lid=' . $lid . ' AND ratinguser=0 AND ratinghostname=' . $ip . ' AND ratingtimestamp > ' . $yesterday );
+    $result = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_votedata' ) . ' WHERE lid=' . $lid . ' AND ratinguser=0 AND ratinghostname=' . $ip . ' AND ratingtimestamp>' . $yesterday );
     list( $anonvotecount ) = icms::$xoopsDB -> fetchRow( $result );
     if ( $anonvotecount >= 1 ) {
         $ratemessage = _MD_MYTUBE_VOTEONCE;
@@ -74,7 +74,7 @@ if ( $ratinguser != 0 ) {
 if ( !empty( $_POST['submit'] ) ) {
     $ratinguser = ( !is_object( icms::$user ) ) ? 0 : icms::$user -> getVar( 'uid' ); 
     // Make sure only 1 anonymous from an IP in a single day.
-    $ip = getenv( 'REMOTE_ADDR' );
+    $ip = ip2long( getenv( 'REMOTE_ADDR' ) );
     $lid = intval( mytube_cleanRequestVars( $_REQUEST, 'lid', 0 ) );
     $cid = intval( mytube_cleanRequestVars( $_REQUEST, 'cid', 0 ) );
     $rating = intval( mytube_cleanRequestVars( $_REQUEST, 'rating', 0 ) );
