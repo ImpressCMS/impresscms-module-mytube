@@ -27,6 +27,7 @@ Fixed:
 - listing of sub categories
 - captcha issue
 - acknowledging of broken videos
+- errors in rating form. IP addresses will be stored as IP-numbers instead of dotted numbers.
 
 Removed:
 - support for Google Video
