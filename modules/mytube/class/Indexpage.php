@@ -25,6 +25,7 @@ class mod_mytube_Indexpage extends icms_ipf_seo_Object {
 	public function __construct( &$handler ) {
 		icms_ipf_object::__construct( $handler );
 
+		$this -> quickInitVar( 'dummy_key', XOBJ_DTYPE_INT, false );
 		$this -> quickInitVar( 'indeximage', XOBJ_DTYPE_TXTBOX, false, '', '', 'blank.gif' );
 		$this -> quickInitVar( 'indexheading', XOBJ_DTYPE_TXTBOX, false, '', '', 'MyTube' );
 		$this -> quickInitVar( 'indexheader', XOBJ_DTYPE_TXTBOX, false );

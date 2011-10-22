@@ -25,6 +25,7 @@ class mod_mytube_Configs extends icms_ipf_seo_Object {
 	public function __construct( &$handler ) {
 		icms_ipf_object::__construct( $handler );
 
+		$this -> quickInitVar( 'dummy_key', XOBJ_DTYPE_INT, false );
 		$this -> quickInitVar( 'rssactive', XOBJ_DTYPE_INT, false, '', '', 1 );
 		$this -> quickInitVar( 'rsstitle', XOBJ_DTYPE_TXTBOX, false );
 		$this -> quickInitVar( 'rsslink', XOBJ_DTYPE_TXTBOX, false );
