@@ -35,7 +35,7 @@ class mod_mytube_Videos extends icms_ipf_seo_Object {
 		$this -> quickInitVar( 'status', XOBJ_DTYPE_INT, true );
 		$this -> quickInitVar( 'date', XOBJ_DTYPE_INT, false );
 		$this -> quickInitVar( 'hits', XOBJ_DTYPE_INT, false );
-		$this -> quickInitVar( 'rating', XOBJ_DTYPE_FLOAT, false );
+		$this -> quickInitVar( 'rating', XOBJ_DTYPE_TXTBOX, false, '', '', '0.0000' );
 		$this -> quickInitVar( 'votes', XOBJ_DTYPE_INT, false );
 		$this -> quickInitVar( 'comments', XOBJ_DTYPE_INT, false );
 		$this -> quickInitVar( 'vidsource', XOBJ_DTYPE_INT, false );
