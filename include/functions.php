@@ -129,7 +129,7 @@ function mytube_toolbar( $cid = 0 ) {
 
 function mytube_serverstats() {
     echo '<fieldset style="border: #E8E8E8 1px solid;">
-	      <legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_VIDEO_IMAGEINFO . '</legend>
+	      <legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' . _AM_MYTUBE_VIDEO_IMAGEINFO . '</legend>
 	      <div style="padding: 12px;">
 			<img src="' . ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/images/icon/server.png" alt="" style="float: left; padding-right: 10px;" />
 		  <div>' . _AM_MYTUBE_VIDEO_SPHPINI . '</div>';

@@ -504,26 +504,16 @@ switch ( strtolower( $op ) ) {
 
         icms_cp_header();
         mytube_adminmenu( 1, _AM_MYTUBE_BINDEX );
-		$style = 'border: #CCCCCC 1px solid; padding: 4px; background-color: #E8E8E8; font-weight: bold; margin: 1px; font-size: smaller;';
+		$style = 'border: #CCCCCC 1px solid; padding: 4px; background-color: #E8E8E8; font-weight: bold; font-size: smaller;';
         echo '
 			<fieldset style="border: #E8E8E8 1px solid;">
-			<legend style="display: inline; font-weight: bold; color: #0A3760;">' ._AM_MYTUBE_MINDEX_VIDEOSUMMARY . '</legend>
+			<legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' ._AM_MYTUBE_MINDEX_VIDEOSUMMARY . '</legend>
 			<div style="padding: 12px;">
-				<span style="' . $style . '">
-					<a href="category.php">' . _AM_MYTUBE_SCATEGORY . '</a>' . $totalcats . '
-				</span>
-				<span style="' . $style . '">
-					<a href="index.php">' . _AM_MYTUBE_SFILES . '</a>' . $totalvideos . '
-				</span>
-				<span style="' . $style . '">
-					<a href="newvideos.php">' . _AM_MYTUBE_SNEWFILESVAL . '</a>' . $totalnewvideos . '
-				</span>
-				<span style="' . $style . '">
-					<a href="modifications.php">' . _AM_MYTUBE_SMODREQUEST . '</a>' . $totalmodrequests . '
-				</span>
-				<span style="' . $style . '">
-					<a href="brokenvideo.php">' . _AM_MYTUBE_SBROKENSUBMIT . '</a>' . $totalbrokenvideos . '
-				</span>
+				<span style="' . $style . '"><a href="category.php">' . _AM_MYTUBE_SCATEGORY . '</a>' . $totalcats . '</span>
+				<span style="' . $style . '"><a href="index.php">' . _AM_MYTUBE_SFILES . '</a>' . $totalvideos . '</span>
+				<span style="' . $style . '"><a href="newvideos.php">' . _AM_MYTUBE_SNEWFILESVAL . '</a>' . $totalnewvideos . '</span>
+				<span style="' . $style . '"><a href="modifications.php">' . _AM_MYTUBE_SMODREQUEST . '</a>' . $totalmodrequests . '</span>
+				<span style="' . $style . '"><a href="brokenvideo.php">' . _AM_MYTUBE_SBROKENSUBMIT . '</a>' . $totalbrokenvideos . '</span>
 			</div>
 			</fieldset>';
 

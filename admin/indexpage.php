@@ -57,7 +57,7 @@ switch ( strtolower( $op ) ) {
 
         echo '
 		 <fieldset style="border: #E8E8E8 1px solid;">
-		   <legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_IPAGE_INFORMATION . '</legend>
+		   <legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' . _AM_MYTUBE_IPAGE_INFORMATION . '</legend>
 		     <div style="padding: 12px;"><img src="' . ICMS_URL . '/modules/' . icms::$module -> getVar('dirname') . '/images/icon/indexpage.png" alt="" style="float: left; padding-right: 10px;" />' . _AM_MYTUBE_MINDEX_PAGEINFOTXT . '</div>
 		 </fieldset><br />';
 
