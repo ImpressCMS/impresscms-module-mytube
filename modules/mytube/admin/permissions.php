@@ -44,23 +44,23 @@ $icon = '<img src="' . ICMS_URL . '/modules/' . icms::$module -> getVar('dirname
 
 switch( $permtoset ) {
 	case 1:
-		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_PERM_CPERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_CSELECTPERMISSIONS . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
+		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' . _AM_MYTUBE_PERM_CPERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_CSELECTPERMISSIONS . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
 		$perm_name = 'MyTubeCatPerm';
 		break;
 	case 2:
-		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_PERM_SPERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_SPERMISSIONS_TEXT . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
+		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' . _AM_MYTUBE_PERM_SPERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_SPERMISSIONS_TEXT . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
 		$perm_name = 'MyTubeSubPerm';
 		break;
 	case 3:
-		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_PERM_APERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_APERMISSIONS_TEXT . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
+		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' . _AM_MYTUBE_PERM_APERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_APERMISSIONS_TEXT . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
 		$perm_name = 'MyTubeAppPerm';
 		break;
 	case 4:
-		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_PERM_AUTOPERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_AUTOPERMISSIONS_TEXT . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
+		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' . _AM_MYTUBE_PERM_AUTOPERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_AUTOPERMISSIONS_TEXT . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
 		$perm_name = 'MyTubeAutoApp';
 		break;
 	case 5:
-		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_PERM_RATEPERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_RATEPERMISSIONS_TEXT . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
+		$title_of_form = '<fieldset style="border: #e8e8e8 1px solid;"><legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' . _AM_MYTUBE_PERM_RATEPERMISSIONS . '</legend><div style="padding: 8px; font-weight: normal;">' . $icon . _AM_MYTUBE_PERM_RATEPERMISSIONS_TEXT . '<br /><br /><br /><small>' . _AM_MYTUBE_PERM_PERMSNOTE . '</small></div></fieldset>';
 		$perm_name = 'MyTubeRatePerms';
 		break;
 }
