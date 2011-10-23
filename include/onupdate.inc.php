@@ -23,6 +23,8 @@ if ( !defined( 'ICMS_ROOT_PATH' ) ) { die( 'ICMS root path not defined' ); }
 define( 'MYTUBE_DB_VERSION', 1 );
 
 function icms_module_update_mytube( $module ) {
+	$icmsDatabaseUpdater = XoopsDatabaseFactory::getDatabaseUpdater();
+	$icmsDatabaseUpdater -> moduleUpgrade( $module );
 	return true;
 }
 
