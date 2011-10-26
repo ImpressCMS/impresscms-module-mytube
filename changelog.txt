@@ -16,6 +16,7 @@ Added:
 - submitted videos will add to user posts
 - support for videoclips from National Geographic
 - videos can be set online/offline by clicking icon in index
+- module name will be shown instead of Home in path in viewcat and singlevideo
 
 Fixed:
 - submission disclaimer form buttons not working

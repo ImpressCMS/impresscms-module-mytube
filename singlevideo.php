@@ -78,7 +78,7 @@ $video['vidid'] = $video_arr['vidid'];
 $video['description2'] = icms_core_DataFilter::checkVar( $video_arr['description'], 'html' );
 
 $mytree = new icms_view_Tree( icms::$xoopsDB -> prefix( 'mytube_cat' ), 'cid', 'pid' );
-$pathstring = '<a href="index.php">' . _MD_MYTUBE_MAIN . '</a>&nbsp;:&nbsp;';
+$pathstring = '<a href="index.php">' . icms::$module -> getVar( 'name' ) . '</a>&nbsp;:&nbsp;';
 $pathstring .= $mytree -> getNicePathFromId( $cid, 'title', 'viewcat.php?op=' );
 $video['path'] = $pathstring;
 
