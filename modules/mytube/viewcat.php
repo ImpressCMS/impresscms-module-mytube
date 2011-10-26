@@ -45,7 +45,7 @@ $xoopsOption['template_main'] = 'mytube_viewcat.html';
 include ICMS_ROOT_PATH . '/header.php';
 
 // Breadcrumb
-$pathstring = '<a href="index.php">' . _MD_MYTUBE_MAIN . '</a>&nbsp;:&nbsp;';
+$pathstring = '<a href="index.php">' . icms::$module -> getVar( 'name' ) . '</a>&nbsp;:&nbsp;';
 $pathstring .= $mytree -> getNicePathFromId( $cid, 'title', 'viewcat.php?op=' );
 $xoopsTpl -> assign( 'category_path', $pathstring );
 $xoopsTpl -> assign( 'category_id', $cid );
