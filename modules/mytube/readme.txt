@@ -33,9 +33,10 @@ Go to the admin panel, choose Modules -> Administration and install MyTube as an
 
 3. UPGRADING FROM MYTUBE 1.05 TO MYTUBE 1.06
 
-- Delete the file bugfixlist.txt from your server
+- Delete the files listed under the topic 'Removed files' in the changelog from your server
+- Login as administrator and go to the Module Administration
 - Upload all files from MyTube 1.06 to the folder /modules/mytube/
-- Login as administrator and update the module from the Module Administration.
+- Now update the module from the Module Administration.
  
 
 5. RENAMING MODULE FOLDER
@@ -61,15 +62,12 @@ For users the tag form can be enabled/disabled from the Preferences, for admins 
 Note: Do NOT use the blocks Top Tag and Tag Cloud when the Tag module is not installed. 
 
 
-7. WAITING, SITEMAP & RSSFIT PLUGINS
+7. WAITING PLUGIN
 
-There are also plugins for GIJOE's Waiting and Sitemap module.
-You can download these modules and find more info about them, here: http://xoops.peak.ne.jp
-To support RSS feeds a plugin for Brandycoke's RSSFit is supplied too (http://www.brandycoke.com/products/rssfit/).
+Upload the folder 'plugins' and its content from the downloaded zip-file to the root of website.
 
 
 
 
     .::McDonald::.
 
-    http://members.lycos.nl/mcdonaldsstore/
