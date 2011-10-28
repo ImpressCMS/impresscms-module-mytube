@@ -37,6 +37,8 @@ Go to the admin panel, choose Modules -> Administration and install MyTube as an
 - Login as administrator and go to the Module Administration
 - Upload all files from MyTube 1.06 to the folder /modules/mytube/
 - Now update the module from the Module Administration.
+
+After updating MyTube the database tables should have been renamed from 'xoopstube_xxxx' into 'mytube_xxx'.
  
 
 5. RENAMING MODULE FOLDER
