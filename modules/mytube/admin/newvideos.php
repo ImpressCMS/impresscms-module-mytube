@@ -133,7 +133,7 @@ switch ( strtolower( $op ) ) {
         echo '</table>';
 
         $pagenav = new icms_view_PageNav( $new_array_count, icms::$module -> config['admin_perpage'], $start, 'start' );
-        echo '<div align="right" style="padding: 8px;">' . $pagenav -> renderNav() . '</div>';
+        echo '<span style="float: right; font-size: 90%;">' . $pagenav -> renderNav() . '</span>';
         icms_cp_footer();
         break;
 } 

@@ -188,12 +188,12 @@ switch ( strtolower( $op ) ) {
                 echo '</tr>';
             } 
         } else {
-            echo '<tr style="text-align: center;"><td class="head" colspan="7">' . _AM_MYTUBE_MOD_NOMODREQUEST . '</td></tr>';
+            echo '<tr style="text-align: center;"><td class="head" colspan="5">' . _AM_MYTUBE_MOD_NOMODREQUEST . '</td></tr>';
         } 
         echo '</table>';
 
         $pagenav = new icms_view_PageNav( $totalmodrequests, icms::$module -> config['admin_perpage'], $start, 'start' );
-        echo '<div style="text-align: right; padding: 8px;">' . $pagenav -> renderNav() . '</div>';
+        echo '<span style="float: right; font-size: 90%;">' . $pagenav -> renderNav() . '</span>';
         icms_cp_footer();
 } 
 ?>

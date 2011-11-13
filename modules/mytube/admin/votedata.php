@@ -117,7 +117,7 @@ switch ( strtolower( $op ) ) {
         // Include page navigation
         $page = ( $votes > icms::$module -> config['admin_perpage'] ) ? _AM_MYTUBE_MINDEX_PAGE : '';
         $pagenav = new icms_view_PageNav( $_vote_data['rate'], icms::$module -> config['admin_perpage'], $start, 'start' );
-        echo '<div align="right" style="padding: 8px;">' . $pagenav -> renderNav() . '</div>';
+        echo '<span style="float: right; font-size: 90%;">' . $pagenav -> renderNav() . '</span>';
         break;
 } 
 icms_cp_footer();
