@@ -13,9 +13,7 @@
 			</a>
 		</span>
 	<{/if}>	
-</div> 
-
-<br />
+</div>
 
 <div style="float: right; width: 250px;">
 	<div class="mytube_infoblock">
@@ -26,21 +24,17 @@
 		<{$smarty.const._MD_MYTUBE_TIMEB}>&nbsp;<{$video.time}>
 	</div>
 
-	<{if $video.showrating}>
-		<br /> 
+	<{if $video.showrating}> 
 		<div class="mytube_infoblock2">
 			<b><{$smarty.const._MD_MYTUBE_RATINGC}></b>&nbsp;<img src="<{$icms_url}>/modules/<{$video.module_dir}>/images/icon/<{$video.rateimg}>" alt="" align="middle" />&nbsp;&nbsp;(<{$video.votes}>)
 		</div>
 	<{/if}>
 </div>
 
-<div style="float: left; padding: 0 4px 4px 0;">
-	<{if $video.screen_shot}>
-		<a href="<{$video.url}>"><{$video.videothumb}></a>
-	<{/if}>
-</div>
-
 <div>
+	<{if $video.screen_shot}>
+		<span style="float: left; padding: 0 4px 4px 0;"><a href="<{$video.url}>"><{$video.videothumb}></a></span>
+	<{/if}>
 	<b><{$smarty.const._MD_MYTUBE_DESCRIPTIONC}></b><br />
 	<{$video.description|truncate:$video.total_chars}>
 </div>

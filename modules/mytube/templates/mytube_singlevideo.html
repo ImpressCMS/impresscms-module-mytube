@@ -22,20 +22,18 @@
 </div>
 
 <{if $video.showsbookmarx > 0}>
-	<br />
-	<div class="mytube_socbookmark" align="center"><{$video.sbmarks}></div>
+	<div class="mytube_socbookmark" style="text-align: center; padding: 10px 0 10px 0;"><{$video.sbmarks}></div>
 <{/if}>
 
-<div style="clear: both;">&nbsp;</div>
+<fieldset class="mytube_description">
 
-<fieldset class="mytube_description">	
-	<span style="float: left; width: 48%;">
+	<span style="float: left; width: 49%;">
 		<small><b><{$smarty.const._MD_MYTUBE_SUBMITTER}>:</b>&nbsp;<{$video.submitter}></small><br />
 		<small><b><{$smarty.const._MD_MYTUBE_PUBLISHER}>:</b>&nbsp;<{$video.publisher}></small><br />
 		<small><b><{$lang_subdate}>:</b>&nbsp;<{$video.updated|wordwrap:50:"\n":true}></small>
 	</span>
 
-	<span style="float: right; width: 48%;">
+	<span style="float: right; width: 49%;">
 		<small><{$video.hits|wordwrap:50:"\n":true}></small><br />
 		<small><{$smarty.const._MD_MYTUBE_TIMEB}>&nbsp;<{$video.time}></small>
 		<{if $video.showrating}>
@@ -49,9 +47,12 @@
 		<{/if}>
 	</span>
 
-	<div style="clear: both; height: 25px;">&nbsp;</div> 
-	<b><{$smarty.const._MD_MYTUBE_DESCRIPTIONC}></b><br />
-	<{$video.description2}>
+	<div style="clear: both;">
+		<br />
+		<b><{$smarty.const._MD_MYTUBE_DESCRIPTIONC}></b><br />
+		<{$video.description2}>
+	</div>
+
 </fieldset>
 
 <br />	
