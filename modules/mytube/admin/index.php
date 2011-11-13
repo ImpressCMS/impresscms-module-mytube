@@ -539,17 +539,30 @@ switch ( strtolower( $op ) ) {
             $sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' ORDER BY lid DESC';
             $published_array = icms::$xoopsDB -> query( $sql, icms::$module -> config['admin_perpage'], $start );
             $published_array_count = icms::$xoopsDB -> getRowsNum( icms::$xoopsDB -> query( $sql ) );
-            mytube_videolistheader( _AM_MYTUBE_MINDEX_PUBLISHEDVIDEO );
-            mytube_videolistpagenav( $published_array_count, $start, 'art', '', 'right' );
+			echo '<br /><div><span style="float: left; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_MINDEX_PUBLISHEDVIDEO . '</span>' . mytube_videolistpagenav( $published_array_count, $start, 'art', '', 'right' ) . '</div>';
+			echo '<table width="100%" cellspacing="1" class="outer" summary>
+					<tr style="text-align: center; font-size: smaller;">
+						<th>' . _AM_MYTUBE_MINDEX_ID . '</th>
+						<th style="text-align: left;">&nbsp;<b>' . _AM_MYTUBE_MINDEX_TITLE . '</th>
+						<th>' . _AM_MYTUBE_VIDSOURCE2 . '</th>
+						<th>' . _AM_MYTUBE_CATTITLE . '</th>
+						<th>' . _AM_MYTUBE_MINDEX_POSTER . '</th>
+						<th>' . _AM_MYTUBE_MINDEX_PUBLISH . '</th>
+						<th>' . _AM_MYTUBE_MINDEX_EXPIRE . '</th>
+						<th>' . _AM_MYTUBE_MINDEX_ONLINE . '</th>
+						<th>' . _AM_MYTUBE_MINDEX_ACTION . '</th>
+					</tr>';
             if ( $published_array_count > 0 ) {
                 while ( $published = icms::$xoopsDB -> fetchArray( $published_array ) ) {
 					mytube_videolistbody( $published );
                 }
 				echo '</table>';
+				mytube_videolistpagenav( $published_array_count, $start, 'art', '', 'right' );
             } else {
-                mytube_videolistfooter();
-            } 
-            mytube_videolistpagenav( $published_array_count, $start, 'art', '', 'right' );
+                echo '<tr style="text-align: center;">
+						<td class="head" colspan="9">' . _AM_MYTUBE_MINDEX_NOVIDEOSFOUND . '</td>
+					  </tr>';
+            }
         }
         icms_cp_footer();
         break;

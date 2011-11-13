@@ -24,6 +24,7 @@
  
 include '../../../include/cp_header.php';
 
+include_once ICMS_ROOT_PATH . '/modules/' . icms::$module -> getVar('dirname') . '/admin/functions.php';
 include_once ICMS_ROOT_PATH . '/modules/' . icms::$module -> getVar('dirname') . '/include/functions.php';
 include_once ICMS_ROOT_PATH . '/modules/' . icms::$module -> getVar('dirname') . '/include/video.php';
 include_once ICMS_ROOT_PATH . '/modules/' . icms::$module -> getVar('dirname') . '/class/mytube_lists.php';
