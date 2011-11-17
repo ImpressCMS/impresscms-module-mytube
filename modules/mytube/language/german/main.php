@@ -221,7 +221,7 @@ function mytube_alfabet() {
 }
 
 // Version 1.06 RC-1
-define( '_MD_MYTUBE_FEED', 'RSS feed' );
+define( '_MD_MYTUBE_FEED', 'RSS Feed' );
 define( '_MD_MYTUBE_NATIOGEO', 'National Geographic' );
-define( '_MD_MYTUBE_NOPERMISSIONTOVIEW', 'Sorry, you do not have permission to view this category.' );
+define( '_MD_MYTUBE_NOPERMISSIONTOVIEW', 'Entschuldigung, Sie haben zu dieser Kategorie keine Berechtingungsion.' );
 ?>

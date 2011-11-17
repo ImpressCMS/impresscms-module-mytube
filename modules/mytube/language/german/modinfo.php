@@ -2,7 +2,7 @@
 /**
  * $Id: modinfo.php
  * Module: MyTube
- * Language: english
+ * Language: German
  * Format: UTF-8
  */
 
@@ -265,7 +265,8 @@ define('_MI_MYTUBE_FLVPLAYER_CREDITDSC', 'JW FLV Media Player by LongTail Video 
 define('_MI_MYTUBE_VUPLOADS', 'Videoupload');
 define('_MI_MYTUBE_CATEGORYIMGDSC', '');
 define('_MI_MYTUBE_MAINIMGDIRDSC', '');
-define("_MI_MYTUBE_BNAME8","Banner");
+define("_MI_MYTUBE_BNAME8","MyTube Sponsor Statistiken");
+define('_MI_MYTUBE_ICONS_CREDITS', "Icons");
 
 // Version 1.04 RC-2
 define('_MI_MYTUBE_MODULE_MANUAL', 'Anleitung' );

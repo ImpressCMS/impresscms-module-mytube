@@ -2,7 +2,7 @@
 /**
  * $Id: blocks.php
  * Module: MyTube
- * Language: english
+ * Language: German
  * Format: UTF-8
  */
  
@@ -25,5 +25,5 @@ define( "_MB_MYTUBE_DATEFORMAT", "Datumformat" );
 define( "_MB_MYTUBE_DATEFORMATMANUAL", 'Siehe <a href="http://jp.php.net/manual/de/function.date.php" target="_blank">PHP Syntax</a>' );
 define( "_MB_MYTUBE_ALLCAT", "Alle Kategorien");
 define( "_MB_MYTUBE_SELECTCAT", "Zeige Videos von:");
-define( '_MB_MYTUBE_VIEWS', 'views' );
+define( '_MB_MYTUBE_VIEWS', 'gesehen' );
 ?>

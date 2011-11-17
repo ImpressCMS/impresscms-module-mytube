@@ -2,7 +2,7 @@
 /**
  * $Id: admin.php
  * Module: MyTube
- * Language: english
+ * Language: German
  * Format: UTF-8
  */
 
