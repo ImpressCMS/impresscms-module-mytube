@@ -558,4 +558,8 @@ define( '_AM_MYTUBE_NICEURLDSC', 'Enter an alternative title for the videoclip t
 define( '_AM_MYTUBE_NATIOGEO', 'National Geographic' );
 define( '_AM_MYTUBE_MSG_OFFLINE', 'Video was set Offline successfully.' );
 define( '_AM_MYTUBE_MSG_ONLINE', 'Video was set Online successfully.' );
+
+define( '_AM_MYTUBE_VIDEO_HD', 'Play in High Definition:' );
+define( '_AM_MYTUBE_VIDEO_HDDSC','Works currently for YouTube only.' );
+define( '_AM_MYTUBE_ICO_HD', 'High Definition' );
 ?>

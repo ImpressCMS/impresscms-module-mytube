@@ -72,6 +72,8 @@ if( !defined( 'ICMS_ROOT_PATH' ) ) exit ;
 
 	$sql = "ALTER TABLE " . icms::$xoopsDB -> prefix( 'mytube_videos' ) . " ADD nice_url VARCHAR(100) NOT NULL default ''";
 	$db -> query( $sql );
+	$sql = "ALTER TABLE " . icms::$xoopsDB -> prefix( 'mytube_videos' ) . " ADD hd INT(11) NOT NULL default '0'";
+	$db -> query( $sql );
 	
 	$sql = sprintf( "ALTER TABLE " . icms::$xoopsDB -> prefix( 'mytube_cat') . " DROP spotlighttop" );
 	$db -> query( $sql );

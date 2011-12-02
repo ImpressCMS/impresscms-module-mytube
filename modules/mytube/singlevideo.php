@@ -6,14 +6,14 @@
 *
 * File: singlevideo.php
 *
-* @copyright		http://www.xoops.org/ The XOOPS Project
-* @copyright		XOOPS_copyrights.txt
-* @copyright		http://www.impresscms.org/ The ImpressCMS Project
+* @copyright	http://www.xoops.org/ The XOOPS Project
+* @copyright	XOOPS_copyrights.txt
+* @copyright	http://www.impresscms.org/ The ImpressCMS Project
 * @license		GNU General Public License (GPL)
 *				a copy of the GNU license is enclosed.
 * ----------------------------------------------------------------------------------------------------------
 * @package		WF-Links 
-* @since			1.03
+* @since		1.03
 * @author		John N
 * ----------------------------------------------------------------------------------------------------------
 * 				MyTube
@@ -30,8 +30,8 @@ $sql3 = 'SELECT cid FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHE
 list( $cid ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $sql3 ) );
 
 if  ( false == mytube_checkgroups( $cid ) ) {
-        redirect_header( 'index.php', 1, _MD_MYTUBE_NOPERMISSIONTOVIEW );
-        exit();
+	redirect_header( 'index.php', 1, _MD_MYTUBE_NOPERMISSIONTOVIEW );
+	exit();
 }
 
 $sql2 = 'SELECT count(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' a LEFT JOIN '
@@ -43,8 +43,8 @@ $sql2 = 'SELECT count(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . 
 list( $count ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $sql2 ) );
 
 if ( false == mytube_checkgroups( $cid ) && $count == 0 ) {
-    redirect_header( 'index.php', 1, _MD_MYTUBE_MUSTREGFIRST );
-    exit();
+	redirect_header( 'index.php', 1, _MD_MYTUBE_MUSTREGFIRST );
+	exit();
 } 
 
 $sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid . '
@@ -56,8 +56,8 @@ $result = icms::$xoopsDB -> query( $sql );
 $video_arr = icms::$xoopsDB -> fetchArray( $result );
 
 if ( !is_array( $video_arr ) ) {
-    redirect_header( 'index.php', 1, _MD_MYTUBE_NOVIDEOLOAD );
-    exit();
+	redirect_header( 'index.php', 1, _MD_MYTUBE_NOVIDEOLOAD );
+	exit();
 } 
 
 $xoopsOption['template_main'] = 'mytube_singlevideo.html';
@@ -83,26 +83,26 @@ $pathstring .= $mytree -> getNicePathFromId( $cid, 'title', 'viewcat.php?op=' );
 $video['path'] = $pathstring;
 
 // Get video from source
-$video['showvideo'] = mytube_showvideo( $video_arr['vidid'], $video_arr['vidsource'], $video_arr['screenshot'], $video_arr['picurl'] );
+$video['showvideo'] = mytube_showvideo( $video_arr['vidid'], $video_arr['vidsource'], $video_arr['screenshot'], $video_arr['picurl'], $video_arr['hd'] );
 
 // Get Social Bookmarks
 $video['sbmarks'] = mytube_sbmarks( $video_arr['lid'], $video_arr['title'] );
 
 // Start of meta tags
-    $maxWords = 100;
-    $words = array();
-    $words = explode( ' ', mytube_html2text( $video_arr['description'] ) );
-    $newWords = array();
-    $i = 0;
-    while ( $i < $maxWords-1 && $i < count( $words ) ) {
+	$maxWords = 100;
+	$words = array();
+	$words = explode( ' ', mytube_html2text( $video_arr['description'] ) );
+	$newWords = array();
+	$i = 0;
+	while ( $i < $maxWords-1 && $i < count( $words ) ) {
 		if ( isset( $words[$i] ) ) {
 			$newWords[] = trim( $words[$i] );
 		}
 		$i++;
-    }
-    $video_meta_description = implode( ' ', $newWords );
+	}
+	$video_meta_description = implode( ' ', $newWords );
 
-    if ( is_object( $xoTheme ) ) {
+	if ( is_object( $xoTheme ) ) {
 		if ( $video_arr['keywords'] ) {
 			$xoTheme -> addMeta( 'meta', 'keywords', $video_arr['keywords'] );
 		}
@@ -110,15 +110,17 @@ $video['sbmarks'] = mytube_sbmarks( $video_arr['lid'], $video_arr['title'] );
 		if ( icms::$module -> config['usemetadescr'] == 1 ) {
 			$xoTheme -> addMeta( 'meta', 'description', $video_meta_description );
 		}
-    } else {
+	} else {
 		if ( $video_arr['keywords'] ) {
 			$xoopsTpl -> assign( 'icms_meta_keywords', $video_arr['keywords'] );
 		}
 		if ( icms::$module -> config['usemetadescr'] == 1 ) {
 			$xoopsTpl -> assign( 'icms_meta_description', $video_meta_description );
 		}
-    }
-    $xoopsTpl -> assign( 'icms_pagetitle', $video_arr['title'] );
+	}
+	$xoopsTpl -> assign( 'icms_pagetitle', $video_arr['title'] );
+	$xoopsTpl -> assign( 'og_url', mytube_niceurl( $video_arr['lid'], $video_arr['title'], $video_arr['nice_url'] ) );
+	$xoopsTpl -> assign( 'og_image', ICMS_URL . '/modules/' . icms::$module -> getvar( 'dirname' ) . '/images/mytube_ilogo.png' );
 // End of meta tags
 
 $moderate = 0;
@@ -126,9 +128,9 @@ include_once ICMS_ROOT_PATH . '/modules/' . icms::$module -> getvar( 'dirname' )
 
 $xoopsTpl -> assign( 'show_screenshot', false );
 if ( isset( icms::$module -> config['screenshot'] ) && icms::$module -> config['screenshot'] == 1 ) {
-    $xoopsTpl -> assign( 'shotwidth', icms::$module -> config['shotwidth'] );
-    $xoopsTpl -> assign( 'shotheight', icms::$module -> config['shotheight'] );
-    $xoopsTpl -> assign( 'show_screenshot', true );
+	$xoopsTpl -> assign( 'shotwidth', icms::$module -> config['shotwidth'] );
+	$xoopsTpl -> assign( 'shotheight', icms::$module -> config['shotheight'] );
+	$xoopsTpl -> assign( 'show_screenshot', true );
 } 
 
 if ( $video['isadmin'] == false ) {
@@ -137,40 +139,40 @@ if ( $video['isadmin'] == false ) {
 
 // Show other author videos
 $sql = 'SELECT lid, title, published, nice_url FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . '
-        WHERE submitter=' . $video_arr['submitter'] . '
-        AND lid <> ' . $video_arr['lid'] . '
-        AND published > 0 AND published <= ' . time() . ' AND (expired = 0 OR expired > ' . time() . ')  
-        AND offline = 0 ORDER by published DESC'; 
+		WHERE submitter=' . $video_arr['submitter'] . '
+		AND lid <> ' . $video_arr['lid'] . '
+		AND published > 0 AND published <= ' . time() . ' AND (expired = 0 OR expired > ' . time() . ')  
+		AND offline = 0 ORDER by published DESC'; 
 $result = icms::$xoopsDB -> query( $sql, 10, 0 );
 
 while ( $arr = icms::$xoopsDB -> fetchArray( $result ) ) {
-    $videouid['title'] = $mytubemyts -> htmlSpecialCharsStrip( $arr['title'] );
-    $videouid['niceurl'] = mytube_niceurl( $arr['lid'], $arr['title'], $arr['nice_url'] );
-    $videouid['published'] = mytube_time( formatTimestamp( $arr['published'], icms::$module -> config['dateformat'] ) );
-    $xoopsTpl -> append( 'video_uid', $videouid );
+	$videouid['title'] = $mytubemyts -> htmlSpecialCharsStrip( $arr['title'] );
+	$videouid['niceurl'] = mytube_niceurl( $arr['lid'], $arr['title'], $arr['nice_url'] );
+	$videouid['published'] = mytube_time( formatTimestamp( $arr['published'], icms::$module -> config['dateformat'] ) );
+	$xoopsTpl -> append( 'video_uid', $videouid );
 }
 
 // Copyright notice
 if ( isset( icms::$module -> config['copyright'] ) && icms::$module -> config['copyright'] == 1 ) {
-    $xoopsTpl -> assign( 'lang_copyright', '' . $video['publisher'] . ' &#0169; ' . _MD_MYTUBE_COPYRIGHT . ' ' . formatTimestamp( time(), 'Y' ) . ' - ' . ICMS_URL );
+	$xoopsTpl -> assign( 'lang_copyright', '' . $video['publisher'] . ' &#0169; ' . _MD_MYTUBE_COPYRIGHT . ' ' . formatTimestamp( time(), 'Y' ) . ' - ' . ICMS_URL );
 }
 
 // Show other videos by submitter
 if ( isset( icms::$module -> config['othervideos'] ) && icms::$module -> config['othervideos'] == 1 ) {
-    $xoopsTpl -> assign( 'other_videos', '<b>' ._MD_MYTUBE_OTHERBYUID . '</b>'  . $video['submitter'] . '<br />' );
+	$xoopsTpl -> assign( 'other_videos', '<b>' ._MD_MYTUBE_OTHERBYUID . '</b>'  . $video['submitter'] . '<br />' );
 } else {
-    $xoopsTpl -> assign( 'other_videos', '<b>' ._MD_MYTUBE_NOOTHERBYUID . '</b>'  . $video['submitter'] . '<br />' );
+	$xoopsTpl -> assign( 'other_videos', '<b>' ._MD_MYTUBE_NOOTHERBYUID . '</b>'  . $video['submitter'] . '<br />' );
 }
 
 $video['useradminlink'] = 0;
 if ( is_object( icms::$user ) && !empty( icms::$user ) ) {
-  $_user_submitter = ( icms::$user -> getvar( 'uid' ) == $video_arr['submitter'] ) ? true : false;
-  if ( true == mytube_checkgroups( $cid ) ) {
-    $video['useradminlink'] = 1;
-    if ( icms::$user -> getvar( 'uid' ) == $video_arr['submitter'] ) {
-      $video['usermodify'] = '<a class="mytube_button" href="' . ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/submit.php?lid=' . $video_arr['lid'] . '"><img src="' . ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/images/icon/film_edit.png" alt="" style="vertical-align: middle;" /> ' . _MD_MYTUBE_MODIFY . '</a>';
-    }
-  }
+	$_user_submitter = ( icms::$user -> getvar( 'uid' ) == $video_arr['submitter'] ) ? true : false;
+	if ( true == mytube_checkgroups( $cid ) ) {
+		$video['useradminlink'] = 1;
+		if ( icms::$user -> getvar( 'uid' ) == $video_arr['submitter'] ) {
+			$video['usermodify'] = '<a class="mytube_button" href="' . ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/submit.php?lid=' . $video_arr['lid'] . '"><img src="' . ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/images/icon/film_edit.png" alt="" style="vertical-align: middle;" /> ' . _MD_MYTUBE_MODIFY . '</a>';
+		}
+	}
 }
 
 $video['showsbookmarx'] = icms::$module -> config['showsbookmarks'];

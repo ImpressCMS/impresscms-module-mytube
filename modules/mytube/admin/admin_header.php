@@ -6,18 +6,18 @@
 *
 * File: admin/admin_header.php
 *
-* @copyright		http://www.xoops.org/ The XOOPS Project
-* @copyright		XOOPS_copyrights.txt
-* @copyright		http://www.impresscms.org/ The ImpressCMS Project
+* @copyright	http://www.xoops.org/ The XOOPS Project
+* @copyright	XOOPS_copyrights.txt
+* @copyright	http://www.impresscms.org/ The ImpressCMS Project
 * @license		GNU General Public License (GPL)
 *				a copy of the GNU license is enclosed.
 * ----------------------------------------------------------------------------------------------------------
 * @package		WF-Links 
-* @since			1.03
+* @since		1.03
 * @author		John N
 * ----------------------------------------------------------------------------------------------------------
 * 				MyTube
-* @since			1.00
+* @since		1.00
 * @author		McDonald
 * @version		$Id$
 */
@@ -36,7 +36,7 @@ global $mytubemyts, $icmsConfig;
 
 $imagearray = array(
 	'editimg' => '<img src="../images/icon/film_edit.png" alt="' . _AM_MYTUBE_ICO_EDIT . '" title="' . _AM_MYTUBE_ICO_EDIT . '" style="vertical-align: middle;">',
-    'deleteimg' => '<img src="../images/icon/film_delete.png" alt="' . _AM_MYTUBE_ICO_DELETE . '" title="' . _AM_MYTUBE_ICO_DELETE . '" style="vertical-align: middle;">',
+	'deleteimg' => '<img src="../images/icon/film_delete.png" alt="' . _AM_MYTUBE_ICO_DELETE . '" title="' . _AM_MYTUBE_ICO_DELETE . '" style="vertical-align: middle;">',
 	'altcat' => '<img src="../images/icon/folder_add.png" alt="' . _AM_MYTUBE_ALTCAT_CREATEF . '" title="' . _AM_MYTUBE_ALTCAT_CREATEF . '" style="vertical-align: middle;">',
 	'online' => '<img src="../images/icon/film_on.png" alt="' . _AM_MYTUBE_ICO_ONLINE . '" title="' . _AM_MYTUBE_ICO_ONLINE . '" style="vertical-align: middle;">',
 	'offline' => '<img src="../images/icon/film_off.png" alt="' . _AM_MYTUBE_ICO_OFFLINE . '" title="' . _AM_MYTUBE_ICO_OFFLINE . '" style="vertical-align: middle;">',
@@ -50,6 +50,7 @@ $imagearray = array(
 	'ack_no' => '<img src="../images/icon/film_off.png" alt="' . _AM_MYTUBE_ICO_REPORT . '" title="' . _AM_MYTUBE_ICO_REPORT . '" style="vertical-align: middle;">',
 	'con_yes' => '<img src="../images/icon/film_on.png" alt="' . _AM_MYTUBE_ICO_CONFIRM . '" title="' . _AM_MYTUBE_ICO_CONFIRM . '" style="vertical-align: middle;">',
 	'con_no' => '<img src="../images/icon/film_off.png" alt="' . _AM_MYTUBE_ICO_CONBROKEN . '" title="' . _AM_MYTUBE_ICO_CONBROKEN . '" style="vertical-align: middle;">',
-	'view' => '<img src="../images/icon/view.png" alt="' . _AM_MYTUBE_ICO_VIEW . '" title="' . _AM_MYTUBE_ICO_VIEW . '" style="vertical-align: middle;">'
+	'view' => '<img src="../images/icon/view.png" alt="' . _AM_MYTUBE_ICO_VIEW . '" title="' . _AM_MYTUBE_ICO_VIEW . '" style="vertical-align: middle;">',
+	'hd' => '<img src="../images/icon/hd.gif" alt="' . _AM_MYTUBE_ICO_HD . '" title="' . _AM_MYTUBE_ICO_HD . '" style="vertical-align: middle;">'
 	);
 ?>
