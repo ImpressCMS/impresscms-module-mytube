@@ -24,6 +24,8 @@
 
 include 'header.php';
 
+global $icmsConfigUser;
+
 $mytree = new icms_view_Tree( icms::$xoopsDB -> prefix( 'mytube_cat' ), 'cid', 'pid' );
 
 //$xoopsTpl -> assign( 'icms_module_header', '<link rel="stylesheet" type="text/css" href="' .  ICMS_URL . '/mytubestyle.css" />' );
@@ -40,7 +42,7 @@ if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
     if ( mytube_cleanRequestVars( $_REQUEST, 'submit', 0 ) ) {
 	
 		// Verify captcha code
-		if ( $icmsConfigUser['use_captcha'] == true ) {
+		if ( icms::$module -> config['captcha'] == true && $icmsConfigUser['use_captcha'] == true ) {
 			$icmsCaptcha = icms_form_elements_captcha_Object::instance(); 
 			if ( !$icmsCaptcha -> verify( true ) ) { 
 				redirect_header( 'submit.php', 2, $icmsCaptcha -> getMessage() ); 
@@ -343,7 +345,7 @@ if ( icms::$module -> config['usercantag'] == 1 ) {
         $sform -> addElement( $option_tray );
 		
 		// Captcha
-		if ( $icmsConfigUser['use_captcha'] == true ) {
+		if ( icms::$module -> config['captcha'] == true && $icmsConfigUser['use_captcha'] == true ) {
 			$sform -> addElement( new icms_form_elements_Captcha( _SECURITYIMAGE_GETCODE, 'scode' ), true ); 
 		}
 
