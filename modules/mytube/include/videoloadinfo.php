@@ -48,13 +48,13 @@ $video[ 'videothumb' ] = mytube_videothumb( $video_arr['vidid'], $video_arr['tit
 $video['publisher'] = mytube_videopublisher( $video_arr['vidid'], $video_arr['publisher'], $video_arr['vidsource'] );
 
 if ( $moderate == 0 ) {
-    $time = ( $video_arr['updated'] != 0 ) ? $video_arr['updated'] : $video_arr['published'];
-    $is_updated = ( $video_arr['updated'] != 0 ) ? _MD_MYTUBE_UPDATEDON : _MD_MYTUBE_PUBLISHDATE;
-    $xoopsTpl -> assign( 'lang_subdate' , $is_updated );
+	$time = ( $video_arr['updated'] != 0 ) ? $video_arr['updated'] : $video_arr['published'];
+	$is_updated = ( $video_arr['updated'] != 0 ) ? _MD_MYTUBE_UPDATEDON : _MD_MYTUBE_PUBLISHDATE;
+	$xoopsTpl -> assign( 'lang_subdate' , $is_updated );
 } else {
-    $time = $video_arr['date'];
-    $is_updated = _MD_MYTUBE_SUBMITDATE;
-    $xoopsTpl -> assign( 'lang_subdate' , $is_updated );
+	$time = $video_arr['date'];
+	$is_updated = _MD_MYTUBE_SUBMITDATE;
+	$xoopsTpl -> assign( 'lang_subdate' , $is_updated );
 }
 
 $video['adminvideo'] = '';
@@ -102,4 +102,6 @@ $video['total_chars']   = icms::$module -> config['totalchars'];
 $video['module_dir']    = icms::$module -> getVar( 'dirname' );
 $video['comment_rules'] = icms::$module -> config['com_rule'];
 $video['showrating']    = icms::$module -> config['showrating'];
+$video['width']			= icms::$module -> config['shotwidth'];
+$video['height']		= icms::$module -> config['shotheight'];
 ?>

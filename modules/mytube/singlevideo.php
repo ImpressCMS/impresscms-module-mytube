@@ -120,7 +120,7 @@ $video['sbmarks'] = mytube_sbmarks( $video_arr['lid'], $video_arr['title'] );
 	}
 	$xoopsTpl -> assign( 'icms_pagetitle', $video_arr['title'] );
 	$xoopsTpl -> assign( 'og_url', mytube_niceurl( $video_arr['lid'], $video_arr['title'], $video_arr['nice_url'] ) );
-	$xoopsTpl -> assign( 'og_image', ICMS_URL . '/modules/' . icms::$module -> getvar( 'dirname' ) . '/images/mytube_ilogo.png' );
+	$xoopsTpl -> assign( 'og_image', mytube_videothumb( $video_arr['vidid'], $video_arr['title'], $video_arr['vidsource'], $video_arr['picurl'], icms::$module -> config['videoimgdir'] . '/' . $video_arr['screenshot'] ) );
 // End of meta tags
 
 $moderate = 0;

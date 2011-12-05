@@ -78,38 +78,34 @@ function mytube_returnsource( $returnsource ) {
 // *******************************************************
 // Function for determining source for creating screenshot
 // *******************************************************
-function mytube_videothumb( $vidid, $title, $source, $picurl, $screenshot, $width = '', $height = '' ) {
-	if ( $width == '' || $height == '' ) {
-		$width  = icms::$module -> config['shotwidth'];
-		$height = icms::$module -> config['shotheight'];
-	}
+function mytube_videothumb( $vidid, $title, $source, $picurl, $screenshot ) {
 	$thumb = '';
 	switch( $source ) { 
 // YouTube
 		case 0:
-			$thumb = '<img src="http://img.youtube.com/vi/' . $vidid . '/default.jpg" title="' . $title . '" alt="' . $title . '" width="' . $width . '" height="' . $height . '" style="padding: 0px; border-style: none;" />';
+			$thumb = 'http://img.youtube.com/vi/' . $vidid . '/default.jpg';
 			break;
 
 // MetaCafe
 		case 1:
 			list($metaclip) = preg_split('[/]', $vidid);
 			$videothumb['metathumb'] = $metaclip;
-			$thumb = '<img src="http://www.metacafe.com/thumb/' . $videothumb['metathumb'] . '.jpg" title="' . $title . '" alt="' . $title . '" width="' . $width . '" height="' . $height . '" style="padding: 0px; border-style: none;" />';
+			$thumb = 'http://www.metacafe.com/thumb/' . $videothumb['metathumb'] . '.jpg';
 			break;
 
 // Spike
 		case 2:
-			$thumb = '<img src="http://spike.mtvnimages.com/images/import/stills/films/resize/istd/' . $vidid . '.jpg?width=' . $width . '&height=' . $height . '"  title="' . $title . '" alt="' . $title . '" style="padding: 0px; border-style: none;" />';
+			$thumb = 'http://spike.mtvnimages.com/images/import/stills/films/resize/istd/' . $vidid . '.jpg';
 			break;
 
 // Photobucket
 		case 3:
-			$thumb = '<img src="http://i153.photobucket.com/albums/' . $vidid . '.jpg" width="' . $width . '" height="' . $height . '"  title="' . $title . '" alt="' . $title . '" style="padding: 0px; border-style: none;" />';
+			$thumb = 'http://i153.photobucket.com/albums/' . $vidid . '.jpg';
 			break;
 
 // Photobucket
 		case 4:
-			$thumb = '<img src="http://cdn-thumbs.viddler.com/thumbnail_2_' . $vidid . '.jpg" width="' . $width . '" height="' . $height . '"  title="' . $title . '" alt="' . $title . '" style="padding: 0px; border-style: none;" />';
+			$thumb = 'http://cdn-thumbs.viddler.com/thumbnail_2_' . $vidid . '.jpg';
 			break;
 
 // Google Video, MySpace TV, DailyMotion, BrightCove, Blip.tv, ClipFish, LiveLeak, Maktoob, Veoh
@@ -124,11 +120,11 @@ function mytube_videothumb( $vidid, $title, $source, $picurl, $screenshot, $widt
 		case 108:
 		case 109:
 		case 110:
-			$thumb = '<img src="' . $picurl . '" width="' . $width . '" height="' . $height . '"  title="' . $title . '" alt="' . $title . '" style="padding: 0px; border-style: none;" />';
+			$thumb = $picurl;
 			break;
 // Determine if video source is MyTube for thumbnail
 		case 200:
-			$thumb = '<img src="' . ICMS_URL . '/' . $screenshot . '" width="' . $width . '" height="' . $height . '"  title="' . $title . '" alt="' . $title . '" style="padding: 0px; border-style: none;" />';
+			$thumb = ICMS_URL . '/' . $screenshot;
 			break;
 	}
 	return $thumb;
@@ -230,9 +226,9 @@ function mytube_showvideo( $vidid, $source, $screenshot, $picurl, $hd ) {
 // YouTube
 		case 0:
 			if ( $hd ) {
-				$showvideo = '<embed src="http://www.youtube.com/v/' . $vidid . '&autoplay=' . $autoplay . '&hd=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="315"></embed>';
+				$showvideo = '<embed src="http://www.youtube.com/v/' . $vidid . '&fs=1&autoplay=' . $autoplay . '&hd=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="315"></embed>';
 			} else {
-				$showvideo = '<embed src="http://www.youtube.com/v/' . $vidid . '&autoplay=' . $autoplay . '" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="295"></embed>';
+				$showvideo = '<embed src="http://www.youtube.com/v/' . $vidid . '&fs=1&autoplay=' . $autoplay . '" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="295"></embed>';
 			}
 			break;
 	

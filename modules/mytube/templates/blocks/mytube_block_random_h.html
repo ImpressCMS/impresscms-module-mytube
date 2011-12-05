@@ -2,11 +2,9 @@
  <{foreach item=videorandomh from=$block.random}>
    <div style="float: left; width: <{$videorandomh.width}>px; margin: 1px; padding: 2px; background-color: #d9d9d9; font-size: smaller; text-align: center;">
 	<span>
-		<a href="<{$videorandomh.url}>"><{$videorandomh.videothumb}></a>
-		<br />
-		<a href="<{$videorandomh.url}>"><{$videorandomh.title}></a>
-		<br />
-		<a href="<{$videorandomh.url}>"><{$videorandomh.date}></a>
+		<a href="<{$videorandomh.url}>"><img src="<{$videorandomh.videothumb}>" title="<{$videorandomh.title}>" alt="<{$videorandomh.title}>" width="<{$videorandomh.width}>" height="<{$videorandomh.height}>" /><br />
+		<{$videorandomh.title}></a><br />
+		<{$videorandomh.date}>
 	</span>	
    </div>
  <{/foreach}> 

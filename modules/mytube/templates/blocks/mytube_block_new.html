@@ -2,10 +2,8 @@
 <{foreach item=videoload from=$block.videos}>
 <tr>
  <td align="center" style="padding: 2px; vertical-align: top; background-color: #d9d9d9; font-size: smaller;">
-	<a href="<{$videoload.url}>"><{$videoload.videothumb}></a>
-	<br />
-	<a href="<{$videoload.url}>"><{$videoload.title}></a>
-	<br />
+	<a href="<{$videoload.url}>"><img src="<{$videoload.videothumb}>" title="<{$videoload.title}>" alt="<{$videoload.title}>" width="<{$videoload.width}>" height="<{$videoload.height}>" /><br />
+	<{$videoload.title}></a><br />
 	(<{$videoload.date}>)
  </td>
 </tr>

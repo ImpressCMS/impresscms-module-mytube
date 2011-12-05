@@ -92,7 +92,7 @@ function edit( $lid = 0 ) {
 					<div><b>' . _AM_MYTUBE_VOTE_NONREGISTERED . ': </b>' . intval( $_vote_data['null_ratinguser'] ) . '</div>
 				</td>
 				<td style="width: 25%; vertical-align: top; padding-left: 10px;">
-					<div>' . mytube_videothumb( $video_array['vidid'], $video_array['title'], $video_array['vidsource'], $video_array['picurl'], $video_array['screenshot'] ) . '</div>
+					<div><img src="' . mytube_videothumb( $video_array['vidid'], $video_array['title'], $video_array['vidsource'], $video_array['picurl'], $video_array['screenshot'] ) . '" alt="" width="' . icms::$module -> config['shotwidth'] . ' height="'. icms::$module -> config['shotheight'] . '" /></div>
 				</td>
 			 </tr>
 			</table>';

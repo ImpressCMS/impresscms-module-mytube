@@ -33,7 +33,7 @@
 
 <div>
 	<{if $video.screen_shot}>
-		<span style="float: left; padding: 0 4px 4px 0;"><a href="<{$video.url}>"><{$video.videothumb}></a></span>
+		<span style="float: left; padding: 0 4px 4px 0; border-style: none;"><a href="<{$video.url}>"><img src="<{$video.videothumb}>" title="<{$video.title}>" alt="<{$video.title}>" width="<{$video.width}>" height="<{$video.height}>" /></a></span>
 	<{/if}>
 	<b><{$smarty.const._MD_MYTUBE_DESCRIPTIONC}></b><br />
 	<{$video.description|truncate:$video.total_chars}>

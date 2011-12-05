@@ -2,10 +2,8 @@
 <{foreach item=videorandom from=$block.random}>
 <tr>
 <td align="center" style="padding: 2px; vertical-align: top; background-color: #d9d9d9; font-size: smaller;">
-	<a href="<{$videorandom.url}>"><{$videorandom.videothumb}></a>
-	<br />
-	<a href="<{$videorandom.url}>"><{$videorandom.title}></a>
-	<br />
+	<a href="<{$videorandom.url}>"><img src="<{$videorandom.videothumb}>" title="<{$videorandom.title}>" alt="<{$videorandom.title}>" width="<{$videorandom.width}>" height="<{$videorandom.height}>" /><br />
+	<{$videorandom.title}></a><br />
 	(<{$videorandom.date}>)
 </td>
 </tr>
