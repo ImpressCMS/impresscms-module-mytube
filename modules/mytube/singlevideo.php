@@ -16,8 +16,8 @@
 * @since		1.03
 * @author		John N
 * ----------------------------------------------------------------------------------------------------------
-* 				MyTube
-* @since			1.00
+*				MyTube
+* @since		1.00
 * @author		McDonald
 * @version		$Id$
 */
@@ -29,23 +29,23 @@ $lid  = intval( mytube_cleanRequestVars( $_REQUEST, 'lid', 0 ) );
 $sql3 = 'SELECT cid FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid;
 list( $cid ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $sql3 ) );
 
-if  ( false == mytube_checkgroups( $cid ) ) {
+if ( false == mytube_checkgroups( $cid ) ) {
 	redirect_header( 'index.php', 1, _MD_MYTUBE_NOPERMISSIONTOVIEW );
 	exit();
 }
 
 $sql2 = 'SELECT count(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' a LEFT JOIN '
- . icms::$xoopsDB -> prefix( 'mytube_altcat' ) . ' b'
- . ' ON b.lid = a.lid'
- . ' WHERE a.published > 0 AND a.published <= ' . time()
- . ' AND (a.expired = 0 OR a.expired > ' . time() . ') AND a.offline = 0'
- . ' AND (b.cid=a.cid OR (a.cid=' . $cid . ' OR b.cid=' . $cid . '))';
+	. icms::$xoopsDB -> prefix( 'mytube_altcat' ) . ' b'
+	. ' ON b.lid = a.lid'
+	. ' WHERE a.published > 0 AND a.published <= ' . time()
+	. ' AND (a.expired = 0 OR a.expired > ' . time() . ') AND a.offline = 0'
+	. ' AND (b.cid=a.cid OR (a.cid=' . $cid . ' OR b.cid=' . $cid . '))';
 list( $count ) = icms::$xoopsDB -> fetchRow( icms::$xoopsDB -> query( $sql2 ) );
 
 if ( false == mytube_checkgroups( $cid ) && $count == 0 ) {
 	redirect_header( 'index.php', 1, _MD_MYTUBE_MUSTREGFIRST );
 	exit();
-} 
+}
 
 $sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $lid . '
 		AND (published > 0 AND published <= ' . time() . ')
@@ -58,7 +58,7 @@ $video_arr = icms::$xoopsDB -> fetchArray( $result );
 if ( !is_array( $video_arr ) ) {
 	redirect_header( 'index.php', 1, _MD_MYTUBE_NOVIDEOLOAD );
 	exit();
-} 
+}
 
 $xoopsOption['template_main'] = 'mytube_singlevideo.html';
 include ICMS_ROOT_PATH . '/header.php';
@@ -69,7 +69,7 @@ if ( mytube_tag_module_included() ) {
 	$xoopsTpl -> assign( 'tagbar', tagBar( $video_arr['lid'], 0 ) );
 }
 
-if ( mytube_imageheader() != '' ) { 
+if ( mytube_imageheader() != '' ) {
 	$video['imageheader'] = '<div style="padding-bottom: 12px; text-align: center;">' . mytube_imageheader() . '</div>';
 }
 $video['id'] = $video_arr['lid'];
@@ -131,12 +131,11 @@ if ( isset( icms::$module -> config['screenshot'] ) && icms::$module -> config['
 	$xoopsTpl -> assign( 'shotwidth', icms::$module -> config['shotwidth'] );
 	$xoopsTpl -> assign( 'shotheight', icms::$module -> config['shotheight'] );
 	$xoopsTpl -> assign( 'show_screenshot', true );
-} 
+}
 
 if ( $video['isadmin'] == false ) {
 	$count = mytube_updateCounter( $video_arr['lid'] );
 }
-
 // Show other author videos
 $sql = 'SELECT lid, title, published, nice_url FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . '
 		WHERE submitter=' . $video_arr['submitter'] . '

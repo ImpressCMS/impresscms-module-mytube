@@ -21,8 +21,6 @@
 * @author		McDonald
 * @version		$Id$
 */
-
-
 if( !defined( 'ICMS_ROOT_PATH' ) ) exit ;
 
 	$db =& Database::getInstance();
@@ -100,5 +98,4 @@ if( !defined( 'ICMS_ROOT_PATH' ) ) exit ;
 	$db -> query( $sql );
 	$sql = sprintf( "ALTER TABLE " . icms::$xoopsDB -> prefix( 'mytube_indexpage') . " DROP nobreak" );
 	$db -> query( $sql );
-
 ?>

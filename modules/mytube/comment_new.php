@@ -24,15 +24,14 @@
 //  along with this program; if not, write to the Free Software              //
 //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA //
 //  ------------------------------------------------------------------------ //
-
 include '../../mainfile.php';
 $com_itemid = isset( $_GET['com_itemid'] ) ? intval( $_GET['com_itemid'] ) : 0;
 if ( $com_itemid > 0 ) {
-    // Get file title
-    $sql = 'SELECT title FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $com_itemid;
-    $result = icms::$xoopsDB -> query( $sql );
-    $row = icms::$xoopsDB -> fetchArray( $result );
-    $com_replytitle = $row['title'];
-    include ICMS_ROOT_PATH . '/include/comment_new.php';
+	// Get file title
+	$sql = 'SELECT title FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE lid=' . $com_itemid;
+	$result = icms::$xoopsDB -> query( $sql );
+	$row = icms::$xoopsDB -> fetchArray( $result );
+	$com_replytitle = $row['title'];
+	include ICMS_ROOT_PATH . '/include/comment_new.php';
 }
 ?>

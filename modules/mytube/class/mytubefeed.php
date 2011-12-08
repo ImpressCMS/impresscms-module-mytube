@@ -3,10 +3,10 @@
 *
 * Module RSS Feed Class 
 *
-* @copyright		http://www.impresscms.org/ The ImpressCMS Project 
+* @copyright	http://www.impresscms.org/ The ImpressCMS Project 
 * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
 * @package		core
-* @since			1.1
+* @since		1.1
 * @author		Ignacio Segura, "Nachenko"
 * @version		$Id: icmsfeed.php 6991 2008-11-16 20:37:32Z mcdonald3072 $
 */
@@ -71,7 +71,7 @@ class MyTubeFeed {
 		$tpl -> assign( 'channel_lastbuild', $this -> lastbuild );
 		$tpl -> assign( 'channel_copyright', $this -> copyright );
 		$tpl -> assign( 'channel_width', $this -> width ); 
-        $tpl -> assign( 'channel_height', $this -> height );
+		$tpl -> assign( 'channel_height', $this -> height );
 		$tpl -> assign( 'channel_ttl', $this -> ttl );
 		$tpl -> assign( 'image_url', $this -> image['url'] );
 		foreach ( $this -> feeds as $feed ) {

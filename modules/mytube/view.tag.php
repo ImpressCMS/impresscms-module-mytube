@@ -9,7 +9,6 @@
  * @version		$Id$
  * @package		module::tag
  */
-
 include 'header.php';
 include ICMS_ROOT_PATH . '/modules/tag/view.tag.php';
 ?>

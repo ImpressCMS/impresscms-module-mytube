@@ -109,15 +109,15 @@ function edit( $lid = 0 ) {
 	$sform = new icms_form_Theme( $caption, 'storyform', '' );
 	$sform -> setExtra( 'enctype="multipart/form-data"' );
 
-// Video title
+	// Video title
 	$sform -> addElement( new icms_form_elements_Text( _AM_MYTUBE_VIDEO_TITLE, 'title', 70, 100, $title ), true );
 	
-// Video nice url	
+	// Video nice url	
 	$niceform = new icms_form_elements_Text( _AM_MYTUBE_NICEURL, 'nice_url', 70, 100, $nice_url );
 	$niceform -> setDescription( '<small>' . _AM_MYTUBE_NICEURLDSC . '</small>' );
 	$sform -> addElement( $niceform, false );
 
-// Video source
+	// Video source
 	$vidsource_array = array(	0 => _AM_MYTUBE_YOUTUBE,
 								1 => _AM_MYTUBE_METACAFE,
 								2 => _AM_MYTUBE_IFILM,
@@ -139,47 +139,47 @@ function edit( $lid = 0 ) {
 	$vidsource_select -> addOptionArray( $vidsource_array );
 	$sform -> addElement( $vidsource_select );
 
-// Video code
+	// Video code
 	$videocode = new icms_form_elements_Text( _AM_MYTUBE_VIDEO_DLVIDID, 'vidid', 70, 512, $vidid );
 	$videocode -> setDescription( '<small>' . _AM_MYTUBE_VIDEO_DLVIDIDDSC . '</small>' );
 	$sform -> addElement( $videocode, true );
 	$note = _AM_MYTUBE_VIDEO_DLVIDID_NOTE;
 	$sform -> addElement( new icms_form_elements_Label( '', $note ) );
-	
-// HD
+
+	// HD
 	$highdef = new icms_form_elements_Radioyn( _AM_MYTUBE_VIDEO_HD, 'hd', $hd, ' ' . _YES . '', ' ' . _NO . '' );
 	$highdef -> setDescription( '<small>' . _AM_MYTUBE_VIDEO_HDDSC . '</small>' );
 	$sform -> addElement( $highdef );
 
-// Picture url
+	// Picture url
 	$picurl = new icms_form_elements_Text( _AM_MYTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
 	$picurl -> setDescription( '<span style="font-weight: normal;font-size: smaller;">' . _AM_MYTUBE_VIDEO_PICURLNOTE . '</span>' );
 	$sform -> addElement( $picurl, false );
 
-// Video publisher
+	// Video publisher
 	$sform -> addElement( new icms_form_elements_Text( _AM_MYTUBE_VIDEO_PUBLISHER, 'publisher', 70, 255, $publisher ), true );
 
-// Time form
+	// Time form
 	$timeform = new icms_form_elements_Text( _AM_MYTUBE_TIME, 'time', 7, 7, $time );
 	$timeform -> setDescription( '<small>(h:mm:ss)</small>' );
 	$sform -> addElement( $timeform, false );
 
-// Category menu
+	// Category menu
 	ob_start();
 		$mytree -> makeMySelBox( 'title', 'title', $cid, 0 );
 		$sform -> addElement( new icms_form_elements_Label( _AM_MYTUBE_VIDEO_CATEGORY, ob_get_contents() ) );
 	ob_end_clean();
 
-// Description form
+	// Description form
 	$editor = mytube_getWysiwygForm( _AM_MYTUBE_VIDEO_DESCRIPTION, 'descriptionb', $descriptionb );
 	$sform -> addElement( $editor, false );
 
-// Meta keywords form
+	// Meta keywords form
 	$keywords = new icms_form_elements_TextArea( _AM_MYTUBE_KEYWORDS, 'keywords', $keywords, 5, 50, false );
 	$keywords -> setDescription( '<span style="font-size: smaller;">' . _AM_MYTUBE_KEYWORDS_NOTE . '</span>' );
 	$sform -> addElement($keywords);
 
-// Insert tags if Tag-module is installed
+	// Insert tags if Tag-module is installed
 	if ( mytube_tag_module_included() ) {
 		include_once ICMS_ROOT_PATH . '/modules/tag/include/formtag.php';
 		$text_tags = new XoopsFormTag( 'item_tag', 70, 255, $video_array['item_tag'], 0 );
@@ -188,7 +188,7 @@ function edit( $lid = 0 ) {
 		$sform -> addElement( new icms_form_elements_Hidden( 'item_tag', $video_array['item_tag'] ) ) ;
 	}
 
-// Video Publish Date
+	// Video Publish Date
 	$sform -> addElement( new icms_form_elements_Datetime( _AM_MYTUBE_VIDEO_SETPUBLISHDATE, 'published', $size = 15, $published ));
 
 	if ( $lid ) {
@@ -196,7 +196,7 @@ function edit( $lid = 0 ) {
 		$sform -> addElement( new icms_form_elements_Hidden( 'was_expired', $expired ) );
 	}
 
-// Video Expire Date
+	// Video Expire Date
 	$isexpired = ( $expired > time() ) ? 1: 0 ;
 	$expiredates = ( $expired > time() ) ? _AM_MYTUBE_VIDEO_EXPIREDATESET . mytube_time( formatTimestamp( $expired, icms::$module -> config['dateformat'] ) ) : _AM_MYTUBE_VIDEO_SETDATETIMEEXPIRE;
 	$warning = ( $published > $expired && $expired > time() ) ? _AM_MYTUBE_VIDEO_EXPIREWARNING : '';
@@ -209,11 +209,11 @@ function edit( $lid = 0 ) {
 	$expiredate_tray -> addElement( new icms_form_elements_Radioyn( _AM_MYTUBE_VIDEO_CLEAREXPIREDATE, 'clearexpire', 0, ' ' . _YES . ' ', ' ' . _NO ) );
 	$sform -> addElement( $expiredate_tray );
 
-// Set video offline yes/no
+	// Set video offline yes/no
 	$videostatus_radio = new icms_form_elements_Radioyn( _AM_MYTUBE_VIDEO_FILESSTATUS, 'offline', $offline, ' ' . _YES . ' ', ' ' . _NO );
 	$sform -> addElement( $videostatus_radio );
 
-// Set video status as updated yes/no
+	// Set video status as updated yes/no
 	$up_dated = ( $updated == 0 ) ? 0 : 1;
 	$video_updated_radio = new icms_form_elements_Radioyn( _AM_MYTUBE_VIDEO_SETASUPDATED, 'up_dated', $up_dated, ' ' . _YES . ' ', ' ' . _NO );
 	$sform -> addElement( $video_updated_radio );
@@ -335,7 +335,7 @@ switch ( strtolower( $op ) ) {
 			$expiredate = '0';
 		}
 
-// Update or insert linkload data into database
+		// Update or insert linkload data into database
 		if ( !$lid ) {
 			$date = time();
 			$publishdate = time();
@@ -487,86 +487,86 @@ switch ( strtolower( $op ) ) {
 		case 'main':
 		default:
 
-		$start  = mytube_cleanRequestVars( $_REQUEST, 'start', 0 );
-		$start1 = mytube_cleanRequestVars( $_REQUEST, 'start1', 0 );
-		$start2 = mytube_cleanRequestVars( $_REQUEST, 'start2', 0 );
-		$start3 = mytube_cleanRequestVars( $_REQUEST, 'start3', 0 );
-		$start4 = mytube_cleanRequestVars( $_REQUEST, 'start4', 0 );
-		$start5 = mytube_cleanRequestVars( $_REQUEST, 'start5', 0 );
-		$totalcats = mytube_totalcategory();
+			$start  = mytube_cleanRequestVars( $_REQUEST, 'start', 0 );
+			$start1 = mytube_cleanRequestVars( $_REQUEST, 'start1', 0 );
+			$start2 = mytube_cleanRequestVars( $_REQUEST, 'start2', 0 );
+			$start3 = mytube_cleanRequestVars( $_REQUEST, 'start3', 0 );
+			$start4 = mytube_cleanRequestVars( $_REQUEST, 'start4', 0 );
+			$start5 = mytube_cleanRequestVars( $_REQUEST, 'start5', 0 );
+			$totalcats = mytube_totalcategory();
 
-		$result = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_broken' ) );
-		list( $totalbrokenvideos ) = icms::$xoopsDB -> fetchRow( $result );
-		$result2 = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_mod' ) );
-		list( $totalmodrequests ) = icms::$xoopsDB -> fetchRow( $result2 );
-		$result3 = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published = 0' );
-		list( $totalnewvideos ) = icms::$xoopsDB -> fetchRow( $result3 );
-		$result4 = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published > 0' );
-		list( $totalvideos ) = icms::$xoopsDB -> fetchRow( $result4 );
+			$result = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_broken' ) );
+			list( $totalbrokenvideos ) = icms::$xoopsDB -> fetchRow( $result );
+			$result2 = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_mod' ) );
+			list( $totalmodrequests ) = icms::$xoopsDB -> fetchRow( $result2 );
+			$result3 = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published = 0' );
+			list( $totalnewvideos ) = icms::$xoopsDB -> fetchRow( $result3 );
+			$result4 = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published > 0' );
+			list( $totalvideos ) = icms::$xoopsDB -> fetchRow( $result4 );
 
-		icms_cp_header();
-		mytube_adminmenu( 1, _AM_MYTUBE_BINDEX );
-		$style = 'border: #CCCCCC 1px solid; padding: 4px; background-color: #E8E8E8; font-weight: bold; font-size: smaller;';
-		echo '
-			<fieldset style="border: #E8E8E8 1px solid;">
-			<legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' ._AM_MYTUBE_MINDEX_VIDEOSUMMARY . '</legend>
-			<div style="padding: 12px;">
-				<span style="' . $style . '"><a href="category.php">' . _AM_MYTUBE_SCATEGORY . '</a>' . $totalcats . '</span>
-				<span style="' . $style . '"><a href="index.php">' . _AM_MYTUBE_SFILES . '</a>' . $totalvideos . '</span>
-				<span style="' . $style . '"><a href="newvideos.php">' . _AM_MYTUBE_SNEWFILESVAL . '</a>' . $totalnewvideos . '</span>
-				<span style="' . $style . '"><a href="modifications.php">' . _AM_MYTUBE_SMODREQUEST . '</a>' . $totalmodrequests . '</span>
-				<span style="' . $style . '"><a href="brokenvideo.php">' . _AM_MYTUBE_SBROKENSUBMIT . '</a>' . $totalbrokenvideos . '</span>
-			</div>
-			</fieldset>';
+			icms_cp_header();
+			mytube_adminmenu( 1, _AM_MYTUBE_BINDEX );
+			$style = 'border: #CCCCCC 1px solid; padding: 4px; background-color: #E8E8E8; font-weight: bold; font-size: smaller;';
+			echo '
+				<fieldset style="border: #E8E8E8 1px solid;">
+				<legend style="display: inline; font-weight: bold; color: #0A3760; font-size: 12px;">' ._AM_MYTUBE_MINDEX_VIDEOSUMMARY . '</legend>
+				<div style="padding: 12px;">
+					<span style="' . $style . '"><a href="category.php">' . _AM_MYTUBE_SCATEGORY . '</a>' . $totalcats . '</span>
+					<span style="' . $style . '"><a href="index.php">' . _AM_MYTUBE_SFILES . '</a>' . $totalvideos . '</span>
+					<span style="' . $style . '"><a href="newvideos.php">' . _AM_MYTUBE_SNEWFILESVAL . '</a>' . $totalnewvideos . '</span>
+					<span style="' . $style . '"><a href="modifications.php">' . _AM_MYTUBE_SMODREQUEST . '</a>' . $totalmodrequests . '</span>
+					<span style="' . $style . '"><a href="brokenvideo.php">' . _AM_MYTUBE_SBROKENSUBMIT . '</a>' . $totalbrokenvideos . '</span>
+				</div>
+				</fieldset>';
 
-		if ( $totalcats > 0 ) {
-			$sform = new icms_form_Theme( _AM_MYTUBE_CCATEGORY_MODIFY, 'category', 'category.php' );
-			ob_start();
-				$mytree -> makeMySelBox( 'title', 'title' );
-				$sform -> addElement( new icms_form_elements_Label( _AM_MYTUBE_CCATEGORY_MODIFY_TITLE, ob_get_contents() ) );
-			ob_end_clean();
-			$dup_tray = new icms_form_elements_Tray( '', '' );
-			$dup_tray -> addElement( new icms_form_elements_Hidden( 'op', 'modCat' ) );
-			$butt_dup = new icms_form_elements_Button( '', '', _AM_MYTUBE_BMODIFY, 'submit' );
-			$butt_dup -> setExtra( 'onclick="this.form.elements.op.value=\'modCat\'"' );
-			$dup_tray -> addElement( $butt_dup );
-			$butt_dupct = new icms_form_elements_Button( '', '', _AM_MYTUBE_BDELETE, 'submit' );
-			$butt_dupct -> setExtra( 'onclick="this.form.elements.op.value=\'del\'"' );
-			$dup_tray -> addElement( $butt_dupct );
-			$sform -> addElement( $dup_tray );
-			$sform -> display();
-		}
-
-		if ( $totalvideos > 0 ) {
-			$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' ORDER BY lid DESC';
-			$published_array = icms::$xoopsDB -> query( $sql, icms::$module -> config['admin_perpage'], $start );
-			$published_array_count = icms::$xoopsDB -> getRowsNum( icms::$xoopsDB -> query( $sql ) );
-			echo '<br /><div><span style="float: left; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_MINDEX_PUBLISHEDVIDEO . '</span>' . mytube_videolistpagenav( $published_array_count, $start, 'art', '', 'right' ) . '</div>';
-			echo '<table width="100%" cellspacing="1" class="outer" summary>
-					<tr style="text-align: center; font-size: smaller;">
-						<th>' . _AM_MYTUBE_MINDEX_ID . '</th>
-						<th style="text-align: left;">&nbsp;<b>' . _AM_MYTUBE_MINDEX_TITLE . '</th>
-						<th>' . _AM_MYTUBE_VIDSOURCE2 . '</th>
-						<th>' . _AM_MYTUBE_CATTITLE . '</th>
-						<th>' . _AM_MYTUBE_MINDEX_POSTER . '</th>
-						<th>' . _AM_MYTUBE_MINDEX_PUBLISH . '</th>
-						<th>' . _AM_MYTUBE_MINDEX_EXPIRE . '</th>
-						<th>' . _AM_MYTUBE_MINDEX_ONLINE . '</th>
-						<th>' . _AM_MYTUBE_MINDEX_ACTION . '</th>
-					</tr>';
-			if ( $published_array_count > 0 ) {
-				while ( $published = icms::$xoopsDB -> fetchArray( $published_array ) ) {
-					mytube_videolistbody( $published );
-				}
-				echo '</table>';
-				mytube_videolistpagenav( $published_array_count, $start, 'art', '', 'right' );
-			} else {
-				echo '<tr style="text-align: center;">
-						<td class="head" colspan="9">' . _AM_MYTUBE_MINDEX_NOVIDEOSFOUND . '</td>
-					  </tr>';
+			if ( $totalcats > 0 ) {
+				$sform = new icms_form_Theme( _AM_MYTUBE_CCATEGORY_MODIFY, 'category', 'category.php' );
+				ob_start();
+					$mytree -> makeMySelBox( 'title', 'title' );
+					$sform -> addElement( new icms_form_elements_Label( _AM_MYTUBE_CCATEGORY_MODIFY_TITLE, ob_get_contents() ) );
+				ob_end_clean();
+				$dup_tray = new icms_form_elements_Tray( '', '' );
+				$dup_tray -> addElement( new icms_form_elements_Hidden( 'op', 'modCat' ) );
+				$butt_dup = new icms_form_elements_Button( '', '', _AM_MYTUBE_BMODIFY, 'submit' );
+				$butt_dup -> setExtra( 'onclick="this.form.elements.op.value=\'modCat\'"' );
+				$dup_tray -> addElement( $butt_dup );
+				$butt_dupct = new icms_form_elements_Button( '', '', _AM_MYTUBE_BDELETE, 'submit' );
+				$butt_dupct -> setExtra( 'onclick="this.form.elements.op.value=\'del\'"' );
+				$dup_tray -> addElement( $butt_dupct );
+				$sform -> addElement( $dup_tray );
+				$sform -> display();
 			}
-		}
-		icms_cp_footer();
-		break;
+
+			if ( $totalvideos > 0 ) {
+				$sql = 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' ORDER BY lid DESC';
+				$published_array = icms::$xoopsDB -> query( $sql, icms::$module -> config['admin_perpage'], $start );
+				$published_array_count = icms::$xoopsDB -> getRowsNum( icms::$xoopsDB -> query( $sql ) );
+				echo '<br /><div><span style="float: left; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_MINDEX_PUBLISHEDVIDEO . '</span>' . mytube_videolistpagenav( $published_array_count, $start, 'art', '', 'right' ) . '</div>';
+				echo '<table width="100%" cellspacing="1" class="outer" summary>
+						<tr style="text-align: center; font-size: smaller;">
+							<th>' . _AM_MYTUBE_MINDEX_ID . '</th>
+							<th style="text-align: left;">&nbsp;<b>' . _AM_MYTUBE_MINDEX_TITLE . '</th>
+							<th>' . _AM_MYTUBE_VIDSOURCE2 . '</th>
+							<th>' . _AM_MYTUBE_CATTITLE . '</th>
+							<th>' . _AM_MYTUBE_MINDEX_POSTER . '</th>
+							<th>' . _AM_MYTUBE_MINDEX_PUBLISH . '</th>
+							<th>' . _AM_MYTUBE_MINDEX_EXPIRE . '</th>
+							<th>' . _AM_MYTUBE_MINDEX_ONLINE . '</th>
+							<th>' . _AM_MYTUBE_MINDEX_ACTION . '</th>
+						</tr>';
+				if ( $published_array_count > 0 ) {
+					while ( $published = icms::$xoopsDB -> fetchArray( $published_array ) ) {
+						mytube_videolistbody( $published );
+					}
+					echo '</table>';
+					mytube_videolistpagenav( $published_array_count, $start, 'art', '', 'right' );
+				} else {
+					echo '<tr style="text-align: center;">
+							<td class="head" colspan="9">' . _AM_MYTUBE_MINDEX_NOVIDEOSFOUND . '</td>
+						</tr>';
+				}
+			}
+			icms_cp_footer();
+			break;
 }
 ?>

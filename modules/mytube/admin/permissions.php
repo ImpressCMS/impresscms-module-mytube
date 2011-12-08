@@ -68,12 +68,12 @@ switch( $permtoset ) {
 $permform = new icms_form_Groupperm( $title_of_form, $module_id, $perm_name, '' );
 $result = icms::$xoopsDB -> query( 'SELECT cid, pid, title FROM ' . icms::$xoopsDB -> prefix( 'mytube_cat' ) . ' ORDER BY title ASC' );
 if ( icms::$xoopsDB -> getRowsNum( $result ) ) {
-    while ( $permrow = icms::$xoopsDB -> fetcharray( $result ) ) {
-        $permform -> addItem( $permrow['cid'], '&nbsp;' . $permrow['title'], $permrow['pid']);
-    }
-    echo $permform -> render();
+	while ( $permrow = icms::$xoopsDB -> fetcharray( $result ) ) {
+		$permform -> addItem( $permrow['cid'], '&nbsp;' . $permrow['title'], $permrow['pid']);
+	}
+	echo $permform -> render();
 } else {
-    echo '<div><b>' . _AM_MYTUBE_PERM_CNOCATEGORY . '</b></div>';
+	echo '<div><b>' . _AM_MYTUBE_PERM_CNOCATEGORY . '</b></div>';
 } 
 unset( $permform );
 

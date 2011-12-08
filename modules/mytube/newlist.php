@@ -36,7 +36,7 @@ if ( isset( $_GET['newvideoshowdays'] ) ) {
 			if ( $newvideoshowdays != 30 ) {
 				redirect_header( 'newlist.php?newvideoshowdays=7', 5, _MD_MYTUBE_STOPIT . '<br /><img src="' . ICMS_URL . '/modules/' . icms::$module -> getvar( 'dirname' ) . '/images/icon/security.png" />' );
 				exit();
-            }
+			}
 		}
 	}
 	$time_cur = time();
@@ -46,39 +46,39 @@ if ( isset( $_GET['newvideoshowdays'] ) ) {
 	$allweekvideos = 0;
 	$result = icms::$xoopsDB -> query( 'SELECT lid, cid, published, updated FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE (published >= ' . $duration . ' AND published <= ' . $time_cur . ') OR updated >= ' . $duration . ' AND (expired = 0 OR expired > ' . $time_cur . ') AND offline = 0' );
 	while ( $myrow = icms::$xoopsDB -> fetcharray( $result ) ) {
-	    $published = ( $myrow['updated'] > 0 ) ? $myrow['updated'] : $myrow['published'];
-	    $allmonthvideos++;
-	    if ( $published > $duration_week ) {
-	        $allweekvideos++;
-	    }
+		$published = ( $myrow['updated'] > 0 ) ? $myrow['updated'] : $myrow['published'];
+		$allmonthvideos++;
+		if ( $published > $duration_week ) {
+			$allweekvideos++;
+		}
 	} 
 	$xoopsTpl -> assign( 'allweekvideos', $allweekvideos );
 	$xoopsTpl -> assign( 'allmonthvideos', $allmonthvideos );
 
-//  List Last VARIABLE Days of videos
+	// List Last VARIABLE Days of videos
 	$newvideoshowdays = ( !isset( $_GET['newvideoshowdays'] ) ) ? 7 : $_GET['newvideoshowdays'];
 	$xoopsTpl -> assign( 'newvideoshowdays', intval( $newvideoshowdays ) );
 
 	$dailyvideos = array();
 	for ( $i = 0; $i < intval( $newvideoshowdays ); $i++ ) {
-	    $key  = intval( $newvideoshowdays ) - $i - 1;
-	    $time = $time_cur - ( 86400 * $key );
-	    $dailyvideos[$key]['newvideodayRaw'] = $time;
-	    $dailyvideos[$key]['newvideoView']   = mytube_time( formatTimestamp( $time, icms::$module -> config['dateformat'] ) );
-        $dailyvideos[$key]['totalvideos']    = 0;
-	}  
+		$key  = intval( $newvideoshowdays ) - $i - 1;
+		$time = $time_cur - ( 86400 * $key );
+		$dailyvideos[$key]['newvideodayRaw'] = $time;
+		$dailyvideos[$key]['newvideoView']	= mytube_time( formatTimestamp( $time, icms::$module -> config['dateformat'] ) );
+		$dailyvideos[$key]['totalvideos']	= 0;
+	}
 }
 
 $duration = ( $time_cur - ( 86400 * ( intval( $newvideoshowdays ) - 1 ) ) );
 $result = icms::$xoopsDB -> query( 'SELECT lid, cid, published, updated FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE (published > ' . $duration . ' AND published <= ' . $time_cur . ') OR (updated >= ' . $duration . ' AND updated <= ' . $time_cur . ') AND (expired = 0 OR expired > ' . $time_cur . ') AND offline = 0' );
 while ( $myrow = icms::$xoopsDB -> fetcharray( $result ) ) {
-    $published = ( $myrow['updated'] > 0 ) ? $myrow['updated'] : $myrow['published'];
-    $d = date( 'j', $published );
-    $m = date( 'm', $published );
-    $y = date( 'Y', $published );
-    $key = intval( ( $time_cur - mktime ( 0, 0, 0, $m, $d, $y ) ) / 86400 );
-    $dailyvideos[$key]['totalvideos']++;
-} 
+	$published = ( $myrow['updated'] > 0 ) ? $myrow['updated'] : $myrow['published'];
+	$d = date( 'j', $published );
+	$m = date( 'm', $published );
+	$y = date( 'Y', $published );
+	$key = intval( ( $time_cur - mktime ( 0, 0, 0, $m, $d, $y ) ) / 86400 );
+	$dailyvideos[$key]['totalvideos']++;
+}
 ksort( $dailyvideos );
 reset( $dailyvideos );
 $xoopsTpl -> assign( 'dailyvideos', $dailyvideos );
@@ -93,7 +93,7 @@ $sql .= 'WHERE (published > 0 AND published <= ' . $time_cur . ')
 		 ORDER BY ' . icms::$module -> config['linkxorder'];
 $result = icms::$xoopsDB -> query( $sql, 10 , 0 );
 while ( $video_arr = icms::$xoopsDB -> fetchArray( $result ) ) {
-    include ICMS_ROOT_PATH . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/include/videoloadinfo.php';
+	include ICMS_ROOT_PATH . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/include/videoloadinfo.php';
 }
 
 $xoopsTpl -> assign( 'back', '<a class="mytube_button" href="javascript:history.go(-1)">&#9668; ' . _BACK . '</a>' );
