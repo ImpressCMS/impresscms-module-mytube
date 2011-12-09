@@ -163,7 +163,7 @@ if ( $lastvideos['lastvideosyn'] == 1 && $lastvideos['lastvideostotal'] > 0 ) {
 								AND (expired = 0 OR expired > ' . $time . ') 
 								AND offline = 0 
 								ORDER BY published DESC', $limit, $start );
-								
+
 	while ( $video_arr = icms::$xoopsDB -> fetchArray( $result ) ) {
 		$res_type = 0;
 		$moderate = 0;
@@ -172,7 +172,7 @@ if ( $lastvideos['lastvideosyn'] == 1 && $lastvideos['lastvideostotal'] > 0 ) {
 		$xoopsTpl -> append( 'video', $video );
 	}
 
-	pagenav = new icms_view_PageNav( $count, icms::$module -> config['perpage'] , $start, 'start' );
+	$pagenav = new icms_view_PageNav( $count, icms::$module -> config['perpage'] , $start, 'start' );
 	$xoopsTpl -> assign( 'pagenav', $pagenav -> renderNav() );
 	$xoopsTpl -> assign( 'showlatest', $lastvideos['lastvideosyn'] );
 }
