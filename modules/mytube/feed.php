@@ -50,7 +50,7 @@ if ( $config_arr['rssactive'] == 1 ) {
 		$text  = icms_core_DataFilter::checkVar( $text, 'html' );
 		$link  = mytube_niceurl( $myrow['lid'], $myrow['title'], $myrow['nice_url'] );
 		$author= $myrow['publisher'];
-		$thumb = htmlspecialchars( '<span style="float: right;">' . mytube_videothumb( $myrow['vidid'], $myrow['title'], $myrow['vidsource'], $myrow['picurl'], icms::$module -> config['videoimgdir'] . '/' . $myrow['screenshot'] ) . '</span>' . $text );
+		$thumb = htmlspecialchars( '<img style="float: right;" src="' . mytube_videothumb( $myrow['vidid'], $myrow['title'], $myrow['vidsource'], $myrow['picurl'], $icmsModuleConfig['videoimgdir'] . '/' . $myrow['screenshot'] ) . '" title="' . $title . '" alt="' . $title . '" width="' . $icmsModuleConfig['shotwidth'] . 'px" height="' . $icmsModuleConfig['shotheight'] . 'px" />' . $text );
 		$myFeed -> feeds[] = array(
 			'title'			=> $title,
 			'link'			=> $link,
@@ -58,16 +58,14 @@ if ( $config_arr['rssactive'] == 1 ) {
 			'pubdate'		=> $date,
 			'category'		=> $category,
 			'author'		=> $author,
-			'guid'			=> $link
-			);
+			'guid'			=> $link );
 	}
 	$myFeed -> render();
 } else {
 	$myFeed = new MyTubeFeed(); 
 	$myFeed -> feeds[] = array( 'title'			=> $config_arr['rssofftitle'],
 								'link'			=> ICMS_URL,
-								'description'	=> $config_arr['rssoffdsc']
-								);
+								'description'	=> $config_arr['rssoffdsc'] );
 	$myFeed -> render();
 }
 ?>
