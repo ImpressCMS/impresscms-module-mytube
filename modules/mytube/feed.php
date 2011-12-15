@@ -40,7 +40,6 @@ if ( $config_arr['rssactive'] == 1 ) {
 	$sql2 = icms::$xoopsDB -> query( 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published > 0 AND published <= ' . time() . ' AND (expired = 0 OR expired > ' . time() . ') AND offline = 0  ORDER BY published DESC ', $config_arr['rsstotal'], 0 );
 
 	while ( $myrow = icms::$xoopsDB -> fetchArray( $sql2 ) ) {
-		// First get the main category title of the link
 		$sql3 = icms::$xoopsDB -> query( 'SELECT title FROM ' . icms::$xoopsDB -> prefix( 'mytube_cat' ) . ' WHERE cid=' . $myrow['cid'] );
 		$mycat = icms::$xoopsDB -> fetchArray( $sql3 );
 		$category = htmlspecialchars( $mycat['title'] );
@@ -50,11 +49,11 @@ if ( $config_arr['rssactive'] == 1 ) {
 		$text  = icms_core_DataFilter::checkVar( $text, 'html' );
 		$link  = mytube_niceurl( $myrow['lid'], $myrow['title'], $myrow['nice_url'] );
 		$author= $myrow['publisher'];
-		$thumb = htmlspecialchars( '<img style="float: right;" src="' . mytube_videothumb( $myrow['vidid'], $myrow['title'], $myrow['vidsource'], $myrow['picurl'], $icmsModuleConfig['videoimgdir'] . '/' . $myrow['screenshot'] ) . '" title="' . $title . '" alt="' . $title . '" width="' . $icmsModuleConfig['shotwidth'] . 'px" height="' . $icmsModuleConfig['shotheight'] . 'px" />' . $text );
+		$description = htmlspecialchars( '<img style="float: right;" src="' . mytube_videothumb( $myrow['vidid'], $myrow['title'], $myrow['vidsource'], $myrow['picurl'], $icmsModuleConfig['videoimgdir'] . '/' . $myrow['screenshot'] ) . '" title="' . $title . '" alt="' . $title . '" width="' . $icmsModuleConfig['shotwidth'] . 'px" height="' . $icmsModuleConfig['shotheight'] . 'px" />' . $text );
 		$myFeed -> feeds[] = array(
 			'title'			=> $title,
 			'link'			=> $link,
-			'description'	=> $thumb,
+			'description'	=> $description,
 			'pubdate'		=> $date,
 			'category'		=> $category,
 			'author'		=> $author,
@@ -62,7 +61,7 @@ if ( $config_arr['rssactive'] == 1 ) {
 	}
 	$myFeed -> render();
 } else {
-	$myFeed = new MyTubeFeed(); 
+	$myFeed = new MyTubeFeed();
 	$myFeed -> feeds[] = array( 'title'			=> $config_arr['rssofftitle'],
 								'link'			=> ICMS_URL,
 								'description'	=> $config_arr['rssoffdsc'] );
