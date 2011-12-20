@@ -177,6 +177,7 @@ switch ( $op ) {
 			$sform -> addElement( $create_tray );
 			$sform -> display();
 			icms_cp_footer();
+
 		} else {
 
 			$source = $_POST['source'];
@@ -199,13 +200,13 @@ switch ( $op ) {
 		break;
 
 	case 'addCat':
-		$groups = isset( $_REQUEST['groups'] ) ? $_REQUEST['groups'] : array();
-		$cid = ( isset( $_REQUEST['cid'] ) ) ? $_REQUEST['cid'] : 0;
-		$pid = ( isset( $_REQUEST['pid'] ) ) ? $_REQUEST['pid'] : 0;
-		$weight = ( isset( $_REQUEST['weight'] ) && $_REQUEST['weight'] > 0 ) ? $_REQUEST['weight'] : 0;
-		$title = icms_core_DataFilter::addSlashes( $_REQUEST['title'] );
-		$descriptionb = icms_core_DataFilter::addSlashes( $_REQUEST['description'] );
-		$imgurl = ( $_REQUEST['imgurl'] && $_REQUEST['imgurl'] != 'blank.gif' ) ? icms_core_DataFilter::addSlashes( $_REQUEST['imgurl'] ) : '';
+		$groups = isset( $_POST['groups'] ) ? $_POST['groups'] : array();
+		$cid = ( isset( $_POST['cid'] ) ) ? $_POST['cid'] : 0;
+		$pid = ( isset( $_POST['pid'] ) ) ? $_POST['pid'] : 0;
+		$weight = ( isset( $_POST['weight'] ) && $_POST['weight'] > 0 ) ? $_POST['weight'] : 0;
+		$title = icms_core_DataFilter::addSlashes( $_POST['title'] );
+		$descriptionb = icms_core_DataFilter::addSlashes( $_POST['description'] );
+		$imgurl = ( $_POST['imgurl'] && $_POST['imgurl'] != 'blank.gif' ) ? icms_core_DataFilter::addSlashes( $_POST['imgurl'] ) : '';
 
 		if ( !$cid ) {
 			$cid = 0;
@@ -280,7 +281,7 @@ switch ( $op ) {
 			$sql = sprintf( 'DELETE FROM %s WHERE cid=%u', icms::$xoopsDB -> prefix( 'mytube_altcat' ), intval( $cid ) );
 			icms::$xoopsDB -> query( $sql );
 
-			// delete category			
+			// delete category
 			$sql = sprintf( 'DELETE FROM %s WHERE cid=%u', icms::$xoopsDB -> prefix( 'mytube_cat' ), intval( $cid ) );
 			$error = _AM_MYTUBE_DBERROR . ': <br /><br />' . $sql;
 			xoops_groupperm_deletebymoditem( icms::$module -> getVar( 'mid' ), 'MyTubeCatPerm', intval( $cid ) );
