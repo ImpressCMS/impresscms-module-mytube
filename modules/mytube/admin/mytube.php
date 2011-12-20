@@ -61,39 +61,32 @@ function edit( $lid = 0 ) {
 	icms_cp_header();
 	mytube_adminmenu( 3, _AM_MYTUBE_MVIDEOS );
 
-/*	echo '<fieldset style="border: #E8E8E8 1px solid;">
-	      <legend style="display: inline; font-weight: bold; color: #0A3760;">' . _AM_MYTUBE_FLV_LICENSE . '</legend>
-	      <div style="padding: 8px;"><img src="' . ICMS_URL . '/modules/' . icms::$module -> getVar( 'dirname' ) . '/images/icon/certificate.png" alt="" style="float: left; padding-right: 10px;" />
-		  <div>' . _AM_MYTUBE_FLV_LICENSEDSC . '</div>';
-	echo '</div>';
-    echo '</fieldset>';
-*/
 	if ( $lid ) {
 		$_vote_data = mytube_getVoteDetails( $lid );
 		$text_info = "
 			<table width='100%'>
 			 <tr>
-			  <td width='33%' valign='top'>
-				<div><b>" . _AM_MYTUBE_VIDEO_ID . " </b>" . $lid . "</div>
-				<div><b>" . _AM_MYTUBE_MINDEX_SUBMITTED . ": </b>" . mytube_time( formatTimestamp( $video_array['date'], icms::$module -> config['dateformat'] ) ) . "</div>
-				<div><b>" . _AM_MYTUBE_MOD_MODIFYSUBMITTER . " </b>" . icms_member_user_Handler::getUserLink( $video_array['submitter'] ) . "</div>
-				<div><b>" . _AM_MYTUBE_VIDEO_IP . " </b>" . $ipaddress . "</div>
-				<div><b>" . _AM_MYTUBE_VIDEO_VIEWS . " </b>" . $video_array['hits'] . "</div>
-			  </td>
-			  <td>
-				<div><b>" . _AM_MYTUBE_VOTE_TOTALRATE . ": </b>" . intval( $_vote_data['rate'] ) . "</div>
-				<div><b>" . _AM_MYTUBE_VOTE_USERAVG . ": </b>" . intval( round( $_vote_data['avg_rate'], 2 ) ) . "</div>
-				<div><b>" . _AM_MYTUBE_VOTE_MAXRATE . ": </b>" . intval( $_vote_data['min_rate'] ) . "</div>
-				<div><b>" . _AM_MYTUBE_VOTE_MINRATE . ": </b>" . intval( $_vote_data['max_rate'] ) . "</div>
-				<div><b>&nbsp;</div>
-			  </td>
-			  <td>		 
-				<div><b>" . _AM_MYTUBE_VOTE_MOSTVOTEDTITLE . ": </b>" . intval( $_vote_data['max_title'] ) . "</div>
-				<div><b>" . _AM_MYTUBE_VOTE_LEASTVOTEDTITLE . ": </b>" . intval( $_vote_data['min_title'] ) . "</div>
-				<div><b>" . _AM_MYTUBE_VOTE_REGISTERED . ": </b>" . ( intval( $_vote_data['rate'] - $_vote_data['null_ratinguser'] ) ) . "</div>
-				<div><b>" . _AM_MYTUBE_VOTE_NONREGISTERED . ": </b>" . intval( $_vote_data['null_ratinguser'] ) . "</div>
-				<div><b>&nbsp;</div>
-			  </td>
+				<td width='33%' valign='top'>
+					<div><b>" . _AM_MYTUBE_VIDEO_ID . " </b>" . $lid . "</div>
+					<div><b>" . _AM_MYTUBE_MINDEX_SUBMITTED . ": </b>" . mytube_time( formatTimestamp( $video_array['date'], icms::$module -> config['dateformat'] ) ) . "</div>
+					<div><b>" . _AM_MYTUBE_MOD_MODIFYSUBMITTER . " </b>" . icms_member_user_Handler::getUserLink( $video_array['submitter'] ) . "</div>
+					<div><b>" . _AM_MYTUBE_VIDEO_IP . " </b>" . $ipaddress . "</div>
+					<div><b>" . _AM_MYTUBE_VIDEO_VIEWS . " </b>" . $video_array['hits'] . "</div>
+				</td>
+				<td>
+					<div><b>" . _AM_MYTUBE_VOTE_TOTALRATE . ": </b>" . intval( $_vote_data['rate'] ) . "</div>
+					<div><b>" . _AM_MYTUBE_VOTE_USERAVG . ": </b>" . intval( round( $_vote_data['avg_rate'], 2 ) ) . "</div>
+					<div><b>" . _AM_MYTUBE_VOTE_MAXRATE . ": </b>" . intval( $_vote_data['min_rate'] ) . "</div>
+					<div><b>" . _AM_MYTUBE_VOTE_MINRATE . ": </b>" . intval( $_vote_data['max_rate'] ) . "</div>
+					<div><b>&nbsp;</div>
+				</td>
+				<td>
+					<div><b>" . _AM_MYTUBE_VOTE_MOSTVOTEDTITLE . ": </b>" . intval( $_vote_data['max_title'] ) . "</div>
+					<div><b>" . _AM_MYTUBE_VOTE_LEASTVOTEDTITLE . ": </b>" . intval( $_vote_data['min_title'] ) . "</div>
+					<div><b>" . _AM_MYTUBE_VOTE_REGISTERED . ": </b>" . ( intval( $_vote_data['rate'] - $_vote_data['null_ratinguser'] ) ) . "</div>
+					<div><b>" . _AM_MYTUBE_VOTE_NONREGISTERED . ": </b>" . intval( $_vote_data['null_ratinguser'] ) . "</div>
+					<div><b>&nbsp;</div>
+				</td>
 			 </tr>
 			</table>";
 		echo '
@@ -113,7 +106,7 @@ function edit( $lid = 0 ) {
 	// Video title
 	$sform -> addElement( new icms_form_elements_Text( _AM_MYTUBE_VIDEO_TITLE, 'title', 70, 100, $title ), true );
 	
-	// Video nice url	
+	// Video nice url
 	$niceform = new icms_form_elements_Text( _AM_MYTUBE_NICEURL, 'nice_url', 70, 100, $nice_url );
 	$niceform -> setDescription( '<small>' . _AM_MYTUBE_NICEURLDSC . '</small>' );
 	$sform -> addElement( $niceform, false );
