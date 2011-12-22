@@ -25,7 +25,7 @@ CREATE TABLE `mytube_broken` (
 	`confirmed` int(1) NOT NULL default '0',
 	`acknowledged` int(1) NOT NULL default '0',
 	`title` varchar(255) NOT NULL default '',
-	PRIMARY KEY  (`reportid`),
+	PRIMARY KEY (`reportid`),
 	KEY `lid` (`lid`),
 	KEY `sender` (`sender`),
 	KEY `ip` (`ip`)
@@ -45,7 +45,7 @@ CREATE TABLE `mytube_cat` (
 	`weight` int(11) NOT NULL default '0',
 	`client_id` int(5) NOT NULL default '0',
 	`banner_id` int(5) NOT NULL default '0',
-	PRIMARY KEY  (cid),
+	PRIMARY KEY (cid),
 	KEY pid (pid)
 ) ENGINE=MyISAM COMMENT='MyTube by McDonald' AUTO_INCREMENT=1;
 
@@ -102,9 +102,9 @@ CREATE TABLE `mytube_mod` (
 	`vidrating` tinyint(1) NOT NULL default '0',
 	`time` varchar(7) NOT NULL default '0:00:00',
 	`keywords` varchar(255) NOT NULL default '',
-	`item_tag` text NOT NULL default '',
-	`picurl` text NOT NULL default '',
-	PRIMARY KEY  (`requestid`)
+	`item_tag` text NOT NULL,
+	`picurl` text NOT NULL,
+	PRIMARY KEY (`requestid`)
 ) ENGINE=MyISAM COMMENT='MyTube by McDonald' AUTO_INCREMENT=1;
 
 
@@ -137,14 +137,14 @@ CREATE TABLE `mytube_videos` (
 	`vidrating` tinyint(1) NOT NULL default '0',
 	`time` varchar(7) NOT NULL default '0:00:00',
 	`keywords` varchar(255) NOT NULL default '',
-	`item_tag` text NOT NULL default '',
-	`picurl` text NOT NULL default '',
+	`item_tag` text NOT NULL,
+	`picurl` text NOT NULL,
 	`nice_url` varchar(100) NOT NULL default '',
-	PRIMARY KEY  (`lid`),
+	PRIMARY KEY (`lid`),
 	KEY `cid` (`cid`),
 	KEY `status` (`status`),
 	KEY `title` (`title`(40))
-) ENGINE=MyISAM COMMENT='MyTube by McDonald' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM COMMENT='MyTube by McDonald' AUTO_INCREMENT=1;
 
 #
 # Table structure for table 'mytube_votedata'
@@ -158,11 +158,11 @@ CREATE TABLE `mytube_votedata` (
 	`ratinghostname` varchar(60) NOT NULL default '',
 	`ratingtimestamp` int(10) NOT NULL default '0',
 	`title` varchar(255) NOT NULL default '',
-	PRIMARY KEY  (`ratingid`),
+	PRIMARY KEY (`ratingid`),
 	KEY `ratinguser` (`ratinguser`),
 	KEY `ratinghostname` (`ratinghostname`),
 	KEY `lid` (`lid`)
-) ENGINE=MyISAM COMMENT='MyTube by McDonald' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM COMMENT='MyTube by McDonald' AUTO_INCREMENT=1;
 
 #
 # Table structure for table 'imlinks_configs'
