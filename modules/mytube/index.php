@@ -131,8 +131,8 @@ while ( $myrow = icms::$xoopsDB -> fetchArray( $result ) ) {
 												'count' => $count,
 												'alttext' => $myrow['description'] ) );
 		$count++;
-	} 
-} 
+	}
+}
 switch ( $total_cat ) {
 	case '1':
 		$lang_thereare = _MD_MYTUBE_THEREIS;
@@ -142,25 +142,20 @@ switch ( $total_cat ) {
 		break;
 }
 
-$time = time();
-
-$sql = icms::$xoopsDB -> query( 'SELECT lastvideosyn, lastvideostotal FROM ' . icms::$xoopsDB -> prefix( 'mytube_indexpage' ) );
-$lastvideos = icms::$xoopsDB -> fetchArray( $sql );
-
-if ( $lastvideos['lastvideosyn'] == 1 && $lastvideos['lastvideostotal'] > 0 ) {
+if ( $head_arr['lastvideosyn'] == 1 && $head_arr['lastvideostotal'] > 0 ) {
 	$result = icms::$xoopsDB -> query( 'SELECT COUNT(*) FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published > 0 
-								AND published <= ' . $time . ' 
-								AND (expired = 0 OR expired > ' . $time . ') 
+								AND published <= ' . time() . ' 
+								AND (expired = 0 OR expired > ' . time() . ') 
 								AND offline = 0 
 								ORDER BY published DESC', 0, 0 );
 	list( $count ) = icms::$xoopsDB -> fetchRow( $result );
 
-	$count = ( ( $count > $lastvideos['lastvideostotal'] ) && ( $lastvideos['lastvideostotal'] != 0 ) ) ? $lastvideos['lastvideostotal'] : $count;
+	$count = ( ( $count > $head_arr['lastvideostotal'] ) && ( $head_arr['lastvideostotal'] != 0 ) ) ? $head_arr['lastvideostotal'] : $count;
 	$limit = ( ( $start + icms::$module -> config['perpage'] ) > $count ) ? ( $count - $start ) : icms::$module -> config['perpage'];
 
 	$result = icms::$xoopsDB -> query( 'SELECT * FROM ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . ' WHERE published > 0 
-								AND published <= ' . $time . ' 
-								AND (expired = 0 OR expired > ' . $time . ') 
+								AND published <= ' . time() . ' 
+								AND (expired = 0 OR expired > ' . time() . ') 
 								AND offline = 0 
 								ORDER BY published DESC', $limit, $start );
 
@@ -174,7 +169,7 @@ if ( $lastvideos['lastvideosyn'] == 1 && $lastvideos['lastvideostotal'] > 0 ) {
 
 	$pagenav = new icms_view_PageNav( $count, icms::$module -> config['perpage'] , $start, 'start' );
 	$xoopsTpl -> assign( 'pagenav', $pagenav -> renderNav() );
-	$xoopsTpl -> assign( 'showlatest', $lastvideos['lastvideosyn'] );
+	$xoopsTpl -> assign( 'showlatest', $head_arr['lastvideosyn'] );
 }
 
 $xoopsTpl -> assign( 'cat_columns', icms::$module -> config['catcolumns'] );

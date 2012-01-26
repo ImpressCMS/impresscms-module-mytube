@@ -224,4 +224,8 @@ function mytube_alfabet() {
 define( '_MD_MYTUBE_FEED', 'RSS feed' );
 define( '_MD_MYTUBE_NATIOGEO', 'National Geographic' );
 define( '_MD_MYTUBE_NOPERMISSIONTOVIEW', 'Sorry, you do not have permission to view this category.' );
+
+// Version 1.07
+define( '_MD_MYTUBE_VIDEO_HD', 'Play in High Definition:' );
+define( '_MD_MYTUBE_VIDEO_HDDSC','Works currently for YouTube only.' );
 ?>

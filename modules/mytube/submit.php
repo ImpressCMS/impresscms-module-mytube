@@ -69,6 +69,7 @@ if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
 		$date = time();
 		$publishdate = 0;
 		$ipaddress = $_SERVER['REMOTE_ADDR'];
+		$hd = mytube_cleanRequestVars( $_REQUEST, 'hd', 0 );
 
 		if ( $lid == 0 ) {
 			$status = 0;
@@ -79,8 +80,8 @@ if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
 				$status = 1;
 				$message = _MD_MYTUBE_ISAPPROVED;
 			}
-			$sql = 'INSERT INTO ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . '	(lid, cid, title, vidid, submitter, publisher, status, date, hits, rating, votes, comments, vidsource, published, expired, offline, description, ipaddress, notifypub, vidrating, time, keywords, item_tag, picurl) ';
-			$sql .= " VALUES 	('', $cid, '$title', '$vidid', '$submitter', '$publisher', '$status', '$date', 0, 0, 0, 0, '$vidsource', '$publishdate', 0, '$offline', '$descriptionb', '$ipaddress', '$notifypub', '$vidrating', '$time', '$keywords', '$item_tag', '$picurl')";
+			$sql = 'INSERT INTO ' . icms::$xoopsDB -> prefix( 'mytube_videos' ) . '	(lid, cid, title, vidid, submitter, publisher, status, date, hits, rating, votes, comments, vidsource, published, expired, offline, description, ipaddress, notifypub, vidrating, time, keywords, item_tag, picurl, hd) ';
+			$sql .= " VALUES 	('', $cid, '$title', '$vidid', '$submitter', '$publisher', '$status', '$date', 0, 0, 0, 0, '$vidsource', '$publishdate', 0, '$offline', '$descriptionb', '$ipaddress', '$notifypub', '$vidrating', '$time', '$keywords', '$item_tag', '$picurl', '$hd')";
 			if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
 				$_error = icms::$xoopsDB -> error() . ' : ' . icms::$xoopsDB -> errno();
 				icms::$logger -> handleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
@@ -127,7 +128,7 @@ if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
 		} else {
 			if ( true == mytube_checkgroups( $cid, 'MyTubeAutoApp' ) || $approve == 1 ) {
 				$updated = time();
-				$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'mytube_videos' ) . " SET cid=$cid, title='$title', vidid='$vidid', publisher='$publisher', updated='$updated', offline='$offline', description='$descriptionb', ipaddress='$ipaddress', notifypub='$notifypub', vidrating='$vidrating', time='$time', keywords='$keywords', item_tag='$item_tag', picurl='$picurl' WHERE lid =" . $lid;
+				$sql = "UPDATE " . icms::$xoopsDB -> prefix( 'mytube_videos' ) . " SET cid=$cid, title='$title', vidid='$vidid', publisher='$publisher', updated='$updated', offline='$offline', description='$descriptionb', ipaddress='$ipaddress', notifypub='$notifypub', vidrating='$vidrating', time='$time', keywords='$keywords', item_tag='$item_tag', picurl='$picurl', hd='$hd' WHERE lid =" . $lid;
 				if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
 					$_error = icms::$xoopsDB -> error() . " : " . icms::$xoopsDB -> errno();
 					icms::$logger -> handleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
@@ -153,8 +154,8 @@ if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
 				$requestdate = time();
 				$updated = mytube_cleanRequestVars( $_REQUEST, 'up_dated', time() );
 				if ( $modifysubmitter == $submitter_array['submitter'] ) {
-					$sql = 'INSERT INTO ' . icms::$xoopsDB -> prefix( 'mytube_mod' ) . ' (requestid, lid, cid, title, vidid, publisher, vidsource, description, modifysubmitter, requestdate, time, keywords, item_tag, picurl)';
-					$sql .= " VALUES ('', $lid, $cid, '$title', '$vidid', '$publisher', '$vidsource', '$descriptionb', '$modifysubmitter', '$requestdate', '$time', '$keywords', '$item_tag', '$picurl')";
+					$sql = 'INSERT INTO ' . icms::$xoopsDB -> prefix( 'mytube_mod' ) . ' (requestid, lid, cid, title, vidid, publisher, vidsource, description, modifysubmitter, requestdate, time, keywords, item_tag, picurl, hd)';
+					$sql .= " VALUES ('', $lid, $cid, '$title', '$vidid', '$publisher', '$vidsource', '$descriptionb', '$modifysubmitter', '$requestdate', '$time', '$keywords', '$item_tag', '$picurl', '$hd')";
 				if ( !$result = icms::$xoopsDB -> query( $sql ) ) {
 					$_error = icms::$xoopsDB -> error() . " : " . icms::$xoopsDB -> errno();
 					icms::$logger -> handleError( E_USER_WARNING, $_error, __FILE__, __LINE__ );
@@ -232,6 +233,7 @@ if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
 		$keywords = $video_array['keywords'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['keywords'] ) : '';
 		$item_tag = $video_array['item_tag'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['item_tag'] ) : '';
 		$picurl = $video_array['picurl'] ? $mytubemyts -> htmlSpecialCharsStrip( $video_array['picurl'] ) : 'http://';
+		$hd = $video_array['hd'] ? $video_array['hd'] : 0;
 
 		$sform = new icms_form_Theme( _MD_MYTUBE_SUBMITCATHEAD, 'storyform', '' );
 		$sform -> setExtra( 'enctype="multipart/form-data"' );
@@ -267,6 +269,11 @@ if ( true == mytube_checkgroups( $cid, 'MyTubeSubPerm' ) ) {
 		$videocode -> setDescription( '<small>' . _MD_MYTUBE_VIDEO_DLVIDIDDSC . '</small>');
 		$sform -> addElement( $videocode, true );
 		$sform -> addElement( new icms_form_elements_Label( '', _MD_MYTUBE_VIDEO_DLVIDID_NOTE ) );
+
+		// HD
+		$highdef = new icms_form_elements_Radioyn( _MD_MYTUBE_VIDEO_HD, 'hd', $hd, _YES, _NO );
+		$highdef -> setDescription( '<small>' . _MD_MYTUBE_VIDEO_HDDSC . '</small>' );
+		$sform -> addElement( $highdef );
 
 		// Picture url form
 		$picurl = new icms_form_elements_Text( _MD_MYTUBE_VIDEO_PICURL, 'picurl', 70, 255, $picurl );
