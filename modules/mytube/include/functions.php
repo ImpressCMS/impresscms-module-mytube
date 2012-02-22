@@ -433,7 +433,7 @@ function mytube_getDirSelectOption( $selected, $dirarray, $namearray ) {
 		} else {
 			$opt_selected = '';
 		}
-		echo '<option value="' . htmlspecialchars( $namearray, ENT_QUOTES ) . '" $opt_selected>' . $workd . '</option>';
+		echo '<option value="' . htmlspecialchars( $namearray, ENT_QUOTES ) . '"' . $opt_selected . '>' . $workd . '</option>';
 	}
 	echo '</select>';
 }
