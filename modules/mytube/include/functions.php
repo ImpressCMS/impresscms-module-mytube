@@ -424,34 +424,6 @@ function mytube_strrrchr( $haystack, $needle ) {
 	return substr( $haystack, 0, strpos( $haystack, $needle ) + 1 );
 }
 
-function mytube_getDirSelectOption( $selected, $dirarray, $namearray ) {
-	echo "<select size='1' name='workd' onchange='location.href=\"upload.php?rootpath=\"+this.options[this.selectedIndex].value'>";
-	echo "<option value=''>--------------------------------------</option>";
-	foreach( $namearray as $namearray => $workd ) {
-		if ( $workd === $selected ) {
-			$opt_selected = 'selected';
-		} else {
-			$opt_selected = '';
-		}
-		echo '<option value="' . htmlspecialchars( $namearray, ENT_QUOTES ) . '"' . $opt_selected . '>' . $workd . '</option>';
-	}
-	echo '</select>';
-}
-
-function mytube_VgetDirSelectOption( $selected, $dirarray, $namearray ) {
-	echo "<select size='1' name='workd' onchange='location.href=\"vupload.php?rootpath=\"+this.options[this.selectedIndex].value'>";
-	echo "<option value=''>--------------------------------------</option>";
-	foreach( $namearray as $namearray => $workd ) {
-		if ( $workd === $selected ) {
-			$opt_selected = 'selected';
-		} else {
-			$opt_selected = '';
-		}
-		echo '<option value="' . htmlspecialchars( $namearray, ENT_QUOTES ) . '"' . $opt_selected . '>' . $workd . '</option>';
-	}
-	echo '</select>';
-}
-
 // Code for retreiving an editor is based on code from Hervet
 function &mytube_getWysiwygForm( $caption, $name, $value ) {
 	$isadmin = ( ( is_object( icms::$user ) && !empty( icms::$user ) ) && icms::$user -> isAdmin( icms::$module -> getVar( 'mid' ) ) ) ? true : false;

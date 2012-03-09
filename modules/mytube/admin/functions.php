@@ -47,6 +47,34 @@ function mytube_serverstats() {
 	echo '</fieldset>';
 }
 
+function mytube_getDirSelectOption( $selected, $dirarray, $namearray ) {
+	echo "<select size='1' name='workd' onchange='location.href=\"upload.php?rootpath=\"+this.options[this.selectedIndex].value'>";
+	echo "<option value=''>--------------------------------------</option>";
+	foreach( $namearray as $namearray => $workd ) {
+		if ( $workd === $selected ) {
+			$opt_selected = 'selected';
+		} else {
+			$opt_selected = '';
+		}
+		echo '<option value="' . htmlspecialchars( $namearray, ENT_QUOTES ) . '"' . $opt_selected . '>' . $workd . '</option>';
+	}
+	echo '</select>';
+}
+
+function mytube_VgetDirSelectOption( $selected, $dirarray, $namearray ) {
+	echo "<select size='1' name='workd' onchange='location.href=\"vupload.php?rootpath=\"+this.options[this.selectedIndex].value'>";
+	echo "<option value=''>--------------------------------------</option>";
+	foreach( $namearray as $namearray => $workd ) {
+		if ( $workd === $selected ) {
+			$opt_selected = 'selected';
+		} else {
+			$opt_selected = '';
+		}
+		echo '<option value="' . htmlspecialchars( $namearray, ENT_QUOTES ) . '"' . $opt_selected . '>' . $workd . '</option>';
+	}
+	echo '</select>';
+}
+
 function mytube_uploading( $_FILES, $uploaddir = 'uploads', $allowed_mimetypes = '', $redirecturl = 'index.php', $num = 0, $redirect = 0, $usertype = 1 ) {
 	global $_FILES, $icmsConfig;
 	$down = array();
