@@ -447,7 +447,7 @@ function mytube_VgetDirSelectOption( $selected, $dirarray, $namearray ) {
 		} else {
 			$opt_selected = '';
 		}
-		echo '<option value="' . htmlspecialchars( $namearray, ENT_QUOTES ) . '" $opt_selected>' . $workd . '</option>';
+		echo '<option value="' . htmlspecialchars( $namearray, ENT_QUOTES ) . '"' . $opt_selected . '>' . $workd . '</option>';
 	}
 	echo '</select>';
 }
