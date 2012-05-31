@@ -175,7 +175,7 @@ function edit( $lid = 0 ) {
 	$sform -> addElement( $editor, false );
 
 	// Meta keywords form
-	$keywords = new icms_form_elements_TextArea( _AM_MYTUBE_KEYWORDS, 'keywords', $keywords, 5, 50, false );
+	$keywords = new icms_form_elements_Textarea( _AM_MYTUBE_KEYWORDS, 'keywords', $keywords, 5, 50, false );
 	$keywords -> setDescription( '<span style="font-size: smaller;">' . _AM_MYTUBE_KEYWORDS_NOTE . '</span>' );
 	$sform -> addElement($keywords);
 
