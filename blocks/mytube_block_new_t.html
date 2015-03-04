@@ -1,0 +1,5 @@
+<ul style="text-align: left;">
+  <{foreach item=videoload from=$block.videos}>
+    <li><a href="<{$videoload.url}>"><{$videoload.title}></a> <small>(<{$videoload.date}>)</small></li>
+ <{/foreach}>
+ </ul>
